@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/jisosavi/forensic-semiotics#readme",
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.80.0",
+    "@mozilla/readability": "^0.6.0",
+    "jsdom": "^29.0.1",
     "puppeteer": "^24.40.0"
   }
 }
