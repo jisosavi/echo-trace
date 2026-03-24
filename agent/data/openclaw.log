@@ -87,3 +87,5 @@
 [2026-03-24T13:53:43Z] [manual-trigger] step=validate_output status=started command="python3 -m json.tool web/public/data/comparisons.json >/dev/null"
 [2026-03-24T13:53:43Z] [manual-trigger] step=validate_output status=ok
 [2026-03-24T13:53:43Z] [manual-trigger] step=web_sync status=started mode=git
+[2026-03-24T13:53:44Z] [manual-trigger] step=web_sync status=attempted
+[2026-03-24T13:53:44Z] [manual-trigger] pipeline=manual-analysis status=completed
