@@ -1,2 +1,24 @@
 [OpenClaw] boot: Forensic Semiotics runtime ready
 [OpenClaw] heartbeat: awaiting next 6-hour cycle
+[2026-03-24T13:25:57Z] [manual-trigger] received url=https://example.com/article
+[2026-03-24T13:25:57Z] [manual-trigger] pipeline=manual-analysis status=started
+[2026-03-24T13:25:57Z] [manual-trigger] step=analyze_url status=started command="node scripts/analyze-one-url.mjs "https://example.com/article""
+[2026-03-24T13:25:57Z] [manual-trigger] step=analyze_url status=failed
+[2026-03-24T13:29:56Z] [manual-trigger] received url=https://www.foxnews.com/world/putin-says-russia-launch-new-attacks-other-countries-if-you-treat-us-with-respect
+[2026-03-24T13:29:56Z] [manual-trigger] pipeline=manual-analysis status=started
+[2026-03-24T13:29:56Z] [manual-trigger] step=analyze_url status=started command="node scripts/analyze-one-url.mjs "https://www.foxnews.com/world/putin-says-russia-launch-new-attacks-other-countries-if-you-treat-us-with-respect""
+[2026-03-24T13:29:56Z] [manual-trigger] step=analyze_url status=failed
+[2026-03-24T13:31:44Z] [manual-trigger] received url=https://www.foxnews.com/world/putin-says-russia-launch-new-attacks-other-countries-if-you-treat-us-with-respect
+[2026-03-24T13:31:44Z] [manual-trigger] pipeline=manual-analysis status=started
+[2026-03-24T13:31:44Z] [manual-trigger] step=analyze_url status=started command="node scripts/analyze-one-url.mjs "https://www.foxnews.com/world/putin-says-russia-launch-new-attacks-other-countries-if-you-treat-us-with-respect""
+[2026-03-24T13:31:46Z] [manual-trigger] step=analyze_url status=failed
+[2026-03-24T13:33:01Z] [manual-trigger] received url=https://www.foxnews.com/world/putin-says-russia-launch-new-attacks-other-countries-if-you-treat-us-with-respect
+[2026-03-24T13:33:01Z] [manual-trigger] pipeline=manual-analysis status=started
+[2026-03-24T13:33:01Z] [manual-trigger] step=analyze_url status=started command="node scripts/analyze-one-url.mjs "https://www.foxnews.com/world/putin-says-russia-launch-new-attacks-other-countries-if-you-treat-us-with-respect""
+[2026-03-24T13:33:01.117Z] [analyze-one-url] wrote comparison id=manual-www-foxnews-com-1774359181117 url=https://www.foxnews.com/world/putin-says-russia-launch-new-attacks-other-countries-if-you-treat-us-with-respect
+[2026-03-24T13:33:01Z] [manual-trigger] step=analyze_url status=ok
+[2026-03-24T13:33:01Z] [manual-trigger] step=historical_compare status=skipped reason=no-command
+[2026-03-24T13:33:01Z] [manual-trigger] step=archive_expansion status=skipped reason=no-command
+[2026-03-24T13:33:01Z] [manual-trigger] step=validate_output status=started command="python3 -m json.tool web/public/data/comparisons.json >/dev/null"
+[2026-03-24T13:33:01Z] [manual-trigger] step=validate_output status=ok
+[2026-03-24T13:33:01Z] [manual-trigger] step=web_sync status=started mode=git
