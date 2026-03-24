@@ -1,0 +1,43 @@
+{
+  "rhetorical_tropes": [
+    {
+      "id": "foreign_saboteur",
+      "theme": "External Threat / Foreign Interference",
+      "modern_keywords": ["foreign agents", "color revolutions", "western decadence", "sovereignty"],
+      "historical_echoes": [
+        {
+          "figure": "Joseph Stalin",
+          "context": "The Great Purge (1937)",
+          "quote": "The 'Fifth Column' of wreckers and spies must be liquidated to protect the revolution from capitalist encirclement.",
+          "analogy_link": "Both use the fear of 'unseen' internal enemies funded by distant powers to justify crackdowns."
+        }
+      ]
+    },
+    {
+      "id": "paternal_protector",
+      "theme": "The Cult of the Infallible Leader",
+      "modern_keywords": ["great helmsman", "father of the nation", "unifying force", "absolute loyalty"],
+      "historical_echoes": [
+        {
+          "figure": "Mao Zedong",
+          "context": "The Cultural Revolution",
+          "quote": "The force at the core leading our cause forward is the Chinese Communist Party. The theoretical basis guiding our thinking is Marxism-Leninism.",
+          "analogy_link": "Focuses on the Leader/Party as the sole source of truth and survival."
+        }
+      ]
+    },
+    {
+      "id": "moral_purification",
+      "theme": "Traditional Values vs. Modern Degeneracy",
+      "modern_keywords": ["traditional family values", "spiritual health", "anti-woke", "moral fiber"],
+      "historical_echoes": [
+        {
+          "figure": "Benito Mussolini",
+          "context": "Doctrine of Fascism (1932)",
+          "quote": "Fascism is a religious conception in which man is seen in his immanent relationship with a higher law and an objective Will.",
+          "analogy_link": "Frame political obedience as a moral or spiritual duty to the state."
+        }
+      ]
+    }
+  ]
+}
