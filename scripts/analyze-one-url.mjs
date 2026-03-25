@@ -470,6 +470,69 @@ async function classifyTropeWithClaude(articleText, archive) {
   return { trope, confidence: Number(result.confidence ?? 0), reasoning: result.reasoning ?? '' };
 }
 
+async function runHistoricalAnalysis(modernQuote, trope, articleText) {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey || !trope) {
+    return null;
+  }
+
+  const echoes = trope.historical_echoes ?? [];
+  if (echoes.length === 0) {
+    return null;
+  }
+
+  const echoList = echoes
+    .map((e, i) => `[${i}] Figure: ${e.figure} | Context: ${e.context}\nQuote: "${e.quote}"`)
+    .join('\n\n');
+
+  const client = new Anthropic({ apiKey });
+  const message = await client.messages.create({
+    model: 'claude-opus-4-6',
+    max_tokens: 512,
+    messages: [
+      {
+        role: 'user',
+        content: `You are a forensic rhetorical analyst. A modern authoritarian media quote has been matched to the trope "${trope.theme}".
+
+Modern quote:
+"${modernQuote}"
+
+Historical echoes available:
+${echoList}
+
+Tasks:
+1. Select the historical echo that most closely mirrors the rhetorical logic of the modern quote (not just topic similarity — look for the same emotional appeal or logical structure).
+2. Write a concise divergence note (1-2 sentences) explaining how the 2026 language differs from the historical version — e.g. updated vocabulary, shifted framing, new technology references.
+
+Respond with JSON only:
+{
+  "echo_index": 0,
+  "figure": "...",
+  "year": "YYYY",
+  "quote": "...",
+  "context": "...",
+  "divergence_note": "..."
+}`
+      }
+    ]
+  });
+
+  const raw = message.content[0].text.trim();
+  const jsonMatch = raw.match(/\{[\s\S]*\}/);
+  if (!jsonMatch) {
+    return null;
+  }
+
+  const result = JSON.parse(jsonMatch[0]);
+  return {
+    figure: result.figure ?? '',
+    year: result.year ?? '',
+    quote: result.quote ?? '',
+    context: result.context ?? '',
+    divergence_note: result.divergence_note ?? ''
+  };
+}
+
 async function main() {
   const targetUrl = process.argv[2];
   if (!targetUrl) {
@@ -536,6 +599,19 @@ async function main() {
     classificationMethod = 'keyword';
   }
 
+  let historicalEcho = null;
+  if (confidence >= 0.4) {
+    historicalEcho = await runHistoricalAnalysis(quote, trope, extraction.text).catch(async (err) => {
+      await log(`historical-analysis failed: ${err instanceof Error ? err.message : 'unknown'}`);
+      return null;
+    });
+    if (historicalEcho) {
+      await log(`historical-analysis complete figure="${historicalEcho.figure}" url=${targetUrl}`);
+    }
+  } else {
+    await log(`confidence=${confidence} below threshold; skipping historical analysis for url=${targetUrl}`);
+  }
+
   const stamp = nowIso();
   const id = `manual-${safeIdPart(parsedUrl.hostname)}-${Date.now()}`;
   const entry = {
@@ -549,6 +625,15 @@ async function main() {
     historical_parallel: trope?.theme ?? 'Unclassified rhetorical pattern',
     tropes: trope?.id ? [trope.id] : ['unclassified'],
     confidence,
+    ...(historicalEcho && {
+      historical_echo: {
+        figure: historicalEcho.figure,
+        year: historicalEcho.year,
+        quote: historicalEcho.quote,
+        context: historicalEcho.context
+      },
+      divergence_note: historicalEcho.divergence_note
+    }),
     extraction_method: extraction.extractionMethod,
     evidence_snippet: extraction.evidenceSnippet,
     notes:
