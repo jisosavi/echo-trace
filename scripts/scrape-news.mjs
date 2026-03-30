@@ -1,27 +1,33 @@
 #!/usr/bin/env node
 /**
  * scrape-news.mjs
- * Scrapes article URLs from 24 state/pro-government sources across Russia, China,
- * Saudi Arabia, North Korea, Cuba, and Hungary using Puppeteer with stealth settings.
- * Writes normalized records to agent/data/raw-news.json.
+ * Scrapes article URLs from 24 state/pro-government sources using native fetch
+ * + cheerio. Falls back to Puppeteer only when a source returns fewer than 2
+ * matching links (indicating a JS-rendered page).
  *
- * NOT activated automatically — run manually or via openclaw-cycle.sh.
+ * Writes normalized records to agent/data/raw-news.json.
+ * Prints new article URLs to stdout (one per line) for cycle.sh.
+ *
  * Usage: node scripts/scrape-news.mjs
  */
 import { appendFile, mkdir, readFile, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import puppeteerExtra from 'puppeteer-extra';
-import StealthPlugin from 'puppeteer-extra-plugin-stealth';
-
-puppeteerExtra.use(StealthPlugin());
+import * as cheerio from 'cheerio';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 const RAW_NEWS_PATH = path.join(ROOT_DIR, 'agent/data/raw-news.json');
 const LOG_PATH = path.join(ROOT_DIR, 'agent/data/openclaw.log');
+
+const FETCH_HEADERS = {
+  'User-Agent':
+    'Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+  Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'Accept-Language': 'en-US,en;q=0.9'
+};
 
 // ── Source configs ────────────────────────────────────────────────────────────
 
@@ -240,74 +246,121 @@ async function log(message) {
 async function loadExisting() {
   if (!existsSync(RAW_NEWS_PATH)) return [];
   try {
-    const raw = await readFile(RAW_NEWS_PATH, 'utf8');
-    return JSON.parse(raw);
+    return JSON.parse(await readFile(RAW_NEWS_PATH, 'utf8'));
   } catch {
     return [];
   }
 }
 
-// ── Article discovery ─────────────────────────────────────────────────────────
-
-async function discoverArticleUrls(page, source) {
-  await log(`visiting front page source=${source.name} url=${source.frontPage}`);
-  await page.goto(source.frontPage, { waitUntil: 'domcontentloaded', timeout: 45000 });
-  await randomDelay(1500, 3000);
-
-  const hrefs = await page.evaluate(() =>
-    Array.from(document.querySelectorAll('a[href]'))
-      .map((a) => a.href)
-      .filter(Boolean)
-  );
-
-  const matched = [...new Set(hrefs)]
-    .filter((href) => source.articlePattern.test(href))
-    .slice(0, source.maxArticles);
-
-  await log(`discovered count=${matched.length} urls source=${source.name}`);
-  return matched;
+async function fetchHtml(url) {
+  const response = await fetch(url, {
+    headers: FETCH_HEADERS,
+    redirect: 'follow',
+    signal: AbortSignal.timeout(20000)
+  });
+  if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText}`);
+  return response.text();
 }
 
-// ── Article extraction ────────────────────────────────────────────────────────
+// ── URL discovery ─────────────────────────────────────────────────────────────
 
-async function extractArticle(page, url, source) {
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 });
-  await randomDelay(1200, 2500);
+async function discoverUrlsWithFetch(source) {
+  const html = await fetchHtml(source.frontPage);
+  const $ = cheerio.load(html);
+  const hrefs = new Set();
 
-  return page.evaluate((sourceInfo) => {
-    const readMeta = (selector) =>
-      document.querySelector(selector)?.getAttribute('content')?.trim() ?? '';
+  $('a[href]').each((_, el) => {
+    let href = $(el).attr('href') || '';
+    // Resolve relative URLs
+    if (href.startsWith('/')) {
+      href = new URL(href, source.frontPage).href;
+    }
+    if (source.articlePattern.test(href)) hrefs.add(href);
+  });
 
-    const title =
-      document.querySelector('h1')?.textContent?.trim() ||
-      readMeta('meta[property="og:title"]') ||
-      readMeta('meta[name="title"]') ||
-      '';
+  return [...hrefs].slice(0, source.maxArticles);
+}
 
-    const publishedAt =
-      readMeta('meta[property="article:published_time"]') ||
-      readMeta('meta[name="date"]') ||
-      document.querySelector('time[datetime]')?.getAttribute('datetime') ||
-      '';
+async function discoverUrlsWithPuppeteer(source) {
+  let puppeteer;
+  try {
+    puppeteer = (await import('puppeteer')).default;
+  } catch {
+    return [];
+  }
 
-    const article =
-      document.querySelector('article') ||
-      document.querySelector('main') ||
-      document.body;
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      // --single-process is Linux/Pi only; skip on macOS to avoid Chromium crashes
+      ...(process.platform === 'linux' ? ['--single-process'] : [])
+    ]
+  });
 
-    const body = Array.from(article.querySelectorAll('p'))
-      .map((p) => (p.textContent || '').replace(/\s+/g, ' ').trim())
-      .filter((t) => t.length >= 40)
-      .join(' ');
+  try {
+    const page = await browser.newPage();
+    await page.goto(source.frontPage, { waitUntil: 'domcontentloaded', timeout: 45000 });
+    await randomDelay(1500, 2500);
 
-    return {
-      source: sourceInfo.name,
-      language: sourceInfo.language,
-      title,
-      published_at: publishedAt,
-      body
-    };
-  }, source);
+    const hrefs = await page.evaluate(() =>
+      Array.from(document.querySelectorAll('a[href]'))
+        .map((a) => a.href)
+        .filter(Boolean)
+    );
+
+    return [...new Set(hrefs)]
+      .filter((href) => source.articlePattern.test(href))
+      .slice(0, source.maxArticles);
+  } finally {
+    await browser.close();
+  }
+}
+
+async function discoverArticleUrls(source) {
+  const urls = await discoverUrlsWithFetch(source);
+  if (urls.length >= 2) return urls;
+
+  // Fewer than 2 links suggests the page is JS-rendered — try Puppeteer.
+  await log(`fetch returned ${urls.length} links source=${source.name}; trying puppeteer fallback`);
+  return discoverUrlsWithPuppeteer(source);
+}
+
+// ── Article metadata extraction ───────────────────────────────────────────────
+
+async function extractArticleMetadata(url, source) {
+  const html = await fetchHtml(url);
+  const $ = cheerio.load(html);
+
+  const title =
+    $('h1').first().text().trim() ||
+    $('meta[property="og:title"]').attr('content')?.trim() ||
+    '';
+
+  const publishedAt =
+    $('meta[property="article:published_time"]').attr('content') ||
+    $('meta[name="date"]').attr('content') ||
+    $('time[datetime]').first().attr('datetime') ||
+    '';
+
+  const paragraphs = [];
+  const articleScope = $('article, main').first();
+  const scope = articleScope.length ? articleScope : $('body');
+
+  scope.find('p').each((_, el) => {
+    const text = $(el).text().replace(/\s+/g, ' ').trim();
+    if (text.length >= 40) paragraphs.push(text);
+  });
+
+  return {
+    source: source.name,
+    language: source.language,
+    title,
+    published_at: publishedAt,
+    body: paragraphs.join(' ')
+  };
 }
 
 // ── Main ──────────────────────────────────────────────────────────────────────
@@ -319,61 +372,45 @@ async function main() {
   const seenUrls = new Set(existing.map((r) => r.url));
   const newRecords = [];
 
-  const browser = await puppeteerExtra.launch({
-    headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
-  });
+  for (const source of SOURCES) {
+    let articleUrls;
+    try {
+      articleUrls = await discoverArticleUrls(source);
+      await log(`discovered count=${articleUrls.length} source=${source.name}`);
+    } catch (err) {
+      await log(`front-page failed source=${source.name} error="${err instanceof Error ? err.message : err}"`);
+      continue;
+    }
 
-  try {
-    for (const source of SOURCES) {
-      const page = await browser.newPage();
-      await page.setViewport({ width: 1280, height: 800 });
-      await page.setExtraHTTPHeaders({ 'Accept-Language': 'en-US,en;q=0.9' });
-
-      let articleUrls;
-      try {
-        articleUrls = await discoverArticleUrls(page, source);
-      } catch (err) {
-        await log(`front-page failed source=${source.name} error="${err instanceof Error ? err.message : err}"`);
-        await page.close();
+    for (const url of articleUrls) {
+      if (seenUrls.has(url)) {
+        await log(`skip existing url=${url}`);
         continue;
       }
 
-      for (const url of articleUrls) {
-        if (seenUrls.has(url)) {
-          await log(`skip existing url=${url}`);
+      try {
+        await randomDelay(600, 1400);
+        const article = await extractArticleMetadata(url, source);
+
+        if (!article.body || article.body.length < 100) {
+          await log(`skip thin-content url=${url}`);
           continue;
         }
 
-        try {
-          await randomDelay(800, 1800);
-          const article = await extractArticle(page, url, source);
-
-          if (!article.body || article.body.length < 100) {
-            await log(`skip thin-content url=${url}`);
-            continue;
-          }
-
-          const record = {
-            ...article,
-            url,
-            regime: source.regime,
-            retrieved_at: new Date().toISOString()
-          };
-
-          newRecords.push(record);
-          seenUrls.add(url);
-          await log(`scraped url=${url} title="${article.title.slice(0, 60)}"`);
-        } catch (err) {
-          await log(`article-failed url=${url} error="${err instanceof Error ? err.message : err}"`);
-        }
+        newRecords.push({
+          ...article,
+          url,
+          regime: source.regime,
+          retrieved_at: new Date().toISOString()
+        });
+        seenUrls.add(url);
+        await log(`scraped url=${url} title="${article.title.slice(0, 60)}"`);
+      } catch (err) {
+        await log(`article-failed url=${url} error="${err instanceof Error ? err.message : err}"`);
       }
-
-      await page.close();
-      await randomDelay(2000, 4000); // pause between sources
     }
-  } finally {
-    await browser.close();
+
+    await randomDelay(1500, 3000); // pause between sources
   }
 
   if (newRecords.length === 0) {
@@ -386,7 +423,7 @@ async function main() {
   await writeFile(RAW_NEWS_PATH, `${JSON.stringify(updated, null, 2)}\n`, 'utf8');
   await log(`scrape cycle complete new=${newRecords.length} total=${updated.length}`);
 
-  // Print new URLs to stdout so openclaw-cycle.sh can pick them up.
+  // Print new URLs to stdout so cycle.sh can pick them up.
   for (const record of newRecords) {
     console.log(record.url);
   }
