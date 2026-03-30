@@ -1,7 +1,7 @@
 # HEARTBEAT: 6-Hour Autonomous Schedule
 
 ## Cadence
-OpenClaw runs in a repeating 6-hour cycle.
+The cycle runs every 6 hours via crontab.
 
 # Interval: 6 Hours
 - **Phase 1:** Run `news-archaeology` skill to scan TASS, Xinhua, and SPA.

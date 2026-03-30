@@ -20,7 +20,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 const RAW_NEWS_PATH = path.join(ROOT_DIR, 'agent/data/raw-news.json');
-const LOG_PATH = path.join(ROOT_DIR, 'agent/data/openclaw.log');
+const LOG_PATH = path.join(ROOT_DIR, 'agent/data/cycle.log');
 
 const FETCH_HEADERS = {
   'User-Agent':

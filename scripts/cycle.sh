@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # cycle.sh — Autonomous scrape-and-analyse cycle, designed for crontab.
 #
-# Replaces openclaw-cycle.sh without any OpenClaw dependencies.
+# Runs scraping and analysis without any external orchestration dependencies.
 #
 # Usage (manual):
 #   bash scripts/cycle.sh
@@ -18,7 +18,7 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-LOG_PATH="$ROOT_DIR/agent/data/openclaw.log"
+LOG_PATH="$ROOT_DIR/agent/data/cycle.log"
 
 mkdir -p "$(dirname "$LOG_PATH")"
 

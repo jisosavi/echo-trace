@@ -9,12 +9,12 @@ const MAX_LINES = 120;
 const POLL_MS = 2000;
 
 function resolveLogPath(): string {
-  if (process.env.OPENCLAW_LOG_PATH) {
-    return process.env.OPENCLAW_LOG_PATH;
+  if (process.env.CYCLE_LOG_PATH) {
+    return process.env.CYCLE_LOG_PATH;
   }
 
   // Running from `/web`, defaulting to monorepo sibling log file.
-  return path.resolve(process.cwd(), '../agent/data/openclaw.log');
+  return path.resolve(process.cwd(), '../agent/data/cycle.log');
 }
 
 function tailLines(content: string, maxLines: number): string[] {

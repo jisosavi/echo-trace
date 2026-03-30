@@ -30,9 +30,9 @@ export default function ComparisonsPage() {
 
       <LiveConsole
         initialLogs={[
-          '[OpenClaw] live console initialized',
-          '[OpenClaw] waiting for stream events from /api/logs',
-          `[OpenClaw] seed: ${data.length} comparison records loaded`
+          '[cycle] live console initialized',
+          '[cycle] waiting for stream events from /api/logs',
+          `[cycle] seed: ${data.length} comparison records loaded`
         ]}
       />
 

@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 const ARCHIVE_PATH = path.join(ROOT_DIR, 'archival-memory.json');
 const COMPARISONS_PATH = path.join(ROOT_DIR, 'web/public/data/comparisons.json');
-const LOG_PATH = path.join(ROOT_DIR, 'agent/data/openclaw.log');
+const LOG_PATH = path.join(ROOT_DIR, 'agent/data/cycle.log');
 
 function nowIso() {
   return new Date().toISOString();
