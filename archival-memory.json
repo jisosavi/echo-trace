@@ -3,6 +3,15 @@
     {
       "id": "foreign_saboteur",
       "theme": "External Threat / Foreign Interference",
+      "taxonomy": {
+        "narrative_strategy": "suppression",
+        "ellul_type": "agitation",
+        "ellul_axis": "vertical",
+        "eco_properties": ["Obsession with a Plot", "Fear of Difference"],
+        "typical_san_martino_techniques": ["Appeal to Fear/Prejudice", "Name Calling/Labeling", "Loaded Language"],
+        "typical_ipa_techniques": ["Name-calling", "Transfer"],
+        "typical_nimmo_4d": "Dismiss"
+      },
       "modern_keywords": ["foreign agents", "color revolutions", "western decadence", "sovereignty"],
       "historical_echoes": [
         {
@@ -16,6 +25,15 @@
     {
       "id": "paternal_protector",
       "theme": "The Cult of the Infallible Leader",
+      "taxonomy": {
+        "narrative_strategy": "direction",
+        "ellul_type": "integration",
+        "ellul_axis": "vertical",
+        "eco_properties": ["The Cult of Tradition", "Selective Populism"],
+        "typical_san_martino_techniques": ["Appeal to Authority", "Slogans", "Flag-Waving"],
+        "typical_ipa_techniques": ["Testimonial", "Glittering generalities"],
+        "typical_nimmo_4d": "Distort"
+      },
       "modern_keywords": ["great helmsman", "father of the nation", "unifying force", "absolute loyalty"],
       "historical_echoes": [
         {
@@ -29,6 +47,15 @@
     {
       "id": "moral_purification",
       "theme": "Traditional Values vs. Modern Degeneracy",
+      "taxonomy": {
+        "narrative_strategy": "suppression",
+        "ellul_type": "integration",
+        "ellul_axis": "vertical",
+        "eco_properties": ["The Rejection of Modernism", "Fear of Difference", "The Cult of Tradition"],
+        "typical_san_martino_techniques": ["Appeal to Fear/Prejudice", "Loaded Language", "Flag-Waving"],
+        "typical_ipa_techniques": ["Glittering generalities", "Name-calling"],
+        "typical_nimmo_4d": "Distort"
+      },
       "modern_keywords": ["traditional family values", "spiritual health", "anti-woke", "moral fiber"],
       "historical_echoes": [
         {

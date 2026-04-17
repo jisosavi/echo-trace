@@ -450,11 +450,63 @@ async function classifyTropeWithClaude(articleText, archive) {
   const client = new Anthropic({ apiKey });
   const message = await client.messages.create({
     model: 'claude-opus-4-6',
-    max_tokens: 256,
+    max_tokens: 768,
     messages: [
       {
         role: 'user',
-        content: `You are a rhetorical analyst. Classify the following article excerpt into exactly one of these propaganda tropes based on its rhetorical function and intent — not just keyword presence.\n\nTropes:\n${tropeList}\n\nIf none fit, use id "unclassified".\n\nRespond with JSON only, no prose:\n{"trope_id": "...", "confidence": 0.0, "reasoning": "..."}\n\nArticle:\n${articleText.slice(0, 3000)}`
+        content: `You are a forensic rhetorical analyst. Analyze the following article excerpt using all of these propaganda taxonomies simultaneously.
+
+TROPES — classify into exactly one (or "unclassified"):
+${tropeList}
+
+NARRATIVE STRATEGY (Lank & Antai 2025) — pick one:
+- suppression: Diminishes target's status/character through negative portrayal
+- destruction: Damages target's military/strategic reliability; portrays as weak and untrustworthy
+- direction: Steers behavior via incentives and disincentives toward preferred outcomes
+- exploitation: Co-opts third-party narratives into own framework by omitting contextual facts
+
+SAN MARTINO TECHNIQUES — pick all that apply (Da San Martino et al. 2019, 18 techniques):
+Appeal to Authority, Appeal to Fear/Prejudice, Bandwagon, Black-and-White Fallacy, Causal Oversimplification, Doubt, Exaggeration/Minimisation, Flag-Waving, Loaded Language, Name Calling/Labeling, Obfuscation/Vagueness, Red Herring, Repetition, Slogans, Straw Man, Thought-terminating Clichés, Whataboutism, Smears
+
+IPA TECHNIQUES — pick all that apply (Institute for Propaganda Analysis, 1937):
+Name-calling, Glittering generalities, Transfer, Testimonial, Plain folks, Card stacking, Bandwagon
+
+NIMMO 4D — pick one (DFRLab / Ben Nimmo):
+- Dismiss: Attacks the messenger to undermine credibility rather than addressing the claim
+- Distort: Fabricates or manipulates facts; rewrites historical narratives
+- Distract: Redirects attention via subject-switching or whataboutism
+- Dismay: Intimidates through fear-based threats or conspiracy framing
+
+ELLUL TYPE — pick one (Ellul 1965):
+- agitation: Short-term emotional mobilization; seeks immediate behavioral response
+- integration: Long-term worldview normalization; sociological conditioning
+
+ELLUL AXIS — pick one (Ellul 1965):
+- vertical: State/authority broadcast to public (top-down)
+- horizontal: Peer-to-peer, grassroots-seeming diffusion
+
+ECO PROPERTY — pick all that apply (Eco, "Ur-Fascism" 1995, 14 features):
+The Cult of Tradition, The Rejection of Modernism, The Cult of Action for Action's Sake, Disagreement is Treason, Fear of Difference, Appeal to a Frustrated Middle Class, Obsession with a Plot, Enemies Too Strong and Too Weak, Pacifism as Enemy Collaboration, Contempt for the Weak, Education Toward Heroism, Machismo, Selective Populism, Newspeak
+
+Respond with JSON only, no prose:
+{
+  "trope_id": "...",
+  "confidence": 0.0,
+  "reasoning": "...",
+  "analysis": {
+    "theme": "...",
+    "narrative_strategy": "...",
+    "san_martino_techniques": [],
+    "ipa_techniques": [],
+    "nimmo_4d": "...",
+    "ellul_type": "...",
+    "ellul_axis": "...",
+    "eco_properties": []
+  }
+}
+
+Article:
+${articleText.slice(0, 3000)}`
       }
     ]
   });
@@ -467,7 +519,12 @@ async function classifyTropeWithClaude(articleText, archive) {
 
   const result = JSON.parse(jsonMatch[0]);
   const trope = tropes.find((t) => t.id === result.trope_id) ?? null;
-  return { trope, confidence: Number(result.confidence ?? 0), reasoning: result.reasoning ?? '' };
+  return {
+    trope,
+    confidence: Number(result.confidence ?? 0),
+    reasoning: result.reasoning ?? '',
+    analysis: result.analysis ?? null
+  };
 }
 
 async function runHistoricalAnalysis(modernQuote, trope, articleText) {
@@ -625,6 +682,7 @@ async function main() {
     historical_parallel: trope?.theme ?? 'Unclassified rhetorical pattern',
     tropes: trope?.id ? [trope.id] : ['unclassified'],
     confidence,
+    ...(claudeResult?.analysis && { analysis: claudeResult.analysis }),
     ...(historicalEcho && {
       historical_echo: {
         figure: historicalEcho.figure,
