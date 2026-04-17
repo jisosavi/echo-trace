@@ -10,7 +10,11 @@
         "eco_properties": ["Obsession with a Plot", "Fear of Difference"],
         "typical_san_martino_techniques": ["Appeal to Fear/Prejudice", "Name Calling/Labeling", "Loaded Language"],
         "typical_ipa_techniques": ["Name-calling", "Transfer"],
-        "typical_nimmo_4d": "Dismiss"
+        "typical_nimmo_4d": "Dismiss",
+        "typical_eudisinfo_narratives": ["Elites vs People", "Lost Sovereignty"],
+        "typical_eudisinfo_rhetoric": ["Attack", "Straw Man", "Provocations"],
+        "typical_eudisinfo_conspiracy": ["Shadow Government / Deep State", "Anglo-Saxon Plot", "Color Revolution Conspiracy", "Soros Conspiracy"],
+        "typical_eudisinfo_ttp": ["Fabricated Content", "False Attribution", "Conspiracy Amplification", "Infoshum"]
       },
       "modern_keywords": ["foreign agents", "color revolutions", "western decadence", "sovereignty"],
       "historical_echoes": [
@@ -32,7 +36,11 @@
         "eco_properties": ["The Cult of Tradition", "Selective Populism"],
         "typical_san_martino_techniques": ["Appeal to Authority", "Slogans", "Flag-Waving"],
         "typical_ipa_techniques": ["Testimonial", "Glittering generalities"],
-        "typical_nimmo_4d": "Distort"
+        "typical_nimmo_4d": "Distort",
+        "typical_eudisinfo_narratives": ["Elites vs People", "Threatened Values"],
+        "typical_eudisinfo_rhetoric": ["Mockery", "Denial", "Whataboutism"],
+        "typical_eudisinfo_conspiracy": ["Shadow Government / Deep State", "Anglo-Saxon Plot"],
+        "typical_eudisinfo_ttp": ["Fake Experts", "Emotional Manipulation", "Narrative Laundering"]
       },
       "modern_keywords": ["great helmsman", "father of the nation", "unifying force", "absolute loyalty"],
       "historical_echoes": [
@@ -54,7 +62,11 @@
         "eco_properties": ["The Rejection of Modernism", "Fear of Difference", "The Cult of Tradition"],
         "typical_san_martino_techniques": ["Appeal to Fear/Prejudice", "Loaded Language", "Flag-Waving"],
         "typical_ipa_techniques": ["Glittering generalities", "Name-calling"],
-        "typical_nimmo_4d": "Distort"
+        "typical_nimmo_4d": "Distort",
+        "typical_eudisinfo_narratives": ["Threatened Values", "Imminent Collapse"],
+        "typical_eudisinfo_rhetoric": ["Attack", "Straw Man", "Mockery"],
+        "typical_eudisinfo_conspiracy": ["Gay / LGBTQ Lobby", "Big Pharma / Vaccine Conspiracy", "Rothschilds / Banker Conspiracy"],
+        "typical_eudisinfo_ttp": ["Manipulated Content", "False Context", "Emotional Manipulation", "Strategic Decontextualization"]
       },
       "modern_keywords": ["traditional family values", "spiritual health", "anti-woke", "moral fiber"],
       "historical_echoes": [

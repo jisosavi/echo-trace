@@ -49,6 +49,23 @@ Bridge the modern signal to its historical twin — completing the core forensic
   Obsession with a Plot, Enemies Too Strong and Too Weak, Pacifism as Enemy Collaboration,
   Contempt for the Weak, Education Toward Heroism, Machismo, Selective Populism, Newspeak
   *(Umberto Eco, "Ur-Fascism", 1995)*
+- `analysis.eudisinfo_narratives` — array, all applicable from 6 key pro-Kremlin narratives:
+  Elites vs People, Threatened Values, Lost Sovereignty, Imminent Collapse, Hahaganda, Nazis
+  *(EUvsDisinfo, euvsdisinfo.eu/learn)*
+- `analysis.eudisinfo_rhetoric` — array, all applicable from SWAMPED (7 rhetorical devices):
+  Straw Man, Whataboutism, Attack, Mockery, Provocations, Exhaust, Denial
+  *(EUvsDisinfo Modus Trollerandi, euvsdisinfo.eu/learn)*
+- `analysis.eudisinfo_conspiracy` — array of applicable conspiracy theory patterns (EUvsDisinfo Shadow Government archetype):
+  Shadow Government / Deep State, Rothschilds / Banker Conspiracy, Protocols / Jewish Plot,
+  Soros Conspiracy, Anglo-Saxon Plot, Color Revolution Conspiracy,
+  Climate Hoax, Big Pharma / Vaccine Conspiracy, Gay / LGBTQ Lobby, False Flag
+  *(EUvsDisinfo, "Why Authoritarians Love the Concept of the Big Conspiracy", 2019)*
+- `analysis.eudisinfo_ttp` — array of applicable content-detectable TTPs (DISARM Framework / EUvsDisinfo):
+  Fabricated Content, Manipulated Content, False Attribution, False Context,
+  Fake Experts, Forced Confessions, Video/Image Manipulation, Infoshum,
+  Firehose of Falsehood, Conspiracy Amplification, Narrative Laundering,
+  Data Void Exploitation, Strategic Decontextualization, Impersonation, Emotional Manipulation
+  *(DISARM Framework, disarmframework.net — content-detectable subset only)*
 
 ### Historical echo fields
 - `historical_echo.figure` — name of the historical figure

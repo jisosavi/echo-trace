@@ -450,7 +450,7 @@ async function classifyTropeWithClaude(articleText, archive) {
   const client = new Anthropic({ apiKey });
   const message = await client.messages.create({
     model: 'claude-opus-4-6',
-    max_tokens: 768,
+    max_tokens: 1024,
     messages: [
       {
         role: 'user',
@@ -488,6 +488,52 @@ ELLUL AXIS — pick one (Ellul 1965):
 ECO PROPERTY — pick all that apply (Eco, "Ur-Fascism" 1995, 14 features):
 The Cult of Tradition, The Rejection of Modernism, The Cult of Action for Action's Sake, Disagreement is Treason, Fear of Difference, Appeal to a Frustrated Middle Class, Obsession with a Plot, Enemies Too Strong and Too Weak, Pacifism as Enemy Collaboration, Contempt for the Weak, Education Toward Heroism, Machismo, Selective Populism, Newspeak
 
+EUVSDISINFO NARRATIVES — pick all that apply (EUvsDisinfo, 6 key pro-Kremlin narratives):
+- Elites vs People: Blames a shadowy elite (bankers, globalists, Anglo-Saxons) for ordinary people's grievances
+- Threatened Values: Portrays the West as morally decayed; Russia as defender of tradition and decency
+- Lost Sovereignty: Claims target states are puppet regimes controlled by outside powers (US, NATO, Anglo-Saxons)
+- Imminent Collapse: Portrays Western institutions, economies or nations as on the verge of breakdown
+- Hahaganda: Deploys ridicule, satire and mockery to delegitimise opponents without engaging their arguments
+- Nazis: Labels adversaries as Nazis or fascists to delegitimise them and justify aggression
+
+EUVSDISINFO RHETORIC — pick all that apply (EUvsDisinfo SWAMPED, 7 rhetorical devices):
+- Straw Man: Attacks views the opponent never expressed; most common form is the "Nazi" label
+- Whataboutism: Deflects criticism by raising a counter-accusation or unrelated issue
+- Attack: Uses brutal or dehumanising language to silence and discourage the opposition
+- Mockery: Uses sarcasm and ridicule to belittle rather than engage arguments
+- Provocations: Pre-emptively accuses the opponent of planning a false-flag operation
+- Exhaust: Drowns the opponent in technicalities and peripheral details to avoid the core issue
+- Denial: Flatly denies all evidence regardless of its strength
+
+EUVSDISINFO CONSPIRACY THEORIES — pick all that apply (EUvsDisinfo; Shadow Government archetype and its named variants):
+- Shadow Government / Deep State: A secret elite ruling the world behind the scenes; absence of proof is treated as proof of concealment
+- Rothschilds / Banker Conspiracy: Rothschild family or unnamed international bankers covertly controlling global finance and politics
+- Protocols / Jewish Plot: Antisemitic trope claiming a coordinated Jewish conspiracy for world domination
+- Soros Conspiracy: George Soros secretly funding protests, "color revolutions", and social destabilisation
+- Anglo-Saxon Plot: US and UK orchestrating global events against Russia and Slavic peoples
+- Color Revolution Conspiracy: Popular protests reframed as foreign-staged coups, never genuine civic movements
+- Climate Hoax: Climate change as a fabricated crisis used by elites or bankers to control economies
+- Big Pharma / Vaccine Conspiracy: Pharmaceutical industry hiding cures, manufacturing diseases, or using vaccines for control
+- Gay / LGBTQ Lobby: LGBTQ rights as a coordinated elite agenda to destroy traditional society
+- False Flag: Real events (attacks, disasters) staged by governments or elites to manufacture political justification
+
+DISARM TTPs — pick all that apply (DISARM Framework / EUvsDisinfo; content-detectable techniques only):
+- Fabricated Content: Completely invented stories, quotes, statistics, or events
+- Manipulated Content: Real content altered to distort its meaning or context
+- False Attribution: Misattributing statements, images, or actions to real people or institutions
+- False Context: Genuine content paired with fabricated contextual framing
+- Fake Experts: Citing non-existent, unqualified, or undisclosed paid experts as authorities
+- Forced Confessions: Using scripted, coerced, or context-stripped testimonial "evidence"
+- Video/Image Manipulation: Deepfakes, out-of-context imagery, or digitally altered media
+- Infoshum: Flooding the information space with high-volume noise to obscure truth
+- Firehose of Falsehood: Rapid-fire contradictory claims that overwhelm fact-checking capacity
+- Conspiracy Amplification: Repeating and legitimising conspiracy narratives as plausible alternatives
+- Narrative Laundering: Seeding fringe claims into mainstream via intermediary outlets
+- Data Void Exploitation: Filling low-information gaps with disinformation before facts emerge
+- Strategic Decontextualization: Stripping context from real events to reverse their meaning
+- Impersonation: Posing as legitimate news sources, officials, or grassroots movements
+- Emotional Manipulation: Using fear, outrage, or manufactured hope to bypass critical reasoning
+
 Respond with JSON only, no prose:
 {
   "trope_id": "...",
@@ -501,7 +547,11 @@ Respond with JSON only, no prose:
     "nimmo_4d": "...",
     "ellul_type": "...",
     "ellul_axis": "...",
-    "eco_properties": []
+    "eco_properties": [],
+    "eudisinfo_narratives": [],
+    "eudisinfo_rhetoric": [],
+    "eudisinfo_conspiracy": [],
+    "eudisinfo_ttp": []
   }
 }
 

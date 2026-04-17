@@ -11,6 +11,10 @@ type Analysis = {
   ellul_type?: string;
   ellul_axis?: string;
   eco_properties?: string[];
+  eudisinfo_narratives?: string[];
+  eudisinfo_rhetoric?: string[];
+  eudisinfo_conspiracy?: string[];
+  eudisinfo_ttp?: string[];
 };
 
 type Comparison = {
@@ -219,6 +223,54 @@ export default function ComparisonDetailPage({ params }: { params: { id: string 
                 <div>
                   <TagList items={item.analysis.eco_properties} />
                   <p className="mt-1.5 text-xs text-zinc-600">Umberto Eco, 1995</p>
+                </div>
+              </DimRow>
+            )}
+
+            {item.analysis.eudisinfo_narratives && item.analysis.eudisinfo_narratives.length > 0 && (
+              <DimRow label="Pro-Kremlin narratives">
+                <div>
+                  <TagList
+                    items={item.analysis.eudisinfo_narratives}
+                    className="border-red-900 bg-red-950/40 text-red-300"
+                  />
+                  <p className="mt-1.5 text-xs text-zinc-600">EUvsDisinfo — 6 key narratives</p>
+                </div>
+              </DimRow>
+            )}
+
+            {item.analysis.eudisinfo_rhetoric && item.analysis.eudisinfo_rhetoric.length > 0 && (
+              <DimRow label="Rhetoric (SWAMPED)">
+                <div>
+                  <TagList
+                    items={item.analysis.eudisinfo_rhetoric}
+                    className="border-orange-900 bg-orange-950/40 text-orange-300"
+                  />
+                  <p className="mt-1.5 text-xs text-zinc-600">EUvsDisinfo Modus Trollerandi</p>
+                </div>
+              </DimRow>
+            )}
+
+            {item.analysis.eudisinfo_conspiracy && item.analysis.eudisinfo_conspiracy.length > 0 && (
+              <DimRow label="Conspiracy patterns">
+                <div>
+                  <TagList
+                    items={item.analysis.eudisinfo_conspiracy}
+                    className="border-violet-900 bg-violet-950/40 text-violet-300"
+                  />
+                  <p className="mt-1.5 text-xs text-zinc-600">EUvsDisinfo — conspiracy theories</p>
+                </div>
+              </DimRow>
+            )}
+
+            {item.analysis.eudisinfo_ttp && item.analysis.eudisinfo_ttp.length > 0 && (
+              <DimRow label="TTPs">
+                <div>
+                  <TagList
+                    items={item.analysis.eudisinfo_ttp}
+                    className="border-yellow-900 bg-yellow-950/40 text-yellow-300"
+                  />
+                  <p className="mt-1.5 text-xs text-zinc-600">EUvsDisinfo — tactics, techniques &amp; procedures</p>
                 </div>
               </DimRow>
             )}
