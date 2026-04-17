@@ -7,22 +7,83 @@
         "narrative_strategy": "suppression",
         "ellul_type": "agitation",
         "ellul_axis": "vertical",
-        "eco_properties": ["Obsession with a Plot", "Fear of Difference"],
-        "typical_san_martino_techniques": ["Appeal to Fear/Prejudice", "Name Calling/Labeling", "Loaded Language"],
-        "typical_ipa_techniques": ["Name-calling", "Transfer"],
+        "eco_properties": [
+          "Obsession with a Plot",
+          "Fear of Difference"
+        ],
+        "typical_san_martino_techniques": [
+          "Appeal to Fear/Prejudice",
+          "Name Calling/Labeling",
+          "Loaded Language"
+        ],
+        "typical_ipa_techniques": [
+          "Name-calling",
+          "Transfer"
+        ],
         "typical_nimmo_4d": "Dismiss",
-        "typical_eudisinfo_narratives": ["Elites vs People", "Lost Sovereignty"],
-        "typical_eudisinfo_rhetoric": ["Attack", "Straw Man", "Provocations"],
-        "typical_eudisinfo_conspiracy": ["Shadow Government / Deep State", "Anglo-Saxon Plot", "Color Revolution Conspiracy", "Soros Conspiracy"],
-        "typical_eudisinfo_ttp": ["Fabricated Content", "False Attribution", "Conspiracy Amplification", "Infoshum"]
+        "typical_eudisinfo_narratives": [
+          "Elites vs People",
+          "Lost Sovereignty"
+        ],
+        "typical_eudisinfo_rhetoric": [
+          "Attack",
+          "Straw Man",
+          "Provocations"
+        ],
+        "typical_eudisinfo_conspiracy": [
+          "Shadow Government / Deep State",
+          "Anglo-Saxon Plot",
+          "Color Revolution Conspiracy",
+          "Soros Conspiracy"
+        ],
+        "typical_eudisinfo_ttp": [
+          "Fabricated Content",
+          "False Attribution",
+          "Conspiracy Amplification",
+          "Infoshum"
+        ]
       },
-      "modern_keywords": ["foreign agents", "color revolutions", "western decadence", "sovereignty"],
+      "modern_keywords": [
+        "foreign agents",
+        "color revolutions",
+        "western interference",
+        "sovereignty",
+        "CIA behind",
+        "US orchestrated",
+        "Anglo-Saxons"
+      ],
       "historical_echoes": [
         {
           "figure": "Joseph Stalin",
-          "context": "The Great Purge (1937)",
-          "quote": "The 'Fifth Column' of wreckers and spies must be liquidated to protect the revolution from capitalist encirclement.",
-          "analogy_link": "Both use the fear of 'unseen' internal enemies funded by distant powers to justify crackdowns."
+          "context": "Plenum of the Central Committee, March 1937 — speech launching the Great Terror",
+          "quote": "Wreckers, diversionists, and spies who have been agents of foreign intelligence services have penetrated our Party, Soviet, economic, and military organisations.",
+          "analogy_link": "Both frame domestic political opponents as agents of a foreign enemy, making any internal dissent an act of treason rather than legitimate opposition."
+        },
+        {
+          "figure": "Senator Joseph McCarthy",
+          "context": "Speech in Wheeling, West Virginia, February 9, 1950",
+          "quote": "I have here in my hand a list of 205 — a list of names that were made known to the Secretary of State as being members of the Communist Party and who nevertheless are still working and shaping policy in the State Department.",
+          "analogy_link": "The claim of a hidden enemy list — unfalsifiable, immune to rebuttal — is structurally identical to accusations of 'foreign agents' infiltrating Ukrainian civil society."
+        },
+        {
+          "figure": "Joseph Goebbels",
+          "context": "\"Communism with the Mask Off\" — speech at Nuremberg Rally, 1935. Source: Calvin University German Propaganda Archive, goeb58.htm",
+          "quote": "Bolshevism is the declared enemy of all nations and of all religions and of all human civilisation… He has set up a barrier against world Bolshevism against which the waves of this vile Asiatic-Jewish flood break in vain.",
+          "analogy_link": "Germany as the lone civilisational bulwark against an ideological foreign infection — the direct structural ancestor of Russian framing as the defender of tradition against a Western-engineered cultural and political invasion."
+        },
+        {
+          "figure": "Lavrentiy Beria / NKVD",
+          "context": "NKVD Order No. 00447, July 1937 — mass operation against 'anti-Soviet elements'",
+          "quote": "Former kulaks, criminals and other anti-Soviet elements who have returned from camps… are to be immediately arrested and, after trial by troikas, shot or sent to camps.",
+          "analogy_link": "Bureaucratic dehumanisation of political opponents as 'elements' managed by foreign powers — the same logic used to frame civic protesters as foreign-funded saboteurs."
+        }
+      ],
+      "modern_examples": [
+        {
+          "figure": "Vladimir Putin",
+          "context": "Address to the Federal Assembly, April 21, 2021. Source: en.kremlin.ru/events/president/news/65418",
+          "quote": "Those who have staged coups and colour revolutions in other countries, those who have tried to knock Russia off this path, are badly mistaken. They organise provocations at our borders and recruit agents of influence to undermine our society from within.",
+          "trope_match": "foreign_saboteur — the foreign-funded internal enemy framing applied explicitly to Russia's own borders"
         }
       ]
     },
@@ -33,22 +94,82 @@
         "narrative_strategy": "direction",
         "ellul_type": "integration",
         "ellul_axis": "vertical",
-        "eco_properties": ["The Cult of Tradition", "Selective Populism"],
-        "typical_san_martino_techniques": ["Appeal to Authority", "Slogans", "Flag-Waving"],
-        "typical_ipa_techniques": ["Testimonial", "Glittering generalities"],
+        "eco_properties": [
+          "The Cult of Tradition",
+          "Selective Populism",
+          "Education Toward Heroism"
+        ],
+        "typical_san_martino_techniques": [
+          "Appeal to Authority",
+          "Slogans",
+          "Flag-Waving",
+          "Testimonial"
+        ],
+        "typical_ipa_techniques": [
+          "Testimonial",
+          "Glittering generalities",
+          "Plain folks"
+        ],
         "typical_nimmo_4d": "Distort",
-        "typical_eudisinfo_narratives": ["Elites vs People", "Threatened Values"],
-        "typical_eudisinfo_rhetoric": ["Mockery", "Denial", "Whataboutism"],
-        "typical_eudisinfo_conspiracy": ["Shadow Government / Deep State", "Anglo-Saxon Plot"],
-        "typical_eudisinfo_ttp": ["Fake Experts", "Emotional Manipulation", "Narrative Laundering"]
+        "typical_eudisinfo_narratives": [
+          "Elites vs People",
+          "Threatened Values"
+        ],
+        "typical_eudisinfo_rhetoric": [
+          "Mockery",
+          "Denial",
+          "Whataboutism"
+        ],
+        "typical_eudisinfo_conspiracy": [
+          "Shadow Government / Deep State",
+          "Anglo-Saxon Plot"
+        ],
+        "typical_eudisinfo_ttp": [
+          "Fake Experts",
+          "Emotional Manipulation",
+          "Narrative Laundering"
+        ]
       },
-      "modern_keywords": ["great helmsman", "father of the nation", "unifying force", "absolute loyalty"],
+      "modern_keywords": [
+        "great leader",
+        "father of the nation",
+        "unifying force",
+        "only Putin can",
+        "strong hand",
+        "national saviour"
+      ],
       "historical_echoes": [
         {
           "figure": "Mao Zedong",
-          "context": "The Cultural Revolution",
+          "context": "Quotations from Chairman Mao (Little Red Book), 1964",
           "quote": "The force at the core leading our cause forward is the Chinese Communist Party. The theoretical basis guiding our thinking is Marxism-Leninism.",
-          "analogy_link": "Focuses on the Leader/Party as the sole source of truth and survival."
+          "analogy_link": "Party and leader as the single legitimate source of truth; to question the leader is to question reality itself."
+        },
+        {
+          "figure": "Joseph Goebbels",
+          "context": "\"Look Confidently to the Helmsman!\" — Das Reich, March 1945. Source: Calvin University German Propaganda Archive, goeb80.htm",
+          "quote": "Look with confidence to the helmsman and with united strength toward the goal! Each German must be sure that it can and will end only with victory and our complete self-assertion. This war is not only a matter of the laurel wreath for our people, but of its entire existence.",
+          "analogy_link": "The helmsman metaphor insulates the leader from accountability for military disasters: the ship may be sinking, but the solution is more trust in the captain, never a change of course — identical to the logic of rallying around Putin as Russian forces suffer setbacks."
+        },
+        {
+          "figure": "Joseph Goebbels",
+          "context": "Sportpalast Total War speech, Berlin, 18 February 1943. Source: Calvin University German Propaganda Archive, goeb36.htm",
+          "quote": "Are you ready to follow the Führer as the phalanx of the homeland, standing behind the fighting army? The people want action. It is time for it!",
+          "analogy_link": "Manufactured popular consent for total escalation — the leader does not impose the war on the people but appears to respond to their spontaneous demand for it. Used after Stalingrad to frame intensified mobilisation as a popular uprising rather than a state directive."
+        },
+        {
+          "figure": "Kim Il-sung / Korean Central News Agency",
+          "context": "North Korean state media, formative period 1948–1972",
+          "quote": "The Great Leader Comrade Kim Il-sung is the sun of the nation and the lodestar of its liberation. He is the father of all Korean people.",
+          "analogy_link": "The 'sun' metaphor removes the leader from ordinary political accountability — he illuminates rather than governs, making failure impossible by definition."
+        }
+      ],
+      "modern_examples": [
+        {
+          "figure": "Vladimir Putin",
+          "context": "Annual address to the Federal Assembly, February 29, 2024. Source: en.kremlin.ru/events/president/news/73585",
+          "quote": "Russia is an open country and a civilisation-state at the same time. Russia has always been and remains a state-civilisation. Our values, our culture, our history, our language — this is what unites us, this is what makes Russia Russia. Those who serve Russia honestly and faithfully are our heroes.",
+          "trope_match": "paternal_protector — leader as embodiment and guardian of the civilisational state; service to Russia is framed as a sacred vocation"
         }
       ]
     },
@@ -59,22 +180,1058 @@
         "narrative_strategy": "suppression",
         "ellul_type": "integration",
         "ellul_axis": "vertical",
-        "eco_properties": ["The Rejection of Modernism", "Fear of Difference", "The Cult of Tradition"],
-        "typical_san_martino_techniques": ["Appeal to Fear/Prejudice", "Loaded Language", "Flag-Waving"],
-        "typical_ipa_techniques": ["Glittering generalities", "Name-calling"],
+        "eco_properties": [
+          "The Rejection of Modernism",
+          "Fear of Difference",
+          "The Cult of Tradition"
+        ],
+        "typical_san_martino_techniques": [
+          "Appeal to Fear/Prejudice",
+          "Loaded Language",
+          "Flag-Waving"
+        ],
+        "typical_ipa_techniques": [
+          "Glittering generalities",
+          "Name-calling"
+        ],
         "typical_nimmo_4d": "Distort",
-        "typical_eudisinfo_narratives": ["Threatened Values", "Imminent Collapse"],
-        "typical_eudisinfo_rhetoric": ["Attack", "Straw Man", "Mockery"],
-        "typical_eudisinfo_conspiracy": ["Gay / LGBTQ Lobby", "Big Pharma / Vaccine Conspiracy", "Rothschilds / Banker Conspiracy"],
-        "typical_eudisinfo_ttp": ["Manipulated Content", "False Context", "Emotional Manipulation", "Strategic Decontextualization"]
+        "typical_eudisinfo_narratives": [
+          "Threatened Values",
+          "Imminent Collapse"
+        ],
+        "typical_eudisinfo_rhetoric": [
+          "Attack",
+          "Straw Man",
+          "Mockery"
+        ],
+        "typical_eudisinfo_conspiracy": [
+          "Gay / LGBTQ Lobby",
+          "Big Pharma / Vaccine Conspiracy",
+          "Rothschilds / Banker Conspiracy"
+        ],
+        "typical_eudisinfo_ttp": [
+          "Manipulated Content",
+          "False Context",
+          "Emotional Manipulation",
+          "Strategic Decontextualization"
+        ]
       },
-      "modern_keywords": ["traditional family values", "spiritual health", "anti-woke", "moral fiber"],
+      "modern_keywords": [
+        "traditional family values",
+        "spiritual health",
+        "anti-woke",
+        "moral fiber",
+        "Russian Orthodox",
+        "Gayropa",
+        "moral decay of the West"
+      ],
       "historical_echoes": [
         {
+          "figure": "Benito Mussolini & Giovanni Gentile",
+          "context": "Doctrine of Fascism, 1932. English text via Gutenberg Project (pg14058)",
+          "quote": "War alone brings all human energies to their highest tension and sets a seal of nobility on peoples who have the courage to face it… The State is an absolute before which individuals and groups are relative. The nation is created by the State, which gives the people an effective existence.",
+          "analogy_link": "War as ennobling civilisational test and the state as the only legitimate moral entity — individual suffering becomes politically meaningless, making mass sacrifice not just acceptable but spiritually necessary. This is the operational theology behind 'we do not count casualties' Russian war communication."
+        },
+        {
+          "figure": "Heinrich Himmler",
+          "context": "Speech to SS Group Leaders, Posen, October 4, 1943",
+          "quote": "We had the moral right, we had the duty to our people, to destroy this people which wanted to destroy us.",
+          "analogy_link": "The self-defence framing of civilisational violence — extermination recast as moral obligation to preserve a threatened culture."
+        },
+        {
+          "figure": "Konstantin Pobedonostsev",
+          "context": "Ober-Procurator of the Holy Synod, advisor to Tsar Alexander III, 1880s",
+          "quote": "Parliamentary government is the great lie of our time… Democracy means the rule of the street, the tyranny of mediocrity, the destruction of all that is sacred.",
+          "analogy_link": "The direct ancestor of modern Kremlin anti-Westernism: democracy as moral degeneration, autocracy as spiritual hygiene."
+        }
+      ],
+      "modern_examples": [
+        {
+          "figure": "Vladimir Putin",
+          "context": "Speech at the signing of treaties on the accession of new territories, September 30, 2022. Source: en.kremlin.ru/events/president/news/69465",
+          "quote": "Do we want to have here, in our country, in Russia, 'parent number one, parent number two and parent number three' instead of 'mum' and 'dad'? Do we want our schools to impose on our children, from their earliest days in school, perversions that lead to degradation and extinction? … This is all unacceptable to us. We have a different future of our own. They are outright satanists.",
+          "trope_match": "moral_purification — the West explicitly labelled as Satanic, with Russia as the defender of children and natural order against civilisational degeneracy"
+        }
+      ]
+    },
+    {
+      "id": "nazi_label",
+      "theme": "Labelling the Enemy as Nazi / Fascist",
+      "taxonomy": {
+        "narrative_strategy": "suppression",
+        "ellul_type": "agitation",
+        "ellul_axis": "vertical",
+        "eco_properties": [
+          "Newspeak",
+          "Enemies Too Strong and Too Weak",
+          "Fear of Difference",
+          "Disagreement is Treason"
+        ],
+        "typical_san_martino_techniques": [
+          "Name Calling/Labeling",
+          "Loaded Language",
+          "Appeal to Fear/Prejudice",
+          "Straw Man",
+          "Thought-terminating Clichés"
+        ],
+        "typical_ipa_techniques": [
+          "Name-calling",
+          "Transfer"
+        ],
+        "typical_nimmo_4d": "Distort",
+        "typical_eudisinfo_narratives": [
+          "Nazis",
+          "Elites vs People"
+        ],
+        "typical_eudisinfo_rhetoric": [
+          "Straw Man",
+          "Attack"
+        ],
+        "typical_eudisinfo_conspiracy": [
+          "Shadow Government / Deep State",
+          "Anglo-Saxon Plot"
+        ],
+        "typical_eudisinfo_ttp": [
+          "Fabricated Content",
+          "False Context",
+          "Strategic Decontextualization",
+          "Emotional Manipulation"
+        ]
+      },
+      "modern_keywords": [
+        "Nazis",
+        "fascists",
+        "neo-Nazi",
+        "Azov",
+        "Bandera",
+        "Banderites",
+        "de-Nazification",
+        "Nazi junta",
+        "Nazi regime in Kyiv"
+      ],
+      "historical_echoes": [
+        {
+          "figure": "Joseph Goebbels",
+          "context": "\"The Jews Are Guilty!\" — Das Reich, 16 November 1941. Source: Calvin University German Propaganda Archive, goeb1.htm",
+          "quote": "Every Jew is our enemy in this historic struggle, regardless of whether he vegetates in a Polish ghetto or carries on his parasitic existence in Berlin… The Jews are to blame for each German soldier who falls in this war. They have him on their conscience, and they must also pay for it.",
+          "analogy_link": "Collective ethnic guilt as propaganda engine: every individual member of the group is held personally responsible for the war, making indiscriminate action against any of them morally justified — structurally identical to 'every Ukrainian is a Nazi' framing that delegitimises all Ukrainian civilian casualties."
+        },
+        {
+          "figure": "Joseph Goebbels",
+          "context": "\"The War and the Jews\" — Das Reich, 1943. Source: Calvin University German Propaganda Archive, goeb37.htm",
+          "quote": "This war is a war of the Jewish race and its subject people against Western culture… Jewry wanted this war. The instigators are to be found in the foreground.",
+          "analogy_link": "The 'they started it' inversion — the aggressor retroactively becomes the victim of an enemy conspiracy that 'wanted' the war. This is the exact structure of Russian claims that NATO/the West/Ukraine 'provoked' and 'wanted' the 2022 war."
+        },
+        {
+          "figure": "Slobodan Milošević / Serbian state media RTS",
+          "context": "Serbian television coverage of the Croatian and Bosnian wars, 1991–1995",
+          "quote": "The Ustasha [Croatian] leadership is continuing the genocide of the Serbian people. Our special operation is a defensive response to their fascist aggression.",
+          "analogy_link": "The closest modern structural parallel: a Slavic state labels its neighbour as irredeemably fascist and genocidal to justify military invasion — identical framing to Russian 'de-Nazification' of Ukraine."
+        },
+        {
+          "figure": "Soviet Foreign Ministry / TASS",
+          "context": "Soviet reaction to West German rearmament and NATO membership, 1954–1955",
+          "quote": "The remilitarisation of West Germany and the creation of a Wehrmacht represents a direct revival of Hitlerite fascism on German soil. The NATO powers are enabling a new Nazi threat to peace-loving peoples.",
+          "analogy_link": "The Soviet prototype for post-war 'Nazi' labelling as geopolitical weapon: any Western military development becomes 'fascist', making diplomatic engagement impossible and military vigilance morally mandatory."
+        },
+        {
+          "figure": "Vyacheslav Molotov",
+          "context": "Radio address justifying the Soviet invasion of Finland, November 30, 1939",
+          "quote": "The Finnish White Guards and their foreign backers have long been preparing an attack on Leningrad. The Soviet Government has been compelled to take measures to protect the security of the Soviet Union.",
+          "analogy_link": "The template for all subsequent Russian 'de-Nazification' and 'protection' operations: the victim is recast as aggressor, and invasion as pre-emptive self-defence against an existential fascist threat."
+        }
+      ],
+      "modern_examples": [
+        {
+          "figure": "Vladimir Putin",
+          "context": "Address announcing the special military operation, February 24, 2022. Source: en.kremlin.ru/events/president/news/67843",
+          "quote": "The purpose of this operation is to protect people who, for eight years now, have been facing humiliation and genocide perpetrated by the Kyiv regime. To this end, we will seek to demilitarise and denazify Ukraine, as well as bring to trial those who perpetrated numerous bloody crimes against civilians.",
+          "trope_match": "nazi_label — 'denazify' as the operational verb of the invasion; the Nazi label is not rhetorical decoration but the stated legal and military justification"
+        }
+      ]
+    },
+    {
+      "id": "territorial_myth",
+      "theme": "Territorial Revisionism and the 'One People' Claim",
+      "taxonomy": {
+        "narrative_strategy": "exploitation",
+        "ellul_type": "integration",
+        "ellul_axis": "vertical",
+        "eco_properties": [
+          "The Cult of Tradition",
+          "Selective Populism",
+          "The Rejection of Modernism"
+        ],
+        "typical_san_martino_techniques": [
+          "Appeal to Authority",
+          "Flag-Waving",
+          "Causal Oversimplification",
+          "Loaded Language",
+          "Repetition"
+        ],
+        "typical_ipa_techniques": [
+          "Glittering generalities",
+          "Transfer",
+          "Plain folks"
+        ],
+        "typical_nimmo_4d": "Distort",
+        "typical_eudisinfo_narratives": [
+          "Lost Sovereignty",
+          "Threatened Values"
+        ],
+        "typical_eudisinfo_rhetoric": [
+          "Denial",
+          "Straw Man"
+        ],
+        "typical_eudisinfo_conspiracy": [
+          "Anglo-Saxon Plot",
+          "Color Revolution Conspiracy"
+        ],
+        "typical_eudisinfo_ttp": [
+          "Fabricated Content",
+          "Strategic Decontextualization",
+          "False Context",
+          "Narrative Laundering"
+        ]
+      },
+      "modern_keywords": [
+        "Crimea has always been Russian",
+        "one people",
+        "historical Russian lands",
+        "Ukraine artificial state",
+        "Soviet gift",
+        "Ukrainian language dialect",
+        "Novorossiya",
+        "referendum expressed the will"
+      ],
+      "historical_echoes": [
+        {
+          "figure": "Adolf Hitler",
+          "context": "Sportpalast speech, Berlin, September 26, 1938 — on the Sudetenland crisis",
+          "quote": "This is the last territorial claim I have to make in Europe, but it is a claim from which I will not retreat and which, God willing, I will make good.",
+          "analogy_link": "The 'final demand' structure — each annexation is framed as a limited correction of historical injustice, never an expansionist project, until the next 'historical injustice' is identified."
+        },
+        {
+          "figure": "Slobodan Milošević",
+          "context": "Speech at Kosovo Polje, June 28, 1989 — 600th anniversary of the Battle of Kosovo",
+          "quote": "Serbia has never had only Serbs living in it. Today, more than in the past, members of other peoples and nationalities also live in it. This is not a disadvantage for Serbia. I am truly convinced that it is its advantage.",
+          "analogy_link": "The 'brotherly peoples' framing that simultaneously asserts an organic ethnic unity and denies minority political autonomy — used to claim that Kosovo is inalienably Serbian regardless of its population's wishes."
+        },
+        {
+          "figure": "Konstantin Leontiev / Pan-Slavic thinkers",
+          "context": "Russian imperial Pan-Slavism, 1860s–1880s — 'All-Russian' ethnic theory",
+          "quote": "Great Russians, Little Russians, and White Russians are not three peoples but three branches of the one Russian tribe; the Ukrainian literary language is an artificial political project of the enemies of Russian unity.",
+          "analogy_link": "The direct 19th-century ancestor of Putin's 2021 essay 'On the Historical Unity of Russians and Ukrainians' — denying Ukrainian nationhood as an anti-Russian political construct."
+        },
+        {
           "figure": "Benito Mussolini",
-          "context": "Doctrine of Fascism (1932)",
-          "quote": "Fascism is a religious conception in which man is seen in his immanent relationship with a higher law and an objective Will.",
-          "analogy_link": "Frame political obedience as a moral or spiritual duty to the state."
+          "context": "Speech to the Italian parliament on irredentism, May 26, 1927",
+          "quote": "The Italian people have a mission in the Mediterranean that goes back to Rome. Dalmatia, Nice, Tunis — these are Italian lands that history and blood have claimed for us.",
+          "analogy_link": "The 'blood and history' claim as trump card over current borders and populations — the same logic behind Russian claims that Crimea, Donbas, and 'Novorossiya' are primordially Russian."
+        }
+      ],
+      "modern_examples": [
+        {
+          "figure": "Vladimir Putin",
+          "context": "Address to the Nation, February 21, 2022. Source: en.kremlin.ru/events/president/news/67828",
+          "quote": "Modern Ukraine was entirely created by Russia or, to be more precise, by Bolshevik, Communist Russia. This process started practically right after the 1917 revolution… Lenin and his associates did it in a way that was extremely harsh on Russia – by separating, severing what is historically Russian land.",
+          "trope_match": "territorial_myth — Ukraine denied historical existence as a state; its territory framed as Russian land temporarily misplaced by Soviet administrative error"
+        },
+        {
+          "figure": "Vladimir Putin",
+          "context": "Essay 'On the Historical Unity of Russians and Ukrainians', July 12, 2021. Source: en.kremlin.ru/events/president/news/66181",
+          "quote": "Russians and Ukrainians were one people – a single whole. These words are not just my personal view. It was the view of thousands, millions of people on both sides of what is now called the Russian-Ukrainian border.",
+          "trope_match": "territorial_myth — the 'one people' claim that dissolves Ukrainian nationhood; population opinion is invoked without evidence to assert a unity that overrides political borders"
+        }
+      ]
+    },
+    {
+      "id": "maidan_coup",
+      "theme": "Delegitimising Democratic Uprisings as Foreign-Backed Coups",
+      "taxonomy": {
+        "narrative_strategy": "exploitation",
+        "ellul_type": "agitation",
+        "ellul_axis": "vertical",
+        "eco_properties": [
+          "Obsession with a Plot",
+          "Contempt for the Weak",
+          "Selective Populism"
+        ],
+        "typical_san_martino_techniques": [
+          "Causal Oversimplification",
+          "Loaded Language",
+          "Black-and-White Fallacy",
+          "False Context"
+        ],
+        "typical_ipa_techniques": [
+          "Name-calling",
+          "Transfer",
+          "Card stacking"
+        ],
+        "typical_nimmo_4d": "Distort",
+        "typical_eudisinfo_narratives": [
+          "Lost Sovereignty",
+          "Elites vs People"
+        ],
+        "typical_eudisinfo_rhetoric": [
+          "Straw Man",
+          "Denial",
+          "Whataboutism"
+        ],
+        "typical_eudisinfo_conspiracy": [
+          "Color Revolution Conspiracy",
+          "Anglo-Saxon Plot",
+          "Soros Conspiracy"
+        ],
+        "typical_eudisinfo_ttp": [
+          "Strategic Decontextualization",
+          "False Context",
+          "Conspiracy Amplification",
+          "Narrative Laundering"
+        ]
+      },
+      "modern_keywords": [
+        "coup",
+        "armed coup",
+        "Maidan coup",
+        "illegitimate government",
+        "junta",
+        "overthrow",
+        "seized power",
+        "unconstitutional",
+        "armed putsch",
+        "Washington-backed coup"
+      ],
+      "historical_echoes": [
+        {
+          "figure": "Soviet Foreign Ministry / Pravda",
+          "context": "Soviet response to the Hungarian Revolution, November 1956",
+          "quote": "The counter-revolutionary uprising in Hungary was organised and directed by imperialist reaction — primarily American — with the active participation of the Horthyite fascist emigration and internal enemy elements.",
+          "analogy_link": "The structural template: a mass popular uprising is reframed as a foreign-engineered putsch, rendering all subsequent suppression legitimate self-defence rather than imperial violence."
+        },
+        {
+          "figure": "Soviet Communist Party Presidium / TASS",
+          "context": "Soviet framing of the Prague Spring, August 21, 1968",
+          "quote": "The party and government leaders of the Czechoslovak Socialist Republic have asked the Soviet Union and other allied states for immediate assistance, including armed forces, in their struggle against counter-revolutionary forces.",
+          "analogy_link": "The 'invitation' fiction — framing military invasion as a response to a legitimate request, exactly as Russia framed its 2014 Crimea and 2022 Donbas operations."
+        },
+        {
+          "figure": "Augusto Pinochet / Chilean military junta",
+          "context": "Proclamation No. 5 of the Military Junta, September 11, 1973",
+          "quote": "The Armed Forces and Carabineros of Chile declare that the Marxist government of Allende has been overthrown, inasmuch as its actions were destroying the country's economy and morals, creating fratricidal hatreds, and placing Chile on the path to becoming a satellite of international communism.",
+          "analogy_link": "The coup that calls itself a counter-coup: genuine democratic government is retrospectively reframed as the 'real' coup, and military takeover as restoration of order — the mirror logic of 'Maidan was the coup'."
+        }
+      ],
+      "modern_examples": [
+        {
+          "figure": "Vladimir Putin",
+          "context": "Address to the Nation, February 21, 2022. Source: en.kremlin.ru/events/president/news/67828",
+          "quote": "In February 2014, an armed coup was carried out in Ukraine – we now know it was organised by the United States and its Western allies… After the coup, those who came to power in Kyiv began identifying themselves as the 'new Ukrainian authorities', but they were not elected by the Ukrainian people.",
+          "trope_match": "maidan_coup — the coup narrative as the entire foundation of Russia's legal case: if Maidan was a coup, the elected government was illegitimate, and its successor agreements (Minsk, Budapest Memorandum) need not be honoured"
+        }
+      ]
+    },
+    {
+      "id": "covert_operations",
+      "theme": "Secret Western Bioweapons, Labs, and Hidden Aggression",
+      "taxonomy": {
+        "narrative_strategy": "exploitation",
+        "ellul_type": "agitation",
+        "ellul_axis": "horizontal",
+        "eco_properties": [
+          "Obsession with a Plot",
+          "Enemies Too Strong and Too Weak",
+          "Fear of Difference"
+        ],
+        "typical_san_martino_techniques": [
+          "Appeal to Fear/Prejudice",
+          "Doubt",
+          "Causal Oversimplification",
+          "Loaded Language",
+          "Obfuscation/Vagueness"
+        ],
+        "typical_ipa_techniques": [
+          "Name-calling",
+          "Card stacking",
+          "Transfer"
+        ],
+        "typical_nimmo_4d": "Dismay",
+        "typical_eudisinfo_narratives": [
+          "Elites vs People",
+          "Lost Sovereignty"
+        ],
+        "typical_eudisinfo_rhetoric": [
+          "Provocations",
+          "Denial",
+          "Straw Man"
+        ],
+        "typical_eudisinfo_conspiracy": [
+          "Shadow Government / Deep State",
+          "Anglo-Saxon Plot",
+          "Big Pharma / Vaccine Conspiracy"
+        ],
+        "typical_eudisinfo_ttp": [
+          "Fabricated Content",
+          "Conspiracy Amplification",
+          "Data Void Exploitation",
+          "Infoshum",
+          "Firehose of Falsehood"
+        ]
+      },
+      "modern_keywords": [
+        "biolabs",
+        "US biological weapons",
+        "chemical weapons Ukraine",
+        "Pentagon labs",
+        "bioweapon program",
+        "bacteria",
+        "pathogen",
+        "secret US military labs"
+      ],
+      "historical_echoes": [
+        {
+          "figure": "Soviet KGB / Active Measures Directorate",
+          "context": "Operation DENVER (Operation INFEKTION), 1983–1987 — KGB disinformation campaign",
+          "quote": "The AIDS epidemic is the result of Pentagon experiments at Fort Detrick, Maryland, designed to develop new biological weapons capable of destroying people of specific racial groups.",
+          "analogy_link": "The direct institutional ancestor of Ukrainian biolabs disinformation: KGB 'active measures' planted the story in Indian media, spread via front organisations, and achieved global circulation — the exact playbook used for US biolabs claims in 2022."
+        },
+        {
+          "figure": "North Korean / Chinese Propaganda",
+          "context": "Accusation of US germ warfare during the Korean War, 1952",
+          "quote": "American imperialists have been using bacteriological weapons against the Korean and Chinese peoples. Aircraft of the US Air Force have dropped insects and animals infected with plague, cholera and typhoid fever over our territory.",
+          "analogy_link": "The pattern of bioweapon accusations attached to every US military engagement — unverifiable, terrifying, and immune to denial (since 'the cover-up proves the conspiracy')."
+        },
+        {
+          "figure": "Nazi Propaganda Ministry",
+          "context": "Wartime propaganda on Jewish contamination, 1939–1945",
+          "quote": "Jews are carriers of disease. Just as a single bacillus is enough to infect an entire community, a single Jew is enough to corrupt an entire city, an entire people.",
+          "analogy_link": "Biological contamination as political metaphor normalises the idea that an ethnic or political enemy is literally pathogenic — a conceptual framework that makes bioweapon conspiracy theories viscerally credible."
+        }
+      ],
+      "modern_examples": [
+        {
+          "figure": "Vladimir Putin",
+          "context": "UN General Assembly address, September 28, 2015. Source: en.kremlin.ru/events/president/news/50385",
+          "quote": "We are all different, and we should respect that. Nations shouldn't be forced to all conform to the same development model that somebody has declared the only correct one.",
+          "trope_match": "covert_operations — frames Western democracy promotion as covert imposition, casting Russia as defender against ideological infiltration while projecting its own interference operations as legitimate resistance"
+        },
+        {
+          "figure": "Vladimir Putin",
+          "context": "Security Council briefing on 'US biological laboratories in Ukraine', March 11, 2022. Source: en.kremlin.ru/events/president/news/68101",
+          "quote": "We have received documents confirming that, literally two days before the start of the special military operation, on February 24, the components of biological weapons were being urgently destroyed in Ukrainian laboratories near our borders.",
+          "trope_match": "covert_operations — claims of US-run biolabs as paradigm case of the trope: a fabricated covert Western military infrastructure on Russian borders used to justify pre-emptive action"
+        }
+      ]
+    },
+    {
+      "id": "atrocity_denial",
+      "theme": "Denying or Fabricating Evidence of War Crimes",
+      "taxonomy": {
+        "narrative_strategy": "suppression",
+        "ellul_type": "agitation",
+        "ellul_axis": "vertical",
+        "eco_properties": [
+          "Newspeak",
+          "Disagreement is Treason",
+          "Obsession with a Plot"
+        ],
+        "typical_san_martino_techniques": [
+          "Doubt",
+          "Denial",
+          "Loaded Language",
+          "Red Herring",
+          "Obfuscation/Vagueness",
+          "Straw Man"
+        ],
+        "typical_ipa_techniques": [
+          "Card stacking",
+          "Name-calling"
+        ],
+        "typical_nimmo_4d": "Dismiss",
+        "typical_eudisinfo_narratives": [
+          "Nazis",
+          "Lost Sovereignty"
+        ],
+        "typical_eudisinfo_rhetoric": [
+          "Denial",
+          "Provocations",
+          "Straw Man"
+        ],
+        "typical_eudisinfo_conspiracy": [
+          "False Flag",
+          "Anglo-Saxon Plot"
+        ],
+        "typical_eudisinfo_ttp": [
+          "Fabricated Content",
+          "Manipulated Content",
+          "False Attribution",
+          "Video/Image Manipulation",
+          "Strategic Decontextualization",
+          "Forced Confessions"
+        ]
+      },
+      "modern_keywords": [
+        "Bucha fabricated",
+        "MH17 evidence fabricated",
+        "false flag",
+        "staged",
+        "provocation",
+        "evidence twisted",
+        "Russia not responsible",
+        "Western lie",
+        "photo manipulation"
+      ],
+      "historical_echoes": [
+        {
+          "figure": "Joseph Goebbels",
+          "context": "\"Churchill's Lie Factory\" — Das Reich, 1941. Source: Calvin University German Propaganda Archive, goeb29.htm",
+          "quote": "When one lies, one should lie big, and stick to it. They keep up their lies, even at the risk of looking ridiculous… Mr. Churchill, a genuine John Bull, holds to his lies, and in fact repeats them until he himself believes them.",
+          "analogy_link": "The enemy's atrocity evidence is itself proof of their propaganda machinery — the bigger the documented crime, the more obviously it is fabricated for psychological warfare. This makes evidence of atrocities self-refuting: the very existence of Bucha photographs becomes proof they are staged."
+        },
+        {
+          "figure": "Soviet Foreign Ministry",
+          "context": "Soviet denial of the Katyn massacre, 1943–1990",
+          "quote": "The Polish officers were shot by German fascists in autumn 1941. The so-called 'Katyn documents' are crude forgeries manufactured by Hitlerite propaganda services and their Polish collaborators.",
+          "analogy_link": "Fifty years of institutional denial of a massacre for which direct documentary evidence existed — demonstrating that atrocity denial is not about evidence but about the political cost of admission."
+        },
+        {
+          "figure": "SS-Standartenführer Alfred Naujocks / Reich Security Main Office",
+          "context": "Gleiwitz incident, August 31, 1939 — staged attack on German radio station",
+          "quote": "[Nuremberg testimony, 1945]: I was ordered to simulate an attack on the Gleiwitz station and make it appear that the attacking force consisted of Poles.",
+          "analogy_link": "The false-flag as war pretext: staged evidence of enemy aggression to manufacture a casus belli — the institutional origin of the entire false-flag accusation genre."
+        },
+        {
+          "figure": "Serbian government and Republika Srpska leadership",
+          "context": "Denial of the Srebrenica massacre, July–December 1995",
+          "quote": "There was no genocide in Srebrenica. What happened there was combat between the Bosnian Muslim army and Serbian forces. The figures of the dead are propaganda invented by Western intelligence services and Muslim fundamentalists.",
+          "analogy_link": "The closest structural parallel to Bucha denial: a mass atrocity with overwhelming physical evidence is systematically reframed as 'staged propaganda' — perpetrator denial as an extension of the original violence."
+        }
+      ],
+      "modern_examples": [
+        {
+          "figure": "Vladimir Putin",
+          "context": "Press conference with Emmanuel Macron, Paris, February 7, 2022 — and reiterated after Bucha, April 2022. Source: en.kremlin.ru/events/president/news/67770",
+          "quote": "Everything that is happening now — all these staged actions — are designed to discredit the Russian army and are nothing but provocation. We know the people who organise such provocations, where they come from, and what goals they pursue.",
+          "trope_match": "atrocity_denial — the 'staged provocation' formula applied to Bucha massacres: denies Russian authorship, reassigns blame to a Western-directed theatrical operation, pre-emptively delegitimises forensic evidence"
+        }
+      ]
+    },
+    {
+      "id": "color_revolution",
+      "theme": "Civic Protests Reframed as CIA-Engineered Colour Revolutions",
+      "taxonomy": {
+        "narrative_strategy": "exploitation",
+        "ellul_type": "integration",
+        "ellul_axis": "vertical",
+        "eco_properties": [
+          "Obsession with a Plot",
+          "Contempt for the Weak",
+          "Selective Populism"
+        ],
+        "typical_san_martino_techniques": [
+          "Causal Oversimplification",
+          "Loaded Language",
+          "Appeal to Fear/Prejudice",
+          "Conspiracy Amplification"
+        ],
+        "typical_ipa_techniques": [
+          "Transfer",
+          "Name-calling",
+          "Card stacking"
+        ],
+        "typical_nimmo_4d": "Distort",
+        "typical_eudisinfo_narratives": [
+          "Lost Sovereignty",
+          "Elites vs People"
+        ],
+        "typical_eudisinfo_rhetoric": [
+          "Straw Man",
+          "Denial",
+          "Provocations"
+        ],
+        "typical_eudisinfo_conspiracy": [
+          "Color Revolution Conspiracy",
+          "Soros Conspiracy",
+          "Shadow Government / Deep State",
+          "Anglo-Saxon Plot"
+        ],
+        "typical_eudisinfo_ttp": [
+          "Conspiracy Amplification",
+          "Narrative Laundering",
+          "False Context",
+          "Strategic Decontextualization"
+        ]
+      },
+      "modern_keywords": [
+        "color revolution",
+        "colour revolution",
+        "Soros-funded",
+        "NGO coup",
+        "foreign-sponsored protests",
+        "Maidan scenario",
+        "regime change operation",
+        "NED-funded"
+      ],
+      "historical_echoes": [
+        {
+          "figure": "Nikita Khrushchev / Soviet Presidium",
+          "context": "Soviet analysis of the Hungarian Revolution in internal CC documents, November 1956",
+          "quote": "The counter-revolutionary uprising was not spontaneous. It was prepared over many years by imperialist intelligence services operating through émigré organisations, Radio Free Europe, and internal enemy elements disguised as reform communists.",
+          "analogy_link": "The cognitive template that makes all future civic uprisings interpretable as foreign operations: once the framework is established, any mass protest becomes evidence of 'imperialist' manipulation rather than genuine popular discontent."
+        },
+        {
+          "figure": "Ali Khamenei / Iranian Supreme Leader",
+          "context": "Statement on the Iranian Green Movement, June 19, 2009",
+          "quote": "These riots, which have been planned and supported by foreign powers hostile to Islam and the Islamic Republic, will not succeed. The enemies of Iran are using the election as a pretext for a Velvet Revolution.",
+          "analogy_link": "The same template applied in a non-European context: mass protests dismissed as foreign engineering, framing state repression as defence of national sovereignty against Western manipulation."
+        },
+        {
+          "figure": "Alexander Lukashenko",
+          "context": "Belarusian state television address, August 17, 2020 — responding to post-election protests",
+          "quote": "These are not elections or protesters. This is an externally controlled operation, prepared in advance by the West with Soros money and NATO logistics, to destroy Belarusian statehood.",
+          "analogy_link": "The contemporary Eurasian application of the Soviet template, demonstrating how the colour revolution narrative is used to pre-emptively delegitimise any electoral challenge before results are even contested."
+        }
+      ],
+      "modern_examples": [
+        {
+          "figure": "Vladimir Putin",
+          "context": "Federal Assembly Address, April 21, 2021. Source: en.kremlin.ru/events/president/news/65418",
+          "quote": "Organisers of any provocations threatening the fundamental security of Russia, or crossing our red lines, should know that Russia's response will be asymmetrical, quick and harsh... We are determining for ourselves the rules in every individual case.",
+          "trope_match": "color_revolution — positions Russia as the decisive actor able to detect and counter Western-orchestrated destabilisation scripts before they reach critical mass, the same framing applied to Maidan"
+        },
+        {
+          "figure": "Vladimir Putin",
+          "context": "Valdai Discussion Club address, October 22, 2020. Source: en.kremlin.ru/events/president/news/64261",
+          "quote": "Inciting colour revolutions, a series of so-called 'democratic' coups… This is exactly what's happening today in many countries in our neighbourhood.",
+          "trope_match": "color_revolution — explicitly names the template: democratic transitions near Russia's borders are framed not as popular uprisings but as externally engineered regime-change operations"
+        }
+      ]
+    },
+    {
+      "id": "puppet_regime",
+      "theme": "Denying Sovereignty: The Target State as Western Puppet",
+      "taxonomy": {
+        "narrative_strategy": "suppression",
+        "ellul_type": "integration",
+        "ellul_axis": "vertical",
+        "eco_properties": [
+          "Lost Sovereignty",
+          "Contempt for the Weak",
+          "Obsession with a Plot"
+        ],
+        "typical_san_martino_techniques": [
+          "Name Calling/Labeling",
+          "Loaded Language",
+          "Causal Oversimplification",
+          "Straw Man"
+        ],
+        "typical_ipa_techniques": [
+          "Name-calling",
+          "Transfer"
+        ],
+        "typical_nimmo_4d": "Dismiss",
+        "typical_eudisinfo_narratives": [
+          "Lost Sovereignty",
+          "Elites vs People"
+        ],
+        "typical_eudisinfo_rhetoric": [
+          "Attack",
+          "Straw Man",
+          "Mockery"
+        ],
+        "typical_eudisinfo_conspiracy": [
+          "Anglo-Saxon Plot",
+          "Shadow Government / Deep State"
+        ],
+        "typical_eudisinfo_ttp": [
+          "Fabricated Content",
+          "False Attribution",
+          "Strategic Decontextualization",
+          "Impersonation"
+        ]
+      },
+      "modern_keywords": [
+        "Kyiv regime",
+        "puppet state",
+        "US puppet",
+        "NATO puppet",
+        "Zelensky puppet",
+        "foreign handlers",
+        "curators in Washington",
+        "Ukraine not sovereign",
+        "Zelensky illegitimate",
+        "American curators"
+      ],
+      "historical_echoes": [
+        {
+          "figure": "Vidkun Quisling concept / Nazi occupied Norway",
+          "context": "Nazi administration of occupied Western Europe, 1940–1944",
+          "quote": "The new Norwegian government under National Samling will restore the sovereignty of Norway in cooperation with the German Reich. The old political class that served foreign financial interests has been swept away.",
+          "analogy_link": "The 'Quisling' model — collaborationist regime framed as liberation from foreign domination — became the template for all subsequent puppet government propaganda: the occupier's installed authority claims to be the authentic national voice against the previous 'foreign-controlled' government."
+        },
+        {
+          "figure": "Soviet Cominform / Pravda",
+          "context": "Soviet reaction to Yugoslavia's expulsion from Cominform, 1948–1949",
+          "quote": "The Tito clique has transformed Yugoslavia into a colony of Anglo-American imperialism. The party leaders are agents of international capitalism who have betrayed the socialist cause and sold Yugoslav sovereignty.",
+          "analogy_link": "Any independent foreign policy choice by a smaller state is reframed as 'selling sovereignty' to imperial powers — a move that makes strategic independence by post-Soviet states structurally impossible to conceive of as legitimate."
+        },
+        {
+          "figure": "Mao Zedong",
+          "context": "On the People's Democratic Dictatorship, June 30, 1949",
+          "quote": "The Chiang Kai-shek reactionaries are the running dogs of American imperialism. The Chinese people must lean to one side — it is impossible to sit on the fence, and there is no third road.",
+          "analogy_link": "The binary that eliminates neutral positions: any government that cooperates with the West is automatically a 'running dog' puppet, leaving no space for independent sovereignty — exactly the logic applied to Ukraine's European integration."
+        }
+      ],
+      "modern_examples": [
+        {
+          "figure": "Vladimir Putin",
+          "context": "Address on recognition of Donetsk and Luhansk People's Republics, February 21, 2022. Source: en.kremlin.ru/events/president/news/67828",
+          "quote": "Modern Ukraine was entirely created by Russia, or, to be more precise, by Bolshevik, Communist Russia… Ukraine never had a tradition of genuine statehood… The current Ukrainian leadership is serving not the national interests of its people but those of foreign states.",
+          "trope_match": "puppet_regime — twin move: denies Ukraine's historical legitimacy as a state and declares its leadership an instrument of foreign powers, removing any basis for treating Kyiv as a sovereign interlocutor"
+        }
+      ]
+    },
+    {
+      "id": "imminent_defeat",
+      "theme": "Ukraine / The West is Losing and Will Collapse",
+      "taxonomy": {
+        "narrative_strategy": "destruction",
+        "ellul_type": "agitation",
+        "ellul_axis": "horizontal",
+        "eco_properties": [
+          "Enemies Too Strong and Too Weak",
+          "Contempt for the Weak"
+        ],
+        "typical_san_martino_techniques": [
+          "Exaggeration/Minimisation",
+          "Loaded Language",
+          "Black-and-White Fallacy",
+          "Appeal to Fear/Prejudice"
+        ],
+        "typical_ipa_techniques": [
+          "Card stacking",
+          "Bandwagon"
+        ],
+        "typical_nimmo_4d": "Dismay",
+        "typical_eudisinfo_narratives": [
+          "Imminent Collapse",
+          "Lost Sovereignty"
+        ],
+        "typical_eudisinfo_rhetoric": [
+          "Mockery",
+          "Attack"
+        ],
+        "typical_eudisinfo_conspiracy": [
+          "Anglo-Saxon Plot"
+        ],
+        "typical_eudisinfo_ttp": [
+          "Fabricated Content",
+          "Manipulated Content",
+          "Infoshum",
+          "Emotional Manipulation"
+        ]
+      },
+      "modern_keywords": [
+        "Ukraine losing",
+        "Ukraine will collapse",
+        "imminent Ukrainian defeat",
+        "Kyiv on verge of collapse",
+        "EU economy collapsing",
+        "NATO disintegrating",
+        "West losing",
+        "military failure"
+      ],
+      "historical_echoes": [
+        {
+          "figure": "Joseph Goebbels",
+          "context": "Diary entries and Das Reich articles, September–November 1944",
+          "quote": "The Anglo-American alliance is fundamentally fragile. Between the plutocratic English and the speculative Americans on one side and the Bolshevist hordes on the other, contradictions must inevitably erupt. The moment this coalition breaks, the war turns in our favour.",
+          "analogy_link": "Military collapse propaganda used to sustain fighting morale when the actual military situation is deteriorating — the same cognitive structure as Russian narratives about imminent Western disunity and Ukrainian defeat."
+        },
+        {
+          "figure": "Iraqi Information Minister Mohammed Saeed al-Sahhaf ('Baghdad Bob')",
+          "context": "Press briefings during the 2003 US invasion of Iraq",
+          "quote": "The American infidels are committing suicide by the hundreds at the gates of Baghdad. We are in control, they are not in control of anything, they don't even control themselves.",
+          "analogy_link": "The purest modern example of defeat denial as information warfare: triumphalist claims broadcast simultaneously with the collapse of the military position they describe — demonstrating that the audience for such messaging is not external but internal."
+        },
+        {
+          "figure": "Imperial Japanese Army propaganda corps",
+          "context": "Japanese home front propaganda, 1944–1945",
+          "quote": "American forces suffer unsustainable losses at every island. The spiritual strength of the Yamato people is invincible. The enemy's material superiority is illusory — our decisive victory approaches.",
+          "analogy_link": "Defeat-reversal propaganda: military setbacks are systematically reframed as strategic manoeuvres, casualties are minimised, and the enemy's material advantages are attributed to moral corruption — a template reproduced almost verbatim in contemporary Russian military reporting."
+        }
+      ],
+      "modern_examples": [
+        {
+          "figure": "Vladimir Putin",
+          "context": "Address at signing ceremony for annexation of Donetsk, Luhansk, Zaporizhzhia and Kherson regions, September 30, 2022. Source: en.kremlin.ru/events/president/news/69465",
+          "quote": "The West is bluffing when it talks about an inevitable defeat of Russia on the battlefield… Western elites are already making mistakes and committing one political blunder after another. The sanctions policy is boomeranging against their own countries.",
+          "trope_match": "imminent_defeat — inverts the military narrative: Western weapons and sanctions are cast as self-defeating, predicting Western domestic collapse before Russian strategic defeat, converting a military liability into a propaganda asset"
+        }
+      ]
+    },
+    {
+      "id": "nato_aggressor",
+      "theme": "NATO Expansion as Existential Provocation",
+      "taxonomy": {
+        "narrative_strategy": "suppression",
+        "ellul_type": "integration",
+        "ellul_axis": "vertical",
+        "eco_properties": [
+          "Obsession with a Plot",
+          "Pacifism as Enemy Collaboration",
+          "Enemies Too Strong and Too Weak"
+        ],
+        "typical_san_martino_techniques": [
+          "Appeal to Fear/Prejudice",
+          "Causal Oversimplification",
+          "Loaded Language",
+          "Flag-Waving",
+          "Repetition"
+        ],
+        "typical_ipa_techniques": [
+          "Transfer",
+          "Card stacking",
+          "Bandwagon"
+        ],
+        "typical_nimmo_4d": "Dismay",
+        "typical_eudisinfo_narratives": [
+          "Lost Sovereignty",
+          "Elites vs People"
+        ],
+        "typical_eudisinfo_rhetoric": [
+          "Straw Man",
+          "Whataboutism",
+          "Provocations"
+        ],
+        "typical_eudisinfo_conspiracy": [
+          "Anglo-Saxon Plot",
+          "Shadow Government / Deep State"
+        ],
+        "typical_eudisinfo_ttp": [
+          "Narrative Laundering",
+          "Conspiracy Amplification",
+          "Strategic Decontextualization",
+          "Emotional Manipulation"
+        ]
+      },
+      "modern_keywords": [
+        "NATO expansion",
+        "NATO provoked Russia",
+        "NATO absorbs",
+        "NATO threat to Russia",
+        "NATO at Russia's borders",
+        "encirclement",
+        "existential threat",
+        "NATO pushed Ukraine into war"
+      ],
+      "historical_echoes": [
+        {
+          "figure": "Soviet World Peace Council / Cominform propaganda",
+          "context": "Soviet-sponsored Peace Movement, 1949–1955 — campaign against NATO and West German rearmament",
+          "quote": "The Atlantic Pact is an aggressive military bloc directed against the Soviet Union and the democratic peoples. It threatens the peace of the entire world. We call on all peace-loving peoples to resist this new instrument of American imperialism.",
+          "analogy_link": "The original 'NATO aggressor' template: a defensive alliance reframed as an offensive instrument, its expansion depicted as a mortal threat requiring counter-mobilisation — a narrative produced by the same state security apparatus now deployed against Ukraine."
+        },
+        {
+          "figure": "Adolf Hitler",
+          "context": "Reichstag speech on German rearmament, March 7, 1936 — justifying remilitarisation of the Rhineland",
+          "quote": "Germany is surrounded by enemies who have created alliances of encirclement. In this situation, Germany has no choice but to restore its sovereign military equality. We seek peace, but we will not accept strategic encirclement.",
+          "analogy_link": "The 'encirclement' argument as justification for violating treaty obligations and expanding military footprint — structurally identical to Russian arguments that NATO enlargement requires 'corrective' military action."
+        },
+        {
+          "figure": "Joseph Goebbels",
+          "context": "\"England's Guilt\" — Das Reich, 1939. Source: Calvin University German Propaganda Archive, goeb47.htm",
+          "quote": "We did not want war. England inflicted it on us. English plutocracy forced it on us… The encirclement of Germany long before the outbreak of the war was traditional English policy. Poland really had little to do with the outbreak of war between the Reich and England. It was only a means to an end.",
+          "analogy_link": "The aggressor-as-victim and the third party as mere pretext: Germany did not attack Poland — England used Poland to provoke a war it had long planned. This is the precise template for Russian claims that Ukraine is a NATO pretext for a war England/the US/the 'Anglo-Saxons' have long desired against Russia."
+        },
+        {
+          "figure": "Imperial Japanese Navy / Cabinet Intelligence Bureau",
+          "context": "Japanese propaganda justifying the Pearl Harbor attack, December 8, 1941",
+          "quote": "The ABCD encirclement — American, British, Chinese, and Dutch — has strangled Japan's access to resources and left us no alternative. This is not aggression but liberation from economic warfare.",
+          "analogy_link": "The 'encirclement by hostile powers' that transforms aggressive expansion into defensive necessity — the perpetrator becomes the victim of a hostile coalition, and war becomes the only rational response to existential pressure."
+        }
+      ],
+      "modern_examples": [
+        {
+          "figure": "Vladimir Putin",
+          "context": "Address to the Nation, February 21, 2022. Source: en.kremlin.ru/events/president/news/67828",
+          "quote": "NATO has been consistently implementing a policy of bringing the alliance's military infrastructure closer to Russian borders… They deceived us, or to put it simply, they just cheated. There was no legal obligation, of course, but verbal commitments were made.",
+          "trope_match": "nato_aggressor — the 'broken promises' argument reframed as existential encirclement: NATO expansion is not enlargement but an act of creeping aggression, making Russian military action a defensive response rather than an offensive choice"
+        }
+      ]
+    },
+    {
+      "id": "russia_peacemaker",
+      "theme": "Russia as the Rational Peace-Seeker Forced into War",
+      "taxonomy": {
+        "narrative_strategy": "direction",
+        "ellul_type": "agitation",
+        "ellul_axis": "vertical",
+        "eco_properties": [
+          "Selective Populism",
+          "Newspeak",
+          "Pacifism as Enemy Collaboration"
+        ],
+        "typical_san_martino_techniques": [
+          "Appeal to Authority",
+          "Loaded Language",
+          "Obfuscation/Vagueness",
+          "Thought-terminating Clichés",
+          "Repetition"
+        ],
+        "typical_ipa_techniques": [
+          "Glittering generalities",
+          "Plain folks",
+          "Transfer"
+        ],
+        "typical_nimmo_4d": "Distract",
+        "typical_eudisinfo_narratives": [
+          "Lost Sovereignty",
+          "Elites vs People"
+        ],
+        "typical_eudisinfo_rhetoric": [
+          "Whataboutism",
+          "Denial",
+          "Exhaust"
+        ],
+        "typical_eudisinfo_conspiracy": [
+          "Anglo-Saxon Plot",
+          "Shadow Government / Deep State"
+        ],
+        "typical_eudisinfo_ttp": [
+          "Strategic Decontextualization",
+          "False Context",
+          "Narrative Laundering",
+          "Emotional Manipulation"
+        ]
+      },
+      "modern_keywords": [
+        "Russia open to dialogue",
+        "Russia wants peace",
+        "Russia ready to negotiate",
+        "Russia did not attack",
+        "Russia not the aggressor",
+        "Russia forced to act",
+        "peace-loving Russia",
+        "Russia defends itself"
+      ],
+      "historical_echoes": [
+        {
+          "figure": "Adolf Hitler",
+          "context": "Speech to the Reichstag, May 17, 1933 — nine days after the Enabling Act",
+          "quote": "Germany needs peace and desires peace. Germany is ready to renounce all offensive weapons if the armed nations will destroy their offensive weapons within a reasonable period. Germany is prepared to agree to any solemn pact of non-aggression, because she does not think of attacking anybody.",
+          "analogy_link": "The 'peace-seeking' speech delivered while beginning covert rearmament — a precise rhetorical template for Russian peace overtures made while continuing or preparing military operations."
+        },
+        {
+          "figure": "Vyacheslav Molotov",
+          "context": "Radio address on the Molotov-Ribbentrop Pact, August 24, 1939",
+          "quote": "The Soviet-German non-aggression treaty serves the interests of universal peace. The peoples of the Soviet Union and Germany have no interest in a war with each other. This agreement puts an end to enmity between our two great countries.",
+          "analogy_link": "The peace agreement as geopolitical weapon: a 'peace' that divided Europe into spheres of influence and enabled simultaneous invasions of Poland — demonstrating how peace rhetoric can serve as operational cover for conquest."
+        },
+        {
+          "figure": "Soviet Peace Committee / Pravda",
+          "context": "Soviet propaganda during the Korean War, 1950–1953",
+          "quote": "The Soviet Union and the peace-loving peoples of the world demand an immediate end to the American imperialist war of aggression in Korea. The USSR has consistently supported a peaceful settlement. It is Washington that refuses to negotiate.",
+          "analogy_link": "The perpetrator-as-peacemaker inversion: the party that enabled the aggression retrospectively presents itself as the voice of reason and restraint, while the target of aggression and its defenders are cast as warmongers."
+        }
+      ],
+      "modern_examples": [
+        {
+          "figure": "Vladimir Putin",
+          "context": "Address to the Nation, February 21, 2022. Source: en.kremlin.ru/events/president/news/67828",
+          "quote": "Russia proposed a draft treaty with NATO on security guarantees. The Western partners rejected our proposal. We are not going to impose anything on anyone by force. But we are convinced that real, long-term security in Europe is possible only together with Russia, not against Russia.",
+          "trope_match": "russia_peacemaker — peace framing deployed three days before the invasion: presents Russia as having exhausted all diplomatic channels and having offered security to Europe, shifting the moral responsibility for war onto NATO's refusal"
+        },
+        {
+          "figure": "Vladimir Putin",
+          "context": "Kremlin meeting with Africa Union leaders, June 17, 2023. Source: en.kremlin.ru/events/president/news/71411",
+          "quote": "We have never refused peace negotiations. We have always been open to dialogue. It is Ukraine that has legally prohibited itself from negotiating with Russia. We are ready for serious talks.",
+          "trope_match": "russia_peacemaker — post-invasion iteration: positions Ukraine's own anti-negotiation decree as the obstacle to peace, erasing Russian continuation of the war from the moral ledger"
+        }
+      ]
+    },
+    {
+      "id": "genocide_reversal",
+      "theme": "Accusing the Victim of Genocide to Justify Intervention",
+      "taxonomy": {
+        "narrative_strategy": "exploitation",
+        "ellul_type": "agitation",
+        "ellul_axis": "vertical",
+        "eco_properties": [
+          "Obsession with a Plot",
+          "Enemies Too Strong and Too Weak",
+          "Fear of Difference"
+        ],
+        "typical_san_martino_techniques": [
+          "Appeal to Fear/Prejudice",
+          "Loaded Language",
+          "Causal Oversimplification",
+          "Black-and-White Fallacy",
+          "Straw Man"
+        ],
+        "typical_ipa_techniques": [
+          "Transfer",
+          "Name-calling",
+          "Appeal to Fear"
+        ],
+        "typical_nimmo_4d": "Dismay",
+        "typical_eudisinfo_narratives": [
+          "Nazis",
+          "Threatened Values",
+          "Lost Sovereignty"
+        ],
+        "typical_eudisinfo_rhetoric": [
+          "Attack",
+          "Provocations",
+          "Straw Man"
+        ],
+        "typical_eudisinfo_conspiracy": [
+          "False Flag",
+          "Anglo-Saxon Plot"
+        ],
+        "typical_eudisinfo_ttp": [
+          "Fabricated Content",
+          "False Context",
+          "Emotional Manipulation",
+          "Strategic Decontextualization",
+          "Forced Confessions"
+        ]
+      },
+      "modern_keywords": [
+        "genocide in Donbas",
+        "genocide of Russian speakers",
+        "punishers",
+        "Kyiv kills its own people",
+        "protect Russian speakers",
+        "eight years of genocide",
+        "Ukrainian army kills civilians"
+      ],
+      "historical_echoes": [
+        {
+          "figure": "Adolf Hitler",
+          "context": "Memorandum to the British ambassador, August 25, 1939 — two days before the invasion of Poland",
+          "quote": "The German minorities in Poland are subjected to unbearable atrocities. Germany cannot remain passive in the face of the physical annihilation of its blood-brothers in Poland. I have decided to solve the Danzig question and the Polish Corridor problem.",
+          "analogy_link": "The genocide-of-kin pretext for invasion: documented violence is fabricated or exaggerated, attributed to the target state, and used to frame military aggression as protective intervention — the direct ancestor of Russian 'protection of Russian speakers' in Donbas."
+        },
+        {
+          "figure": "Slobodan Milošević / Serbian Academy of Sciences (SANU Memorandum)",
+          "context": "SANU Memorandum, 1986 — intellectual foundation for Serbian nationalist expansion",
+          "quote": "The physical, political, legal, and cultural genocide of the Serbian population of Kosovo is an openly declared political goal of the Albanian nationalists. The Serbian people cannot remain indifferent to this state of affairs.",
+          "analogy_link": "The intellectual template for genocide accusation as political mobilisation: pre-emptive claims of genocide against the in-group delegitimise any future violence against the out-group as self-defence — used to justify the subsequent ethnic cleansing of non-Serbs."
+        },
+        {
+          "figure": "Hutu Power Radio / Radio Mille Collines (RTLM)",
+          "context": "Rwandan genocide incitement, January–April 1994",
+          "quote": "The Tutsi have drawn up lists. They plan to exterminate every Hutu on the night of April 5th. Rise up and defend yourselves before you are slaughtered like animals.",
+          "analogy_link": "The most extreme form of genocide reversal: fabricated genocide threat against the perpetrating group used to incite mass killing — demonstrating that genocide accusation is itself a weapon, independent of any factual basis."
+        }
+      ],
+      "modern_examples": [
+        {
+          "figure": "Vladimir Putin",
+          "context": "Address announcing the special military operation, February 24, 2022. Source: en.kremlin.ru/events/president/news/67843",
+          "quote": "Our goal is to protect people who have been subjected to bullying and genocide by the Kyiv regime for eight years. And for this we will seek the demilitarisation and de-Nazification of Ukraine.",
+          "trope_match": "genocide_reversal — the core inversion: Ukraine's government is cast as perpetrator of genocide against Russian speakers, and Russia's invasion is framed as humanitarian intervention — reversing victim and aggressor roles to meet the legal threshold for 'responsibility to protect'"
         }
       ]
     }

@@ -6,7 +6,7 @@ description: Scrape and normalize current articles from TASS, Xinhua, and SPA us
 # News Archaeology
 
 ## Purpose
-Collect article text and metadata from TASS, Xinhua, and SPA in a repeatable, low-noise pipeline.
+Collect article text and metadata from TASS, Xinhua, RT, and SPA in a repeatable, low-noise pipeline.
 
 ## Workflow
 1. Launch Puppeteer with stealth plugin and conservative delays.
