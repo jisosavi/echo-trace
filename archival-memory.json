@@ -1,4 +1,218 @@
 {
+  "_comment": [
+    "╔══════════════════════════════════════════════════════════════════════════════════════╗",
+    "║  FORENSIC SEMIOTICS — AUTHORITARIAN PROPAGANDA TROPE TAXONOMY                      ║",
+    "║  Analytical Dimensions Reference Chart                         version 2.0          ║",
+    "╚══════════════════════════════════════════════════════════════════════════════════════╝",
+    "",
+    "Each trope entry is annotated across the following analytical dimensions.",
+    "Dimensions marked [NEW v2] were added in v2.0 to support regime-agnostic classification.",
+    "",
+    "┌─────────────────────────┬─────────────────────────────────────────────────────────────────────────────┬──────────────────────────────────────────────────────┐",
+    "│ DIMENSION               │ VALUES                                                                      │ SOURCE / REFERENCE                                   │",
+    "├─────────────────────────┼─────────────────────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┤",
+    "│ narrative_strategy      │ suppression · destruction · direction · exploitation                        │ Lank & Antai, Intl J. of Communication 2025          │",
+    "│                         │                                                                             │ doi.org/10.1177/19401612251317696                    │",
+    "├─────────────────────────┼─────────────────────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┤",
+    "│ ellul_type              │ agitation · integration                                                     │ Jacques Ellul — Propaganda (1965)                    │",
+    "│ ellul_axis              │ vertical (top-down) · horizontal (peer diffusion)                           │ en.wikipedia.org/wiki/Propaganda_(Ellul_book)        │",
+    "├─────────────────────────┼─────────────────────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┤",
+    "│ eco_properties          │ 14 features: Cult of Tradition · Rejection of Modernism · Action            │ Umberto Eco — Ur-Fascism (1995)                      │",
+    "│ (Ur-Fascism)            │ for Action's Sake · Disagreement is Treason · Fear of Difference ·         │ en.wikipedia.org/wiki/Ur-Fascism                     │",
+    "│                         │ Frustrated Middle Class · Obsession with a Plot · Enemies Too              │                                                      │",
+    "│                         │ Strong and Too Weak · Pacifism as Collaboration · Contempt for             │                                                      │",
+    "│                         │ the Weak · Selective Populism · Newspeak · Heroism · Machismo              │                                                      │",
+    "├─────────────────────────┼─────────────────────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┤",
+    "│ san_martino_techniques  │ 18 techniques: Appeal to Authority · Appeal to Fear/Prejudice ·            │ Da San Martino et al. — Fine-Grained Analysis of     │",
+    "│ (18 techniques)         │ Bandwagon · Black-and-White Fallacy · Causal Oversimplification ·          │ Propaganda in News Articles, ACL 2019                │",
+    "│                         │ Doubt · Exaggeration/Minimisation · Flag-Waving · Loaded Language ·        │ aclanthology.org/W19-2006/                           │",
+    "│                         │ Name Calling/Labeling · Obfuscation · Red Herring · Repetition ·           │                                                      │",
+    "│                         │ Slogans · Straw Man · Thought-terminating Clichés · Transfer ·             │                                                      │",
+    "│                         │ Whataboutism                                                                │                                                      │",
+    "├─────────────────────────┼─────────────────────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┤",
+    "│ ipa_techniques          │ 7 techniques: Name-calling · Glittering generalities · Transfer ·          │ Institute for Propaganda Analysis (1937)             │",
+    "│ (IPA 1937)              │ Testimonial · Plain folks · Card stacking · Bandwagon                      │ en.wikipedia.org/wiki/Institute_for_Propaganda_Anal… │",
+    "├─────────────────────────┼─────────────────────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┤",
+    "│ nimmo_4d                │ Dismiss · Distort · Distract · Dismay                                      │ Ben Nimmo — DFRLab / EUvsDisinfo 4D Approach         │",
+    "│                         │                                                                             │ euvsdisinfo.eu/the-4d-approach/                      │",
+    "├─────────────────────────┼─────────────────────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┤",
+    "│ eudisinfo_narratives    │ Nazis · Lost Sovereignty · Threatened Values · Elites vs People ·          │ EUvsDisinfo — Pro-Kremlin Disinformation Database     │",
+    "│                         │ Imminent Collapse · Russia as Victim                                        │ euvsdisinfo.eu/disinformation-cases/                 │",
+    "├─────────────────────────┼─────────────────────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┤",
+    "│ eudisinfo_rhetoric      │ SWAMPED: Straw Man · Whataboutism · Attack · Mockery ·                     │ EUvsDisinfo — Modus Trollerandi                      │",
+    "│ (SWAMPED)               │ Provocations · Exhaust · Denial                                            │ euvsdisinfo.eu/modus-trollerandi-the-kremlin-rhetori… │",
+    "├─────────────────────────┼─────────────────────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┤",
+    "│ eudisinfo_conspiracy    │ Shadow Government/Deep State · Anglo-Saxon Plot · Color Revolution ·       │ EUvsDisinfo — Disinformation Cases Database          │",
+    "│                         │ Soros · Gay/LGBTQ Lobby · Big Pharma · Rothschilds · False Flag            │ euvsdisinfo.eu/disinformation-cases/                 │",
+    "├─────────────────────────┼─────────────────────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┤",
+    "│ eudisinfo_ttp           │ Fabricated/Manipulated Content · False Attribution · False Context ·       │ DISARM Framework / EUvsDisinfo TTPs                  │",
+    "│ (DISARM)                │ Conspiracy Amplification · Narrative Laundering · Strategic                 │ disarmframework.com/                                 │",
+    "│                         │ Decontextualization · Emotional Manipulation · Infoshum ·                  │                                                      │",
+    "│                         │ Firehose of Falsehood · Data Void Exploitation · Forced Confessions ·      │                                                      │",
+    "│                         │ Impersonation · Fake Experts · Video/Image Manipulation                    │                                                      │",
+    "├─────────────────────────┼─────────────────────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┤",
+    "│ myth_function   [NEW]   │ cosmogonic (founding/origin) · eschatological (final battle) ·             │ Flood — Political Myth (Routledge 2002)              │",
+    "│                         │ theodicy (suffering is meaningful) · heroic (leader as saviour) ·          │ Tudor — Political Myth (Macmillan 1972)               │",
+    "│                         │ providential (historical mission / destiny)                                 │                                                      │",
+    "├─────────────────────────┼─────────────────────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┤",
+    "│ enemy_type      [NEW]   │ external (foreign state/actor) · internal (traitor/fifth column) ·         │ Volkan — The Need to Have Enemies and Allies (1988)  │",
+    "│                         │ ontological (constitutionally inferior by nature) ·                        │ Keen — Faces of the Enemy (1986)                     │",
+    "│                         │ shadow (occult/conspiratorial hidden enemy everywhere)                      │                                                      │",
+    "├─────────────────────────┼─────────────────────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┤",
+    "│ legitimation_mode [NEW] │ authorization (appeal to authority/tradition/law) ·                        │ van Leeuwen — Discourse and Practice (Oxford UP 2008)│",
+    "│                         │ moral (appeal to shared values) ·                                          │ academic.oup.com/book/26629                          │",
+    "│                         │ rationalization (instrumental/security justification) ·                    │                                                      │",
+    "│                         │ mythopoesis (narrative/historical/mythological justification)               │                                                      │",
+    "├─────────────────────────┼─────────────────────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┤",
+    "│ frame_function  [NEW]   │ diagnostic (defines problem, attributes blame) ·                           │ Snow & Benford — Frame Resonance, ISMR 1 (1988)      │",
+    "│                         │ prognostic (proposes solution, calls to action) ·                          │ Entman — Framing, J. of Communication 43(4) (1993)   │",
+    "│                         │ motivational (emotional/moral mobilisation)                                 │ doi.org/10.1111/j.1460-2466.1993.tb01304.x           │",
+    "├─────────────────────────┼─────────────────────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┤",
+    "│ dehumanisation_ [NEW]   │ 1=Classification (us/them) · 2=Symbolisation (labelling) ·                 │ Stanton — Ten Stages of Genocide (Genocide Watch     │",
+    "│ level (1–10)            │ 3=Discrimination · 4=Dehumanisation (animal/disease metaphors) ·           │ 1996, updated 2013)                                  │",
+    "│                         │ 5=Organisation · 6=Polarisation · 7=Preparation ·                         │ genocide.watch/ten-stages-of-genocide                │",
+    "│                         │ 8=Persecution · 9=Extermination · 10=Denial                               │                                                      │",
+    "├─────────────────────────┼─────────────────────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┤",
+    "│ temporality     [NEW]   │ retrospective (golden age / historical grievance / origin) ·               │ Flood — Political Myth (2002)                        │",
+    "│                         │ contemporaneous (current crisis / present threat) ·                        │ Mink — History and Fiction as Modes of               │",
+    "│                         │ prospective (victory narrative / promised future / end-state)               │ Comprehension, New Literary History 1(3) (1970)      │",
+    "├─────────────────────────┼─────────────────────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┤",
+    "│ greimas_actantial [NEW] │ Roles: subject (hero) · object (goal) · sender (mandate-giver) ·           │ Greimas — Sémantique structurale (Larousse 1966)     │",
+    "│ (future use)            │ receiver (beneficiary) · helper (ally) · opponent (villain)                 │ Propp — Morphology of the Folktale (1928)            │",
+    "│                         │ NOTE: documented for future per-article computation; not yet                │ en.wikipedia.org/wiki/Actantial_model                │",
+    "│                         │ computed as a per-trope scalar field                                        │                                                      │",
+    "└─────────────────────────┴─────────────────────────────────────────────────────────────────────────────┴──────────────────────────────────────────────────────┘",
+    "",
+    "TROPE TAXONOMY SCOPE",
+    "  v1.0 (14 tropes): Kremlin-aligned propaganda, Russia-Ukraine conflict",
+    "  v2.0 (22 tropes): Regime-agnostic — added 8 cross-regime tropes:",
+    "    leader_infallibility · anti_imperial_reversal · civilisational_mission ·",
+    "    stability_mandate · economic_siege · media_lie · unity_demand · ethnic_protection",
+    "",
+    "NOTE: JSON does not support native comments. This '_comment' key is a documentation",
+    "convention only and is ignored by all application code."
+  ],
+  "_meta": {
+    "title": "Forensic Semiotics — Authoritarian Propaganda Trope Taxonomy",
+    "version": "2.0",
+    "scope": "Regime-agnostic: covers Kremlin-aligned propaganda and non-Western authoritarian media (Myanmar, Eritrea, Syria, Cuba, Turkmenistan, Western Sahara/SADR, Yemen, Tajikistan, Eswatini, et al.).",
+    "dimensions": {
+      "narrative_strategy": {
+        "description": "Four strategic categories of narrative suppression and manipulation",
+        "values": ["suppression", "destruction", "direction", "exploitation"],
+        "source": "Lank & Antai — Narrative Strategy and Information Warfare, International Journal of Communication, 2025",
+        "url": "https://doi.org/10.1177/19401612251317696"
+      },
+      "ellul_type": {
+        "description": "Ellul's typology of propaganda by intent: agitation = mobilise for action; integration = normalise existing order",
+        "values": ["agitation", "integration"],
+        "source": "Jacques Ellul — Propaganda: The Formation of Men's Attitudes (1965)",
+        "url": "https://en.wikipedia.org/wiki/Propaganda_(Ellul_book)"
+      },
+      "ellul_axis": {
+        "description": "Ellul's axis: vertical = top-down state messaging; horizontal = peer-group/grassroots diffusion",
+        "values": ["vertical", "horizontal"],
+        "source": "Jacques Ellul — Propaganda: The Formation of Men's Attitudes (1965)",
+        "url": "https://en.wikipedia.org/wiki/Propaganda_(Ellul_book)"
+      },
+      "eco_properties": {
+        "description": "Umberto Eco's 14 features of Ur-Fascism as a proto-fascist content checklist",
+        "values": ["The Cult of Tradition","The Rejection of Modernism","The Cult of Action for Action's Sake","Disagreement is Treason","Fear of Difference","Appeal to a Frustrated Middle Class","Obsession with a Plot","Enemies Too Strong and Too Weak","Pacifism as Enemy Collaboration","Contempt for the Weak","Selective Populism","Newspeak","Education Toward Heroism","Machismo and Weaponry"],
+        "source": "Umberto Eco — Ur-Fascism, New York Review of Books, 1995",
+        "url": "https://en.wikipedia.org/wiki/Ur-Fascism"
+      },
+      "san_martino_techniques": {
+        "description": "18 propaganda techniques from fine-grained NLP analysis of news articles",
+        "values": ["Appeal to Authority","Appeal to Fear/Prejudice","Bandwagon","Black-and-White Fallacy","Causal Oversimplification","Doubt","Exaggeration/Minimisation","Flag-Waving","Loaded Language","Name Calling/Labeling","Obfuscation/Vagueness","Red Herring","Repetition","Slogans","Straw Man","Thought-terminating Clichés","Transfer","Whataboutism"],
+        "source": "Da San Martino et al. — Fine-Grained Analysis of Propaganda in News Articles, ACL 2019",
+        "url": "https://aclanthology.org/W19-2006/"
+      },
+      "ipa_techniques": {
+        "description": "7 classic propaganda techniques from the Institute for Propaganda Analysis",
+        "values": ["Name-calling","Glittering generalities","Transfer","Testimonial","Plain folks","Card stacking","Bandwagon"],
+        "source": "Institute for Propaganda Analysis — 7 Techniques (1937)",
+        "url": "https://en.wikipedia.org/wiki/Institute_for_Propaganda_Analysis"
+      },
+      "nimmo_4d": {
+        "description": "Ben Nimmo's 4D counter-disinformation framework",
+        "values": ["Dismiss","Distort","Distract","Dismay"],
+        "source": "Ben Nimmo — DFRLab / EUvsDisinfo 4D Approach",
+        "url": "https://euvsdisinfo.eu/the-4d-approach/"
+      },
+      "eudisinfo_narratives": {
+        "description": "EUvsDisinfo's 6 recurring pro-Kremlin narrative categories",
+        "values": ["Nazis","Lost Sovereignty","Threatened Values","Elites vs People","Imminent Collapse","Russia as Victim"],
+        "source": "EUvsDisinfo — Pro-Kremlin Disinformation Cases Database",
+        "url": "https://euvsdisinfo.eu/disinformation-cases/"
+      },
+      "eudisinfo_rhetoric": {
+        "description": "EUvsDisinfo Modus Trollerandi — 7 rhetorical devices (SWAMPED acronym)",
+        "values": ["Straw Man","Whataboutism","Attack","Mockery","Provocations","Exhaust","Denial"],
+        "source": "EUvsDisinfo — Modus Trollerandi: The Kremlin's Rhetoric",
+        "url": "https://euvsdisinfo.eu/modus-trollerandi-the-kremlin-rhetoric/"
+      },
+      "eudisinfo_conspiracy": {
+        "description": "Recurring conspiracy theory archetypes in pro-Kremlin disinformation",
+        "values": ["Shadow Government / Deep State","Anglo-Saxon Plot","Color Revolution Conspiracy","Soros Conspiracy","Gay / LGBTQ Lobby","Big Pharma / Vaccine Conspiracy","Rothschilds / Banker Conspiracy","False Flag"],
+        "source": "EUvsDisinfo — Disinformation Cases Database & DISARM Framework",
+        "url": "https://euvsdisinfo.eu/disinformation-cases/"
+      },
+      "eudisinfo_ttp": {
+        "description": "Tactics, Techniques and Procedures from the DISARM disinformation framework",
+        "values": ["Fabricated Content","Manipulated Content","False Attribution","False Context","Conspiracy Amplification","Narrative Laundering","Strategic Decontextualization","Emotional Manipulation","Infoshum","Firehose of Falsehood","Data Void Exploitation","Forced Confessions","Impersonation","Fake Experts","Video/Image Manipulation"],
+        "source": "DISARM Framework / EUvsDisinfo — Tactics, Techniques & Procedures",
+        "url": "https://www.disarmframework.com/"
+      },
+      "myth_function": {
+        "description": "Temporal-functional role of the trope in the political myth system (Flood / Tudor typology)",
+        "values": ["cosmogonic","eschatological","theodicy","heroic","providential"],
+        "notes": "cosmogonic = founding/origin myth; eschatological = final battle / end-times narrative; theodicy = suffering is meaningful / sacrifice justified; heroic = leader as saviour; providential = historical mission / destiny of the nation",
+        "source": "Flood, C. — Political Myth: A Theoretical Introduction (Routledge, 2002); Tudor, H. — Political Myth (Macmillan, 1972)",
+        "url": "https://www.routledge.com/Political-Myth/Flood/p/book/9780415941969"
+      },
+      "enemy_type": {
+        "description": "How the enemy is constructed in the trope's narrative (Volkan / Keen typology)",
+        "values": ["external","internal","ontological","shadow"],
+        "notes": "external = foreign state or actor; internal = traitor / fifth column / ethnic minority within; ontological = constitutionally different or inferior by nature; shadow = occult / conspiratorial hidden enemy that is everywhere",
+        "source": "Volkan, V. — The Need to Have Enemies and Allies (Jason Aronson, 1988); Keen, S. — Faces of the Enemy (Harper & Row, 1986)",
+        "url": "https://en.wikipedia.org/wiki/Vamik_Volkan"
+      },
+      "legitimation_mode": {
+        "description": "How the propaganda claim achieves authority — one or more modes (van Leeuwen typology)",
+        "values": ["authorization","moral","rationalization","mythopoesis"],
+        "notes": "authorization = appeals to authority of person/tradition/law; moral = appeals to shared value systems; rationalization = instrumental/functional justification (security, necessity); mythopoesis = narrative / historical / mythological justification",
+        "source": "van Leeuwen, T. — Discourse and Practice: New Tools for Critical Discourse Analysis (Oxford UP, 2008)",
+        "url": "https://academic.oup.com/book/26629"
+      },
+      "frame_function": {
+        "description": "Rhetorical function of the frame in the propaganda narrative (Snow & Benford / Entman)",
+        "values": ["diagnostic","prognostic","motivational"],
+        "notes": "diagnostic = defines the problem and attributes blame; prognostic = proposes solution or calls to action; motivational = emotional or moral mobilisation of the audience",
+        "source": "Snow, D. & Benford, R. — Ideology, Frame Resonance and Participant Mobilisation, International Social Movement Research 1 (1988); Entman, R. — Framing: Toward Clarification of a Fractured Paradigm, Journal of Communication 43(4) (1993)",
+        "url": "https://doi.org/10.1111/j.1460-2466.1993.tb01304.x"
+      },
+      "dehumanisation_level": {
+        "description": "Severity on Stanton's 10-stage genocide prevention scale applied to language in the article",
+        "values": [1,2,3,4,5,6,7,8,9,10],
+        "notes": "1=Classification (us/them dichotomy); 2=Symbolisation (labelling, badges); 3=Discrimination (legal/social exclusion language); 4=Dehumanisation (animal/disease metaphors); 5=Organisation (calls for organised action against group); 6=Polarisation (no middle ground); 7=Preparation (lists, identity documents, cleansing); 8=Persecution (deprivation of rights); 9=Extermination (mass killing language); 10=Denial (post-atrocity cover-up)",
+        "source": "Stanton, G. — The Ten Stages of Genocide (Genocide Watch, 1996, updated 2013)",
+        "url": "https://www.genocide.watch/ten-stages-of-genocide"
+      },
+      "temporality": {
+        "description": "Temporal register of the propaganda narrative (Flood / Mink)",
+        "values": ["retrospective","contemporaneous","prospective"],
+        "notes": "retrospective = golden age, historical grievance, foundational origin story; contemporaneous = current crisis, present threat requiring action now; prospective = victory narrative, eschatological end-state, promised future",
+        "source": "Flood, C. — Political Myth (Routledge, 2002); Mink, L. — History and Fiction as Modes of Comprehension, New Literary History 1(3) (1970)",
+        "url": "https://www.jstor.org/stable/468543"
+      },
+      "greimas_actantial": {
+        "description": "Structural narrative grammar assigning actantial roles in the propaganda story (not yet computed per-trope — documented for future use)",
+        "roles": {"subject":"hero of the narrative (regime/leader/people)","object":"goal being pursued (sovereignty/security/purity)","sender":"mandate-giver (history/God/the nation)","receiver":"beneficiary (the people/future generations)","helper":"ally (friendly nations/patriotic forces)","opponent":"villain (NATO/West/traitors/terrorists)"},
+        "source": "Greimas, A.J. — Sémantique structurale (Larousse, 1966); Propp, V. — Morphology of the Folktale (1928)",
+        "url": "https://en.wikipedia.org/wiki/Actantial_model"
+      }
+    }
+  },
   "rhetorical_tropes": [
     {
       "id": "foreign_saboteur",
@@ -41,7 +255,13 @@
           "False Attribution",
           "Conspiracy Amplification",
           "Infoshum"
-        ]
+        ],
+        "myth_function": "eschatological",
+        "enemy_type": "shadow",
+        "legitimation_mode": ["rationalization","mythopoesis"],
+        "frame_function": "diagnostic",
+        "dehumanisation_level": 3,
+        "temporality": "contemporaneous"
       },
       "modern_keywords": [
         "foreign agents",
@@ -128,7 +348,13 @@
           "Fake Experts",
           "Emotional Manipulation",
           "Narrative Laundering"
-        ]
+        ],
+        "myth_function": "heroic",
+        "enemy_type": "external",
+        "legitimation_mode": ["authorization","moral"],
+        "frame_function": "motivational",
+        "dehumanisation_level": 1,
+        "temporality": "contemporaneous"
       },
       "modern_keywords": [
         "great leader",
@@ -214,7 +440,13 @@
           "False Context",
           "Emotional Manipulation",
           "Strategic Decontextualization"
-        ]
+        ],
+        "myth_function": "theodicy",
+        "enemy_type": "ontological",
+        "legitimation_mode": ["moral","mythopoesis"],
+        "frame_function": "diagnostic",
+        "dehumanisation_level": 4,
+        "temporality": "contemporaneous"
       },
       "modern_keywords": [
         "traditional family values",
@@ -296,7 +528,13 @@
           "False Context",
           "Strategic Decontextualization",
           "Emotional Manipulation"
-        ]
+        ],
+        "myth_function": "eschatological",
+        "enemy_type": "ontological",
+        "legitimation_mode": ["moral","rationalization"],
+        "frame_function": "diagnostic",
+        "dehumanisation_level": 4,
+        "temporality": "contemporaneous"
       },
       "modern_keywords": [
         "Nazis",
@@ -392,7 +630,13 @@
           "Strategic Decontextualization",
           "False Context",
           "Narrative Laundering"
-        ]
+        ],
+        "myth_function": "cosmogonic",
+        "enemy_type": "internal",
+        "legitimation_mode": ["mythopoesis","authorization"],
+        "frame_function": "diagnostic",
+        "dehumanisation_level": 2,
+        "temporality": "retrospective"
       },
       "modern_keywords": [
         "Crimea has always been Russian",
@@ -488,7 +732,13 @@
           "False Context",
           "Conspiracy Amplification",
           "Narrative Laundering"
-        ]
+        ],
+        "myth_function": "eschatological",
+        "enemy_type": "shadow",
+        "legitimation_mode": ["rationalization","moral"],
+        "frame_function": "diagnostic",
+        "dehumanisation_level": 3,
+        "temporality": "contemporaneous"
       },
       "modern_keywords": [
         "coup",
@@ -576,7 +826,13 @@
           "Data Void Exploitation",
           "Infoshum",
           "Firehose of Falsehood"
-        ]
+        ],
+        "myth_function": "eschatological",
+        "enemy_type": "shadow",
+        "legitimation_mode": ["rationalization"],
+        "frame_function": "diagnostic",
+        "dehumanisation_level": 3,
+        "temporality": "contemporaneous"
       },
       "modern_keywords": [
         "biolabs",
@@ -668,7 +924,13 @@
           "Video/Image Manipulation",
           "Strategic Decontextualization",
           "Forced Confessions"
-        ]
+        ],
+        "myth_function": "theodicy",
+        "enemy_type": "external",
+        "legitimation_mode": ["rationalization","mythopoesis"],
+        "frame_function": "diagnostic",
+        "dehumanisation_level": 10,
+        "temporality": "contemporaneous"
       },
       "modern_keywords": [
         "Bucha fabricated",
@@ -760,7 +1022,13 @@
           "Narrative Laundering",
           "False Context",
           "Strategic Decontextualization"
-        ]
+        ],
+        "myth_function": "eschatological",
+        "enemy_type": "shadow",
+        "legitimation_mode": ["rationalization","moral"],
+        "frame_function": "diagnostic",
+        "dehumanisation_level": 2,
+        "temporality": "contemporaneous"
       },
       "modern_keywords": [
         "color revolution",
@@ -848,7 +1116,13 @@
           "False Attribution",
           "Strategic Decontextualization",
           "Impersonation"
-        ]
+        ],
+        "myth_function": "eschatological",
+        "enemy_type": "internal",
+        "legitimation_mode": ["rationalization","moral"],
+        "frame_function": "diagnostic",
+        "dehumanisation_level": 3,
+        "temporality": "contemporaneous"
       },
       "modern_keywords": [
         "Kyiv regime",
@@ -929,7 +1203,13 @@
           "Manipulated Content",
           "Infoshum",
           "Emotional Manipulation"
-        ]
+        ],
+        "myth_function": "eschatological",
+        "enemy_type": "external",
+        "legitimation_mode": ["rationalization"],
+        "frame_function": "prognostic",
+        "dehumanisation_level": 2,
+        "temporality": "prospective"
       },
       "modern_keywords": [
         "Ukraine losing",
@@ -1013,7 +1293,13 @@
           "Conspiracy Amplification",
           "Strategic Decontextualization",
           "Emotional Manipulation"
-        ]
+        ],
+        "myth_function": "eschatological",
+        "enemy_type": "external",
+        "legitimation_mode": ["rationalization","moral"],
+        "frame_function": "diagnostic",
+        "dehumanisation_level": 2,
+        "temporality": "contemporaneous"
       },
       "modern_keywords": [
         "NATO expansion",
@@ -1103,7 +1389,13 @@
           "False Context",
           "Narrative Laundering",
           "Emotional Manipulation"
-        ]
+        ],
+        "myth_function": "providential",
+        "enemy_type": "external",
+        "legitimation_mode": ["moral","authorization"],
+        "frame_function": "prognostic",
+        "dehumanisation_level": 1,
+        "temporality": "contemporaneous"
       },
       "modern_keywords": [
         "Russia open to dialogue",
@@ -1195,7 +1487,13 @@
           "Emotional Manipulation",
           "Strategic Decontextualization",
           "Forced Confessions"
-        ]
+        ],
+        "myth_function": "eschatological",
+        "enemy_type": "ontological",
+        "legitimation_mode": ["moral","rationalization"],
+        "frame_function": "diagnostic",
+        "dehumanisation_level": 5,
+        "temporality": "contemporaneous"
       },
       "modern_keywords": [
         "genocide in Donbas",
@@ -1232,6 +1530,397 @@
           "context": "Address announcing the special military operation, February 24, 2022. Source: en.kremlin.ru/events/president/news/67843",
           "quote": "Our goal is to protect people who have been subjected to bullying and genocide by the Kyiv regime for eight years. And for this we will seek the demilitarisation and de-Nazification of Ukraine.",
           "trope_match": "genocide_reversal — the core inversion: Ukraine's government is cast as perpetrator of genocide against Russian speakers, and Russia's invasion is framed as humanitarian intervention — reversing victim and aggressor roles to meet the legal threshold for 'responsibility to protect'"
+        }
+      ]
+    }
+    ,
+    {
+      "id": "leader_infallibility",
+      "theme": "The Infallible Ruler Cannot Err — Failure Belongs to Traitors",
+      "taxonomy": {
+        "narrative_strategy": "direction",
+        "ellul_type": "integration",
+        "ellul_axis": "vertical",
+        "eco_properties": ["The Cult of Tradition","Education Toward Heroism","Selective Populism","Disagreement is Treason"],
+        "typical_san_martino_techniques": ["Appeal to Authority","Testimonial","Flag-Waving","Slogans","Repetition"],
+        "typical_ipa_techniques": ["Testimonial","Glittering generalities","Plain folks"],
+        "typical_nimmo_4d": "Distort",
+        "typical_eudisinfo_narratives": ["Elites vs People","Threatened Values"],
+        "typical_eudisinfo_rhetoric": ["Denial","Whataboutism","Mockery"],
+        "typical_eudisinfo_conspiracy": ["Shadow Government / Deep State"],
+        "typical_eudisinfo_ttp": ["Emotional Manipulation","Fake Experts","Narrative Laundering"],
+        "myth_function": "heroic",
+        "enemy_type": "internal",
+        "legitimation_mode": ["authorization","moral"],
+        "frame_function": "motivational",
+        "dehumanisation_level": 2,
+        "temporality": "contemporaneous"
+      },
+      "modern_keywords": [
+        "great leader","father of the nation","presidential wisdom","commander in chief has decided","unparalleled vision","patriotic duty to follow","the president guides","wise leadership","our leader knows","trust the leadership"
+      ],
+      "historical_echoes": [
+        {
+          "figure": "Saparmurat Niyazov (Turkmenbashi)",
+          "context": "President of Turkmenistan 1990–2006 — self-published Ruhnama (Book of the Soul), mandatory in schools and government",
+          "quote": "I'm personally of no interest to anyone. It's the Turkmen people who are interesting, it's Turkmenistan that is interesting. And I am only an instrument, a servant of the people and of God.",
+          "analogy_link": "The leader-as-instrument framing that simultaneously claims humility and centralises all authority: the leader is selfless, therefore any opposition to him is opposition to the people and God — making accountability structurally impossible."
+        },
+        {
+          "figure": "Kim Il-sung / Korean Central News Agency",
+          "context": "KCNA formative propaganda 1948–1972 — establishment of the Suryong (supreme leader) cult",
+          "quote": "The Great Leader Comrade Kim Il-sung is the sun of the nation and the lodestar of its liberation. He is the father of all Korean people, and his guidance is the source of all our victories.",
+          "analogy_link": "The solar metaphor places the leader beyond critique: the sun does not make mistakes, it illuminates. Military failures, famines, or economic collapse are therefore attributable only to clouds — i.e., internal saboteurs or external enemies."
+        },
+        {
+          "figure": "Nicolae Ceaușescu / Romanian state media",
+          "context": "Romanian Communist Party congress coverage 1971–1989 — Ceaușescu cult of personality",
+          "quote": "The Conducător, the genius of the Carpathians, has guided Romania to unprecedented heights through his unerring scientific thought. All victories of the Romanian people bear the imprint of Comrade Ceaușescu's wisdom.",
+          "analogy_link": "The 'scientific' leader whose decisions are beyond political contestation — a template reproduced by every Central Asian personality cult from Niyazov to Berdymukhamedov."
+        }
+      ],
+      "modern_examples": [
+        {
+          "figure": "Isaias Afwerki / Shabait (Eritrea Information Ministry)",
+          "context": "Shabait state media coverage, 2020s",
+          "quote": "Under the wise and resolute leadership of President Isaias Afwerki, Eritrea continues to chart its independent course, resisting foreign pressure and advancing national development.",
+          "trope_match": "leader_infallibility — the leader's decisions are self-evidently correct by virtue of his leadership; resistance to his direction is framed as foreign-manipulated rather than legitimate dissent"
+        }
+      ]
+    },
+    {
+      "id": "anti_imperial_reversal",
+      "theme": "Western Criticism as Neo-Colonialism and Imperialist Interference",
+      "taxonomy": {
+        "narrative_strategy": "suppression",
+        "ellul_type": "agitation",
+        "ellul_axis": "vertical",
+        "eco_properties": ["Fear of Difference","Obsession with a Plot","Selective Populism"],
+        "typical_san_martino_techniques": ["Appeal to Fear/Prejudice","Loaded Language","Flag-Waving","Straw Man","Whataboutism"],
+        "typical_ipa_techniques": ["Transfer","Name-calling","Glittering generalities"],
+        "typical_nimmo_4d": "Dismiss",
+        "typical_eudisinfo_narratives": ["Lost Sovereignty","Elites vs People"],
+        "typical_eudisinfo_rhetoric": ["Whataboutism","Straw Man","Denial"],
+        "typical_eudisinfo_conspiracy": ["Anglo-Saxon Plot","Shadow Government / Deep State"],
+        "typical_eudisinfo_ttp": ["Narrative Laundering","Strategic Decontextualization","Conspiracy Amplification"],
+        "myth_function": "cosmogonic",
+        "enemy_type": "external",
+        "legitimation_mode": ["moral","mythopoesis"],
+        "frame_function": "diagnostic",
+        "dehumanisation_level": 2,
+        "temporality": "retrospective"
+      },
+      "modern_keywords": [
+        "neo-colonialism","imperialist agenda","Western interference","double standards","sovereignty","self-determination","colonial legacy","imperialist blockade","regime change agenda","hegemony","unilateral coercive measures","Western hypocrisy"
+      ],
+      "historical_echoes": [
+        {
+          "figure": "Fidel Castro",
+          "context": "Speech to the UN General Assembly, September 26, 1960",
+          "quote": "The underdeveloped countries were colonies, and in many cases they are still colonies, of the big monopolies. The natural wealth of those countries is possessed and exploited by those same monopolies. And their political life is shaped by those monopolies.",
+          "analogy_link": "The anti-colonial framing as a universal rhetorical inoculation: any future criticism of the Cuban government becomes classifiable as continuation of colonial interference, making external accountability impossible by structural definition."
+        },
+        {
+          "figure": "Kwame Nkrumah",
+          "context": "Neo-Colonialism: The Last Stage of Imperialism, 1965",
+          "quote": "Neo-colonialism is the worst form of imperialism. For those who practise it, it means power without responsibility, and for those who suffer from it, it means exploitation without redress.",
+          "analogy_link": "The intellectual framework adopted by postcolonial authoritarian regimes globally: any economic or political conditionality from Western donors or institutions becomes 'neo-colonialism', neutralising demands for democratic accountability or human rights compliance."
+        }
+      ],
+      "modern_examples": [
+        {
+          "figure": "Raúl Castro / Granma (Cuba)",
+          "context": "Granma editorial response to US human rights criticism, recurring framing",
+          "quote": "The imperialist campaign against Cuba is nothing more than the latest attempt by Washington to reimpose its colonial domination over the Caribbean. Our sovereignty is not negotiable.",
+          "trope_match": "anti_imperial_reversal — human rights criticism is reframed as a sovereignty violation, converting the critic into the aggressor and the regime into the defender of national dignity"
+        }
+      ]
+    },
+    {
+      "id": "civilisational_mission",
+      "theme": "Our Regime Carries a World-Historical Civilisational Mission",
+      "taxonomy": {
+        "narrative_strategy": "direction",
+        "ellul_type": "integration",
+        "ellul_axis": "vertical",
+        "eco_properties": ["The Cult of Tradition","Selective Populism","Education Toward Heroism","Pacifism as Enemy Collaboration"],
+        "typical_san_martino_techniques": ["Flag-Waving","Appeal to Authority","Loaded Language","Repetition","Slogans"],
+        "typical_ipa_techniques": ["Glittering generalities","Transfer","Bandwagon"],
+        "typical_nimmo_4d": "Distort",
+        "typical_eudisinfo_narratives": ["Threatened Values","Lost Sovereignty"],
+        "typical_eudisinfo_rhetoric": ["Denial","Whataboutism"],
+        "typical_eudisinfo_conspiracy": [],
+        "typical_eudisinfo_ttp": ["Emotional Manipulation","Narrative Laundering"],
+        "myth_function": "providential",
+        "enemy_type": "external",
+        "legitimation_mode": ["mythopoesis","moral"],
+        "frame_function": "motivational",
+        "dehumanisation_level": 2,
+        "temporality": "prospective"
+      },
+      "modern_keywords": [
+        "our civilisation","civilisational choice","our values","unique path","spiritual values","China Dream","Russkiy mir","Russian world","Islamic revolution","African destiny","historical mission","defend our way of life","civilisational state"
+      ],
+      "historical_echoes": [
+        {
+          "figure": "Pan-Slavic ideologues / Nikolai Danilevsky",
+          "context": "Russia and Europe (1869) — foundational text of Russian civilisational exceptionalism",
+          "quote": "Russia is not Europe… it is a separate cultural-historical type with its own civilisational mission. The Romano-Germanic world and the Slavic world are irreconcilable, and Russia must lead the Slavic civilisation against Western decadence.",
+          "analogy_link": "The direct intellectual ancestor of the 'Russian world' concept and Putin's civilisation-state rhetoric: Russia not as a European nation among nations but as a civilisational pole whose mission is incompatible with Western norms."
+        },
+        {
+          "figure": "Ayatollah Khomeini",
+          "context": "Proclamation on the export of the Islamic Revolution, 1979",
+          "quote": "We shall export our revolution to the four corners of the world until the calls 'There is no god but God and Muhammad is the messenger of God' are echoed all over the world.",
+          "analogy_link": "The civilisational mission as aggressive universalism: our values are not merely ours but the destiny of all humanity, making their global spread not imperialism but liberation — a logic reproduced from the Soviet Comintern to Chinese Belt and Road rhetoric."
+        }
+      ],
+      "modern_examples": [
+        {
+          "figure": "Vladimir Putin",
+          "context": "Valdai Discussion Club speech, October 27, 2022",
+          "quote": "Russia is an original civilisation… We are defending our right to exist, to go our own path. Those who are trying to dictate to us are not representatives of democracy, but neo-colonists.",
+          "trope_match": "civilisational_mission — Russia framed not as a state defending interests but as a civilisational pole resisting Western civilisational aggression, elevating the conflict from political to ontological"
+        }
+      ]
+    },
+    {
+      "id": "stability_mandate",
+      "theme": "Strong Rule Is Necessary to Prevent Chaos, Terrorism, and Civil War",
+      "taxonomy": {
+        "narrative_strategy": "direction",
+        "ellul_type": "integration",
+        "ellul_axis": "vertical",
+        "eco_properties": ["Contempt for the Weak","Pacifism as Enemy Collaboration","Selective Populism"],
+        "typical_san_martino_techniques": ["Appeal to Fear/Prejudice","Causal Oversimplification","Loaded Language","Black-and-White Fallacy"],
+        "typical_ipa_techniques": ["Appeal to Fear","Card stacking","Plain folks"],
+        "typical_nimmo_4d": "Dismay",
+        "typical_eudisinfo_narratives": ["Threatened Values","Elites vs People"],
+        "typical_eudisinfo_rhetoric": ["Straw Man","Denial","Attack"],
+        "typical_eudisinfo_conspiracy": ["Shadow Government / Deep State"],
+        "typical_eudisinfo_ttp": ["Emotional Manipulation","Strategic Decontextualization","False Context"],
+        "myth_function": "theodicy",
+        "enemy_type": "internal",
+        "legitimation_mode": ["rationalization","moral"],
+        "frame_function": "prognostic",
+        "dehumanisation_level": 3,
+        "temporality": "contemporaneous"
+      },
+      "modern_keywords": [
+        "stability","national unity","prevent civil war","armed gangs","terrorists","extremists","foreign-backed insurgents","restore order","protect civilians from chaos","sectarian conflict","without the army there would be chaos"
+      ],
+      "historical_echoes": [
+        {
+          "figure": "Francisco Franco",
+          "context": "Radio address announcing the military uprising, July 17–18, 1936",
+          "quote": "Spain is offered to anarchy and revolutionary chaos… The army, navy, and security forces, inspired by love of their fatherland, have decided to restore public order and guarantee national peace.",
+          "analogy_link": "The foundational stability-mandate structure: a coup framed as an anti-chaos operation, the military as the only institution capable of protecting civilian life from the disorder caused by democratic politics — reproduced by every subsequent military junta from Greece 1967 to Myanmar 2021."
+        },
+        {
+          "figure": "Syrian Arab News Agency (SANA) / Bashar al-Assad",
+          "context": "Syrian state media coverage of the 2011–2012 uprising",
+          "quote": "Armed terrorist gangs, backed by foreign intelligence services, are targeting the security and stability of Syria. The Syrian Arab Army is carrying out its national duty to protect citizens from this externally orchestrated aggression.",
+          "analogy_link": "The democracy movement reframed as terrorism: protesters are 'armed gangs', the crackdown is 'protection', and the entire uprising is an external conspiracy — making any negotiation or reform structurally impossible since you do not negotiate with foreign-sponsored terrorists."
+        }
+      ],
+      "modern_examples": [
+        {
+          "figure": "Myanmar military junta (SAC) / Global New Light of Myanmar",
+          "context": "GNLM coverage of the 2021 coup and ongoing civil conflict",
+          "quote": "The Tatmadaw is fulfilling its duty to protect the sovereignty of the state and the stability of the nation against the destructive actions of terrorist organisations that seek to plunge Myanmar into chaos.",
+          "trope_match": "stability_mandate — democratic opposition reframed as terrorism, military coup as constitutional duty, and ongoing killing as 'protection' of civilians from the chaos the military itself created"
+        }
+      ]
+    },
+    {
+      "id": "economic_siege",
+      "theme": "Western Sanctions and Blockades Are Acts of War Against Innocent Civilians",
+      "taxonomy": {
+        "narrative_strategy": "exploitation",
+        "ellul_type": "agitation",
+        "ellul_axis": "vertical",
+        "eco_properties": ["Obsession with a Plot","Enemies Too Strong and Too Weak","Fear of Difference"],
+        "typical_san_martino_techniques": ["Appeal to Fear/Prejudice","Loaded Language","Causal Oversimplification","Exaggeration/Minimisation"],
+        "typical_ipa_techniques": ["Transfer","Name-calling","Appeal to Fear"],
+        "typical_nimmo_4d": "Dismay",
+        "typical_eudisinfo_narratives": ["Lost Sovereignty","Russia as Victim"],
+        "typical_eudisinfo_rhetoric": ["Attack","Straw Man","Whataboutism"],
+        "typical_eudisinfo_conspiracy": ["Anglo-Saxon Plot","Rothschilds / Banker Conspiracy"],
+        "typical_eudisinfo_ttp": ["Emotional Manipulation","Strategic Decontextualization","Conspiracy Amplification"],
+        "myth_function": "theodicy",
+        "enemy_type": "external",
+        "legitimation_mode": ["moral","rationalization"],
+        "frame_function": "diagnostic",
+        "dehumanisation_level": 2,
+        "temporality": "contemporaneous"
+      },
+      "modern_keywords": [
+        "illegal sanctions","economic war","blockade","unilateral coercive measures","economic terrorism","sanctions kill civilians","economic strangulation","economic aggression","humanitarian crisis caused by sanctions","siege mentality","economic warfare"
+      ],
+      "historical_echoes": [
+        {
+          "figure": "Fidel Castro / Granma",
+          "context": "Cuban state media framing of the US economic embargo, ongoing since 1962",
+          "quote": "The criminal blockade imposed by the United States against Cuba is the longest and most unjust act of economic aggression in history. Its purpose is to destroy the Cuban revolution by starving the Cuban people into submission.",
+          "analogy_link": "The foundational template for economic siege rhetoric: the sanctions regime becomes the primary cause of all domestic economic failures, making the sanctioning state the aggressor and the sanctioned government the victim of economic warfare against civilians."
+        },
+        {
+          "figure": "Mahmoud Ahmadinejad / Iranian state media (IRNA/Press TV)",
+          "context": "Iranian government response to nuclear sanctions, 2012",
+          "quote": "The sanctions imposed on the Iranian nation are a crime against humanity. The enemies of Iran are targeting not the government but the Iranian people — they are collective punishment of an innocent nation.",
+          "analogy_link": "The 'collective punishment' framing that converts economic pressure on a government into an attack on a people — structurally separating regime accountability from civilian suffering to maximum propaganda effect."
+        }
+      ],
+      "modern_examples": [
+        {
+          "figure": "Nicolas Maduro / VTV (Venezuelan state television)",
+          "context": "Venezuelan government framing of US sanctions, 2019–present",
+          "quote": "The economic war waged by US imperialism and its lackeys against the Venezuelan people is a form of terrorism. We will not kneel. Venezuela resists.",
+          "trope_match": "economic_siege — sanctions reframed as terrorism and as an act of aggression against the people, not a response to government behaviour — placing moral responsibility for economic collapse entirely on external actors"
+        }
+      ]
+    },
+    {
+      "id": "media_lie",
+      "theme": "All Independent and Western Media Is Fabricated Propaganda Against Us",
+      "taxonomy": {
+        "narrative_strategy": "suppression",
+        "ellul_type": "agitation",
+        "ellul_axis": "vertical",
+        "eco_properties": ["Newspeak","Obsession with a Plot","Disagreement is Treason"],
+        "typical_san_martino_techniques": ["Doubt","Loaded Language","Straw Man","Name Calling/Labeling","Thought-terminating Clichés"],
+        "typical_ipa_techniques": ["Name-calling","Transfer","Card stacking"],
+        "typical_nimmo_4d": "Dismiss",
+        "typical_eudisinfo_narratives": ["Lost Sovereignty","Elites vs People"],
+        "typical_eudisinfo_rhetoric": ["Denial","Attack","Straw Man"],
+        "typical_eudisinfo_conspiracy": ["Anglo-Saxon Plot","Shadow Government / Deep State"],
+        "typical_eudisinfo_ttp": ["Infoshum","Firehose of Falsehood","Conspiracy Amplification","Narrative Laundering"],
+        "myth_function": "eschatological",
+        "enemy_type": "external",
+        "legitimation_mode": ["rationalization","moral"],
+        "frame_function": "diagnostic",
+        "dehumanisation_level": 2,
+        "temporality": "contemporaneous"
+      },
+      "modern_keywords": [
+        "Western propaganda","fake news","information war","lies","media fabrication","mainstream media lies","BBC propaganda","CNN lies","anti-Russian propaganda","biased reporting","information warfare","presstitutes","controlled media"
+      ],
+      "historical_echoes": [
+        {
+          "figure": "Nazi Ministry of Public Enlightenment (Goebbels)",
+          "context": "Systematic use of 'Lügenpresse' (lying press) as propaganda concept, 1933–1945",
+          "quote": "The Lügenpresse — the lying press — is the most dangerous weapon of the enemy. Jewish international finance controls the world press and uses it to destroy National Socialist Germany with lies and falsifications.",
+          "analogy_link": "The 'lying press' framing as a totalising epistemic strategy: once established, any critical media report is pre-emptively classified as fabrication, making fact-checking impossible — the target audience is inoculated against all contrary evidence before it arrives."
+        },
+        {
+          "figure": "Soviet Agitprop / Pravda",
+          "context": "Standard Soviet framing of Western press, Cold War period",
+          "quote": "The bourgeois press does not report news — it manufactures consent for imperialist aggression. Every Western newspaper is an instrument of class warfare disguised as objective journalism.",
+          "analogy_link": "The structural critique of media ownership as a truth-claim: since Western media is owned by capitalists, its output is definitionally propaganda — an argument that pre-empts engagement with any specific factual claim."
+        }
+      ],
+      "modern_examples": [
+        {
+          "figure": "Maria Zakharova / Russian Foreign Ministry",
+          "context": "Regular press briefings, 2022–present",
+          "quote": "Western media are not journalism — they are instruments of information warfare. Everything published about Russia in the Western press is coordinated disinformation designed to justify NATO aggression.",
+          "trope_match": "media_lie — wholesale delegitimisation of all non-state-aligned media, converting fact-checking into evidence of conspiracy and making the state media channel the only credible information source by elimination"
+        }
+      ]
+    },
+    {
+      "id": "unity_demand",
+      "theme": "Internal Dissent in a Time of National Crisis Is Treason",
+      "taxonomy": {
+        "narrative_strategy": "suppression",
+        "ellul_type": "agitation",
+        "ellul_axis": "vertical",
+        "eco_properties": ["Disagreement is Treason","Selective Populism","Obsession with a Plot","Pacifism as Enemy Collaboration"],
+        "typical_san_martino_techniques": ["Appeal to Fear/Prejudice","Flag-Waving","Black-and-White Fallacy","Loaded Language","Thought-terminating Clichés"],
+        "typical_ipa_techniques": ["Bandwagon","Name-calling","Transfer"],
+        "typical_nimmo_4d": "Dismay",
+        "typical_eudisinfo_narratives": ["Elites vs People","Threatened Values"],
+        "typical_eudisinfo_rhetoric": ["Attack","Provocations","Mockery"],
+        "typical_eudisinfo_conspiracy": ["Shadow Government / Deep State","Anglo-Saxon Plot"],
+        "typical_eudisinfo_ttp": ["Emotional Manipulation","Narrative Laundering","Strategic Decontextualization"],
+        "myth_function": "eschatological",
+        "enemy_type": "internal",
+        "legitimation_mode": ["moral","authorization"],
+        "frame_function": "motivational",
+        "dehumanisation_level": 3,
+        "temporality": "contemporaneous"
+      },
+      "modern_keywords": [
+        "national unity","traitors","fifth column","enemies of the state","anti-national","divisive forces","rally behind the flag","this is not the time for politics","unpatriotic","saboteurs","internal enemies","useful idiots of the West","wartime solidarity"
+      ],
+      "historical_echoes": [
+        {
+          "figure": "US Government / Espionage Act",
+          "context": "US Espionage Act 1917 and Sedition Act 1918 — WWI domestic dissent suppression",
+          "quote": "Whoever, when the United States is at war, shall wilfully cause or attempt to cause insubordination, disloyalty, mutiny, or refusal of duty in the military or naval forces of the United States, shall be punished by a fine of not more than $10,000 or imprisonment for not more than twenty years, or both.",
+          "analogy_link": "Legal codification of the unity demand: wartime transforms political dissent from a protected right into a criminal act — demonstrating that the unity-demand trope is not exclusively authoritarian but requires active resistance to prevent abuse in democratic contexts also."
+        },
+        {
+          "figure": "George W. Bush",
+          "context": "Address to Congress, September 20, 2001 — post-9/11 framing",
+          "quote": "Either you are with us, or you are with the terrorists.",
+          "analogy_link": "The binary unity demand in democratic context: the elimination of neutral positions and the conflation of dissent with enemy alignment — structurally identical to authoritarian unity rhetoric, though without the same enforcement mechanisms."
+        }
+      ],
+      "modern_examples": [
+        {
+          "figure": "Isaias Afwerki / Eritrean Ministry of Information",
+          "context": "Eritrean state media framing of opposition political activity, 2000s–present",
+          "quote": "Those who collaborate with foreign powers seeking to destabilise Eritrea are traitors to the national cause. There is no room for division when the nation faces existential threats.",
+          "trope_match": "unity_demand — any political opposition is conflated with foreign destabilisation, making domestic political pluralism structurally equivalent to national treason"
+        }
+      ]
+    },
+    {
+      "id": "ethnic_protection",
+      "theme": "The Regime Must Protect an Ethnic or Religious Group from Persecution",
+      "taxonomy": {
+        "narrative_strategy": "exploitation",
+        "ellul_type": "agitation",
+        "ellul_axis": "vertical",
+        "eco_properties": ["Fear of Difference","Obsession with a Plot","Enemies Too Strong and Too Weak"],
+        "typical_san_martino_techniques": ["Appeal to Fear/Prejudice","Loaded Language","Causal Oversimplification","Black-and-White Fallacy","Exaggeration/Minimisation"],
+        "typical_ipa_techniques": ["Transfer","Appeal to Fear","Name-calling"],
+        "typical_nimmo_4d": "Dismay",
+        "typical_eudisinfo_narratives": ["Threatened Values","Nazis","Lost Sovereignty"],
+        "typical_eudisinfo_rhetoric": ["Attack","Provocations","Straw Man"],
+        "typical_eudisinfo_conspiracy": ["Anglo-Saxon Plot","False Flag"],
+        "typical_eudisinfo_ttp": ["Emotional Manipulation","Fabricated Content","False Context","Strategic Decontextualization"],
+        "myth_function": "heroic",
+        "enemy_type": "ontological",
+        "legitimation_mode": ["moral","rationalization"],
+        "frame_function": "diagnostic",
+        "dehumanisation_level": 4,
+        "temporality": "contemporaneous"
+      },
+      "modern_keywords": [
+        "protect our people","persecution of minorities","ethnic cleansing","compatriots abroad","protect citizens","diaspora under threat","religious persecution","humanitarian corridor","kin-state responsibility","ethnic community under attack","protect Russian speakers","rights of our compatriots"
+      ],
+      "historical_echoes": [
+        {
+          "figure": "Adolf Hitler",
+          "context": "Memorandum to the British ambassador, August 25, 1939 — two days before the invasion of Poland",
+          "quote": "The German minorities in Poland are being subjected to unbearable atrocities. Germany cannot stand by while blood-brothers are physically annihilated. I have therefore decided to solve the Danzig question and the Polish Corridor problem.",
+          "analogy_link": "The Volksdeutsche protection template: a claim of ethnic persecution — fabricated, exaggerated, or real but contextually distorted — as a legal-moral warrant for cross-border military intervention. Reproduced structurally in every kin-state protection argument since."
+        },
+        {
+          "figure": "Slobodan Milošević / SANU Memorandum",
+          "context": "Serbian Academy of Sciences memorandum, 1986 — intellectual foundation for Bosnian war",
+          "quote": "The physical, political, legal, and cultural genocide of the Serbian population of Kosovo and Metohija represents the gravest defeat in the liberation struggle that Serbia has waged… The Serbian people in Kosovo are being subjected to systematic genocide.",
+          "analogy_link": "Pre-emptive genocide accusation as political mobilisation: claiming that an ethnic group faces extinction justifies any action taken to 'protect' it, while converting the future perpetrator into the present victim — the intellectual structure behind Russian 'genocide of Russian speakers in Donbas'."
+        }
+      ],
+      "modern_examples": [
+        {
+          "figure": "Vladimir Putin",
+          "context": "Address recognising Donetsk and Luhansk People's Republics, February 21, 2022. Source: en.kremlin.ru/events/president/news/67828",
+          "quote": "People living in Donbas — Russians — have been subjected to genocide for eight years. We cannot stand aside. Russia will protect its people.",
+          "trope_match": "ethnic_protection — the genocide framing of the Russian-speaking minority serves as the legal and moral trigger for military intervention, converting invasion into humanitarian protection"
         }
       ]
     }

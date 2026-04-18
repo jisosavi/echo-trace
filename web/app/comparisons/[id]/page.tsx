@@ -1,6 +1,7 @@
 import comparisons from '@/public/data/comparisons.json';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import type React from 'react';
 
 type Analysis = {
   theme?: string;
@@ -22,6 +23,9 @@ type Comparison = {
   timestamp: string;
   source: { publication: string; url: string };
   contemporary_quote: string;
+  contemporary_quote_en?: string;
+  translation_language?: string;
+  translation_service?: string;
   historical_parallel: string;
   tropes: string[];
   confidence: number;
@@ -75,6 +79,19 @@ function TagList({ items, className = 'border-zinc-700 bg-zinc-800/60 text-zinc-
   );
 }
 
+function CiteLink({ children, href }: { children: React.ReactNode; href: string }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-xs text-zinc-600 underline underline-offset-2 hover:text-zinc-400"
+    >
+      {children}
+    </a>
+  );
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function DimRow({ label, children }: { label: string; children: any }) {
   return (
@@ -85,9 +102,10 @@ function DimRow({ label, children }: { label: string; children: any }) {
   );
 }
 
-export default function ComparisonDetailPage({ params }: { params: { id: string } }) {
+export default async function ComparisonDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   const data = comparisons as Comparison[];
-  const item = data.find((entry) => entry.id === params.id);
+  const item = data.find((entry) => entry.id === id);
 
   if (!item) {
     notFound();
@@ -108,6 +126,14 @@ export default function ComparisonDetailPage({ params }: { params: { id: string 
       {/* Contemporary quote */}
       <blockquote className="mt-6 rounded-lg border border-zinc-800 bg-zinc-900/40 p-5">
         <p className="text-zinc-200 leading-relaxed">"{item.contemporary_quote}"</p>
+        {item.contemporary_quote_en && (
+          <div className="mt-4 border-t border-zinc-800 pt-4">
+            <p className="text-zinc-300 leading-relaxed italic">"{item.contemporary_quote_en}"</p>
+            <p className="mt-1.5 text-xs text-zinc-600">
+              Translated from {item.translation_language} by {item.translation_service}
+            </p>
+          </div>
+        )}
         <footer className="mt-3 text-sm text-zinc-500">
           <a
             href={item.source.url}
@@ -173,7 +199,7 @@ export default function ComparisonDetailPage({ params }: { params: { id: string 
                 <span className={`rounded border px-2 py-0.5 text-xs ${strategyBadge(item.analysis.narrative_strategy)}`}>
                   {item.analysis.narrative_strategy}
                 </span>
-                <span className="ml-3 text-xs text-zinc-500">Lank &amp; Antai 2025</span>
+                <span className="ml-3"><CiteLink href="https://doi.org/10.1177/19401612251317696">Lank &amp; Antai 2025</CiteLink></span>
               </DimRow>
             )}
 
@@ -182,7 +208,7 @@ export default function ComparisonDetailPage({ params }: { params: { id: string 
                 <span className={`rounded border px-2 py-0.5 text-xs ${nimmoBadge(item.analysis.nimmo_4d)}`}>
                   {item.analysis.nimmo_4d}
                 </span>
-                <span className="ml-3 text-xs text-zinc-500">DFRLab / Ben Nimmo</span>
+                <span className="ml-3"><CiteLink href="https://euvsdisinfo.eu/the-4d-approach/">DFRLab / Ben Nimmo</CiteLink></span>
               </DimRow>
             )}
 
@@ -196,7 +222,7 @@ export default function ComparisonDetailPage({ params }: { params: { id: string 
                     {item.analysis.ellul_axis}
                   </span>
                 )}
-                <span className="ml-3 text-xs text-zinc-500">Ellul 1965</span>
+                <span className="ml-3"><CiteLink href="https://en.wikipedia.org/wiki/Propaganda_(Ellul_book)">Ellul 1965</CiteLink></span>
               </DimRow>
             )}
 
@@ -204,7 +230,7 @@ export default function ComparisonDetailPage({ params }: { params: { id: string 
               <DimRow label="Techniques (18)">
                 <div>
                   <TagList items={item.analysis.san_martino_techniques} />
-                  <p className="mt-1.5 text-xs text-zinc-600">Da San Martino et al., ACL 2019</p>
+                  <p className="mt-1.5"><CiteLink href="https://aclanthology.org/W19-2006/">Da San Martino et al. — Fine-Grained Analysis of Propaganda in News Articles, ACL 2019</CiteLink></p>
                 </div>
               </DimRow>
             )}
@@ -213,7 +239,7 @@ export default function ComparisonDetailPage({ params }: { params: { id: string 
               <DimRow label="IPA techniques">
                 <div>
                   <TagList items={item.analysis.ipa_techniques} />
-                  <p className="mt-1.5 text-xs text-zinc-600">Institute for Propaganda Analysis, 1937</p>
+                  <p className="mt-1.5"><CiteLink href="https://en.wikipedia.org/wiki/Institute_for_Propaganda_Analysis">Institute for Propaganda Analysis — 7 Techniques, 1937</CiteLink></p>
                 </div>
               </DimRow>
             )}
@@ -222,7 +248,7 @@ export default function ComparisonDetailPage({ params }: { params: { id: string 
               <DimRow label="Ur-Fascism features">
                 <div>
                   <TagList items={item.analysis.eco_properties} />
-                  <p className="mt-1.5 text-xs text-zinc-600">Umberto Eco, 1995</p>
+                  <p className="mt-1.5"><CiteLink href="https://en.wikipedia.org/wiki/Ur-Fascism">Umberto Eco — Ur-Fascism (14 features), 1995</CiteLink></p>
                 </div>
               </DimRow>
             )}
@@ -234,7 +260,7 @@ export default function ComparisonDetailPage({ params }: { params: { id: string 
                     items={item.analysis.eudisinfo_narratives}
                     className="border-red-900 bg-red-950/40 text-red-300"
                   />
-                  <p className="mt-1.5 text-xs text-zinc-600">EUvsDisinfo — 6 key narratives</p>
+                  <p className="mt-1.5"><CiteLink href="https://euvsdisinfo.eu/disinformation-cases/">EUvsDisinfo — 6 Key Pro-Kremlin Narratives</CiteLink></p>
                 </div>
               </DimRow>
             )}
@@ -246,7 +272,7 @@ export default function ComparisonDetailPage({ params }: { params: { id: string 
                     items={item.analysis.eudisinfo_rhetoric}
                     className="border-orange-900 bg-orange-950/40 text-orange-300"
                   />
-                  <p className="mt-1.5 text-xs text-zinc-600">EUvsDisinfo Modus Trollerandi</p>
+                  <p className="mt-1.5"><CiteLink href="https://euvsdisinfo.eu/modus-trollerandi-the-kremlin-rhetoric/">EUvsDisinfo — Modus Trollerandi (SWAMPED, 7 devices)</CiteLink></p>
                 </div>
               </DimRow>
             )}
@@ -258,7 +284,7 @@ export default function ComparisonDetailPage({ params }: { params: { id: string 
                     items={item.analysis.eudisinfo_conspiracy}
                     className="border-violet-900 bg-violet-950/40 text-violet-300"
                   />
-                  <p className="mt-1.5 text-xs text-zinc-600">EUvsDisinfo — conspiracy theories</p>
+                  <p className="mt-1.5"><CiteLink href="https://euvsdisinfo.eu/disinformation-cases/">EUvsDisinfo — Conspiracy Theory Archetypes</CiteLink></p>
                 </div>
               </DimRow>
             )}
@@ -270,7 +296,7 @@ export default function ComparisonDetailPage({ params }: { params: { id: string 
                     items={item.analysis.eudisinfo_ttp}
                     className="border-yellow-900 bg-yellow-950/40 text-yellow-300"
                   />
-                  <p className="mt-1.5 text-xs text-zinc-600">EUvsDisinfo — tactics, techniques &amp; procedures</p>
+                  <p className="mt-1.5"><CiteLink href="https://www.disarmframework.com/">DISARM Framework / EUvsDisinfo — Tactics, Techniques &amp; Procedures</CiteLink></p>
                 </div>
               </DimRow>
             )}

@@ -190,6 +190,44 @@ function quoteHasUsefulSignal(sentence) {
   );
 }
 
+function isBoilerplateQuote(quote) {
+  const q = quote.trim();
+  return (
+    q.startsWith('©') ||
+    /all rights reserved/i.test(q) ||
+    /derechos reservados/i.test(q) ||
+    /droits réservés/i.test(q) ||
+    /\(\+\d{2,}\).*\(\+\d{2,}\)/.test(q) ||  // multiple phone numbers
+    /sitio diseñado/i.test(q)
+  );
+}
+
+const NO_PROPAGANDA_PATTERNS = [
+  /^N\/A\s*[—–-]/i,
+  /^None\s*[—–-]/i,
+  /no propaganda/i,
+  /not.*propaganda/i,
+  /non-propaganda/i,
+  /no.*disinformation/i,
+  /legitimate.*news/i,
+  /factual.*report/i,
+  /website footer/i,
+  /horoscope/i,
+  /sports journalism/i,
+  /educational content/i,
+  /commercial aviation/i,
+  /crime.*report/i,
+  /domestic.*no propaganda/i,
+  /not.*related.*propaganda/i,
+  /no.*trope.*detected/i,
+  /no propaganda.*detected/i,
+];
+
+function isPropagandaContent(claudeResult) {
+  const theme = claudeResult?.analysis?.theme ?? '';
+  return !NO_PROPAGANDA_PATTERNS.some((p) => p.test(theme));
+}
+
 function isWeakExtraction(text, quote) {
   if (!text || text.length < 260) {
     return true;
@@ -398,7 +436,7 @@ async function fetchArticleTextWithPuppeteer(targetUrl) {
       'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
     );
     await page.goto(targetUrl, { waitUntil: 'domcontentloaded', timeout: 45000 });
-    await page.waitForTimeout(1500);
+    await new Promise((r) => setTimeout(r, 1500));
 
     const extracted = await page.evaluate(() => {
       const readMeta = (selector) => {
@@ -577,6 +615,34 @@ ${articleText.slice(0, 3000)}`
   };
 }
 
+async function translateQuoteIfNeeded(quote) {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) return null;
+
+  const client = new Anthropic({ apiKey });
+  const message = await client.messages.create({
+    model: 'claude-haiku-4-5-20251001',
+    max_tokens: 512,
+    messages: [
+      {
+        role: 'user',
+        content: `Detect the language of the following text. If it is English, respond with {"language":"English","translation":null}. If it is not English, translate it into formal UK English and respond with {"language":"<detected language full name in English>","translation":"<UK English translation>"}.
+
+Text: ${JSON.stringify(quote)}
+
+Respond with JSON only, no prose.`
+      }
+    ]
+  });
+
+  const raw = message.content[0].text.trim();
+  const jsonMatch = raw.match(/\{[\s\S]*\}/);
+  if (!jsonMatch) return null;
+  const result = JSON.parse(jsonMatch[0]);
+  if (!result.translation || result.language === 'English') return null;
+  return { language: result.language, translation: result.translation };
+}
+
 async function runHistoricalAnalysis(modernQuote, trope, articleText) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey || !trope) {
@@ -706,6 +772,24 @@ async function main() {
     classificationMethod = 'keyword';
   }
 
+  if (isBoilerplateQuote(quote)) {
+    await log(`skipped boilerplate-quote url=${targetUrl}`);
+    return;
+  }
+
+  if (claudeResult && !isPropagandaContent(claudeResult)) {
+    await log(`skipped non-propaganda url=${targetUrl} theme="${claudeResult.analysis?.theme?.slice(0, 80)}"`);
+    return;
+  }
+
+  const translationResult = await translateQuoteIfNeeded(quote).catch(async (err) => {
+    await log(`translation failed: ${err instanceof Error ? err.message : 'unknown'}`);
+    return null;
+  });
+  if (translationResult) {
+    await log(`translated quote from ${translationResult.language} for url=${targetUrl}`);
+  }
+
   let historicalEcho = null;
   if (confidence >= 0.4) {
     historicalEcho = await runHistoricalAnalysis(quote, trope, extraction.text).catch(async (err) => {
@@ -729,6 +813,11 @@ async function main() {
       url: targetUrl
     },
     contemporary_quote: quote,
+    ...(translationResult && {
+      contemporary_quote_en: translationResult.translation,
+      translation_language: translationResult.language,
+      translation_service: 'Claude claude-haiku-4-5'
+    }),
     historical_parallel: trope?.theme ?? 'Unclassified rhetorical pattern',
     tropes: trope?.id ? [trope.id] : ['unclassified'],
     confidence,

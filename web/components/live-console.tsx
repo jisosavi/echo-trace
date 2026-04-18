@@ -10,11 +10,11 @@ type LiveConsoleProps = {
 const MAX_LINES = 120;
 
 function clipLogs(lines: string[]): string[] {
-  return lines.slice(-MAX_LINES);
+  return lines.slice(0, MAX_LINES);
 }
 
 export function LiveConsole({ initialLogs = [] }: LiveConsoleProps) {
-  const [logs, setLogs] = useState<string[]>(() => clipLogs(initialLogs));
+  const [logs, setLogs] = useState<string[]>(() => clipLogs([...initialLogs].reverse()));
   const [connected, setConnected] = useState(false);
 
   useEffect(() => {
@@ -30,18 +30,18 @@ export function LiveConsole({ initialLogs = [] }: LiveConsoleProps) {
 
     source.addEventListener('snapshot', (event) => {
       const payload = JSON.parse((event as MessageEvent<string>).data) as string[];
-      setLogs(clipLogs(payload));
+      setLogs(clipLogs([...payload].reverse()));
     });
 
     source.addEventListener('append', (event) => {
       const payload = JSON.parse((event as MessageEvent<string>).data) as string[];
-      setLogs((current) => clipLogs([...current, ...payload]));
+      setLogs((current) => clipLogs([...payload].reverse().concat(current)));
     });
 
     source.addEventListener('status', (event) => {
       const payload = JSON.parse((event as MessageEvent<string>).data) as { message?: string };
       if (payload.message) {
-        setLogs((current) => clipLogs([...current, `[system] ${payload.message}`]));
+        setLogs((current) => clipLogs([`[system] ${payload.message}`, ...current]));
       }
     });
 
@@ -63,7 +63,7 @@ export function LiveConsole({ initialLogs = [] }: LiveConsoleProps) {
         {logs.map((line, idx) => (
           <motion.p
             key={`${line}-${idx}`}
-            initial={{ opacity: 0, y: 3 }}
+            initial={{ opacity: 0, y: -4 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2 }}
           >

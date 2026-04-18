@@ -1,6 +1,5 @@
 import comparisons from '@/public/data/comparisons.json';
 import Link from 'next/link';
-import { LiveConsole } from '@/components/live-console';
 
 type Analysis = {
   theme?: string;
@@ -18,6 +17,9 @@ type Comparison = {
   timestamp: string;
   source: { publication: string; url: string };
   contemporary_quote: string;
+  contemporary_quote_en?: string;
+  translation_language?: string;
+  translation_service?: string;
   historical_parallel: string;
   tropes: string[];
   confidence: number;
@@ -67,14 +69,6 @@ export default function ComparisonsPage() {
         </Link>
       </header>
 
-      <LiveConsole
-        initialLogs={[
-          '[cycle] live console initialized',
-          '[cycle] waiting for stream events from /api/logs',
-          `[cycle] seed: ${data.length} comparison records loaded`
-        ]}
-      />
-
       <section className="grid gap-4">
         {data.map((item) => (
           <article key={item.id} className="rounded-lg border border-zinc-800 bg-zinc-900/40 p-5">
@@ -91,6 +85,14 @@ export default function ComparisonsPage() {
             )}
 
             <p className="mt-3 line-clamp-3 text-sm text-zinc-300">"{item.contemporary_quote}"</p>
+            {item.contemporary_quote_en && (
+              <div className="mt-1">
+                <p className="line-clamp-3 text-sm text-zinc-400 italic">"{item.contemporary_quote_en}"</p>
+                <p className="mt-0.5 text-[10px] text-zinc-600">
+                  Translated from {item.translation_language} by {item.translation_service}
+                </p>
+              </div>
+            )}
 
             <div className="mt-4 flex flex-wrap gap-2">
               {item.tropes.map((trope) => (

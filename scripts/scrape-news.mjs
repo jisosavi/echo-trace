@@ -1,14 +1,20 @@
 #!/usr/bin/env node
 /**
  * scrape-news.mjs
- * Scrapes article URLs from 24 state/pro-government sources using native fetch
+ * Scrapes article URLs from 31 state/pro-government sources using native fetch
  * + cheerio. Falls back to Puppeteer only when a source returns fewer than 2
- * matching links (indicating a JS-rendered page).
+ * matching links (indicating a JS-rendered page). Sources with rssUrl use RSS
+ * feed parsing instead of HTML scraping.
  *
  * Writes normalized records to agent/data/raw-news.json.
  * Prints new article URLs to stdout (one per line) for cycle.sh.
  *
- * Usage: node scripts/scrape-news.mjs
+ * Usage: node scripts/scrape-news.mjs [options]
+ *
+ * Options:
+ *   --source <name>   Only scrape this source (case-insensitive, partial match OK)
+ *   --regime <name>   Only scrape sources from this regime (e.g. "Russia", "Iran")
+ *   --limit <n>       Max new articles to collect across all sources
  */
 import { appendFile, mkdir, readFile, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
@@ -22,33 +28,27 @@ const ROOT_DIR = path.resolve(__dirname, '..');
 const RAW_NEWS_PATH = path.join(ROOT_DIR, 'agent/data/raw-news.json');
 const LOG_PATH = path.join(ROOT_DIR, 'agent/data/cycle.log');
 
-const FETCH_HEADERS = {
-  'User-Agent':
-    'Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-  Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-  'Accept-Language': 'en-US,en;q=0.9'
-};
+const USER_AGENTS = [
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0',
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15',
+  'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+];
+
+function getFetchHeaders() {
+  return {
+    'User-Agent': USER_AGENTS[Math.floor(Math.random() * USER_AGENTS.length)],
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'Accept-Language': 'en-US,en;q=0.9',
+  };
+}
 
 // ── Source configs ────────────────────────────────────────────────────────────
 
 const SOURCES = [
   // ── Russia ──────────────────────────────────────────────────────────────────
-  {
-    name: 'RT',
-    regime: 'Russia',
-    language: 'en',
-    frontPage: 'https://www.rt.com/news/',
-    articlePattern: /^https:\/\/(www\.)?rt\.com\/(news|russia|world|politics|business|op-ed)\/\d+/,
-    maxArticles: 4
-  },
-  {
-    name: 'Sputnik',
-    regime: 'Russia',
-    language: 'en',
-    frontPage: 'https://sputniknews.com/',
-    articlePattern: /^https:\/\/sputniknews\.com\/\d{8}\/[a-z0-9-]+-\d+\.html/,
-    maxArticles: 4
-  },
+  // RT and Sputnik are CF-blocked from direct fetch and RSS; removed.
   {
     name: 'TASS',
     regime: 'Russia',
@@ -62,7 +62,7 @@ const SOURCES = [
     regime: 'Russia',
     language: 'en',
     frontPage: 'http://en.kremlin.ru/events/president/news',
-    articlePattern: /^https?:\/\/en\.kremlin\.ru\/(events|news)\/[a-z\/]+\/\d+/,
+    articlePattern: /^https?:\/\/en\.kremlin\.ru\/(events|news)\/[a-z\/]+\/\d+(?!\/photos|\/video|\/audio)/,
     maxArticles: 3
   },
   {
@@ -79,8 +79,8 @@ const SOURCES = [
     name: 'Xinhua',
     regime: 'China',
     language: 'en',
-    frontPage: 'https://english.news.cn/',
-    articlePattern: /^https:\/\/english\.news\.cn\/\d{8}\/[a-z0-9_]+\.htm/,
+    frontPage: 'https://english.news.cn/world/index.htm',
+    articlePattern: /^https:\/\/english\.news\.cn\/(?:[a-z]+\/)?[0-9]{8}\/[a-f0-9]{32}\/c\.html/,
     maxArticles: 4
   },
   {
@@ -100,45 +100,29 @@ const SOURCES = [
     maxArticles: 4
   },
   {
-    name: 'CGTN',
+    name: 'Global Times',
     regime: 'China',
     language: 'en',
-    frontPage: 'https://news.cgtn.com/',
-    articlePattern: /^https:\/\/news\.cgtn\.com\/news\/\d{4}-\d{2}-\d{2}\//,
+    frontPage: 'https://www.globaltimes.cn/world/',
+    articlePattern: /^https:\/\/www\.globaltimes\.cn\/page\/\d{6}\/\d{7}\.shtml/,
     maxArticles: 4
-  },
-  {
-    name: 'China.org.cn',
-    regime: 'China',
-    language: 'en',
-    frontPage: 'http://www.china.org.cn/world/',
-    articlePattern: /^https?:\/\/(www\.)?china\.org\.cn\/[a-z\/_-]+\d{4}-\d{2}\/[a-z0-9_]+\.htm/,
-    maxArticles: 3
   },
 
-  // ── Saudi Arabia ─────────────────────────────────────────────────────────────
+  // ── Middle East ───────────────────────────────────────────────────────────────
   {
-    name: 'SPA',
-    regime: 'Saudi Arabia',
+    name: 'Al Jazeera',
+    regime: 'Qatar',
     language: 'en',
-    frontPage: 'https://www.spa.gov.sa/en',
-    articlePattern: /^https:\/\/www\.spa\.gov\.sa\/en\/[a-z0-9-]+-\d+/,
+    frontPage: 'https://www.aljazeera.com/news/',
+    articlePattern: /^https:\/\/www\.aljazeera\.com\/(news|features|opinion)\/\d{4}\/\d{1,2}\/\d{1,2}\//,
     maxArticles: 4
   },
   {
-    name: 'Al Arabiya',
-    regime: 'Saudi Arabia',
+    name: 'Middle East Eye',
+    regime: 'Qatar',
     language: 'en',
-    frontPage: 'https://english.alarabiya.net/',
-    articlePattern: /^https:\/\/english\.alarabiya\.net\/[A-Za-z]+\/[a-z-]+\/\d{4}\/\d{2}\/\d{2}\//,
-    maxArticles: 4
-  },
-  {
-    name: 'Arab News',
-    regime: 'Saudi Arabia',
-    language: 'en',
-    frontPage: 'https://www.arabnews.com/',
-    articlePattern: /^https:\/\/(www\.)?arabnews\.com\/node\/\d{6,}/,
+    frontPage: 'https://www.middleeasteye.net/news',
+    articlePattern: /^https:\/\/www\.middleeasteye\.net\/news\/[a-z0-9-]{10,}/,
     maxArticles: 4
   },
   {
@@ -151,22 +135,15 @@ const SOURCES = [
   },
 
   // ── North Korea ──────────────────────────────────────────────────────────────
-  // Note: NK sites are often inaccessible outside the country; failures are expected.
+  // Naenara returns 404; removed. KCNA works from Finnish IP.
   {
     name: 'KCNA',
     regime: 'North Korea',
     language: 'en',
     frontPage: 'https://kcna.kp/en/',
     articlePattern: /^https:\/\/kcna\.kp\/en\/article\//,
-    maxArticles: 3
-  },
-  {
-    name: 'Naenara',
-    regime: 'North Korea',
-    language: 'en',
-    frontPage: 'http://www.naenara.com.kp/en/news/',
-    articlePattern: /^https?:\/\/www\.naenara\.com\.kp\/en\/(news|politics|economy)\//,
-    maxArticles: 3
+    maxArticles: 3,
+    timeout: 45000
   },
 
   // ── Cuba ─────────────────────────────────────────────────────────────────────
@@ -195,13 +172,139 @@ const SOURCES = [
     maxArticles: 3
   },
 
+  // ── Iran ─────────────────────────────────────────────────────────────────────
+  {
+    name: 'Press TV',
+    regime: 'Iran',
+    language: 'en',
+    frontPage: 'https://www.presstv.ir/',
+    articlePattern: /^https?:\/\/(www\.)?presstv\.ir\/Detail\/\d{4}\/\d{2}\/\d{2}\/\d+/,
+    maxArticles: 4
+  },
+  {
+    name: 'Tehran Times',
+    regime: 'Iran',
+    language: 'en',
+    frontPage: 'https://www.tehrantimes.com/',
+    articlePattern: /^https:\/\/(www\.)?tehrantimes\.com\/news\/[5-9]\d{5}\//,
+    maxArticles: 4
+  },
+
+  // ── Belarus ──────────────────────────────────────────────────────────────────
+  {
+    name: 'BelTA',
+    regime: 'Belarus',
+    language: 'en',
+    frontPage: 'https://eng.belta.by/',
+    articlePattern: /^https:\/\/eng\.belta\.by\/[a-z]+\/view\/[a-z0-9-]+-\d+/,
+    maxArticles: 4
+  },
+  {
+    name: 'SB Belarus',
+    regime: 'Belarus',
+    language: 'ru',
+    frontPage: 'https://www.sb.by/articles/',
+    articlePattern: /^https:\/\/(www\.)?sb\.by\/articles\/[a-z0-9-]+\.html/,
+    maxArticles: 3
+  },
+
+  // ── Eritrea ───────────────────────────────────────────────────────────────────
+  {
+    name: 'Shabait',
+    regime: 'Eritrea',
+    language: 'en',
+    rssUrl: 'https://shabait.com/feed/',
+    articlePattern: /^https:\/\/shabait\.com\/\d{4}\/\d{2}\/\d{2}\/[a-z][a-z0-9-]+\//,
+    maxArticles: 3
+  },
+
+  // ── Syria ─────────────────────────────────────────────────────────────────────
+  {
+    name: 'SANA',
+    regime: 'Syria',
+    language: 'en',
+    rssUrl: 'https://sana.sy/en/feed/',
+    articlePattern: /^https:\/\/sana\.sy\/en\/[a-z-]+\/\d{7,}\//,
+    maxArticles: 3
+  },
+
+  // ── Turkmenistan ──────────────────────────────────────────────────────────────
+  {
+    name: 'TDH',
+    regime: 'Turkmenistan',
+    language: 'en',
+    frontPage: 'https://tdh.gov.tm/en/',
+    articlePattern: /^https:\/\/tdh\.gov\.tm\/en\/post\/\d{4,}\//,
+    maxArticles: 3
+  },
+
+  // ── Western Sahara ────────────────────────────────────────────────────────────
+  {
+    name: 'SPS',
+    regime: 'Western Sahara',
+    language: 'en',
+    frontPage: 'https://spsrasd.info/en',
+    articlePattern: /^https:\/\/spsrasd\.info\/en\/\d{4}\/\d{2}\/\d{2}\/\d+\.html/,
+    maxArticles: 3
+  },
+
+  // ── Myanmar ───────────────────────────────────────────────────────────────────
+  {
+    name: 'GNLM',
+    regime: 'Myanmar',
+    language: 'en',
+    rssUrl: 'https://www.gnlm.com.mm/feed/',
+    articlePattern: /^https:\/\/www\.gnlm\.com\.mm\/[a-z][a-z0-9-]{10,}\/$/,
+    maxArticles: 3
+  },
+
+  // ── Tajikistan ────────────────────────────────────────────────────────────────
+  {
+    name: 'Khovar',
+    regime: 'Tajikistan',
+    language: 'en',
+    rssUrl: 'http://eng.khovar.tj/feed/',
+    articlePattern: /^https?:\/\/eng\.khovar\.tj\/\d{4}\/\d{2}\/[a-z0-9-]+\//,
+    maxArticles: 3
+  },
+
+  // ── Yemen ─────────────────────────────────────────────────────────────────────
+  {
+    name: 'SABA',
+    regime: 'Yemen',
+    language: 'en',
+    frontPage: 'https://www.saba.ye/en',
+    articlePattern: /^https:\/\/www\.saba\.ye\/en\/news\d+\.htm/,
+    maxArticles: 3
+  },
+
+  // ── Eswatini (Swaziland) ─────────────────────────────────────────────────────
+  // Eswatini Observer: owned by Tibiyo Taka Ngwane (King Mswati III's sovereign fund)
+  {
+    name: 'Eswatini Observer',
+    regime: 'Eswatini',
+    language: 'en',
+    rssUrl: 'https://eswatiniobserver.com/feed/',
+    articlePattern: /^https:\/\/eswatiniobserver\.com\/[a-z][a-z0-9-]{10,}\/$/,
+    maxArticles: 3
+  },
+  // Times of Eswatini: largest daily, operates under royal/government pressure
+  {
+    name: 'Times of Eswatini',
+    regime: 'Eswatini',
+    language: 'en',
+    frontPage: 'https://www.times.co.sz/',
+    articlePattern: /^https:\/\/www\.times\.co\.sz\/[a-z]+\/readmore\.php\?.*yiphi=\d+/,
+    maxArticles: 3
+  },
+
   // ── Hungary (Fidesz) ─────────────────────────────────────────────────────────
   {
     name: 'Origo',
     regime: 'Hungary',
     language: 'hu',
-    frontPage: 'https://www.origo.hu/',
-    articlePattern: /^https:\/\/(www\.)?origo\.hu\/[a-z]+\/\d{4}-\d{2}-\d{2}/,
+    rssUrl: 'https://api.origo.hu/publicapi/hu/rss/origo/itthon/articles',
+    articlePattern: /^https:\/\/www\.origo\.hu\/[a-z]+\/\d{4}\/\d{2}\/[a-z0-9-]+/,
     maxArticles: 3
   },
   {
@@ -252,11 +355,11 @@ async function loadExisting() {
   }
 }
 
-async function fetchHtml(url) {
+async function fetchHtml(url, timeout = 20000) {
   const response = await fetch(url, {
-    headers: FETCH_HEADERS,
+    headers: getFetchHeaders(),
     redirect: 'follow',
-    signal: AbortSignal.timeout(20000)
+    signal: AbortSignal.timeout(timeout)
   });
   if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText}`);
   return response.text();
@@ -264,8 +367,20 @@ async function fetchHtml(url) {
 
 // ── URL discovery ─────────────────────────────────────────────────────────────
 
+async function discoverUrlsFromRss(source) {
+  const xml = await fetchHtml(source.rssUrl, source.timeout);
+  const urls = [];
+  const linkPattern = /<link>\s*(?:<!\[CDATA\[)?\s*(https?[^<\]]+?)\s*(?:\]\]>)?\s*<\/link>/g;
+  let match;
+  while ((match = linkPattern.exec(xml)) !== null) {
+    const url = match[1].trim();
+    if (source.articlePattern.test(url)) urls.push(url);
+  }
+  return [...new Set(urls)].slice(0, source.maxArticles);
+}
+
 async function discoverUrlsWithFetch(source) {
-  const html = await fetchHtml(source.frontPage);
+  const html = await fetchHtml(source.frontPage, source.timeout);
   const $ = cheerio.load(html);
   const hrefs = new Set();
 
@@ -320,6 +435,8 @@ async function discoverUrlsWithPuppeteer(source) {
 }
 
 async function discoverArticleUrls(source) {
+  if (source.rssUrl) return discoverUrlsFromRss(source);
+
   const urls = await discoverUrlsWithFetch(source);
   if (urls.length >= 2) return urls;
 
@@ -330,8 +447,8 @@ async function discoverArticleUrls(source) {
 
 // ── Article metadata extraction ───────────────────────────────────────────────
 
-async function extractArticleMetadata(url, source) {
-  const html = await fetchHtml(url);
+async function extractArticleMetadata(url, source, timeout) {
+  const html = await fetchHtml(url, timeout);
   const $ = cheerio.load(html);
 
   const title =
@@ -354,6 +471,14 @@ async function extractArticleMetadata(url, source) {
     if (text.length >= 40) paragraphs.push(text);
   });
 
+  // Fallback for sites that use divs instead of <p> for article body
+  if (paragraphs.length === 0) {
+    $('[class*="mainText"], [class*="article-body"], [class*="entry-content"], [class*="post-content"]').each((_, el) => {
+      const text = $(el).text().replace(/\s+/g, ' ').trim();
+      if (text.length >= 80) paragraphs.push(text);
+    });
+  }
+
   return {
     source: source.name,
     language: source.language,
@@ -363,16 +488,43 @@ async function extractArticleMetadata(url, source) {
   };
 }
 
+// ── CLI ───────────────────────────────────────────────────────────────────────
+
+function parseArgs() {
+  const args = process.argv.slice(2);
+  const opts = { source: null, regime: null, limit: Infinity };
+  for (let i = 0; i < args.length; i++) {
+    switch (args[i]) {
+      case '--source': opts.source = args[++i].toLowerCase(); break;
+      case '--regime': opts.regime = args[++i].toLowerCase(); break;
+      case '--limit':  opts.limit  = parseInt(args[++i], 10); break;
+    }
+  }
+  return opts;
+}
+
 // ── Main ──────────────────────────────────────────────────────────────────────
 
 async function main() {
-  await log('scrape cycle started');
+  const opts = parseArgs();
+
+  let activeSources = SOURCES;
+  if (opts.source) activeSources = activeSources.filter((s) => s.name.toLowerCase().includes(opts.source));
+  if (opts.regime) activeSources = activeSources.filter((s) => s.regime.toLowerCase().includes(opts.regime));
+
+  if (activeSources.length === 0) {
+    console.error(`No sources matched. Available: ${SOURCES.map((s) => s.name).join(', ')}`);
+    process.exit(1);
+  }
+
+  await log(`scrape cycle started sources=${activeSources.map((s) => s.name).join(',')}`);
 
   const existing = await loadExisting();
   const seenUrls = new Set(existing.map((r) => r.url));
   const newRecords = [];
 
-  for (const source of SOURCES) {
+  for (const source of activeSources) {
+    if (newRecords.length >= opts.limit) break;
     let articleUrls;
     try {
       articleUrls = await discoverArticleUrls(source);
@@ -383,6 +535,7 @@ async function main() {
     }
 
     for (const url of articleUrls) {
+      if (newRecords.length >= opts.limit) break;
       if (seenUrls.has(url)) {
         await log(`skip existing url=${url}`);
         continue;
@@ -390,7 +543,7 @@ async function main() {
 
       try {
         await randomDelay(600, 1400);
-        const article = await extractArticleMetadata(url, source);
+        const article = await extractArticleMetadata(url, source, source.timeout);
 
         if (!article.body || article.body.length < 100) {
           await log(`skip thin-content url=${url}`);
@@ -421,7 +574,7 @@ async function main() {
   const updated = [...newRecords, ...existing];
   await mkdir(path.dirname(RAW_NEWS_PATH), { recursive: true });
   await writeFile(RAW_NEWS_PATH, `${JSON.stringify(updated, null, 2)}\n`, 'utf8');
-  await log(`scrape cycle complete new=${newRecords.length} total=${updated.length}`);
+  await log(`scrape cycle complete new=${newRecords.length} total=${updated.length}${opts.limit < Infinity ? ` (limit=${opts.limit})` : ''}`);
 
   // Print new URLs to stdout so cycle.sh can pick them up.
   for (const record of newRecords) {
