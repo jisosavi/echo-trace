@@ -1,5 +1,13 @@
-import comparisons from '@/public/data/comparisons.json';
+import { promises as fs } from 'node:fs';
+import path from 'node:path';
 import Link from 'next/link';
+import { StatusBar } from '@/components/status-bar';
+import { formatUTC } from '@/lib/format';
+import { getSourceMeta } from '@/lib/source-meta';
+
+export const dynamic = 'force-dynamic';
+
+const COMPARISONS_PATH = path.resolve(process.cwd(), 'public/data/comparisons.json');
 
 type Analysis = {
   theme?: string;
@@ -54,26 +62,22 @@ function ellulBadge(t: string) {
     : 'border-teal-800 bg-teal-900/40 text-teal-300';
 }
 
-export default function ComparisonsPage() {
-  const data = comparisons as Comparison[];
+export default async function ComparisonsPage() {
+  const data = JSON.parse(await fs.readFile(COMPARISONS_PATH, 'utf8')) as Comparison[];
 
   return (
     <main className="mx-auto flex min-h-screen w-full max-w-5xl flex-col gap-8 px-6 py-12">
-      <header className="flex items-end justify-between gap-4">
-        <div>
-          <h1 className="text-3xl font-semibold">Comparison Feed</h1>
-          <p className="mt-2 text-zinc-400">Continuously updated forensic semiotic matches.</p>
-        </div>
-        <Link className="text-sm text-zinc-300 hover:text-white" href="/">
-          Back home
-        </Link>
+      <header>
+        <h1 className="text-3xl font-semibold">Rhetorical Echoes of Propaganda</h1>
+        <p className="mt-2 text-zinc-400">Continuously updated forensic semiotic matches between contemporary state media and 20th-century dictatorial rhetoric.</p>
       </header>
+      <StatusBar show={['analysis']} />
 
       <section className="grid gap-4">
         {data.map((item) => (
           <article key={item.id} className="rounded-lg border border-zinc-800 bg-zinc-900/40 p-5">
             <div className="mb-2 flex items-center justify-between gap-4">
-              <p className="text-xs text-zinc-500">{new Date(item.timestamp).toLocaleString()}</p>
+              <p className="text-xs text-zinc-500">{formatUTC(item.timestamp)}</p>
               <span className="text-xs text-zinc-500">{Math.round(item.confidence * 100)}% confidence</span>
             </div>
 
@@ -117,18 +121,39 @@ export default function ComparisonsPage() {
               )}
             </div>
 
-            <div className="mt-4 flex items-center justify-between">
-              <a
-                className="text-sm text-sky-300 hover:text-sky-200"
-                href={item.source.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {item.source.publication}
-              </a>
+            <div className="mt-4 flex items-center justify-between gap-4">
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm">
+                <a
+                  className="text-sky-300 hover:text-sky-200"
+                  href={item.source.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {item.source.publication}
+                </a>
+                {(() => {
+                  const meta = getSourceMeta(item.source.url);
+                  if (!meta) return null;
+                  return (
+                    <>
+                      <span className="text-zinc-600">·</span>
+                      <span className="text-zinc-500">{meta.flag} {meta.country}</span>
+                      <span className="text-zinc-600">·</span>
+                      <a
+                        href={meta.wikipedia}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-zinc-500 underline underline-offset-2 hover:text-zinc-300"
+                      >
+                        Wikipedia
+                      </a>
+                    </>
+                  );
+                })()}
+              </div>
               <Link
                 href={`/comparisons/${item.id}`}
-                className="text-sm text-zinc-400 hover:text-zinc-200"
+                className="shrink-0 text-sm text-zinc-400 hover:text-zinc-200"
               >
                 Full analysis →
               </Link>

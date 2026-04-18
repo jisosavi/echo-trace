@@ -6,7 +6,7 @@ export const dynamic = 'force-dynamic';
 
 const encoder = new TextEncoder();
 const MAX_LINES = 120;
-const POLL_MS = 2000;
+const POLL_MS = 1000;
 
 function resolveLogPath(): string {
   if (process.env.CYCLE_LOG_PATH) {

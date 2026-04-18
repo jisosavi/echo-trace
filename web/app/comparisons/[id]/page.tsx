@@ -1,7 +1,13 @@
-import comparisons from '@/public/data/comparisons.json';
+import { promises as fs } from 'node:fs';
+import path from 'node:path';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type React from 'react';
+import { formatUTC } from '@/lib/format';
+
+export const dynamic = 'force-dynamic';
+
+const COMPARISONS_PATH = path.resolve(process.cwd(), 'public/data/comparisons.json');
 
 type Analysis = {
   theme?: string;
@@ -104,7 +110,7 @@ function DimRow({ label, children }: { label: string; children: any }) {
 
 export default async function ComparisonDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const data = comparisons as Comparison[];
+  const data = JSON.parse(await fs.readFile(COMPARISONS_PATH, 'utf8')) as Comparison[];
   const item = data.find((entry) => entry.id === id);
 
   if (!item) {
@@ -113,13 +119,9 @@ export default async function ComparisonDetailPage({ params }: { params: Promise
 
   return (
     <main className="mx-auto min-h-screen w-full max-w-4xl px-6 py-12">
-      <Link className="text-sm text-zinc-400 hover:text-zinc-200" href="/comparisons">
-        ← Back to feed
-      </Link>
-
       {/* Header */}
       <div className="mt-6">
-        <p className="text-xs text-zinc-500">{new Date(item.timestamp).toLocaleString()}</p>
+        <p className="text-xs text-zinc-500">{formatUTC(item.timestamp)}</p>
         <h1 className="mt-2 text-3xl font-semibold">{item.historical_parallel}</h1>
       </div>
 

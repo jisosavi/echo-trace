@@ -50,7 +50,7 @@ export function LiveConsole({ initialLogs = [] }: LiveConsoleProps) {
     };
   }, []);
 
-  const statusLabel = useMemo(() => (connected ? 'streaming' : 'disconnected'), [connected]);
+  const statusLabel = useMemo(() => (connected ? 'streaming · 1s' : 'disconnected'), [connected]);
 
   return (
     <section className="rounded-lg border border-zinc-800 bg-black/40 p-4">

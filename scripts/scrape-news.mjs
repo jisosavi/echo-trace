@@ -141,7 +141,8 @@ const SOURCES = [
     regime: 'North Korea',
     language: 'en',
     frontPage: 'https://kcna.kp/en/',
-    articlePattern: /^https:\/\/kcna\.kp\/en\/article\//,
+    articlePattern: /^https?:\/\/(www\.)?kcna\.kp\/en\/article\//,
+    httpsFallbackToHttp: true,
     maxArticles: 3,
     timeout: 45000
   },
@@ -380,15 +381,27 @@ async function discoverUrlsFromRss(source) {
 }
 
 async function discoverUrlsWithFetch(source) {
-  const html = await fetchHtml(source.frontPage, source.timeout);
+  let frontPage = source.frontPage;
+  let html;
+  try {
+    html = await fetchHtml(frontPage, source.timeout);
+  } catch (err) {
+    if (source.httpsFallbackToHttp && frontPage.startsWith('https://')) {
+      frontPage = frontPage.replace('https://', 'http://');
+      await log(`https failed for ${source.name} (${err.message}); retrying with http`);
+      html = await fetchHtml(frontPage, source.timeout);
+    } else {
+      throw err;
+    }
+  }
+
   const $ = cheerio.load(html);
   const hrefs = new Set();
 
   $('a[href]').each((_, el) => {
     let href = $(el).attr('href') || '';
-    // Resolve relative URLs
     if (href.startsWith('/')) {
-      href = new URL(href, source.frontPage).href;
+      href = new URL(href, frontPage).href;
     }
     if (source.articlePattern.test(href)) hrefs.add(href);
   });

@@ -638,7 +638,19 @@ Respond with JSON only, no prose.`
   const raw = message.content[0].text.trim();
   const jsonMatch = raw.match(/\{[\s\S]*\}/);
   if (!jsonMatch) return null;
-  const result = JSON.parse(jsonMatch[0]);
+
+  let result;
+  try {
+    result = JSON.parse(jsonMatch[0]);
+  } catch {
+    // LLM sometimes includes unescaped quotes inside the translation value.
+    // Fall back to extracting fields with regex.
+    const langM = jsonMatch[0].match(/"language"\s*:\s*"([^"]+)"/);
+    const transM = jsonMatch[0].match(/"translation"\s*:\s*"([\s\S]+?)"\s*\}/);
+    if (!langM || !transM) return null;
+    result = { language: langM[1], translation: transM[1].replace(/\\"/g, '"') };
+  }
+
   if (!result.translation || result.language === 'English') return null;
   return { language: result.language, translation: result.translation };
 }

@@ -1,8 +1,14 @@
-# Forensic Semiotics
+# ECHO/trace – Tracing the Echo of Propoganda
 
-An autonomous system for historical-comparative propaganda analysis. Every six hours it scrapes 30+ authoritarian state media outlets, identifies rhetorical patterns matching a structured trope taxonomy, and publishes forensic comparisons — each pairing a contemporary quote with its historical twin from 20th-century dictator archives.
+An autonomous system for historical-comparative propaganda analysis. 
 
-The core premise: authoritarian propaganda does not invent new language. It inherits it. Making that inheritance visible is the point.
+Monitors contemporary authoritarian state media and compares rhetorical structures with historical authoritarian archives — exposing the inherited language of propaganda.
+
+Every six hours it scrapes 30+ authoritarian state media outlets, identifies rhetorical patterns matching a structured trope taxonomy, and publishes forensic comparisons — each pairing a contemporary quote with its historical twin from 20th-century authoritarian archives.
+
+The core premise: authoritarian propaganda does not invent new language. It inherits it. 
+Making that inheritance visible is the point.
+Freedom is not free.
 
 ---
 
@@ -196,8 +202,8 @@ The scraper monitors 30+ outlets across seven regime clusters. Sources marked `[
 | **Myanmar** | Global New Light of Myanmar `[RSS]` |
 | **Eswatini** | Eswatini Observer `[RSS]` · Times of Eswatini |
 
-> **Note:** Some Russian sources (kremlin.ru, government.ru) are blocked under EU sanctions. Scraping requires a non-EU VPN or server.
-> **Note:** Use of VPN or other anonymisation method is highly adviced to obscure the scraping from auhtoritarian publishers.
+> **Note:** Some Russian sources are blocked under EU sanctions. Scraping requires a non-EU VPN or server.
+> **Note:** Use of VPN or other anonymisation method is highly adviced to hide the scraping from auhtoritarian regimes.
 
 ---
 

@@ -1,7 +1,7 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
-import Link from 'next/link';
-import { LiveConsole } from '@/components/live-console';
+import { StatusBar } from '@/components/status-bar';
+import { formatUTC } from '@/lib/format';
 
 const DATA_DIR = path.resolve(process.cwd(), '../agent/data');
 const COMPARISONS_PATH = path.resolve(process.cwd(), 'public/data/comparisons.json');
@@ -218,16 +218,11 @@ export default async function DashboardPage() {
     <main className="mx-auto flex min-h-screen w-full max-w-5xl flex-col gap-8 px-6 py-12">
 
       {/* Header */}
-      <header className="flex items-end justify-between gap-4">
-        <div>
-          <h1 className="text-3xl font-semibold">Dashboard</h1>
-          <p className="mt-2 text-zinc-400">Scraping activity and propaganda classification overview.</p>
-        </div>
-        <nav className="flex gap-4 text-sm text-zinc-400">
-          <Link href="/comparisons" className="hover:text-white">Comparisons</Link>
-          <Link href="/" className="hover:text-white">Home</Link>
-        </nav>
+      <header>
+        <h1 className="text-3xl font-semibold">Dashboard</h1>
+        <p className="mt-2 text-zinc-400">Scraping activity and propaganda classification overview.</p>
       </header>
+      <StatusBar show={['scrape', 'analysis']} />
 
       {/* Stat cards */}
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
@@ -403,7 +398,7 @@ export default async function DashboardPage() {
                     <td className="py-2 pr-4">{source}</td>
                     <td className="py-2 pr-4 text-zinc-500">{data.regime}</td>
                     <td className="py-2 pr-4 font-mono">{data.count}</td>
-                    <td className="py-2 text-zinc-500">{new Date(data.lastSeen).toLocaleDateString()}</td>
+                    <td className="py-2 text-zinc-500">{formatUTC(data.lastSeen)}</td>
                   </tr>
                 ))}
               </tbody>
@@ -411,9 +406,6 @@ export default async function DashboardPage() {
           </div>
         </section>
       )}
-
-      {/* Live console */}
-      <LiveConsole initialLogs={['[dashboard] live console initialized']} />
 
     </main>
   );

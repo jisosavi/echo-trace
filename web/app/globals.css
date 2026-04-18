@@ -7,3 +7,8 @@
 body {
   @apply bg-zinc-950 text-zinc-100 antialiased;
 }
+
+@keyframes flash-country {
+  0%, 100% { fill: #22c55e; opacity: 1; }
+  50%       { fill: #4ade80; opacity: 0.4; }
+}
