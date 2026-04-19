@@ -1,0 +1,104 @@
+{
+  "nav": {
+    "comparisons": "修辞回声",
+    "console": "实时控制台",
+    "about": "关于"
+  },
+  "about": {
+    "title": "法证符号学",
+    "lead": "监控当代威权主义国家媒体，将其修辞结构与历史独裁档案进行比较——揭示宣传语言的历史传承。",
+    "body": "系统每六小时爬取30余家政权媒体，依据22个修辞格的分类法对每篇文章进行分类，并将匹配引文与其历史对应文本配对。每项比较均从宣传研究、符号学、政治神话理论和种族灭绝预防研究所提炼的18个分析维度进行注释。",
+    "tagline": "威权宣传不创造新语言，它继承旧语言。"
+  },
+  "dashboard": {
+    "title": "追踪宣传的回声",
+    "subtitle": "分类概览。",
+    "stats": {
+      "classified": "已分类案例",
+      "classifiedSub": "已分析比较",
+      "confidence": "平均置信度",
+      "tropes": "已检测修辞格",
+      "tropesSub": "共14个已定义修辞格",
+      "articles": "新闻文章",
+      "sources": "{n}个来源",
+      "noScrape": "尚未运行爬取"
+    },
+    "sections": {
+      "tropeDistribution": "历史修辞格分布",
+      "analyticalFraming": "分析框架",
+      "narrativeStrategy": "叙事策略",
+      "nimmo": "尼莫4D",
+      "ellul": "埃吕尔——宣传论（1965）",
+      "ellulTypeAxis": "埃吕尔类型与轴",
+      "ellulType": "类型",
+      "ellulAxis": "轴",
+      "techniques": "技术分类法",
+      "techniques18": "技术（18种）",
+      "ipa": "IPA技术（7种）",
+      "urFascism": "原法西斯主义（14特征）",
+      "euvsdisinfo": "EUvsDisinfo维度",
+      "narratives": "亲克里姆林宫叙事",
+      "rhetoric": "修辞（SWAMPED）",
+      "conspiracy": "阴谋论模式",
+      "ttp": "TTP框架",
+      "sourceActivity": "来源活动",
+      "noData": "暂无数据。"
+    },
+    "table": {
+      "source": "来源",
+      "regime": "政权",
+      "articles": "文章",
+      "lastSeen": "最后出现"
+    }
+  },
+  "comparisons": {
+    "title": "宣传的修辞回声",
+    "subtitle": "持续更新的法证符号学匹配：当代国家媒体与20世纪独裁修辞之间的对照。",
+    "vs": "对比",
+    "fullAnalysis": "完整分析 →",
+    "translatedFrom": "由{service}从{language}翻译",
+    "confidence": "置信度{n}%",
+    "wikipedia": "维基百科"
+  },
+  "comparisonDetail": {
+    "historicalEcho": "历史回声",
+    "divergenceNote": "差异说明",
+    "analyticalDimensions": "分析维度",
+    "labels": {
+      "theme": "主题",
+      "narrativeStrategy": "叙事策略",
+      "nimmo4d": "尼莫4D",
+      "ellulType": "埃吕尔类型",
+      "techniques18": "技术（18种）",
+      "ipaTechniques": "IPA技术",
+      "urFascism": "原法西斯主义特征",
+      "kremlinNarratives": "亲克里姆林宫叙事",
+      "rhetoric": "修辞（SWAMPED）",
+      "conspiracy": "阴谋论模式",
+      "ttp": "TTPs"
+    },
+    "meta": {
+      "confidence": "置信度：",
+      "tropes": "修辞格：",
+      "notes": "备注：",
+      "translatedFrom": "由{service}从{language}翻译"
+    }
+  },
+  "console": {
+    "title": "实时控制台：追踪宣传",
+    "subtitle": "实时爬取与分析活动。",
+    "mappingTitle": "宣传地图",
+    "freedomHouse": "国家自由状况详见",
+    "freedomHouseLink": "Freedom House — 2026年世界自由报告",
+    "streamingStatus": "实时 · 1秒",
+    "disconnected": "已断线",
+    "noLogs": "暂无日志。",
+    "liveConsoleLabel": "实时控制台"
+  },
+  "status": {
+    "cycleRunning": "周期运行中",
+    "lastScraped": "最近爬取：",
+    "lastAnalysed": "最近分析：",
+    "noData": "暂无周期数据。"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "nav": {
+    "comparisons": "RHETORICAL ECHOES",
+    "console": "LIVE CONSOLE",
+    "about": "ABOUT"
+  },
+  "about": {
+    "title": "Forensic Semiotics",
+    "lead": "Monitors contemporary authoritarian state media and compares rhetorical structures with historical dictatorship archives — exposing the inherited language of propaganda.",
+    "body": "Every six hours the system scrapes 30+ regime outlets, classifies each article against a 22-trope taxonomy, and pairs matching quotes with their historical twins. Each comparison is annotated across 18 analytical dimensions drawn from propaganda studies, semiotics, political myth theory, and genocide prevention research.",
+    "tagline": "Authoritarian propaganda does not invent new language. It inherits it."
+  },
+  "dashboard": {
+    "title": "Tracing the Echo of Propaganda",
+    "subtitle": "Classification overview.",
+    "stats": {
+      "classified": "Cases classified",
+      "classifiedSub": "comparisons analysed",
+      "confidence": "Avg confidence",
+      "tropes": "Tropes detected",
+      "tropesSub": "of 14 defined tropes",
+      "articles": "News articles",
+      "sources": "{n} sources",
+      "noScrape": "scraping not yet run"
+    },
+    "sections": {
+      "tropeDistribution": "Historical Trope Distribution",
+      "analyticalFraming": "Analytical framing",
+      "narrativeStrategy": "Narrative Strategy",
+      "nimmo": "Nimmo 4D",
+      "ellul": "Ellul — Propaganda (1965)",
+      "ellulTypeAxis": "Ellul Type & Axis",
+      "ellulType": "Type",
+      "ellulAxis": "Axis",
+      "techniques": "Technique taxonomies",
+      "techniques18": "Techniques (18)",
+      "ipa": "IPA Techniques (7)",
+      "urFascism": "Ur-Fascism (14)",
+      "euvsdisinfo": "EUvsDisinfo dimensions",
+      "narratives": "Pro-Kremlin Narratives",
+      "rhetoric": "Rhetoric (SWAMPED)",
+      "conspiracy": "Conspiracy Patterns",
+      "ttp": "TTP Framework",
+      "sourceActivity": "Source Activity",
+      "noData": "No data yet."
+    },
+    "table": {
+      "source": "Source",
+      "regime": "Regime",
+      "articles": "Articles",
+      "lastSeen": "Last seen"
+    }
+  },
+  "comparisons": {
+    "title": "Rhetorical Echoes of Propaganda",
+    "subtitle": "Continuously updated forensic semiotic matches between contemporary state media and 20th-century dictatorial rhetoric.",
+    "vs": "vs.",
+    "fullAnalysis": "Full analysis →",
+    "translatedFrom": "Translated from {language} by {service}",
+    "confidence": "{n}% confidence",
+    "wikipedia": "Wikipedia"
+  },
+  "comparisonDetail": {
+    "historicalEcho": "Historical Echo",
+    "divergenceNote": "Divergence Note",
+    "analyticalDimensions": "Analytical Dimensions",
+    "labels": {
+      "theme": "Theme",
+      "narrativeStrategy": "Narrative strategy",
+      "nimmo4d": "Nimmo 4D",
+      "ellulType": "Ellul type",
+      "techniques18": "Techniques (18)",
+      "ipaTechniques": "IPA techniques",
+      "urFascism": "Ur-Fascism features",
+      "kremlinNarratives": "Pro-Kremlin narratives",
+      "rhetoric": "Rhetoric (SWAMPED)",
+      "conspiracy": "Conspiracy patterns",
+      "ttp": "TTPs"
+    },
+    "meta": {
+      "confidence": "Confidence:",
+      "tropes": "Tropes:",
+      "notes": "Notes:",
+      "translatedFrom": "Translated from {language} by {service}"
+    }
+  },
+  "console": {
+    "title": "Live Console: Tracing Propaganda",
+    "subtitle": "Real-time scraping and analysis activity.",
+    "mappingTitle": "Mapping Propaganda",
+    "freedomHouse": "For country freedom profiles see",
+    "freedomHouseLink": "Freedom House — Freedom in the World 2026",
+    "streamingStatus": "streaming · 1s",
+    "disconnected": "disconnected",
+    "noLogs": "No logs yet.",
+    "liveConsoleLabel": "Live Console"
+  },
+  "status": {
+    "cycleRunning": "Cycle running",
+    "lastScraped": "Last scraped:",
+    "lastAnalysed": "Last analysed:",
+    "noData": "No cycle data yet."
+  }
+}

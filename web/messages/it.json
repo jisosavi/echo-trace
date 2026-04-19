@@ -1,0 +1,104 @@
+{
+  "nav": {
+    "comparisons": "ECO RETORICHE",
+    "console": "CONSOLE IN DIRETTA",
+    "about": "INFORMAZIONI"
+  },
+  "about": {
+    "title": "Semiotica Forense",
+    "lead": "Monitora i media statali autoritari contemporanei e confronta le strutture retoriche con gli archivi storici delle dittature — esponendo il linguaggio ereditato della propaganda.",
+    "body": "Ogni sei ore il sistema analizza oltre 30 media di regime, classifica ogni articolo secondo una tassonomia di 22 tropi e abbina le citazioni corrispondenti ai loro gemelli storici. Ogni confronto è annotato su 18 dimensioni analitiche tratte dagli studi sulla propaganda, semiotica, teoria del mito politico e ricerca sulla prevenzione del genocidio.",
+    "tagline": "La propaganda autoritaria non inventa un nuovo linguaggio. Lo eredita."
+  },
+  "dashboard": {
+    "title": "Tracciare l'Eco della Propaganda",
+    "subtitle": "Panoramica della classificazione.",
+    "stats": {
+      "classified": "Casi classificati",
+      "classifiedSub": "confronti analizzati",
+      "confidence": "Confidenza media",
+      "tropes": "Tropi rilevati",
+      "tropesSub": "su 14 tropi definiti",
+      "articles": "Articoli di notizie",
+      "sources": "{n} fonti",
+      "noScrape": "scraping non ancora eseguito"
+    },
+    "sections": {
+      "tropeDistribution": "Distribuzione dei Tropi Storici",
+      "analyticalFraming": "Inquadramento analitico",
+      "narrativeStrategy": "Strategia narrativa",
+      "nimmo": "Nimmo 4D",
+      "ellul": "Ellul — Propaganda (1965)",
+      "ellulTypeAxis": "Tipo e Asse Ellul",
+      "ellulType": "Tipo",
+      "ellulAxis": "Asse",
+      "techniques": "Tassonomie delle tecniche",
+      "techniques18": "Tecniche (18)",
+      "ipa": "Tecniche IPA (7)",
+      "urFascism": "Ur-Fascismo (14)",
+      "euvsdisinfo": "Dimensioni EUvsDisinfo",
+      "narratives": "Narrazioni pro-Cremlino",
+      "rhetoric": "Retorica (SWAMPED)",
+      "conspiracy": "Schemi cospirativi",
+      "ttp": "Framework TTP",
+      "sourceActivity": "Attività delle fonti",
+      "noData": "Nessun dato ancora."
+    },
+    "table": {
+      "source": "Fonte",
+      "regime": "Regime",
+      "articles": "Articoli",
+      "lastSeen": "Ultima visualizzazione"
+    }
+  },
+  "comparisons": {
+    "title": "Eco Retoriche della Propaganda",
+    "subtitle": "Corrispondenze semitico-forensiche continuamente aggiornate tra i media statali contemporanei e la retorica dittatoriale del XX secolo.",
+    "vs": "vs.",
+    "fullAnalysis": "Analisi completa →",
+    "translatedFrom": "Tradotto dal {language} da {service}",
+    "confidence": "{n}% di confidenza",
+    "wikipedia": "Wikipedia"
+  },
+  "comparisonDetail": {
+    "historicalEcho": "Eco Storica",
+    "divergenceNote": "Nota di Divergenza",
+    "analyticalDimensions": "Dimensioni Analitiche",
+    "labels": {
+      "theme": "Tema",
+      "narrativeStrategy": "Strategia narrativa",
+      "nimmo4d": "Nimmo 4D",
+      "ellulType": "Tipo Ellul",
+      "techniques18": "Tecniche (18)",
+      "ipaTechniques": "Tecniche IPA",
+      "urFascism": "Caratteristiche Ur-Fascismo",
+      "kremlinNarratives": "Narrazioni pro-Cremlino",
+      "rhetoric": "Retorica (SWAMPED)",
+      "conspiracy": "Schemi cospirativi",
+      "ttp": "TTPs"
+    },
+    "meta": {
+      "confidence": "Confidenza:",
+      "tropes": "Tropi:",
+      "notes": "Note:",
+      "translatedFrom": "Tradotto dal {language} da {service}"
+    }
+  },
+  "console": {
+    "title": "Console in Diretta: Tracciare la Propaganda",
+    "subtitle": "Attività di scraping e analisi in tempo reale.",
+    "mappingTitle": "Mappatura della Propaganda",
+    "freedomHouse": "Per i profili di libertà per paese, vedere",
+    "freedomHouseLink": "Freedom House — Libertà nel Mondo 2026",
+    "streamingStatus": "in diretta · 1s",
+    "disconnected": "disconnesso",
+    "noLogs": "Nessun log ancora.",
+    "liveConsoleLabel": "Console in Diretta"
+  },
+  "status": {
+    "cycleRunning": "Ciclo in esecuzione",
+    "lastScraped": "Ultima estrazione:",
+    "lastAnalysed": "Ultima analisi:",
+    "noData": "Nessun dato del ciclo ancora."
+  }
+}

@@ -13,6 +13,7 @@
     "@types/topojson-specification": "^1.0.5",
     "framer-motion": "latest",
     "next": "latest",
+    "next-intl": "^4.9.1",
     "react": "latest",
     "react-dom": "latest",
     "react-simple-maps": "^3.0.0",

@@ -1,0 +1,104 @@
+{
+  "nav": {
+    "comparisons": "ECOS RETÓRICOS",
+    "console": "CONSOLA EN VIVO",
+    "about": "ACERCA DE"
+  },
+  "about": {
+    "title": "Semiótica Forense",
+    "lead": "Monitoriza los medios estatales autoritarios contemporáneos y compara las estructuras retóricas con los archivos históricos de dictaduras — exponiendo el lenguaje heredado de la propaganda.",
+    "body": "Cada seis horas el sistema rastrea más de 30 medios de régimen, clasifica cada artículo según una taxonomía de 22 tropos y empareja las citas correspondientes con sus gemelos históricos. Cada comparación está anotada en 18 dimensiones analíticas extraídas de estudios sobre propaganda, semiótica, teoría del mito político e investigación sobre prevención del genocidio.",
+    "tagline": "La propaganda autoritaria no inventa un nuevo lenguaje. Lo hereda."
+  },
+  "dashboard": {
+    "title": "Rastreando el Eco de la Propaganda",
+    "subtitle": "Resumen de clasificación.",
+    "stats": {
+      "classified": "Casos clasificados",
+      "classifiedSub": "comparaciones analizadas",
+      "confidence": "Confianza promedio",
+      "tropes": "Tropos detectados",
+      "tropesSub": "de 14 tropos definidos",
+      "articles": "Artículos de noticias",
+      "sources": "{n} fuentes",
+      "noScrape": "rastreo no ejecutado aún"
+    },
+    "sections": {
+      "tropeDistribution": "Distribución de Tropos Históricos",
+      "analyticalFraming": "Encuadre analítico",
+      "narrativeStrategy": "Estrategia narrativa",
+      "nimmo": "Nimmo 4D",
+      "ellul": "Ellul — Propaganda (1965)",
+      "ellulTypeAxis": "Tipo y Eje Ellul",
+      "ellulType": "Tipo",
+      "ellulAxis": "Eje",
+      "techniques": "Taxonomías de técnicas",
+      "techniques18": "Técnicas (18)",
+      "ipa": "Técnicas IPA (7)",
+      "urFascism": "Ur-Fascismo (14)",
+      "euvsdisinfo": "Dimensiones EUvsDisinfo",
+      "narratives": "Narrativas pro-Kremlin",
+      "rhetoric": "Retórica (SWAMPED)",
+      "conspiracy": "Patrones conspiratorios",
+      "ttp": "Marco TTP",
+      "sourceActivity": "Actividad de fuentes",
+      "noData": "Sin datos aún."
+    },
+    "table": {
+      "source": "Fuente",
+      "regime": "Régimen",
+      "articles": "Artículos",
+      "lastSeen": "Última vez visto"
+    }
+  },
+  "comparisons": {
+    "title": "Ecos Retóricos de la Propaganda",
+    "subtitle": "Coincidencias semiótico-forenses continuamente actualizadas entre los medios estatales contemporáneos y la retórica dictatorial del siglo XX.",
+    "vs": "vs.",
+    "fullAnalysis": "Análisis completo →",
+    "translatedFrom": "Traducido del {language} por {service}",
+    "confidence": "{n}% de confianza",
+    "wikipedia": "Wikipedia"
+  },
+  "comparisonDetail": {
+    "historicalEcho": "Eco Histórico",
+    "divergenceNote": "Nota de Divergencia",
+    "analyticalDimensions": "Dimensiones Analíticas",
+    "labels": {
+      "theme": "Tema",
+      "narrativeStrategy": "Estrategia narrativa",
+      "nimmo4d": "Nimmo 4D",
+      "ellulType": "Tipo Ellul",
+      "techniques18": "Técnicas (18)",
+      "ipaTechniques": "Técnicas IPA",
+      "urFascism": "Características Ur-Fascismo",
+      "kremlinNarratives": "Narrativas pro-Kremlin",
+      "rhetoric": "Retórica (SWAMPED)",
+      "conspiracy": "Patrones conspiratorios",
+      "ttp": "TTPs"
+    },
+    "meta": {
+      "confidence": "Confianza:",
+      "tropes": "Tropos:",
+      "notes": "Notas:",
+      "translatedFrom": "Traducido del {language} por {service}"
+    }
+  },
+  "console": {
+    "title": "Consola en Vivo: Rastreando la Propaganda",
+    "subtitle": "Actividad de rastreo y análisis en tiempo real.",
+    "mappingTitle": "Mapeo de la Propaganda",
+    "freedomHouse": "Para perfiles de libertad por país, ver",
+    "freedomHouseLink": "Freedom House — Libertad en el Mundo 2026",
+    "streamingStatus": "en vivo · 1s",
+    "disconnected": "desconectado",
+    "noLogs": "Aún no hay registros.",
+    "liveConsoleLabel": "Consola en Vivo"
+  },
+  "status": {
+    "cycleRunning": "Ciclo en ejecución",
+    "lastScraped": "Último rastreo:",
+    "lastAnalysed": "Último análisis:",
+    "noData": "Aún no hay datos del ciclo."
+  }
+}

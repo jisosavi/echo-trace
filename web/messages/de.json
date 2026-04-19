@@ -1,0 +1,104 @@
+{
+  "nav": {
+    "comparisons": "RHETORISCHE ECHOS",
+    "console": "LIVE-KONSOLE",
+    "about": "ÜBER"
+  },
+  "about": {
+    "title": "Forensische Semiotik",
+    "lead": "Überwacht zeitgenössische autoritäre Staatsmedien und vergleicht rhetorische Strukturen mit historischen Diktaturarchiven — und legt dabei die ererbte Sprache der Propaganda offen.",
+    "body": "Alle sechs Stunden durchsucht das System über 30 Regimemedien, klassifiziert jeden Artikel anhand einer 22-Tropen-Taxonomie und ordnet passende Zitate ihren historischen Zwillingen zu. Jeder Vergleich wird in 18 analytischen Dimensionen aus Propagandastudien, Semiotik, politischer Mythentheorie und Genozidpräventionsforschung annotiert.",
+    "tagline": "Autoritäre Propaganda erfindet keine neue Sprache. Sie erbt sie."
+  },
+  "dashboard": {
+    "title": "Die Echos der Propaganda verfolgen",
+    "subtitle": "Klassifikationsübersicht.",
+    "stats": {
+      "classified": "Klassifizierte Fälle",
+      "classifiedSub": "analysierte Vergleiche",
+      "confidence": "Durchschn. Konfidenz",
+      "tropes": "Erkannte Tropen",
+      "tropesSub": "von 14 definierten Tropen",
+      "articles": "Nachrichtenartikel",
+      "sources": "{n} Quellen",
+      "noScrape": "Scraping noch nicht ausgeführt"
+    },
+    "sections": {
+      "tropeDistribution": "Historische Tropenverteilung",
+      "analyticalFraming": "Analytischer Rahmen",
+      "narrativeStrategy": "Narrativstrategie",
+      "nimmo": "Nimmo 4D",
+      "ellul": "Ellul — Propaganda (1965)",
+      "ellulTypeAxis": "Ellul Typ & Achse",
+      "ellulType": "Typ",
+      "ellulAxis": "Achse",
+      "techniques": "Techniktaxonomien",
+      "techniques18": "Techniken (18)",
+      "ipa": "IPA-Techniken (7)",
+      "urFascism": "Ur-Faschismus (14)",
+      "euvsdisinfo": "EUvsDisinfo-Dimensionen",
+      "narratives": "Pro-Kreml-Narrative",
+      "rhetoric": "Rhetorik (SWAMPED)",
+      "conspiracy": "Verschwörungsmuster",
+      "ttp": "TTP-Rahmen",
+      "sourceActivity": "Quellenaktivität",
+      "noData": "Noch keine Daten."
+    },
+    "table": {
+      "source": "Quelle",
+      "regime": "Regime",
+      "articles": "Artikel",
+      "lastSeen": "Zuletzt gesehen"
+    }
+  },
+  "comparisons": {
+    "title": "Rhetorische Echos der Propaganda",
+    "subtitle": "Kontinuierlich aktualisierte forensisch-semiotische Übereinstimmungen zwischen zeitgenössischen Staatsmedien und diktatorischer Rhetorik des 20. Jahrhunderts.",
+    "vs": "vs.",
+    "fullAnalysis": "Vollständige Analyse →",
+    "translatedFrom": "Übersetzt aus dem {language} von {service}",
+    "confidence": "{n}% Konfidenz",
+    "wikipedia": "Wikipedia"
+  },
+  "comparisonDetail": {
+    "historicalEcho": "Historisches Echo",
+    "divergenceNote": "Divergenzhinweis",
+    "analyticalDimensions": "Analytische Dimensionen",
+    "labels": {
+      "theme": "Thema",
+      "narrativeStrategy": "Narrativstrategie",
+      "nimmo4d": "Nimmo 4D",
+      "ellulType": "Ellul-Typ",
+      "techniques18": "Techniken (18)",
+      "ipaTechniques": "IPA-Techniken",
+      "urFascism": "Ur-Faschismus-Merkmale",
+      "kremlinNarratives": "Pro-Kreml-Narrative",
+      "rhetoric": "Rhetorik (SWAMPED)",
+      "conspiracy": "Verschwörungsmuster",
+      "ttp": "TTPs"
+    },
+    "meta": {
+      "confidence": "Konfidenz:",
+      "tropes": "Tropen:",
+      "notes": "Anmerkungen:",
+      "translatedFrom": "Übersetzt aus dem {language} von {service}"
+    }
+  },
+  "console": {
+    "title": "Live-Konsole: Propaganda verfolgen",
+    "subtitle": "Echtzeit-Scraping- und Analyseaktivität.",
+    "mappingTitle": "Propagandakartierung",
+    "freedomHouse": "Länderprofile zur Pressefreiheit:",
+    "freedomHouseLink": "Freedom House — Freiheit in der Welt 2026",
+    "streamingStatus": "live · 1s",
+    "disconnected": "getrennt",
+    "noLogs": "Noch keine Protokolle.",
+    "liveConsoleLabel": "Live-Konsole"
+  },
+  "status": {
+    "cycleRunning": "Zyklus läuft",
+    "lastScraped": "Zuletzt gescrapt:",
+    "lastAnalysed": "Zuletzt analysiert:",
+    "noData": "Noch keine Zyklusdaten."
+  }
+}

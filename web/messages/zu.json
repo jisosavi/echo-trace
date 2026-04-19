@@ -1,0 +1,104 @@
+{
+  "nav": {
+    "comparisons": "AMAZWI APHINDAPHINDWA",
+    "console": "IKHONSOLI YOKUPHILA",
+    "about": "MAYELANA"
+  },
+  "about": {
+    "title": "Isamayotiksi Yobunikazi",
+    "lead": "Ilandelela izindaba zikahulumeni wamazwe anobandlululo futhi iqhathanisa izakhiwo zomlabalaba nolwazi lweminyaka edlule — ibonisa ulimi olufa olulodwa lokukhangisa.",
+    "body": "Njalo ngehora lesithupha, uhlelo lusesa izindaba zamazwe angaphezu kwama-30, luhlola izihloko ngokwefakhthari yama-22 okuxhumana, futhi luhlanganisa izingcaphuno ezihambelana namathumba azo asemlandweni. Ukukhangiswa ngakunye kubhalwa ngezilinganiso ezingu-18 zokuhlaziya.",
+    "tagline": "Ukukhangisa kobandlululo akukho limi elisha. Kuziphatha ilimi elidala."
+  },
+  "dashboard": {
+    "title": "Landelela Impindwa Yokukhangisa",
+    "subtitle": "Ukubuka kwokwehlukaniswa.",
+    "stats": {
+      "classified": "Izigameko ezihlonziwe",
+      "classifiedSub": "iziqhathaniso ezihlaziyiwe",
+      "confidence": "Ukwethemba okuphakathi",
+      "tropes": "Amaqiniso atholakele",
+      "tropesSub": "kuma-14 amaqiniso achazwe",
+      "articles": "Izindaba zamaphephandaba",
+      "sources": "{n} imithombo",
+      "noScrape": "ukusesa akukabaluli"
+    },
+    "sections": {
+      "tropeDistribution": "Ukusabalala Kwamaqiniso Asemlandweni",
+      "analyticalFraming": "Uhlaka lokuhlaziya",
+      "narrativeStrategy": "Istratijiyi yokulandisa",
+      "nimmo": "Nimmo 4D",
+      "ellul": "Ellul — Ukukhangisa (1965)",
+      "ellulTypeAxis": "Uhlobo Nesixhwele sika-Ellul",
+      "ellulType": "Uhlobo",
+      "ellulAxis": "Isixhwele",
+      "techniques": "Izindlela zokwehlukanisa",
+      "techniques18": "Izindlela (18)",
+      "ipa": "Izindlela ze-IPA (7)",
+      "urFascism": "Ur-Fasism (14)",
+      "euvsdisinfo": "Izinkomba ze-EUvsDisinfo",
+      "narratives": "Izindaba zangaphansi kwe-Kremlin",
+      "rhetoric": "Umlabalaba (SWAMPED)",
+      "conspiracy": "Izinhlelo zamandla",
+      "ttp": "Uhlaka lwe-TTP",
+      "sourceActivity": "Umsebenzi wemithombo",
+      "noData": "Akekho ulwazi okwamanje."
+    },
+    "table": {
+      "source": "Umthombo",
+      "regime": "Uhulumeni",
+      "articles": "Izindaba",
+      "lastSeen": "Kubonwe l'khoke"
+    }
+  },
+  "comparisons": {
+    "title": "Amazwi Aphindaphindwa Okukhangisa",
+    "subtitle": "Ukuqhathaniswa kwesamayotiksi yobunikazi okuvuselelwa njalo phakathi kwezindaba zikahulumeni zanamuhla nomlabalaba wobandlululo.",
+    "vs": "vs.",
+    "fullAnalysis": "Ukuhlaziya okugcwele →",
+    "translatedFrom": "Hunyushwe ku-{language} ngu-{service}",
+    "confidence": "{n}% ukwethemba",
+    "wikipedia": "Wikipedia"
+  },
+  "comparisonDetail": {
+    "historicalEcho": "Impindwa Yasemlandweni",
+    "divergenceNote": "Phawula Ukwahluka",
+    "analyticalDimensions": "Izilinganiso Zokuhlaziya",
+    "labels": {
+      "theme": "Isihloko",
+      "narrativeStrategy": "Istratijiyi yokulandisa",
+      "nimmo4d": "Nimmo 4D",
+      "ellulType": "Uhlobo luka-Ellul",
+      "techniques18": "Izindlela (18)",
+      "ipaTechniques": "Izindlela ze-IPA",
+      "urFascism": "Izimpawu ze-Ur-Fasism",
+      "kremlinNarratives": "Izindaba zangaphansi kwe-Kremlin",
+      "rhetoric": "Umlabalaba (SWAMPED)",
+      "conspiracy": "Izinhlelo zamandla",
+      "ttp": "TTPs"
+    },
+    "meta": {
+      "confidence": "Ukwethemba:",
+      "tropes": "Amaqiniso:",
+      "notes": "Amanothi:",
+      "translatedFrom": "Hunyushwe ku-{language} ngu-{service}"
+    }
+  },
+  "console": {
+    "title": "Ikhonsoli Yokuphila: Landelela Ukukhangisa",
+    "subtitle": "Umsebenzi wokusesa nokuhlaziya ngesikhathi sangempela.",
+    "mappingTitle": "Ithebula Lokukhangisa",
+    "freedomHouse": "Izindlela zentela yenkulumo-mpendulwano wezwe, bona",
+    "freedomHouseLink": "Freedom House — Inkululeko Emhlabeni 2026",
+    "streamingStatus": "bukhoma · 1s",
+    "disconnected": "inqanyuliwe",
+    "noLogs": "Akekho amarekhodi okwamanje.",
+    "liveConsoleLabel": "Ikhonsoli Yokuphila"
+  },
+  "status": {
+    "cycleRunning": "Umjiro uyahamba",
+    "lastScraped": "Kusesiwe kokugcina:",
+    "lastAnalysed": "Kuhlaziwe kokugcina:",
+    "noData": "Akekho ulwazi womjiro okwamanje."
+  }
+}

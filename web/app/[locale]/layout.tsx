@@ -1,0 +1,36 @@
+import '../globals.css';
+import type { Metadata } from 'next';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+import { notFound } from 'next/navigation';
+import { routing } from '@/i18n/routing';
+import { Nav } from '@/components/nav';
+
+export const metadata: Metadata = {
+  title: 'ECHO/trace',
+  description: 'Autonomous forensic semiotic comparisons between contemporary authoritarian media and historical dictatorial rhetoric.',
+};
+
+export default async function LocaleLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
+    notFound();
+  }
+  const messages = await getMessages();
+  return (
+    <html lang={locale}>
+      <body>
+        <NextIntlClientProvider messages={messages}>
+          <Nav />
+          {children}
+        </NextIntlClientProvider>
+      </body>
+    </html>
+  );
+}

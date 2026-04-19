@@ -1,0 +1,104 @@
+{
+  "nav": {
+    "comparisons": "ÉCHOS RHÉTORIQUES",
+    "console": "CONSOLE EN DIRECT",
+    "about": "À PROPOS"
+  },
+  "about": {
+    "title": "Sémiotique Forensique",
+    "lead": "Surveille les médias d'État autoritaires contemporains et compare les structures rhétoriques avec les archives des dictatures historiques — exposant le langage hérité de la propagande.",
+    "body": "Toutes les six heures, le système analyse plus de 30 médias de régimes, classe chaque article selon une taxonomie de 22 tropes et associe les citations correspondantes à leurs jumeaux historiques. Chaque comparaison est annotée selon 18 dimensions analytiques issues des études sur la propagande, la sémiotique, la théorie du mythe politique et la recherche sur la prévention du génocide.",
+    "tagline": "La propagande autoritaire n'invente pas un nouveau langage. Elle l'hérite."
+  },
+  "dashboard": {
+    "title": "Tracer l'Écho de la Propagande",
+    "subtitle": "Aperçu de la classification.",
+    "stats": {
+      "classified": "Cas classifiés",
+      "classifiedSub": "comparaisons analysées",
+      "confidence": "Confiance moyenne",
+      "tropes": "Tropes détectés",
+      "tropesSub": "sur 14 tropes définis",
+      "articles": "Articles de presse",
+      "sources": "{n} sources",
+      "noScrape": "extraction non encore effectuée"
+    },
+    "sections": {
+      "tropeDistribution": "Distribution des Tropes Historiques",
+      "analyticalFraming": "Cadrage analytique",
+      "narrativeStrategy": "Stratégie narrative",
+      "nimmo": "Nimmo 4D",
+      "ellul": "Ellul — Propagande (1965)",
+      "ellulTypeAxis": "Type et Axe Ellul",
+      "ellulType": "Type",
+      "ellulAxis": "Axe",
+      "techniques": "Taxonomies des techniques",
+      "techniques18": "Techniques (18)",
+      "ipa": "Techniques IPA (7)",
+      "urFascism": "Ur-Fascisme (14)",
+      "euvsdisinfo": "Dimensions EUvsDisinfo",
+      "narratives": "Récits pro-Kremlin",
+      "rhetoric": "Rhétorique (SWAMPED)",
+      "conspiracy": "Schémas conspirationnistes",
+      "ttp": "Cadre TTP",
+      "sourceActivity": "Activité des sources",
+      "noData": "Pas encore de données."
+    },
+    "table": {
+      "source": "Source",
+      "regime": "Régime",
+      "articles": "Articles",
+      "lastSeen": "Dernière vue"
+    }
+  },
+  "comparisons": {
+    "title": "Échos Rhétoriques de la Propagande",
+    "subtitle": "Correspondances sémiotiques forensiques continuellement mises à jour entre les médias d'État contemporains et la rhétorique dictatoriale du XXe siècle.",
+    "vs": "vs.",
+    "fullAnalysis": "Analyse complète →",
+    "translatedFrom": "Traduit du {language} par {service}",
+    "confidence": "{n}% de confiance",
+    "wikipedia": "Wikipédia"
+  },
+  "comparisonDetail": {
+    "historicalEcho": "Écho Historique",
+    "divergenceNote": "Note de Divergence",
+    "analyticalDimensions": "Dimensions Analytiques",
+    "labels": {
+      "theme": "Thème",
+      "narrativeStrategy": "Stratégie narrative",
+      "nimmo4d": "Nimmo 4D",
+      "ellulType": "Type Ellul",
+      "techniques18": "Techniques (18)",
+      "ipaTechniques": "Techniques IPA",
+      "urFascism": "Caractéristiques Ur-Fascisme",
+      "kremlinNarratives": "Récits pro-Kremlin",
+      "rhetoric": "Rhétorique (SWAMPED)",
+      "conspiracy": "Schémas conspirationnistes",
+      "ttp": "TTPs"
+    },
+    "meta": {
+      "confidence": "Confiance :",
+      "tropes": "Tropes :",
+      "notes": "Notes :",
+      "translatedFrom": "Traduit du {language} par {service}"
+    }
+  },
+  "console": {
+    "title": "Console en Direct : Tracer la Propagande",
+    "subtitle": "Activité d'extraction et d'analyse en temps réel.",
+    "mappingTitle": "Cartographie de la Propagande",
+    "freedomHouse": "Pour les profils de liberté par pays, voir",
+    "freedomHouseLink": "Freedom House — Liberté dans le Monde 2026",
+    "streamingStatus": "en direct · 1s",
+    "disconnected": "déconnecté",
+    "noLogs": "Aucun journal pour l'instant.",
+    "liveConsoleLabel": "Console en Direct"
+  },
+  "status": {
+    "cycleRunning": "Cycle en cours",
+    "lastScraped": "Dernière extraction :",
+    "lastAnalysed": "Dernière analyse :",
+    "noData": "Aucune donnée de cycle pour l'instant."
+  }
+}

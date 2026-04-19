@@ -1480,3 +1480,59 @@ net::ERR_BLOCKED_BY_CLIENT at http://kcna.kp/en/article/q/cb1a70eadd010ca5ebdb24
 [2026-04-18T11:53:17.889Z] [analyze-one-url] failed: net::ERR_BLOCKED_BY_CLIENT at http://kcna.kp/en/article/q/622ee9bfd5ca850da7a5fd39d43a1028.kcmsf
 net::ERR_BLOCKED_BY_CLIENT at http://kcna.kp/en/article/q/622ee9bfd5ca850da7a5fd39d43a1028.kcmsf
 [2026-04-18T11:53:17Z] [cycle] phase=analyze status=complete failed=3
+[2026-04-19T14:11:07Z] [cycle] cycle=start
+[2026-04-19T14:11:07Z] [cycle] cycle=start
+[2026-04-19T14:11:07Z] [cycle] phase=scrape status=started
+[2026-04-19T14:11:07Z] [cycle] phase=scrape status=started
+[2026-04-19T14:11:07.889Z] [scrape-news] scrape cycle started sources=TASS,Kremlin,Government.ru,Xinhua,China Daily,People's Daily,Global Times,Al Jazeera,Middle East Eye,Saudi Gazette,KCNA,Granma,Prensa Latina,Cubadebate,Press TV,Tehran Times,BelTA,SB Belarus,Shabait,SANA,TDH,SPS,GNLM,Khovar,SABA,Eswatini Observer,Times of Eswatini,Origo,Magyar Nemzet,Hirado,PestiSracok
+[2026-04-19T14:11:18.408Z] [scrape-news] front-page failed source=TASS error="fetch failed"
+[2026-04-19T14:11:20.398Z] [scrape-news] discovered count=3 source=Kremlin
+[2026-04-19T14:11:20.398Z] [scrape-news] skip existing url=http://en.kremlin.ru/events/president/news/79572
+[2026-04-19T14:11:20.399Z] [scrape-news] skip existing url=http://en.kremlin.ru/events/president/news/79572/photos
+[2026-04-19T14:11:20.399Z] [scrape-news] skip existing url=http://en.kremlin.ru/events/president/news/79570
+[2026-04-19T14:11:25.138Z] [scrape-news] discovered count=3 source=Government.ru
+[2026-04-19T14:11:25.141Z] [scrape-news] skip existing url=http://government.ru/en/news/58467/
+[2026-04-19T14:11:25.141Z] [scrape-news] skip existing url=http://government.ru/en/news/58466/
+[2026-04-19T14:11:25.141Z] [scrape-news] skip existing url=http://government.ru/en/news/58457/
+[2026-04-19T14:11:37.722Z] [scrape-news] front-page failed source=Xinhua error="fetch failed"
+[2026-04-19T14:11:39.223Z] [scrape-news] discovered count=4 source=China Daily
+[2026-04-19T14:11:40.307Z] [scrape-news] scraped url=https://www.chinadaily.com.cn/a/202604/18/WS69e38e7da310d6866eb4436a.html title="Iran says to control traffic through Hormuz until war defini"
+[2026-04-19T14:11:41.740Z] [scrape-news] scraped url=https://www.chinadaily.com.cn/a/202604/18/WS69e38db4a310d6866eb44365.html title="Players, enthusiasts in New York mark 55th anniversary of Pi"
+[2026-04-19T14:11:41.740Z] [scrape-news] skip existing url=https://www.chinadaily.com.cn/a/202604/17/WS69e16f46a310d6866eb43e5b.html
+[2026-04-19T14:11:41.740Z] [scrape-news] skip existing url=https://www.chinadaily.com.cn/a/202604/17/WS69e191f9a310d6866eb43f99.html
+[2026-04-19T14:11:54.111Z] [scrape-news] front-page failed source=People's Daily error="fetch failed"
+[2026-04-19T14:11:55.456Z] [scrape-news] discovered count=4 source=Global Times
+[2026-04-19T14:11:56.912Z] [scrape-news] skip thin-content url=https://www.globaltimes.cn/page/202604/1359278.shtml
+[2026-04-19T14:11:58.153Z] [scrape-news] skip thin-content url=https://www.globaltimes.cn/page/202604/1359277.shtml
+[2026-04-19T14:11:59.647Z] [scrape-news] skip thin-content url=https://www.globaltimes.cn/page/202604/1359276.shtml
+[2026-04-19T14:12:00.581Z] [scrape-news] skip thin-content url=https://www.globaltimes.cn/page/202604/1359274.shtml
+[2026-04-19T14:12:03.441Z] [scrape-news] discovered count=4 source=Al Jazeera
+[2026-04-19T14:12:04.920Z] [scrape-news] scraped url=https://www.aljazeera.com/news/2026/4/19/trump-says-us-negotiators-will-head-to-pakistan-for-iran-ceasefire-talks title="Trump says US negotiators to head to Pakistan for Iran talks"
+[2026-04-19T14:12:06.191Z] [scrape-news] scraped url=https://www.aljazeera.com/news/2026/4/19/peru-says-presidential-election-results-due-by-mid-may-after-delayed-count title="Peru says presidential election results due by mid-May after"
+[2026-04-19T14:12:07.639Z] [scrape-news] scraped url=https://www.aljazeera.com/news/2026/4/19/pope-leo-tells-angola-during-huge-mass-to-build-hope title="Pope Leo tells Angola during huge Mass to ‘build hope’"
+[2026-04-19T14:12:08.893Z] [scrape-news] scraped url=https://www.aljazeera.com/news/2026/4/19/iran-war-10-frequently-used-words-and-their-meanings title="Iran war: 10 frequently used words and their meanings"
+[2026-04-19T14:12:11.601Z] [scrape-news] discovered count=4 source=Middle East Eye
+[2026-04-19T14:12:12.574Z] [scrape-news] scraped url=https://www.middleeasteye.net/news/turkey-says-muslim-countries-concerned-israel-greece-cyprus-alliance title="Turkey says Muslim countries concerned by Israel-Greece-Cypr"
+[2026-04-19T14:12:13.500Z] [scrape-news] scraped url=https://www.middleeasteye.net/news/i-am-going-crazy-families-missing-gaza-children-endure-agonising-uncertainty title="‘I am going crazy’: Families of missing Gaza children endure"
+[2026-04-19T14:12:14.948Z] [scrape-news] scraped url=https://www.middleeasteye.net/news/i-thought-i-might-die-palestinian-mothers-account-israeli-detention title="'I thought I might die': A Palestinian mother's account of I"
+[2026-04-19T14:12:14.960Z] [scrape-news] skip existing url=https://www.middleeasteye.net/news/iran-denies-it-will-transfer-enriched-uranium-vessels-pass-strait-hormuz
+[2026-04-19T14:12:18.072Z] [scrape-news] discovered count=3 source=Saudi Gazette
+[2026-04-19T14:12:19.426Z] [scrape-news] scraped url=https://saudigazette.com.sa/article/660660/world/trump-says-us-team-heading-to-pakistan-for-iran-talks title="Trump says US team heading to Pakistan for talks"
+[2026-04-19T14:12:21.125Z] [scrape-news] scraped url=https://saudigazette.com.sa/article/660654/saudi-arabia/saudi-fm-joins-gaza-ministerial-talks-at-antalya-diplomacy-forum title="Saudi FM joins Gaza ministerial talks at Antalya Diplomacy F"
+[2026-04-19T14:12:22.804Z] [scrape-news] scraped url=https://saudigazette.com.sa/article/660653/world/iran-seeks-dignified-end-to-war-pezeshkian-says-nuclear-rights-remain title="Iran seeks dignified end to war, president says"
+[2026-04-19T14:12:28.421Z] [scrape-news] https failed for KCNA (fetch failed); retrying with http
+[2026-04-19T14:12:29.946Z] [scrape-news] discovered count=3 source=KCNA
+[2026-04-19T14:12:29.946Z] [scrape-news] skip existing url=http://kcna.kp/en/article/q/f07411be5b2910f079fec53557b6bbc2.kcmsf
+[2026-04-19T14:12:29.946Z] [scrape-news] skip existing url=http://kcna.kp/en/article/q/cb1a70eadd010ca5ebdb241068d3a73a.kcmsf
+[2026-04-19T14:12:29.947Z] [scrape-news] skip existing url=http://kcna.kp/en/article/q/622ee9bfd5ca850da7a5fd39d43a1028.kcmsf
+[2026-04-19T14:12:35.970Z] [scrape-news] discovered count=3 source=Granma
+[2026-04-19T14:12:35.974Z] [scrape-news] skip existing url=https://en.granma.cu/cuba/2026-04-17/patria-the-southern-frontline-of-communication
+[2026-04-19T14:12:35.974Z] [scrape-news] skip existing url=https://en.granma.cu/cuba/2026-04-16/bay-of-pigs-65-years-on-analyzing-its-legacy-is-not-an-exercise-in-nostalgia-it-is-a-strategic-necessity
+[2026-04-19T14:12:35.974Z] [scrape-news] skip existing url=https://en.granma.cu/cuba/2026-04-16/long-live-the-socialist-revolution
+[2026-04-19T14:12:42.276Z] [scrape-news] discovered count=3 source=Prensa Latina
+[2026-04-19T14:12:42.277Z] [scrape-news] skip existing url=https://www.prensa-latina.cu/2024/12/05/
+[2026-04-19T14:12:44.833Z] [scrape-news] scraped url=https://www.prensa-latina.cu/2026/04/19/regresa-a-cine-dominicano-festival-hecho-en-rd/ title="Regresa a cine dominicano Festival Hecho en RD"
+[2026-04-19T14:12:47.745Z] [scrape-news] scraped url=https://www.prensa-latina.cu/2026/04/19/reabren-puentes-clave-en-el-sur-del-libano-tras-ataques-israelies/ title="Reabren puentes clave en el sur del Líbano tras ataques isra"
+[2026-04-19T14:12:55.449Z] [scrape-news] discovered count=3 source=Cubadebate
+[2026-04-19T14:12:57.714Z] [scrape-news] scraped url=http://www.cubadebate.cu/noticias/2026/04/18/reglas-de-oro-para-blindar-su-dinero-en-transfermovil-ante-estafas-digitales/ title=".alogo{display: block;text-indent: -1000px;width: 330px;heig"
+[2026-04-19T14:13:01.406Z] [scrape-news] scraped url=http://www.cubadebate.cu/noticias/2026/04/18/la-union-electrica-pronostica-una-afectacion-de-1320-mw-para-el-horario-pico-nocturno/ title=".alogo{display: block;text-indent: -1000px;width: 330px;heig"

@@ -1,6 +1,7 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
-import Link from 'next/link';
+import { getTranslations } from 'next-intl/server';
+import { Link } from '@/i18n/navigation';
 import { StatusBar } from '@/components/status-bar';
 import { formatUTC } from '@/lib/format';
 import { getSourceMeta } from '@/lib/source-meta';
@@ -63,13 +64,14 @@ function ellulBadge(t: string) {
 }
 
 export default async function ComparisonsPage() {
+  const t = await getTranslations('comparisons');
   const data = JSON.parse(await fs.readFile(COMPARISONS_PATH, 'utf8')) as Comparison[];
 
   return (
     <main className="mx-auto flex min-h-screen w-full max-w-5xl flex-col gap-8 px-6 py-12">
       <header>
-        <h1 className="text-3xl font-semibold">Rhetorical Echoes of Propaganda</h1>
-        <p className="mt-2 text-zinc-400">Continuously updated forensic semiotic matches between contemporary state media and 20th-century dictatorial rhetoric.</p>
+        <h1 className="text-3xl font-semibold">{t('title')}</h1>
+        <p className="mt-2 text-zinc-400">{t('subtitle')}</p>
       </header>
       <StatusBar show={['analysis']} />
 
@@ -78,13 +80,13 @@ export default async function ComparisonsPage() {
           <article key={item.id} className="rounded-lg border border-zinc-800 bg-zinc-900/40 p-5">
             <div className="mb-2 flex items-center justify-between gap-4">
               <p className="text-xs text-zinc-500">{formatUTC(item.timestamp)}</p>
-              <span className="text-xs text-zinc-500">{Math.round(item.confidence * 100)}% confidence</span>
+              <span className="text-xs text-zinc-500">{t('confidence', { n: Math.round(item.confidence * 100) })}</span>
             </div>
 
             <h2 className="text-lg font-medium">{item.historical_parallel}</h2>
             {item.historical_echo && (
               <p className="mt-0.5 text-xs text-zinc-500">
-                vs. {item.historical_echo.figure}{item.historical_echo.year ? `, ${item.historical_echo.year}` : ''}
+                {t('vs')} {item.historical_echo.figure}{item.historical_echo.year ? `, ${item.historical_echo.year}` : ''}
               </p>
             )}
 
@@ -93,16 +95,14 @@ export default async function ComparisonsPage() {
               <div className="mt-1">
                 <p className="line-clamp-3 text-sm text-zinc-400 italic">"{item.contemporary_quote_en}"</p>
                 <p className="mt-0.5 text-[10px] text-zinc-600">
-                  Translated from {item.translation_language} by {item.translation_service}
+                  {t('translatedFrom', { language: item.translation_language ?? '', service: item.translation_service ?? '' })}
                 </p>
               </div>
             )}
 
             <div className="mt-4 flex flex-wrap gap-2">
               {item.tropes.map((trope) => (
-                <span key={trope} className="rounded bg-zinc-800 px-2 py-1 text-xs text-zinc-300">
-                  {trope}
-                </span>
+                <span key={trope} className="rounded bg-zinc-800 px-2 py-1 text-xs text-zinc-300">{trope}</span>
               ))}
               {item.analysis?.narrative_strategy && (
                 <span className={`rounded border px-2 py-1 text-xs ${strategyBadge(item.analysis.narrative_strategy)}`}>
@@ -123,12 +123,7 @@ export default async function ComparisonsPage() {
 
             <div className="mt-4 flex items-center justify-between gap-4">
               <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm">
-                <a
-                  className="text-sky-300 hover:text-sky-200"
-                  href={item.source.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a className="text-sky-300 hover:text-sky-200" href={item.source.url} target="_blank" rel="noopener noreferrer">
                   {item.source.publication}
                 </a>
                 {(() => {
@@ -139,23 +134,16 @@ export default async function ComparisonsPage() {
                       <span className="text-zinc-600">·</span>
                       <span className="text-zinc-500">{meta.flag} {meta.country}</span>
                       <span className="text-zinc-600">·</span>
-                      <a
-                        href={meta.wikipedia}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-zinc-500 underline underline-offset-2 hover:text-zinc-300"
-                      >
-                        Wikipedia
+                      <a href={meta.wikipedia} target="_blank" rel="noopener noreferrer"
+                        className="text-zinc-500 underline underline-offset-2 hover:text-zinc-300">
+                        {t('wikipedia')}
                       </a>
                     </>
                   );
                 })()}
               </div>
-              <Link
-                href={`/comparisons/${item.id}`}
-                className="shrink-0 text-sm text-zinc-400 hover:text-zinc-200"
-              >
-                Full analysis →
+              <Link href={`/comparisons/${item.id}`} className="shrink-0 text-sm text-zinc-400 hover:text-zinc-200">
+                {t('fullAnalysis')}
               </Link>
             </div>
           </article>

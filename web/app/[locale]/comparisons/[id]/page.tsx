@@ -1,6 +1,6 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
-import Link from 'next/link';
+import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import type React from 'react';
 import { formatUTC } from '@/lib/format';
@@ -36,12 +36,7 @@ type Comparison = {
   tropes: string[];
   confidence: number;
   analysis?: Analysis;
-  historical_echo?: {
-    figure: string;
-    year: string;
-    quote: string;
-    context: string;
-  };
+  historical_echo?: { figure: string; year: string; quote: string; context: string };
   divergence_note?: string;
   notes: string;
 };
@@ -77,9 +72,7 @@ function TagList({ items, className = 'border-zinc-700 bg-zinc-800/60 text-zinc-
   return (
     <div className="flex flex-wrap gap-2">
       {items.map((item) => (
-        <span key={item} className={`rounded border px-2 py-0.5 text-xs ${className}`}>
-          {item}
-        </span>
+        <span key={item} className={`rounded border px-2 py-0.5 text-xs ${className}`}>{item}</span>
       ))}
     </div>
   );
@@ -87,12 +80,8 @@ function TagList({ items, className = 'border-zinc-700 bg-zinc-800/60 text-zinc-
 
 function CiteLink({ children, href }: { children: React.ReactNode; href: string }) {
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-xs text-zinc-600 underline underline-offset-2 hover:text-zinc-400"
-    >
+    <a href={href} target="_blank" rel="noopener noreferrer"
+      className="text-xs text-zinc-600 underline underline-offset-2 hover:text-zinc-400">
       {children}
     </a>
   );
@@ -110,59 +99,43 @@ function DimRow({ label, children }: { label: string; children: any }) {
 
 export default async function ComparisonDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
+  const t = await getTranslations('comparisonDetail');
   const data = JSON.parse(await fs.readFile(COMPARISONS_PATH, 'utf8')) as Comparison[];
   const item = data.find((entry) => entry.id === id);
-
-  if (!item) {
-    notFound();
-  }
+  if (!item) notFound();
 
   return (
     <main className="mx-auto min-h-screen w-full max-w-4xl px-6 py-12">
-      {/* Header */}
       <div className="mt-6">
         <p className="text-xs text-zinc-500">{formatUTC(item.timestamp)}</p>
         <h1 className="mt-2 text-3xl font-semibold">{item.historical_parallel}</h1>
       </div>
 
-      {/* Contemporary quote */}
       <blockquote className="mt-6 rounded-lg border border-zinc-800 bg-zinc-900/40 p-5">
         <p className="text-zinc-200 leading-relaxed">"{item.contemporary_quote}"</p>
         {item.contemporary_quote_en && (
           <div className="mt-4 border-t border-zinc-800 pt-4">
             <p className="text-zinc-300 leading-relaxed italic">"{item.contemporary_quote_en}"</p>
             <p className="mt-1.5 text-xs text-zinc-600">
-              Translated from {item.translation_language} by {item.translation_service}
+              {t('meta.translatedFrom', { language: item.translation_language ?? '', service: item.translation_service ?? '' })}
             </p>
           </div>
         )}
         <footer className="mt-3 text-sm text-zinc-500">
-          <a
-            href={item.source.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-sky-300"
-          >
+          <a href={item.source.url} target="_blank" rel="noopener noreferrer" className="hover:text-sky-300">
             {item.source.publication}
           </a>
         </footer>
       </blockquote>
 
-      {/* Historical echo */}
       {item.historical_echo && (
         <section className="mt-8">
-          <h2 className="mb-3 text-sm font-medium uppercase tracking-wide text-zinc-500">
-            Historical Echo
-          </h2>
+          <h2 className="mb-3 text-sm font-medium uppercase tracking-wide text-zinc-500">{t('historicalEcho')}</h2>
           <div className="rounded-lg border border-zinc-700 bg-zinc-900/60 p-5">
             <div className="mb-3 flex items-baseline gap-3">
               <span className="font-semibold text-zinc-200">{item.historical_echo.figure}</span>
-              {item.historical_echo.year && (
-                <span className="text-xs text-zinc-500">{item.historical_echo.year}</span>
-              )}
-              {item.historical_echo.context && (
-                <span className="text-xs text-zinc-500">— {item.historical_echo.context}</span>
-              )}
+              {item.historical_echo.year && <span className="text-xs text-zinc-500">{item.historical_echo.year}</span>}
+              {item.historical_echo.context && <span className="text-xs text-zinc-500">— {item.historical_echo.context}</span>}
             </div>
             <blockquote className="border-l-2 border-zinc-600 pl-4 text-zinc-300 italic">
               "{item.historical_echo.quote}"
@@ -171,51 +144,42 @@ export default async function ComparisonDetailPage({ params }: { params: Promise
         </section>
       )}
 
-      {/* Divergence note */}
       {item.divergence_note && (
         <section className="mt-6">
-          <h2 className="mb-2 text-sm font-medium uppercase tracking-wide text-zinc-500">
-            Divergence Note
-          </h2>
+          <h2 className="mb-2 text-sm font-medium uppercase tracking-wide text-zinc-500">{t('divergenceNote')}</h2>
           <p className="text-sm leading-relaxed text-zinc-300 rounded-lg border border-zinc-800 bg-zinc-900/40 p-4">
             {item.divergence_note}
           </p>
         </section>
       )}
 
-      {/* Multi-dimensional analysis */}
       {item.analysis && (
         <section className="mt-8">
-          <h2 className="mb-3 text-sm font-medium uppercase tracking-wide text-zinc-500">
-            Analytical Dimensions
-          </h2>
+          <h2 className="mb-3 text-sm font-medium uppercase tracking-wide text-zinc-500">{t('analyticalDimensions')}</h2>
           <dl className="rounded-lg border border-zinc-800 bg-zinc-900/40 px-5">
             {item.analysis.theme && (
-              <DimRow label="Theme">
+              <DimRow label={t('labels.theme')}>
                 <span className="text-zinc-200 text-sm">{item.analysis.theme}</span>
               </DimRow>
             )}
-
             {item.analysis.narrative_strategy && (
-              <DimRow label="Narrative strategy">
+              <DimRow label={t('labels.narrativeStrategy')}>
                 <span className={`rounded border px-2 py-0.5 text-xs ${strategyBadge(item.analysis.narrative_strategy)}`}>
                   {item.analysis.narrative_strategy}
                 </span>
                 <span className="ml-3"><CiteLink href="https://doi.org/10.1177/19401612251317696">Lank &amp; Antai 2025</CiteLink></span>
               </DimRow>
             )}
-
             {item.analysis.nimmo_4d && (
-              <DimRow label="Nimmo 4D">
+              <DimRow label={t('labels.nimmo4d')}>
                 <span className={`rounded border px-2 py-0.5 text-xs ${nimmoBadge(item.analysis.nimmo_4d)}`}>
                   {item.analysis.nimmo_4d}
                 </span>
                 <span className="ml-3"><CiteLink href="https://euvsdisinfo.eu/the-4d-approach/">DFRLab / Ben Nimmo</CiteLink></span>
               </DimRow>
             )}
-
             {item.analysis.ellul_type && (
-              <DimRow label="Ellul type">
+              <DimRow label={t('labels.ellulType')}>
                 <span className={`rounded border px-2 py-0.5 text-xs ${ellulTypeBadge(item.analysis.ellul_type)}`}>
                   {item.analysis.ellul_type}
                 </span>
@@ -227,77 +191,58 @@ export default async function ComparisonDetailPage({ params }: { params: Promise
                 <span className="ml-3"><CiteLink href="https://en.wikipedia.org/wiki/Propaganda_(Ellul_book)">Ellul 1965</CiteLink></span>
               </DimRow>
             )}
-
             {item.analysis.san_martino_techniques && (
-              <DimRow label="Techniques (18)">
+              <DimRow label={t('labels.techniques18')}>
                 <div>
                   <TagList items={item.analysis.san_martino_techniques} />
                   <p className="mt-1.5"><CiteLink href="https://aclanthology.org/W19-2006/">Da San Martino et al. — Fine-Grained Analysis of Propaganda in News Articles, ACL 2019</CiteLink></p>
                 </div>
               </DimRow>
             )}
-
             {item.analysis.ipa_techniques && (
-              <DimRow label="IPA techniques">
+              <DimRow label={t('labels.ipaTechniques')}>
                 <div>
                   <TagList items={item.analysis.ipa_techniques} />
                   <p className="mt-1.5"><CiteLink href="https://en.wikipedia.org/wiki/Institute_for_Propaganda_Analysis">Institute for Propaganda Analysis — 7 Techniques, 1937</CiteLink></p>
                 </div>
               </DimRow>
             )}
-
             {item.analysis.eco_properties && (
-              <DimRow label="Ur-Fascism features">
+              <DimRow label={t('labels.urFascism')}>
                 <div>
                   <TagList items={item.analysis.eco_properties} />
                   <p className="mt-1.5"><CiteLink href="https://en.wikipedia.org/wiki/Ur-Fascism">Umberto Eco — Ur-Fascism (14 features), 1995</CiteLink></p>
                 </div>
               </DimRow>
             )}
-
             {item.analysis.eudisinfo_narratives && item.analysis.eudisinfo_narratives.length > 0 && (
-              <DimRow label="Pro-Kremlin narratives">
+              <DimRow label={t('labels.kremlinNarratives')}>
                 <div>
-                  <TagList
-                    items={item.analysis.eudisinfo_narratives}
-                    className="border-red-900 bg-red-950/40 text-red-300"
-                  />
+                  <TagList items={item.analysis.eudisinfo_narratives} className="border-red-900 bg-red-950/40 text-red-300" />
                   <p className="mt-1.5"><CiteLink href="https://euvsdisinfo.eu/disinformation-cases/">EUvsDisinfo — 6 Key Pro-Kremlin Narratives</CiteLink></p>
                 </div>
               </DimRow>
             )}
-
             {item.analysis.eudisinfo_rhetoric && item.analysis.eudisinfo_rhetoric.length > 0 && (
-              <DimRow label="Rhetoric (SWAMPED)">
+              <DimRow label={t('labels.rhetoric')}>
                 <div>
-                  <TagList
-                    items={item.analysis.eudisinfo_rhetoric}
-                    className="border-orange-900 bg-orange-950/40 text-orange-300"
-                  />
+                  <TagList items={item.analysis.eudisinfo_rhetoric} className="border-orange-900 bg-orange-950/40 text-orange-300" />
                   <p className="mt-1.5"><CiteLink href="https://euvsdisinfo.eu/modus-trollerandi-the-kremlin-rhetoric/">EUvsDisinfo — Modus Trollerandi (SWAMPED, 7 devices)</CiteLink></p>
                 </div>
               </DimRow>
             )}
-
             {item.analysis.eudisinfo_conspiracy && item.analysis.eudisinfo_conspiracy.length > 0 && (
-              <DimRow label="Conspiracy patterns">
+              <DimRow label={t('labels.conspiracy')}>
                 <div>
-                  <TagList
-                    items={item.analysis.eudisinfo_conspiracy}
-                    className="border-violet-900 bg-violet-950/40 text-violet-300"
-                  />
+                  <TagList items={item.analysis.eudisinfo_conspiracy} className="border-violet-900 bg-violet-950/40 text-violet-300" />
                   <p className="mt-1.5"><CiteLink href="https://euvsdisinfo.eu/disinformation-cases/">EUvsDisinfo — Conspiracy Theory Archetypes</CiteLink></p>
                 </div>
               </DimRow>
             )}
-
             {item.analysis.eudisinfo_ttp && item.analysis.eudisinfo_ttp.length > 0 && (
-              <DimRow label="TTPs">
+              <DimRow label={t('labels.ttp')}>
                 <div>
-                  <TagList
-                    items={item.analysis.eudisinfo_ttp}
-                    className="border-yellow-900 bg-yellow-950/40 text-yellow-300"
-                  />
+                  <TagList items={item.analysis.eudisinfo_ttp} className="border-yellow-900 bg-yellow-950/40 text-yellow-300" />
                   <p className="mt-1.5"><CiteLink href="https://www.disarmframework.com/">DISARM Framework / EUvsDisinfo — Tactics, Techniques &amp; Procedures</CiteLink></p>
                 </div>
               </DimRow>
@@ -306,19 +251,18 @@ export default async function ComparisonDetailPage({ params }: { params: Promise
         </section>
       )}
 
-      {/* Metadata */}
       <section className="mt-8 border-t border-zinc-800 pt-6">
         <dl className="grid gap-2 text-sm text-zinc-400">
           <div>
-            <dt className="inline font-medium text-zinc-300">Confidence:</dt>{' '}
+            <dt className="inline font-medium text-zinc-300">{t('meta.confidence')}</dt>{' '}
             <dd className="inline">{Math.round(item.confidence * 100)}%</dd>
           </div>
           <div>
-            <dt className="inline font-medium text-zinc-300">Tropes:</dt>{' '}
+            <dt className="inline font-medium text-zinc-300">{t('meta.tropes')}</dt>{' '}
             <dd className="inline">{item.tropes.join(', ')}</dd>
           </div>
           <div>
-            <dt className="inline font-medium text-zinc-300">Notes:</dt>{' '}
+            <dt className="inline font-medium text-zinc-300">{t('meta.notes')}</dt>{' '}
             <dd className="inline">{item.notes}</dd>
           </div>
         </dl>
