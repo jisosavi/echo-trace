@@ -35,10 +35,10 @@ export function Nav() {
   }, []);
 
   const NAV_ITEMS = [
-    { href: '/dashboard' as const,   label: 'ECHO/trace' },
+    { href: '/' as const,            label: 'ECHO/trace' },
+    { href: '/dashboard' as const,   label: t('dashboard') },
     { href: '/comparisons' as const, label: t('comparisons') },
     { href: '/console' as const,     label: t('console') },
-    { href: '/' as const,            label: t('about') },
   ];
 
   return (
