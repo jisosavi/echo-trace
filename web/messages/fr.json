@@ -5,10 +5,15 @@
     "about": "À PROPOS"
   },
   "about": {
-    "title": "Sémiotique Forensique",
-    "lead": "Surveille les médias d'État autoritaires contemporains et compare les structures rhétoriques avec les archives des dictatures historiques — exposant le langage hérité de la propagande.",
-    "body": "Toutes les six heures, le système analyse plus de 30 médias de régimes, classe chaque article selon une taxonomie de 22 tropes et associe les citations correspondantes à leurs jumeaux historiques. Chaque comparaison est annotée selon 18 dimensions analytiques issues des études sur la propagande, la sémiotique, la théorie du mythe politique et la recherche sur la prévention du génocide.",
-    "tagline": "La propagande autoritaire n'invente pas un nouveau langage. Elle l'hérite."
+    "title": "ECHO/trace",
+    "tagline": "La propagande autoritaire n'invente pas un nouveau langage. Elle l'hérite.",
+    "lead": "ECHO/trace est un système autonome de reconnaissance de schémas qui expose cet héritage en temps réel. Toutes les six heures, il collecte plus de 30 médias d'État à travers des régimes autoritaires, identifie des schémas rhétoriques à l'aide d'une taxonomie de 22 tropes, et les compare à une archive historique de dictatures du XXe siècle.",
+    "output": "Le résultat : des juxtapositions forensiques confrontant la propagande d'aujourd'hui à ses ancêtres structurels — un porte-parole de Poutine faisant écho à Goebbels, les médias d'État chinois recyclant Staline, les émissions iraniennes imitant Mussolini.",
+    "howItWorksTitle": "Comment ça fonctionne",
+    "mechanism": "Le système opère comme un archéologue numérique, analysant chaque article selon 18 dimensions scientifiques issues des études sur la propagande, de la sémiotique et de la recherche sur la prévention du génocide. Il recherche des correspondances structurelles dans les archives de l'Allemagne nazie, de l'URSS stalinienne, de la Chine maoïste et de l'Italie fasciste — les corpus de propagande les plus rigoureusement documentés de l'histoire.",
+    "clinical": "L'analyse est clinique ; les conclusions sont implicites dans le parallélisme.",
+    "parallel": "Juste des citations parallèles, horodatées et tracées.",
+    "closing": "Rendre l'héritage visible est l'objectif."
   },
   "dashboard": {
     "title": "Tracer l'Écho de la Propagande",

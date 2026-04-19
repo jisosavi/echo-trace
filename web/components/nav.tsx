@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { Link, usePathname, useRouter } from '@/i18n/navigation';
 import { useParams } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
 
 const LOCALES = [
   { code: 'en', label: 'EN' },
@@ -22,6 +23,16 @@ export function Nav() {
   const router = useRouter();
   const params = useParams();
   const currentLocale = (params.locale as string) ?? 'en';
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    }
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, []);
 
   const NAV_ITEMS = [
     { href: '/dashboard' as const,   label: 'ECHO/trace' },
@@ -50,16 +61,34 @@ export function Nav() {
           );
         })}
 
-        <select
-          value={currentLocale}
-          onChange={(e) => router.replace(pathname, { locale: e.target.value })}
-          className="border-l border-zinc-600 bg-zinc-800 px-3 text-xs font-semibold text-zinc-400 hover:bg-zinc-700 hover:text-white focus:outline-none cursor-pointer"
-          aria-label="Select language"
-        >
-          {LOCALES.map(({ code, label }) => (
-            <option key={code} value={code}>{label}</option>
-          ))}
-        </select>
+        <div ref={ref} className="relative border-l border-zinc-600">
+          <button
+            onClick={() => setOpen((o) => !o)}
+            className="flex h-full items-center px-5 text-sm font-semibold text-zinc-400 hover:bg-zinc-700 hover:text-white focus:outline-none cursor-pointer"
+            aria-label="Select language"
+          >
+            {currentLocale.toUpperCase()}
+            <span className="ml-2 text-zinc-500">{open ? '▲' : '▼'}</span>
+          </button>
+
+          {open && (
+            <div className="absolute right-0 top-full mt-0 w-24 border border-zinc-600 bg-zinc-800 shadow-lg">
+              {LOCALES.map(({ code, label }) => (
+                <button
+                  key={code}
+                  onClick={() => { router.replace(pathname, { locale: code }); setOpen(false); }}
+                  className={`w-full px-5 py-3 text-left text-sm font-semibold transition-colors ${
+                    code === currentLocale
+                      ? 'bg-zinc-700 text-white'
+                      : 'text-zinc-400 hover:bg-zinc-700 hover:text-white'
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </nav>
   );

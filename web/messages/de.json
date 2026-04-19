@@ -5,10 +5,15 @@
     "about": "ÜBER"
   },
   "about": {
-    "title": "Forensische Semiotik",
-    "lead": "Überwacht zeitgenössische autoritäre Staatsmedien und vergleicht rhetorische Strukturen mit historischen Diktaturarchiven — und legt dabei die ererbte Sprache der Propaganda offen.",
-    "body": "Alle sechs Stunden durchsucht das System über 30 Regimemedien, klassifiziert jeden Artikel anhand einer 22-Tropen-Taxonomie und ordnet passende Zitate ihren historischen Zwillingen zu. Jeder Vergleich wird in 18 analytischen Dimensionen aus Propagandastudien, Semiotik, politischer Mythentheorie und Genozidpräventionsforschung annotiert.",
-    "tagline": "Autoritäre Propaganda erfindet keine neue Sprache. Sie erbt sie."
+    "title": "ECHO/trace",
+    "tagline": "Autoritäre Propaganda erfindet keine neue Sprache. Sie erbt sie.",
+    "lead": "ECHO/trace ist ein autonomes Mustererkennungssystem, das dieses Erbe in Echtzeit aufdeckt. Alle sechs Stunden durchsucht es über 30 Staatsmedien autoritärer Regime, identifiziert rhetorische Muster anhand einer 22-Tropen-Taxonomie und gleicht sie mit einem historischen Archiv von Diktaturen des 20. Jahrhunderts ab.",
+    "output": "Das Ergebnis: forensische Paarungen, die die heutige Propaganda ihren strukturellen Vorfahren gegenüberstellen — ein Putin-Sprecher echot Goebbels, chinesische Staatsmedien recyceln Stalin, iranische Sendungen ahmen Mussolini nach.",
+    "howItWorksTitle": "So funktioniert es",
+    "mechanism": "Das System arbeitet wie ein digitaler Archäologe und analysiert jeden Artikel anhand von 18 wissenschaftlichen Dimensionen aus Propagandastudien, Semiotik und Genozidprävention. Es sucht nach strukturellen DNA-Übereinstimmungen in Archiven aus Nazi-Deutschland, der stalinistischen UdSSR, dem maoistischen China und dem faschistischen Italien — den am rigorosesten dokumentierten Propagandakorpora der Geschichte.",
+    "clinical": "Die Analyse ist klinisch; die Schlussfolgerungen sind implizit im Parallelismus.",
+    "parallel": "Nur parallele Zitate, mit Zeitstempel und nachverfolgt.",
+    "closing": "Das Erbe sichtbar zu machen ist der Punkt."
   },
   "dashboard": {
     "title": "Die Echos der Propaganda verfolgen",

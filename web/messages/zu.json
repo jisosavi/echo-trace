@@ -5,10 +5,15 @@
     "about": "MAYELANA"
   },
   "about": {
-    "title": "Isamayotiksi Yobunikazi",
-    "lead": "Ilandelela izindaba zikahulumeni wamazwe anobandlululo futhi iqhathanisa izakhiwo zomlabalaba nolwazi lweminyaka edlule — ibonisa ulimi olufa olulodwa lokukhangisa.",
-    "body": "Njalo ngehora lesithupha, uhlelo lusesa izindaba zamazwe angaphezu kwama-30, luhlola izihloko ngokwefakhthari yama-22 okuxhumana, futhi luhlanganisa izingcaphuno ezihambelana namathumba azo asemlandweni. Ukukhangiswa ngakunye kubhalwa ngezilinganiso ezingu-18 zokuhlaziya.",
-    "tagline": "Ukukhangisa kobandlululo akukho limi elisha. Kuziphatha ilimi elidala."
+    "title": "ECHO/trace",
+    "tagline": "Ukukhangisa kobandlululo akwenzi ulimi olusha. Aluthola njalo olusakofuthi.",
+    "lead": "I-ECHO/trace iyinhlelo yokubona izinhlelo ezizimele ebonisa lolu thola ngesikhathi sangempela. Njalo ngehora lesithupha, isusa izindaba zamazwe anobandlululo angaphezu kwama-30, ihlonza izinhlelo zomlabalaba kusetshenziswa itheksomonomi yama-trope angu-22, futhi iqhathanisa nazo nge-akhivi yasemlandweni yezinhlobo zobandlululo bekhulu lamashumi amabili.",
+    "output": "Umphumela: iziqhathaniso zabobunikazi ezibeka ukukhangisa kwanamuhla phambi kwabahleli baso basemlandweni — usokhulumela kaPutin okhala njalo uGoebbels, izindaba zikahulumeni waseChina eziphinda iStalin, ukusasaza kwase-Iran okulingisa uMussolini.",
+    "howItWorksTitle": "Kusebenza kanjani",
+    "mechanism": "Inhlelo isebenza njengesokulimba kwedijithali, ihlaziya ingkalo ngazo zonke zezinhlangothi ezingu-18 ezikhona kwimfundo yokukhangisa, i-semiotiki nokucwaninga ukuvimbela ukubulawa kwabantu. Ifuna izifaniso ze-DNA ezakhiwe ema-akhivhi aseJalimane le-Nazi, i-USSR yaStalin, iChina yoMao neli-Italy le-Fascist — imizimba yokukhangisa ebalulekiwe kakhulu ebalwe kahle emphakathini.",
+    "clinical": "Ukuhlaziya kuklinikhi; iziphetho zihilelekile ebulingasweni.",
+    "parallel": "Izingcaphuno ezilingana kuphela, ngesikhathi nesibhalo.",
+    "closing": "Ukwenza ukuthola kubonakale yiyona nhloso."
   },
   "dashboard": {
     "title": "Landelela Impindwa Yokukhangisa",

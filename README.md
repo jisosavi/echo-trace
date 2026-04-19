@@ -1,14 +1,20 @@
-# ECHO/trace – Tracing the Echo of Propoganda
+# ECHO/trace
 
-An autonomous system for historical-comparative propaganda analysis. 
+**Authoritarian propaganda does not invent new language. It inherits it.**
 
-Monitors contemporary authoritarian state media and compares rhetorical structures with historical authoritarian archives — exposing the inherited language of propaganda.
+ECHO/trace is an autonomous pattern-matching system that exposes this inheritance in real time. Every six hours, it scrapes 30+ state media outlets across authoritarian regimes, identifies rhetorical patterns using a 22-trope taxonomy, and matches them against a historical archive of 20th-century dictatorships.
 
-Every six hours it scrapes 30+ authoritarian state media outlets, identifies rhetorical patterns matching a structured trope taxonomy, and publishes forensic comparisons — each pairing a contemporary quote with its historical twin from 20th-century authoritarian archives.
+The output: forensic pairings that juxtapose today's propaganda with its structural ancestors — a Putin spokesman echoing Goebbels, Chinese state media recycling Stalin, Iranian broadcasts mirroring Mussolini.
 
-The core premise: authoritarian propaganda does not invent new language. It inherits it. 
-Making that inheritance visible is the point.
-Freedom is not free.
+## How it works
+
+The system operates as a digital archaeologist, analyzing each article across 18 scientific dimensions drawn from propaganda studies, semiotics, and genocide prevention research. It searches for structural DNA matches in archives from Nazi Germany, Stalinist USSR, Maoist China, and Fascist Italy — the most thoroughly documented propaganda corpora in history.
+
+The analysis is clinical; the conclusions are implicit in the parallelism.
+
+Just parallel quotes, timestamped and traced.
+
+**Making inheritance visible is the point.**
 
 ---
 
@@ -35,7 +41,7 @@ Freedom is not free.
 4. **Annotates** each match across 18 analytical dimensions drawn from propaganda studies, semiotics, political myth theory, and genocide prevention research
 5. **Translates** non-English quotes to UK English (auto-detected; original preserved)
 6. **Publishes** results to a Next.js gallery at `/comparisons` — each entry showing the modern quote, historical echo, and full multi-dimensional analysis
-7. **Streams** live execution logs to a dashboard at `/dashboard`
+7. **Streams** live execution logs to the Live Console at `/console`, with a real-time world map showing which countries are being scraped
 
 ---
 
@@ -73,13 +79,15 @@ Freedom is not free.
                               ▼
             web/public/data/comparisons.json
                               │
-                    ┌─────────▼──────────┐
-                    │  Next.js Frontend  │
-                    │  /                 │
-                    │  /comparisons      │
-                    │  /comparisons/[id] │
-                    │  /dashboard        │
-                    └────────────────────┘
+                    ┌──────────────────────────┐
+                    │  Next.js Frontend        │
+                    │  /[locale]/              │
+                    │  /[locale]/comparisons   │
+                    │  /[locale]/comparisons/  │
+                    │             [id]         │
+                    │  /[locale]/dashboard     │
+                    │  /[locale]/console       │
+                    └──────────────────────────┘
 ```
 
 ### Scripts
@@ -190,7 +198,7 @@ The scraper monitors 30+ outlets across seven regime clusters. Sources marked `[
 | **Belarus** | BelTA `[RSS]` · ONT |
 | **Cuba** | Granma `[RSS]` · Prensa Latina `[RSS]` · Cubadebate `[RSS]` |
 | **Iran** | Press TV `[RSS]` · Tehran Times `[RSS]` |
-| **North Korea** | KCNA `[RSS]` |
+| **North Korea** | KCNA (HTML scraping, HTTP-only — HTTPS not served by kcna.kp) |
 | **Venezuela** | AVN / MPPRE |
 | **Zimbabwe** | The Herald `[RSS]` |
 | **Syria** | SANA `[RSS]` |
@@ -203,7 +211,7 @@ The scraper monitors 30+ outlets across seven regime clusters. Sources marked `[
 | **Eswatini** | Eswatini Observer `[RSS]` · Times of Eswatini |
 
 > **Note:** Some Russian sources are blocked under EU sanctions. Scraping requires a non-EU VPN or server.
-> **Note:** Use of VPN or other anonymisation method is highly adviced to hide the scraping from auhtoritarian regimes.
+> **Note:** Use of VPN or other anonymisation method is highly advised to hide the scraping from authoritarian regimes.
 
 ---
 
@@ -295,7 +303,7 @@ node scripts/batch-classify.mjs
 
 ## Web Frontend
 
-A Next.js 15 app in `web/`. Reads from `web/public/data/comparisons.json` at build time for static rendering; the live dashboard streams `cycle.log` via SSE.
+A Next.js 15 app in `web/`. Uses `force-dynamic` rendering with `fs.readFile` for comparisons data so new analyses appear immediately without a rebuild. Supports 9 UI locales via `next-intl` with URL-based routing (`/[locale]/...`); the default locale (`en`) is served at `/`.
 
 ```bash
 cd web
@@ -306,13 +314,17 @@ npm run start   # production server
 
 ### Routes
 
+All content routes are locale-prefixed. The default locale (`en`) redirects from `/` automatically.
+
 | Route | Purpose |
 |---|---|
-| `/` | Landing page |
-| `/comparisons` | Gallery of all comparisons (paginated feed) |
-| `/comparisons/[id]` | Detail view — full multi-dimensional analysis |
-| `/dashboard` | Live monitoring — stat cards, bar charts, streaming log |
-| `/api/logs` | SSE endpoint serving tail of `cycle.log` |
+| `/[locale]/` | Landing / About page |
+| `/[locale]/comparisons` | Gallery of all comparisons (paginated feed) |
+| `/[locale]/comparisons/[id]` | Detail view — full multi-dimensional analysis |
+| `/[locale]/dashboard` | Analytics — stat cards, bar charts, source activity |
+| `/[locale]/console` | Live Console — streaming log + world map |
+| `/api/logs` | SSE endpoint serving tail of `cycle.log` (1 s poll) |
+| `/api/map-status` | JSON endpoint — active/processed countries for world map |
 
 ### Dashboard sections
 
@@ -323,7 +335,16 @@ npm run start   # production server
 - **Technique Taxonomies**: Da San Martino 18 techniques, IPA 7 techniques, Eco Ur-Fascism 14 features
 - **EUvsDisinfo Dimensions**: Pro-Kremlin Narratives, Rhetoric (SWAMPED), Conspiracy Patterns, TTP Framework
 - **Source Activity**: article counts and last-seen dates per outlet
-- **Live Console**: real-time streaming of `cycle.log`
+
+### Live Console
+
+- Real-time log stream from `cycle.log` via SSE (1-second poll)
+- Interactive world map (`react-simple-maps`) highlighting countries as they are scraped
+- Link to Freedom House — Freedom in the World 2026 for country freedom profiles
+
+### Internationalisation
+
+The UI is available in 9 locales: **English** (en), **French** (fr), **German** (de), **Russian** (ru), **Chinese** (zh), **Italian** (it), **Spanish** (es), **Portuguese** (pt), **Zulu** (zu). A language switcher in the navigation bar changes the locale in-place. All comparisons and scraped-article translations remain in UK English regardless of the selected UI locale.
 
 ---
 
@@ -336,8 +357,10 @@ npm run start   # production server
 | HTML parsing | Cheerio 1.2, Mozilla Readability 0.6, jsdom 29 |
 | Browser automation | Puppeteer 24 (fallback for JS-rendered pages) |
 | Web framework | Next.js 15, React 19 |
+| Internationalisation | next-intl 3.x — 9 locales, URL-based routing |
 | Styling | Tailwind CSS 4.2 |
 | Animations | Framer Motion |
+| World map | react-simple-maps 3.x + world-atlas (Natural Earth topojson) |
 | Data format | JSON throughout — no database |
 | Scheduling | cron |
 
@@ -408,10 +431,3 @@ The core analytical reference. Contains:
 
 ---
 
-## Project Identity
-
-> *"Authoritarian propaganda does not invent new language. It inherits it."*
-
-The system operates as an autonomous forensic semiotician: a digital archaeologist whose mandate is to surface the historical DNA of contemporary state rhetoric. It does not editorialize. It juxtaposes. The analysis is clinical; the conclusions are implicit in the parallelism.
-
-The historical archive deliberately focuses on the most thoroughly documented propaganda corpora — Nazi Germany, Stalinist USSR, Maoist China, Fascist Italy — not to suggest moral equivalence in all directions but because these are the cases where the internal logic of authoritarian rhetoric has been most rigorously studied. They are the reference points against which contemporary deviations and continuities can be measured with the greatest precision.

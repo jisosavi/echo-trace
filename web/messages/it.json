@@ -5,10 +5,15 @@
     "about": "INFORMAZIONI"
   },
   "about": {
-    "title": "Semiotica Forense",
-    "lead": "Monitora i media statali autoritari contemporanei e confronta le strutture retoriche con gli archivi storici delle dittature — esponendo il linguaggio ereditato della propaganda.",
-    "body": "Ogni sei ore il sistema analizza oltre 30 media di regime, classifica ogni articolo secondo una tassonomia di 22 tropi e abbina le citazioni corrispondenti ai loro gemelli storici. Ogni confronto è annotato su 18 dimensioni analitiche tratte dagli studi sulla propaganda, semiotica, teoria del mito politico e ricerca sulla prevenzione del genocidio.",
-    "tagline": "La propaganda autoritaria non inventa un nuovo linguaggio. Lo eredita."
+    "title": "ECHO/trace",
+    "tagline": "La propaganda autoritaria non inventa un nuovo linguaggio. Lo eredita.",
+    "lead": "ECHO/trace è un sistema autonomo di riconoscimento di schemi che espone questa eredità in tempo reale. Ogni sei ore, raccoglie dati da oltre 30 media statali attraverso regimi autoritari, identifica schemi retorici usando una tassonomia di 22 tropi e li confronta con un archivio storico di dittature del XX secolo.",
+    "output": "Il risultato: abbinamenti forensici che giustappongono la propaganda odierna ai suoi antenati strutturali — un portavoce di Putin che echeggia Goebbels, i media statali cinesi che riciclano Stalin, le trasmissioni iraniane che imitano Mussolini.",
+    "howItWorksTitle": "Come funziona",
+    "mechanism": "Il sistema opera come un archeologo digitale, analizzando ogni articolo attraverso 18 dimensioni scientifiche tratte dagli studi sulla propaganda, dalla semiotica e dalla ricerca sulla prevenzione del genocidio. Cerca corrispondenze di DNA strutturale negli archivi della Germania nazista, dell'URSS stalinista, della Cina maoista e dell'Italia fascista — i corpora propagandistici più rigorosamente documentati della storia.",
+    "clinical": "L'analisi è clinica; le conclusioni sono implicite nel parallelismo.",
+    "parallel": "Solo citazioni parallele, con timestamp e tracciate.",
+    "closing": "Rendere visibile l'eredità è lo scopo."
   },
   "dashboard": {
     "title": "Tracciare l'Eco della Propaganda",
