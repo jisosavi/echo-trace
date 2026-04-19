@@ -431,3 +431,9 @@ The core analytical reference. Contains:
 
 ---
 
+## License
+
+GPL v3
+
+See LICENSE file for more.
+
