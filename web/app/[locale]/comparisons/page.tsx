@@ -1,14 +1,11 @@
-import { promises as fs } from 'node:fs';
-import path from 'node:path';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { StatusBar } from '@/components/status-bar';
 import { formatUTC } from '@/lib/format';
 import { getSourceMeta } from '@/lib/source-meta';
+import { getAllComparisons } from '@/lib/db';
 
-export const dynamic = 'force-dynamic';
-
-const COMPARISONS_PATH = path.resolve(process.cwd(), 'public/data/comparisons.json');
+export const revalidate = 21600;
 
 type Analysis = {
   theme?: string;
@@ -65,7 +62,7 @@ function ellulBadge(t: string) {
 
 export default async function ComparisonsPage() {
   const t = await getTranslations('comparisons');
-  const data = JSON.parse(await fs.readFile(COMPARISONS_PATH, 'utf8')) as Comparison[];
+  const data = getAllComparisons() as Comparison[];
 
   return (
     <main className="mx-auto flex min-h-screen w-full max-w-5xl flex-col gap-8 px-6 py-12">

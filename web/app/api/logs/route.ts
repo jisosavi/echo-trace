@@ -1,4 +1,5 @@
-import { promises as fs } from 'node:fs';
+import { watch, type FSWatcher } from 'node:fs';
+import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 
 export const runtime = 'nodejs';
@@ -6,7 +7,6 @@ export const dynamic = 'force-dynamic';
 
 const encoder = new TextEncoder();
 const MAX_LINES = 120;
-const POLL_MS = 1000;
 
 function resolveLogPath(): string {
   if (process.env.CYCLE_LOG_PATH) {
@@ -32,7 +32,9 @@ function toSse(event: string, payload: unknown): Uint8Array {
 export async function GET(): Promise<Response> {
   const logPath = resolveLogPath();
   let heartbeatId: ReturnType<typeof setInterval> | undefined;
-  let pollId: ReturnType<typeof setInterval> | undefined;
+  let watcher: FSWatcher | undefined;
+  let parentWatcher: FSWatcher | undefined;
+  let debounce: ReturnType<typeof setTimeout> | undefined;
 
   const stream = new ReadableStream<Uint8Array>({
     async start(controller) {
@@ -44,7 +46,7 @@ export async function GET(): Promise<Response> {
 
       const sendSnapshot = async () => {
         try {
-          const file = await fs.readFile(logPath, 'utf8');
+          const file = await readFile(logPath, 'utf8');
           previous = file;
           const lines = tailLines(file, MAX_LINES);
           controller.enqueue(toSse('snapshot', lines));
@@ -56,10 +58,8 @@ export async function GET(): Promise<Response> {
 
       const pollForUpdates = async () => {
         try {
-          const latest = await fs.readFile(logPath, 'utf8');
-          if (latest === previous) {
-            return;
-          }
+          const latest = await readFile(logPath, 'utf8');
+          if (latest === previous) return;
 
           if (latest.startsWith(previous)) {
             const delta = latest.slice(previous.length);
@@ -74,23 +74,47 @@ export async function GET(): Promise<Response> {
 
           previous = latest;
         } catch {
-          // Source may be unavailable temporarily; wait for next poll.
+          // Source may be unavailable temporarily; wait for next event.
         }
       };
 
+      const attachFileWatcher = (targetPath: string) => {
+        watcher = watch(targetPath, () => {
+          if (debounce) clearTimeout(debounce);
+          debounce = setTimeout(() => void pollForUpdates(), 100);
+        });
+        watcher.on('error', () => {
+          // File removed or inaccessible — next write will trigger parent watcher if needed.
+        });
+      };
+
       await sendSnapshot();
-      heartbeatId = setInterval(sendHeartbeat, 15000);
-      pollId = setInterval(() => {
-        void pollForUpdates();
-      }, POLL_MS);
+      heartbeatId = setInterval(sendHeartbeat, 15_000);
+
+      try {
+        attachFileWatcher(logPath);
+      } catch {
+        // Log file doesn't exist yet — watch parent directory for creation.
+        try {
+          parentWatcher = watch(path.dirname(logPath), (_, filename) => {
+            if (filename === path.basename(logPath)) {
+              parentWatcher?.close();
+              parentWatcher = undefined;
+              attachFileWatcher(logPath);
+              void pollForUpdates();
+            }
+          });
+        } catch {
+          // Parent directory also inaccessible — no-op, snapshot already sent.
+        }
+      }
     },
+
     cancel() {
-      if (heartbeatId) {
-        clearInterval(heartbeatId);
-      }
-      if (pollId) {
-        clearInterval(pollId);
-      }
+      if (heartbeatId) clearInterval(heartbeatId);
+      if (debounce) clearTimeout(debounce);
+      watcher?.close();
+      parentWatcher?.close();
     }
   });
 

@@ -1,13 +1,10 @@
-import { promises as fs } from 'node:fs';
-import path from 'node:path';
 import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import type React from 'react';
 import { formatUTC } from '@/lib/format';
+import { getComparisonById } from '@/lib/db';
 
-export const dynamic = 'force-dynamic';
-
-const COMPARISONS_PATH = path.resolve(process.cwd(), 'public/data/comparisons.json');
+export const revalidate = 21600;
 
 type Analysis = {
   theme?: string;
@@ -100,8 +97,7 @@ function DimRow({ label, children }: { label: string; children: any }) {
 export default async function ComparisonDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const t = await getTranslations('comparisonDetail');
-  const data = JSON.parse(await fs.readFile(COMPARISONS_PATH, 'utf8')) as Comparison[];
-  const item = data.find((entry) => entry.id === id);
+  const item = getComparisonById(id) as Comparison | null;
   if (!item) notFound();
 
   return (

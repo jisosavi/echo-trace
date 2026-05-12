@@ -3,9 +3,11 @@ import path from 'node:path';
 import { getTranslations } from 'next-intl/server';
 import { StatusBar } from '@/components/status-bar';
 import { formatUTC } from '@/lib/format';
+import { getAllComparisons } from '@/lib/db';
+
+export const revalidate = 21600;
 
 const DATA_DIR = path.resolve(process.cwd(), '../agent/data');
-const COMPARISONS_PATH = path.resolve(process.cwd(), 'public/data/comparisons.json');
 
 type Comparison = {
   id: string;
@@ -52,11 +54,10 @@ function countScalar(comps: Comparison[], field: keyof NonNullable<Comparison['a
 }
 
 async function loadStats() {
-  const [comparisons, rawNews] = await Promise.all([
-    readJson<Comparison[]>(COMPARISONS_PATH),
+  const [rawNews] = await Promise.all([
     readJson<RawNewsRecord[]>(path.join(DATA_DIR, 'raw-news.json')),
   ]);
-  const comps = comparisons ?? [];
+  const comps = getAllComparisons() as Comparison[];
   const news = rawNews ?? [];
   const tropeCounts: Record<string, number> = {};
   let confidenceSum = 0, confidenceN = 0;

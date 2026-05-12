@@ -2,7 +2,7 @@
 /**
  * analyze-new.mjs
  * Reads agent/data/raw-news.json, compares against already-analyzed URLs in
- * web/public/data/comparisons.json, and runs analyze-one-url.mjs on each new URL.
+ * agent/data/echo-trace.db, and runs analyze-one-url.mjs on each new URL.
  *
  * Usage:
  *   ANTHROPIC_API_KEY=sk-... node scripts/analyze-new.mjs [options]
@@ -18,14 +18,14 @@ import { existsSync } from 'node:fs';
 import { spawn } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { getAllUrls } from './db.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname  = path.dirname(__filename);
 const ROOT       = path.resolve(__dirname, '..');
 
-const RAW_NEWS_PATH    = path.join(ROOT, 'agent/data/raw-news.json');
-const COMPARISONS_PATH = path.join(ROOT, 'web/public/data/comparisons.json');
-const ANALYZER         = path.join(ROOT, 'scripts/analyze-one-url.mjs');
+const RAW_NEWS_PATH = path.join(ROOT, 'agent/data/raw-news.json');
+const ANALYZER      = path.join(ROOT, 'scripts/analyze-one-url.mjs');
 
 function parseArgs() {
   const args = process.argv.slice(2);
@@ -67,16 +67,15 @@ async function main() {
     process.exit(1);
   }
 
-  const rawNews    = await readJson(RAW_NEWS_PATH);
-  const comparisons = await readJson(COMPARISONS_PATH);
+  const rawNews = await readJson(RAW_NEWS_PATH);
 
   if (rawNews.length === 0) {
     console.log('No scraped articles found in raw-news.json. Run scrape-news.mjs first.');
     return;
   }
 
-  // Build set of already-analyzed URLs
-  const analyzedUrls = new Set(comparisons.map((c) => c.source?.url).filter(Boolean));
+  // Build set of already-analyzed URLs from SQLite
+  const analyzedUrls = getAllUrls();
 
   // Filter to real news URLs not yet analyzed
   const pending = rawNews

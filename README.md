@@ -61,23 +61,23 @@ Just parallel quotes, timestamped and traced.
 │                ├─ Extract article text                      │
 │                │    (Readability → JSON-LD → DOM → fallback)│
 │                │                                            │
-│                ├─ Classify trope (Claude)                   │
+│                ├─ Classify trope (Claude Opus)              │
 │                │    → archival-memory.json taxonomy         │
 │                │                                            │
-│                ├─ Find historical echo (Claude)             │
+│                ├─ Find historical echo (Claude Opus)        │
 │                │    → 100+ archived quotes                  │
 │                │                                            │
-│                ├─ Multi-dimensional analysis (Claude)       │
+│                ├─ Multi-dimensional analysis (Claude Opus)  │
 │                │    → 18 analytical dimensions              │
 │                │                                            │
 │                ├─ Translate if non-English (Claude Haiku)   │
 │                │                                            │
-│                └─ Append to comparisons.json                │
+│                └─ Write to SQLite DB                        │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
                               │
                               ▼
-            web/public/data/comparisons.json
+               agent/data/echo-trace.db (SQLite)
                               │
                     ┌──────────────────────────┐
                     │  Next.js Frontend        │
@@ -96,7 +96,7 @@ Just parallel quotes, timestamped and traced.
 |---|---|
 | `scripts/cycle.sh` | Bash orchestrator — runs every 6 hours via crontab |
 | `scripts/scrape-news.mjs` | Scrapes 30+ sources; outputs to `raw-news.json` |
-| `scripts/analyze-one-url.mjs` | Deep-analyses a single URL; appends to `comparisons.json` |
+| `scripts/analyze-one-url.mjs` | Deep-analyses a single URL; writes result to `agent/data/echo-trace.db` |
 | `scripts/analyze-new.mjs` | Batch-processes all unanalysed URLs from `raw-news.json` |
 | `scripts/batch-classify.mjs` | Classifies EUvsDisinfo training data with prompt caching |
 | `scripts/fetch-eudisinfo.mjs` | Fetches disinformation cases from euvsdisinfo.eu API |
@@ -220,7 +220,7 @@ The scraper monitors 30+ outlets across seven regime clusters. Sources marked `[
 ### Prerequisites
 
 - Node.js 18+
-- An Anthropic API key (`claude-haiku-4-5-20251001` and `claude-sonnet-4-6` are used)
+- An Anthropic API key (`claude-opus-4-6` for classification and historical analysis; `claude-haiku-4-5-20251001` for translation)
 - Chromium (for Puppeteer — auto-downloaded on `npm install`)
 
 ### Install
@@ -303,7 +303,7 @@ node scripts/batch-classify.mjs
 
 ## Web Frontend
 
-A Next.js 15 app in `web/`. Uses `force-dynamic` rendering with `fs.readFile` for comparisons data so new analyses appear immediately without a rebuild. Supports 9 UI locales via `next-intl` with URL-based routing (`/[locale]/...`); the default locale (`en`) is served at `/`.
+A Next.js 15 app in `web/`. Reads comparisons from `agent/data/echo-trace.db` via `better-sqlite3`. The dashboard, comparisons list, and comparison detail pages use ISR (`revalidate = 21600`) so rendered HTML is cached for 6 hours — matching the pipeline cadence — and rebuilt in the background after the cache expires. The console page remains fully dynamic. Supports 9 UI locales via `next-intl` with URL-based routing (`/[locale]/...`); the default locale (`en`) is served at `/`.
 
 ```bash
 cd web
@@ -323,7 +323,7 @@ All content routes are locale-prefixed. The default locale (`en`) redirects from
 | `/[locale]/comparisons/[id]` | Detail view — full multi-dimensional analysis |
 | `/[locale]/dashboard` | Analytics — stat cards, bar charts, source activity |
 | `/[locale]/console` | Live Console — streaming log + world map |
-| `/api/logs` | SSE endpoint serving tail of `cycle.log` (1 s poll) |
+| `/api/logs` | SSE endpoint — event-driven push from `cycle.log` via `fs.watch` |
 | `/api/map-status` | JSON endpoint — active/processed countries for world map |
 
 ### Dashboard sections
@@ -338,7 +338,7 @@ All content routes are locale-prefixed. The default locale (`en`) redirects from
 
 ### Live Console
 
-- Real-time log stream from `cycle.log` via SSE (1-second poll)
+- Real-time log stream from `cycle.log` via SSE; event-driven via `fs.watch` (pushes only on file writes, no polling)
 - Interactive world map (`react-simple-maps`) highlighting countries as they are scraped
 - Link to Freedom House — Freedom in the World 2026 for country freedom profiles
 
@@ -361,7 +361,7 @@ The UI is available in 9 locales: **English** (en), **French** (fr), **German** 
 | Styling | Tailwind CSS 4.2 |
 | Animations | Framer Motion |
 | World map | react-simple-maps 3.x + world-atlas (Natural Earth topojson) |
-| Data format | JSON throughout — no database |
+| Database | SQLite (`better-sqlite3`) — `agent/data/echo-trace.db` |
 | Scheduling | cron |
 
 ---
@@ -382,45 +382,33 @@ The UI is available in 9 locales: **English** (en), **French** (fr), **German** 
 ]
 ```
 
-### `web/public/data/comparisons.json`
-```json
-[
-  {
-    "id": "tass-foreign-saboteur-1713441600",
-    "timestamp": "2026-04-18T10:00:00Z",
-    "source": { "publication": "TASS", "url": "https://..." },
-    "contemporary_quote": "...",
-    "contemporary_quote_en": "... (UK English translation if non-English)",
-    "translation_language": "Russian",
-    "translation_service": "Claude claude-haiku-4-5",
-    "historical_parallel": "External Threat / Foreign Interference",
-    "tropes": ["foreign_saboteur"],
-    "confidence": 0.92,
-    "analysis": {
-      "theme": "...",
-      "narrative_strategy": "suppression",
-      "nimmo_4d": "Dismiss",
-      "ellul_type": "agitation",
-      "ellul_axis": "vertical",
-      "san_martino_techniques": ["Appeal to Fear/Prejudice", "Loaded Language"],
-      "ipa_techniques": ["Name-calling", "Transfer"],
-      "eco_properties": ["Obsession with a Plot", "Fear of Difference"],
-      "eudisinfo_narratives": ["Lost Sovereignty"],
-      "eudisinfo_rhetoric": ["Attack", "Straw Man"],
-      "eudisinfo_conspiracy": ["Anglo-Saxon Plot"],
-      "eudisinfo_ttp": ["Conspiracy Amplification", "Emotional Manipulation"]
-    },
-    "historical_echo": {
-      "figure": "Joseph Stalin",
-      "year": "1937",
-      "quote": "...",
-      "context": "Plenum of the Central Committee, March 1937"
-    },
-    "divergence_note": "Both quotes deploy the foreign-agent framing, but...",
-    "notes": "..."
-  }
-]
+### `agent/data/echo-trace.db` (SQLite)
+
+All comparison results are stored in a single `comparisons` table. JSON columns (`tropes`, `analysis`, `historical_echo`) hold serialised objects.
+
+```sql
+CREATE TABLE comparisons (
+  id                    TEXT PRIMARY KEY,
+  timestamp             TEXT NOT NULL,       -- ISO 8601
+  source_publication    TEXT,                -- hostname, e.g. "tass.com"
+  source_url            TEXT,
+  contemporary_quote    TEXT,                -- extracted quote, original language
+  contemporary_quote_en TEXT,                -- UK English translation (if non-English)
+  translation_language  TEXT,
+  translation_service   TEXT,
+  historical_parallel   TEXT,                -- matched trope theme
+  tropes                TEXT,                -- JSON array, e.g. ["foreign_saboteur"]
+  confidence            REAL,                -- 0.0 – 0.95
+  analysis              TEXT,                -- JSON object with all 18 dimensions
+  historical_echo       TEXT,                -- JSON: { figure, year, quote, context }
+  divergence_note       TEXT,
+  extraction_method     TEXT,                -- readability | jsonld | dom_paragraphs | puppeteer_dom | fallback_text
+  evidence_snippet      TEXT,
+  notes                 TEXT
+);
 ```
+
+**Indexes:** `idx_ts` on `timestamp DESC` (list ordering), `idx_url` on `source_url` (deduplication).
 
 ### `archival-memory.json`
 

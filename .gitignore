@@ -2,3 +2,6 @@ node_modules
 .next/
 .env
 .env.local
+agent/data/echo-trace.db
+agent/data/echo-trace.db-shm
+agent/data/echo-trace.db-wal
