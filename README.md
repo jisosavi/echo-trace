@@ -2,7 +2,7 @@
 
 **Authoritarian propaganda does not invent new language. It inherits it.**
 
-ECHO/trace is an autonomous pattern-matching system that exposes this inheritance in real time. Every six hours, it scrapes 30+ state media outlets across authoritarian regimes, identifies rhetorical patterns using a 22-trope taxonomy, and matches them against a historical archive of 20th-century dictatorships.
+ECHO/trace is an autonomous AI-powered pattern-matching system that exposes this inheritance in real time. Every six hours, it scrapes 30+ state media outlets across authoritarian regimes, identifies rhetorical patterns using a 22-trope taxonomy, and matches them against a historical archive of 20th-century dictatorships.
 
 The output: forensic pairings that juxtapose today's propaganda with its structural ancestors — a Putin spokesman echoing Goebbels, Chinese state media recycling Stalin, Iranian broadcasts mirroring Mussolini.
 
@@ -61,7 +61,7 @@ Just parallel quotes, timestamped and traced.
 │                ├─ Extract article text                      │
 │                │    (Readability → JSON-LD → DOM → fallback)│
 │                │                                            │
-│                ├─ Classify trope (Claude Opus)              │
+│                ├─ Classify trope (Claude Haiku)             │
 │                │    → archival-memory.json taxonomy         │
 │                │                                            │
 │                ├─ Find historical echo (Claude Opus)        │
