@@ -8,10 +8,10 @@
   "about": {
     "title": "ECHO/trace",
     "tagline": "La propaganda autoritaria no inventa un nuevo lenguaje. Lo hereda.",
-    "lead": "ECHO/trace es un sistema autónomo de reconocimiento de patrones que expone esta herencia en tiempo real. Cada seis horas, rastrea más de 30 medios estatales de regímenes autoritarios, identifica patrones retóricos usando una taxonomía de 22 tropos y los compara con un archivo histórico de dictaduras del siglo XX.",
+    "lead": "ECHO/trace es un sistema autónomo de reconocimiento de patrones impulsado por inteligencia artificial que expone esta herencia en tiempo real. Cada seis horas, rastrea más de 30 medios estatales de regímenes autoritarios, identifica patrones retóricos usando una taxonomía de 22 tropos y los compara con un archivo curado de 88 citas históricamente documentadas de más de 30 figuras que abarcan dictaduras de los siglos XX y XXI.",
     "output": "El resultado: emparejamientos forenses que yuxtaponen la propaganda actual con sus ancestros estructurales — un portavoz de Putin que hace eco a Goebbels, los medios estatales chinos que reciclan a Stalin, las emisiones iraníes que imitan a Mussolini.",
     "howItWorksTitle": "Cómo funciona",
-    "mechanism": "El sistema opera como un arqueólogo digital, analizando cada artículo a través de 18 dimensiones científicas tomadas de los estudios sobre propaganda, la semiótica y la investigación en prevención del genocidio. Busca coincidencias de ADN estructural en archivos de la Alemania nazi, la URSS estalinista, la China maoísta y la Italia fascista — los corpus propagandísticos más rigurosamente documentados de la historia.",
+    "mechanism": "El sistema opera como un arqueólogo digital, analizando cada artículo a través de 18 dimensiones científicas tomadas de los estudios sobre propaganda, la semiótica y la investigación en prevención del genocidio. Busca coincidencias de ADN estructural en un archivo que se extiende desde la Alemania nazi y la URSS estalinista hasta el Chile de Pinochet, la Libia de Gadafi, la Sudáfrica del apartheid y las juntas militares de América Latina — utilizando búsqueda semántica vectorial para encontrar paralelos retóricos independientemente del régimen o la época.",
     "clinical": "El análisis es clínico; las conclusiones son implícitas en el paralelismo.",
     "parallel": "Solo citas paralelas, con marca de tiempo y trazadas.",
     "closing": "Hacer visible la herencia es el objetivo."

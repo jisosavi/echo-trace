@@ -8,10 +8,10 @@
   "about": {
     "title": "ECHO/trace",
     "tagline": "Authoritarian propaganda does not invent new language. It inherits it.",
-    "lead": "ECHO/trace is an autonomous pattern-matching system that exposes this inheritance in real time. Every six hours, it scrapes 30+ state media outlets across authoritarian regimes, identifies rhetorical patterns using a 22-trope taxonomy, and matches them against a historical archive of 20th-century dictatorships.",
+    "lead": "ECHO/trace is an autonomous AI-powered pattern-matching system that exposes this inheritance in real time. Every six hours, it scrapes 30+ state media outlets across authoritarian regimes, identifies rhetorical patterns using a 22-trope taxonomy, and matches them against a curated archive of 88 historically documented quotes from over 30 figures spanning dictatorships of the 20th and 21st centuries.",
     "output": "The output: forensic pairings that juxtapose today's propaganda with its structural ancestors — a Putin spokesman echoing Goebbels, Chinese state media recycling Stalin, Iranian broadcasts mirroring Mussolini.",
     "howItWorksTitle": "How it works",
-    "mechanism": "The system operates as a digital archaeologist, analyzing each article across 18 scientific dimensions drawn from propaganda studies, semiotics, and genocide prevention research. It searches for structural DNA matches in archives from Nazi Germany, Stalinist USSR, Maoist China, and Fascist Italy — the most thoroughly documented propaganda corpora in history.",
+    "mechanism": "The system operates as a digital archaeologist, analyzing each article across 18 scientific dimensions drawn from propaganda studies, semiotics, and genocide prevention research. It searches for structural DNA matches across an archive reaching from Nazi Germany and Stalinist USSR to Pinochet's Chile, Gaddafi's Libya, apartheid South Africa, and the military juntas of Latin America — using semantic vector search to find rhetorical parallels regardless of which regime or era they come from.",
     "clinical": "The analysis is clinical; the conclusions are implicit in the parallelism.",
     "parallel": "Just parallel quotes, timestamped and traced.",
     "closing": "Making inheritance visible is the point."

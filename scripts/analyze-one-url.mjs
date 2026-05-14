@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { appendFile, readFile } from 'node:fs/promises';
-import { insertComparison, existsByUrlAndQuote } from './db.mjs';
+import { insertComparison, existsByUrlAndQuote, getAllEchoEmbeddings } from './db.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Readability } from '@mozilla/readability';
@@ -655,22 +655,66 @@ Respond with JSON only, no prose.`
   return { language: result.language, translation: result.translation };
 }
 
+function cosine(a, b) {
+  let dot = 0, na = 0, nb = 0;
+  for (let i = 0; i < a.length; i++) { dot += a[i] * b[i]; na += a[i] * a[i]; nb += b[i] * b[i]; }
+  return dot / (Math.sqrt(na) * Math.sqrt(nb) || 1);
+}
+
+async function embedText(text, voyageKey) {
+  const res = await fetch('https://api.voyageai.com/v1/embeddings', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${voyageKey}` },
+    body: JSON.stringify({ model: 'voyage-3-lite', input: [text] }),
+  });
+  if (!res.ok) throw new Error(`Voyage embed error ${res.status}: ${await res.text()}`);
+  return (await res.json()).data[0].embedding;
+}
+
 async function runHistoricalAnalysis(modernQuote, trope, articleText) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey || !trope) {
-    return null;
-  }
-
-  const echoes = trope.historical_echoes ?? [];
-  if (echoes.length === 0) {
-    return null;
-  }
-
-  const echoList = echoes
-    .map((e, i) => `[${i}] Figure: ${e.figure} | Context: ${e.context}\nQuote: "${e.quote}"`)
-    .join('\n\n');
+  if (!apiKey || !trope) return null;
 
   const client = new Anthropic({ apiKey });
+  const voyageKey = process.env.VOYAGE_API_KEY;
+
+  let candidateEchoes;
+
+  // Cross-trope path: embed the modern quote and find nearest neighbours globally
+  if (voyageKey) {
+    try {
+      const allRows = getAllEchoEmbeddings();
+      if (allRows.length > 0) {
+        const queryVec = await embedText(modernQuote, voyageKey);
+        const scored = allRows.map((row) => ({ ...row, score: cosine(queryVec, row.embedding) }));
+        scored.sort((a, b) => b.score - a.score);
+        candidateEchoes = scored.slice(0, 5);
+      }
+    } catch (err) {
+      // Fall through to trope-scoped fallback if embedding fails
+      await log(`Embedding search failed, falling back to trope-scoped: ${err.message}`);
+    }
+  }
+
+  // Fallback: use echoes from the matched trope only
+  if (!candidateEchoes) {
+    const echoes = trope.historical_echoes ?? [];
+    if (echoes.length === 0) return null;
+    candidateEchoes = echoes.map((e) => ({
+      trope_id: trope.id,
+      figure: e.figure,
+      quote: e.quote,
+      context: e.context ?? '',
+      source: e.source ?? null,
+    }));
+  }
+
+  if (candidateEchoes.length === 0) return null;
+
+  const echoList = candidateEchoes
+    .map((e, i) => `[${i}] Figure: ${e.figure} | Context: ${e.context ?? ''}\nQuote: "${e.quote}"`)
+    .join('\n\n');
+
   const message = await client.messages.create({
     model: 'claude-opus-4-6',
     max_tokens: 512,
@@ -682,7 +726,7 @@ async function runHistoricalAnalysis(modernQuote, trope, articleText) {
 Modern quote:
 "${modernQuote}"
 
-Historical echoes available:
+Historical echoes available (may span multiple tropes):
 ${echoList}
 
 Tasks:
@@ -697,24 +741,25 @@ Respond with JSON only:
   "quote": "...",
   "context": "...",
   "divergence_note": "..."
-}`
-      }
-    ]
+}`,
+      },
+    ],
   });
 
   const raw = message.content[0].text.trim();
   const jsonMatch = raw.match(/\{[\s\S]*\}/);
-  if (!jsonMatch) {
-    return null;
-  }
+  if (!jsonMatch) return null;
 
   const result = JSON.parse(jsonMatch[0]);
+  const chosen = candidateEchoes[result.echo_index ?? 0];
+  const chosenSource = chosen?.source ?? null;
   return {
     figure: result.figure ?? '',
     year: result.year ?? '',
     quote: result.quote ?? '',
     context: result.context ?? '',
-    divergence_note: result.divergence_note ?? ''
+    divergence_note: result.divergence_note ?? '',
+    ...(chosenSource && { source: chosenSource }),
   };
 }
 
@@ -834,7 +879,8 @@ async function main() {
         figure: historicalEcho.figure,
         year: historicalEcho.year,
         quote: historicalEcho.quote,
-        context: historicalEcho.context
+        context: historicalEcho.context,
+        ...(historicalEcho.source && { source: historicalEcho.source }),
       },
       divergence_note: historicalEcho.divergence_note
     }),

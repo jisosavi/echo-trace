@@ -8,10 +8,10 @@
   "about": {
     "title": "ECHO/trace",
     "tagline": "La propaganda autoritaria non inventa un nuovo linguaggio. Lo eredita.",
-    "lead": "ECHO/trace è un sistema autonomo di riconoscimento di schemi che espone questa eredità in tempo reale. Ogni sei ore, raccoglie dati da oltre 30 media statali attraverso regimi autoritari, identifica schemi retorici usando una tassonomia di 22 tropi e li confronta con un archivio storico di dittature del XX secolo.",
+    "lead": "ECHO/trace è un sistema autonomo di riconoscimento di schemi, basato sull'intelligenza artificiale, che espone questa eredità in tempo reale. Ogni sei ore, raccoglie dati da oltre 30 media statali attraverso regimi autoritari, identifica schemi retorici usando una tassonomia di 22 tropi e li confronta con un archivio curato di 88 citazioni storicamente documentate provenienti da oltre 30 figure che abbracciano dittature del XX e XXI secolo.",
     "output": "Il risultato: abbinamenti forensici che giustappongono la propaganda odierna ai suoi antenati strutturali — un portavoce di Putin che echeggia Goebbels, i media statali cinesi che riciclano Stalin, le trasmissioni iraniane che imitano Mussolini.",
     "howItWorksTitle": "Come funziona",
-    "mechanism": "Il sistema opera come un archeologo digitale, analizzando ogni articolo attraverso 18 dimensioni scientifiche tratte dagli studi sulla propaganda, dalla semiotica e dalla ricerca sulla prevenzione del genocidio. Cerca corrispondenze di DNA strutturale negli archivi della Germania nazista, dell'URSS stalinista, della Cina maoista e dell'Italia fascista — i corpora propagandistici più rigorosamente documentati della storia.",
+    "mechanism": "Il sistema opera come un archeologo digitale, analizzando ogni articolo attraverso 18 dimensioni scientifiche tratte dagli studi sulla propaganda, dalla semiotica e dalla ricerca sulla prevenzione del genocidio. Cerca corrispondenze di DNA strutturale in un archivio che si estende dalla Germania nazista e dall'URSS stalinista fino al Cile di Pinochet, alla Libia di Gheddafi, al Sudafrica dell'apartheid e alle giunte militari dell'America Latina — utilizzando la ricerca semantica vettoriale per trovare paralleli retorici indipendentemente dal regime o dall'epoca.",
     "clinical": "L'analisi è clinica; le conclusioni sono implicite nel parallelismo.",
     "parallel": "Solo citazioni parallele, con timestamp e tracciate.",
     "closing": "Rendere visibile l'eredità è lo scopo."

@@ -9,11 +9,9 @@
 # Crontab (every 6 hours) — add with `crontab -e`:
 #   0 */6 * * * cd /home/pi/forensic-semiotics && bash scripts/cycle.sh
 #
-# Required env var:
+# Required env vars (define in .env at the project root, or export to shell/cron):
 #   ANTHROPIC_API_KEY
-#
-# Optional — set in /etc/environment or ~/.profile on the Pi so cron can see it:
-#   export ANTHROPIC_API_KEY="sk-ant-..."
+#   VOYAGE_API_KEY     (enables cross-trope semantic echo search)
 
 set -euo pipefail
 
@@ -21,6 +19,14 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 LOG_PATH="$ROOT_DIR/agent/data/cycle.log"
 
 mkdir -p "$(dirname "$LOG_PATH")"
+
+# Load .env if present (allows running without exporting vars to the shell profile)
+if [[ -f "$ROOT_DIR/.env" ]]; then
+  set -o allexport
+  # shellcheck source=/dev/null
+  source "$ROOT_DIR/.env"
+  set +o allexport
+fi
 
 log() {
   local msg="[$(date -u +"%Y-%m-%dT%H:%M:%SZ")] [cycle] $1"

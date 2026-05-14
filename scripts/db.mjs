@@ -37,6 +37,17 @@ export function getDb() {
     );
     CREATE INDEX IF NOT EXISTS idx_ts  ON comparisons(timestamp DESC);
     CREATE INDEX IF NOT EXISTS idx_url ON comparisons(source_url);
+
+    CREATE TABLE IF NOT EXISTS echo_embeddings (
+      echo_key   TEXT PRIMARY KEY,
+      trope_id   TEXT NOT NULL,
+      figure     TEXT NOT NULL,
+      quote      TEXT NOT NULL,
+      context    TEXT,
+      source     TEXT,
+      embedding  BLOB NOT NULL
+    );
+    CREATE INDEX IF NOT EXISTS idx_ee_trope ON echo_embeddings(trope_id);
   `);
   return _db;
 }
@@ -89,4 +100,41 @@ export function getAllUrls() {
       .all()
       .map((r) => r.source_url)
   );
+}
+
+export function upsertEchoEmbedding({ echo_key, trope_id, figure, quote, context, source, embedding }) {
+  getDb().prepare(`
+    INSERT INTO echo_embeddings (echo_key, trope_id, figure, quote, context, source, embedding)
+    VALUES (@echo_key, @trope_id, @figure, @quote, @context, @source, @embedding)
+    ON CONFLICT(echo_key) DO UPDATE SET
+      trope_id  = excluded.trope_id,
+      figure    = excluded.figure,
+      quote     = excluded.quote,
+      context   = excluded.context,
+      source    = excluded.source,
+      embedding = excluded.embedding
+  `).run({
+    echo_key,
+    trope_id,
+    figure,
+    quote,
+    context: context ?? null,
+    source: source ? JSON.stringify(source) : null,
+    embedding: Buffer.from(new Float32Array(embedding).buffer),
+  });
+}
+
+export function getAllEchoEmbeddings() {
+  return getDb()
+    .prepare('SELECT echo_key, trope_id, figure, quote, context, source, embedding FROM echo_embeddings')
+    .all()
+    .map((row) => ({
+      echo_key: row.echo_key,
+      trope_id: row.trope_id,
+      figure: row.figure,
+      quote: row.quote,
+      context: row.context,
+      source: row.source ? JSON.parse(row.source) : null,
+      embedding: Array.from(new Float32Array(row.embedding.buffer ?? row.embedding)),
+    }));
 }

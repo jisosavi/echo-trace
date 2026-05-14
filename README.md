@@ -2,13 +2,13 @@
 
 **Authoritarian propaganda does not invent new language. It inherits it.**
 
-ECHO/trace is an autonomous AI-powered pattern-matching system that exposes this inheritance in real time. Every six hours, it scrapes 30+ state media outlets across authoritarian regimes, identifies rhetorical patterns using a 22-trope taxonomy, and matches them against a historical archive of 20th-century dictatorships.
+ECHO/trace is an autonomous AI-powered pattern-matching system that exposes this inheritance in real time. Every six hours, it scrapes 30+ state media outlets across authoritarian regimes, identifies rhetorical patterns using a 22-trope taxonomy, and matches them against a curated archive of 88 historically documented quotes from over 30 figures spanning dictatorships of the 20th and 21st centuries.
 
 The output: forensic pairings that juxtapose today's propaganda with its structural ancestors — a Putin spokesman echoing Goebbels, Chinese state media recycling Stalin, Iranian broadcasts mirroring Mussolini.
 
 ## How it works
 
-The system operates as a digital archaeologist, analyzing each article across 18 scientific dimensions drawn from propaganda studies, semiotics, and genocide prevention research. It searches for structural DNA matches in archives from Nazi Germany, Stalinist USSR, Maoist China, and Fascist Italy — the most thoroughly documented propaganda corpora in history.
+The system operates as a digital archaeologist, analyzing each article across 18 scientific dimensions drawn from propaganda studies, semiotics, and genocide prevention research. It searches for structural DNA matches across an archive reaching from Nazi Germany and Stalinist USSR to Pinochet's Chile, Gaddafi's Libya, apartheid South Africa, and the military juntas of Latin America — using semantic vector search to find rhetorical parallels regardless of which regime or era they come from.
 
 The analysis is clinical; the conclusions are implicit in the parallelism.
 
@@ -36,11 +36,11 @@ Just parallel quotes, timestamped and traced.
 ## What It Does
 
 1. **Scrapes** headlines and article bodies from 30+ state-controlled media outlets across a dozen authoritarian regimes
-2. **Classifies** each article against a 22-trope rhetorical taxonomy using Claude (claude-haiku-4-5-20251001 for classification, claude-sonnet-4-6 for deep analysis)
-3. **Searches** an archive of 100+ historical quotes from Stalin, Goebbels, Mussolini, Mao, Milošević and others for structural parallels
+2. **Classifies** each article against a 22-trope rhetorical taxonomy using Claude Haiku (fast triage) and Claude Sonnet (deep multi-dimensional analysis)
+3. **Matches** a modern quote against 88 historically documented quotes spanning 30+ figures from Stalin and Goebbels to Pinochet, Gaddafi, Khamenei, and Mugabe — using Voyage AI semantic embeddings for cross-trope retrieval, with Claude selecting the closest rhetorical parallel from the top-5 candidates
 4. **Annotates** each match across 18 analytical dimensions drawn from propaganda studies, semiotics, political myth theory, and genocide prevention research
-5. **Translates** non-English quotes to UK English (auto-detected; original preserved)
-6. **Publishes** results to a Next.js gallery at `/comparisons` — each entry showing the modern quote, historical echo, and full multi-dimensional analysis
+5. **Translates** non-English quotes to UK English (auto-detected; original language preserved alongside)
+6. **Publishes** results to a Next.js gallery — each entry showing the modern quote, its historical echo with source citation, divergence note, and full multi-dimensional analysis
 7. **Streams** live execution logs to the Live Console at `/console`, with a real-time world map showing which countries are being scraped
 
 ---
@@ -48,36 +48,42 @@ Just parallel quotes, timestamped and traced.
 ## Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│  Crontab (every 6 hours)                                    │
-│    └─ scripts/cycle.sh                                      │
-│         │                                                   │
-│         ├─ Phase 1: scrape-news.mjs                         │
-│         │    Fetches 30+ sources → agent/data/raw-news.json │
-│         │                                                   │
-│         └─ Phase 2: loop over new URLs                      │
-│              analyze-one-url.mjs <URL>                      │
-│                │                                            │
-│                ├─ Extract article text                      │
-│                │    (Readability → JSON-LD → DOM → fallback)│
-│                │                                            │
-│                ├─ Classify trope (Claude Haiku)             │
-│                │    → archival-memory.json taxonomy         │
-│                │                                            │
-│                ├─ Find historical echo (Claude Opus)        │
-│                │    → 100+ archived quotes                  │
-│                │                                            │
-│                ├─ Multi-dimensional analysis (Claude Opus)  │
-│                │    → 18 analytical dimensions              │
-│                │                                            │
-│                ├─ Translate if non-English (Claude Haiku)   │
-│                │                                            │
-│                └─ Write to SQLite DB                        │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│  Crontab (every 6 hours)                                        │
+│    └─ scripts/cycle.sh                                          │
+│         │                                                       │
+│         ├─ Phase 1: scrape-news.mjs                             │
+│         │    Fetches 30+ sources → emits new article URLs       │
+│         │                                                       │
+│         └─ Phase 2: loop over new URLs                          │
+│              analyze-one-url.mjs <URL>                          │
+│                │                                                │
+│                ├─ Extract article text                          │
+│                │    (Readability → JSON-LD → DOM → Puppeteer)   │
+│                │                                                │
+│                ├─ Classify trope (Claude Haiku)                 │
+│                │    → 22-trope archival-memory.json taxonomy    │
+│                │                                                │
+│                ├─ Find historical echo (Voyage AI + Claude)     │
+│                │    1. Embed modern quote (voyage-3-lite)        │
+│                │    2. Cosine similarity → top-5 across all 88  │
+│                │       echoes (cross-trope)                     │
+│                │    3. Claude selects best rhetorical parallel  │
+│                │       + writes divergence note                 │
+│                │                                                │
+│                ├─ Multi-dimensional analysis (Claude Sonnet)    │
+│                │    → 18 analytical dimensions                  │
+│                │                                                │
+│                ├─ Translate if non-English (Claude Haiku)       │
+│                │                                                │
+│                └─ Write to SQLite                               │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
                agent/data/echo-trace.db (SQLite)
+                    ├── comparisons          (analysis results)
+                    └── echo_embeddings      (precomputed Voyage vectors)
                               │
                     ┌──────────────────────────┐
                     │  Next.js Frontend        │
@@ -95,11 +101,11 @@ Just parallel quotes, timestamped and traced.
 | Script | Purpose |
 |---|---|
 | `scripts/cycle.sh` | Bash orchestrator — runs every 6 hours via crontab |
-| `scripts/scrape-news.mjs` | Scrapes 30+ sources; outputs to `raw-news.json` |
-| `scripts/analyze-one-url.mjs` | Deep-analyses a single URL; writes result to `agent/data/echo-trace.db` |
-| `scripts/analyze-new.mjs` | Batch-processes all unanalysed URLs from `raw-news.json` |
-| `scripts/batch-classify.mjs` | Classifies EUvsDisinfo training data with prompt caching |
-| `scripts/fetch-eudisinfo.mjs` | Fetches disinformation cases from euvsdisinfo.eu API |
+| `scripts/scrape-news.mjs` | Scrapes 30+ sources; emits new article URLs to stdout |
+| `scripts/analyze-one-url.mjs` | Full analysis pipeline for a single URL; writes result to SQLite |
+| `scripts/precompute-embeddings.mjs` | One-time seeder — computes Voyage AI embeddings for all 88 historical echoes and stores them in `echo_embeddings`; re-run after adding new echoes |
+| `scripts/analyze-new.mjs` | Utility — batch-processes unanalysed URLs |
+| `scripts/db.mjs` | SQLite helpers shared by analysis and seeder scripts |
 
 ---
 
@@ -143,13 +149,13 @@ Each comparison is annotated across 18 scientific dimensions. Dimensions marked 
 | **frame\_function** | `diagnostic` · `prognostic` · `motivational` | defines problem & blame · proposes solution · emotional mobilisation | Snow & Benford (1988); Entman — *Framing*, J. of Communication 43(4) (1993) · [doi](https://doi.org/10.1111/j.1460-2466.1993.tb01304.x) |
 | **dehumanisation\_level** | 1–10 | 1=Classification · 2=Symbolisation · 3=Discrimination · 4=Dehumanisation · 5=Organisation · 6=Polarisation · 7=Preparation · 8=Persecution · 9=Extermination · 10=Denial | Stanton — *Ten Stages of Genocide* (Genocide Watch, 1996/2013) · [genocide.watch](https://www.genocide.watch/ten-stages-of-genocide) |
 | **temporality** | `retrospective` · `contemporaneous` · `prospective` | golden age / historical grievance · present crisis · victory narrative / promised future | Flood — *Political Myth* (2002); Mink — *History and Fiction as Modes of Comprehension*, New Literary History 1(3) (1970) |
-| **greimas\_actantial** | subject · object · sender · receiver · helper · opponent | hero · goal · mandate-giver · beneficiary · ally · villain — documented for future per-article computation | Greimas — *Sémantique structurale* (1966); Propp — *Morphology of the Folktale* (1928) · [Wikipedia](https://en.wikipedia.org/wiki/Actantial_model) |
+| **greimas\_actantial** | subject · object · sender · receiver · helper · opponent | hero · goal · mandate-giver · beneficiary · ally · villain | Greimas — *Sémantique structurale* (1966); Propp — *Morphology of the Folktale* (1928) · [Wikipedia](https://en.wikipedia.org/wiki/Actantial_model) |
 
 ---
 
 ## Trope Taxonomy
 
-The taxonomy in `archival-memory.json` covers 22 rhetorical tropes. Each entry contains modern keywords for detection, historical echoes with verbatim quotes, modern examples with Kremlin/regime source URLs, and full annotation across all 18 dimensions above.
+The taxonomy in `archival-memory.json` covers 22 rhetorical tropes. Each entry contains modern keywords for detection, 88 historical echoes in total with verbatim quotes and verifiable source citations, and full annotation across all 18 dimensions above.
 
 ### Kremlin-aligned tropes (v1.0 — 14 tropes)
 
@@ -211,7 +217,7 @@ The scraper monitors 30+ outlets across seven regime clusters. Sources marked `[
 | **Eswatini** | Eswatini Observer `[RSS]` · Times of Eswatini |
 
 > **Note:** Some Russian sources are blocked under EU sanctions. Scraping requires a non-EU VPN or server.
-> **Note:** Use of VPN or other anonymisation method is highly advised to hide the scraping from authoritarian regimes.
+> **Note:** Use of a VPN or other anonymisation method is strongly advised to avoid exposing the scraping origin to authoritarian regime infrastructure.
 
 ---
 
@@ -220,14 +226,15 @@ The scraper monitors 30+ outlets across seven regime clusters. Sources marked `[
 ### Prerequisites
 
 - Node.js 18+
-- An Anthropic API key (`claude-opus-4-6` for classification and historical analysis; `claude-haiku-4-5-20251001` for translation)
+- An Anthropic API key (Claude Haiku for classification and translation; Claude Sonnet for deep analysis)
+- A Voyage AI API key (for semantic echo search; free tier covers 200M tokens — sufficient for years of normal usage)
 - Chromium (for Puppeteer — auto-downloaded on `npm install`)
 
 ### Install
 
 ```bash
 git clone <repo-url>
-cd forensic-semiotics
+cd echo-trace
 
 # Root dependencies (scraping + analysis scripts)
 npm install
@@ -238,13 +245,30 @@ cd web && npm install && cd ..
 
 ### Environment
 
+Copy the included template and fill in your keys:
+
 ```bash
-export ANTHROPIC_API_KEY="sk-ant-..."
+cp .env.example .env
 ```
 
-For persistent use on a server or Raspberry Pi, add to `/etc/environment` or `~/.profile` so cron can access it.
+`.env` contents:
 
-No `.env` file is required. The API key is the only required variable.
+```
+ANTHROPIC_API_KEY=sk-ant-...
+VOYAGE_API_KEY=pa-...
+```
+
+`.env` is gitignored and never committed. `cycle.sh` sources it automatically on startup, so no shell exports or profile changes are needed. For cron on a headless server, the same `.env` file is picked up — no additional configuration required.
+
+### Seed the embedding index
+
+After installation (and again after adding new echoes to `archival-memory.json`):
+
+```bash
+node scripts/precompute-embeddings.mjs
+```
+
+This embeds all 88 historical echoes via Voyage AI and stores the vectors in SQLite. It is idempotent — safe to re-run.
 
 ---
 
@@ -256,17 +280,7 @@ No `.env` file is required. The API key is the only required variable.
 bash scripts/cycle.sh
 ```
 
-Runs Phase 1 (scraping) then Phase 2 (analysis of new URLs). Logs to `agent/data/cycle.log`.
-
-### Scraping only
-
-```bash
-node scripts/scrape-news.mjs
-
-# Filter by regime or source:
-node scripts/scrape-news.mjs --regime Russia
-node scripts/scrape-news.mjs --source TASS --limit 5
-```
+Runs scraping then analysis of all new URLs. Logs to `agent/data/cycle.log`.
 
 ### Analyse a single URL
 
@@ -278,7 +292,6 @@ node scripts/analyze-one-url.mjs "https://tass.com/politics/..."
 
 ```bash
 node scripts/analyze-new.mjs
-node scripts/analyze-new.mjs --limit 20 --delay 3000
 ```
 
 ### Automated scheduling (crontab)
@@ -286,24 +299,14 @@ node scripts/analyze-new.mjs --limit 20 --delay 3000
 ```bash
 crontab -e
 # Add (runs every 6 hours):
-0 */6 * * * cd /path/to/forensic-semiotics && bash scripts/cycle.sh >> /var/log/forensic-semiotics.log 2>&1
-```
-
-### EUvsDisinfo training data (optional)
-
-```bash
-# Fetch cases from euvsdisinfo.eu:
-node scripts/fetch-eudisinfo.mjs --keyword "ukraine"
-
-# Batch-classify with Claude:
-node scripts/batch-classify.mjs
+0 */6 * * * cd /path/to/echo-trace && bash scripts/cycle.sh >> /var/log/echo-trace.log 2>&1
 ```
 
 ---
 
 ## Web Frontend
 
-A Next.js 15 app in `web/`. Reads comparisons from `agent/data/echo-trace.db` via `better-sqlite3`. The dashboard, comparisons list, and comparison detail pages use ISR (`revalidate = 21600`) so rendered HTML is cached for 6 hours — matching the pipeline cadence — and rebuilt in the background after the cache expires. The console page remains fully dynamic. Supports 9 UI locales via `next-intl` with URL-based routing (`/[locale]/...`); the default locale (`en`) is served at `/`.
+A Next.js 15 app in `web/`. Reads comparisons directly from `agent/data/echo-trace.db` via `better-sqlite3`. The dashboard, comparisons list, and comparison detail pages use ISR (`revalidate = 21600`) so rendered HTML is cached for 6 hours — matching the pipeline cadence — and rebuilt in the background after the cache expires. The console page is fully dynamic. Supports 9 UI locales via `next-intl` with URL-based routing (`/[locale]/...`); the default locale (`en`) is served at `/`.
 
 ```bash
 cd web
@@ -314,13 +317,11 @@ npm run start   # production server
 
 ### Routes
 
-All content routes are locale-prefixed. The default locale (`en`) redirects from `/` automatically.
-
 | Route | Purpose |
 |---|---|
 | `/[locale]/` | Landing / About page |
 | `/[locale]/comparisons` | Gallery of all comparisons (paginated feed) |
-| `/[locale]/comparisons/[id]` | Detail view — full multi-dimensional analysis |
+| `/[locale]/comparisons/[id]` | Detail view — modern quote, historical echo with source citation, divergence note, full 18-dimension analysis |
 | `/[locale]/dashboard` | Analytics — stat cards, bar charts, source activity |
 | `/[locale]/console` | Live Console — streaming log + world map |
 | `/api/logs` | SSE endpoint — event-driven push from `cycle.log` via `fs.watch` |
@@ -338,7 +339,7 @@ All content routes are locale-prefixed. The default locale (`en`) redirects from
 
 ### Live Console
 
-- Real-time log stream from `cycle.log` via SSE; event-driven via `fs.watch` (pushes only on file writes, no polling)
+- Real-time log stream from `cycle.log` via SSE; event-driven via `fs.watch` — no polling
 - Interactive world map (`react-simple-maps`) highlighting countries as they are scraped
 - Link to Freedom House — Freedom in the World 2026 for country freedom profiles
 
@@ -353,7 +354,8 @@ The UI is available in 9 locales: **English** (en), **French** (fr), **German** 
 | Layer | Technology |
 |---|---|
 | Analysis scripts | Node.js 18+ (ESM), Bash |
-| AI / LLM | Anthropic Claude (`claude-haiku-4-5-20251001`, `claude-sonnet-4-6`) via `@anthropic-ai/sdk` |
+| AI / LLM | Anthropic Claude (`claude-haiku-4-5-20251001` for classification and translation, `claude-sonnet-4-6` for deep analysis) via `@anthropic-ai/sdk` |
+| Semantic embeddings | Voyage AI `voyage-3-lite` — cross-trope echo retrieval via cosine similarity |
 | HTML parsing | Cheerio 1.2, Mozilla Readability 0.6, jsdom 29 |
 | Browser automation | Puppeteer 24 (fallback for JS-rendered pages) |
 | Web framework | Next.js 15, React 19 |
@@ -368,29 +370,17 @@ The UI is available in 9 locales: **English** (en), **French** (fr), **German** 
 
 ## Data Formats
 
-### `agent/data/raw-news.json`
-```json
-[
-  {
-    "source": "TASS",
-    "regime": "Russia",
-    "language": "en",
-    "title": "...",
-    "url": "https://...",
-    "retrieved_at": "2026-04-18T10:00:00Z"
-  }
-]
-```
-
 ### `agent/data/echo-trace.db` (SQLite)
 
-All comparison results are stored in a single `comparisons` table. JSON columns (`tropes`, `analysis`, `historical_echo`) hold serialised objects.
+#### `comparisons` table
+
+All analysis results. JSON columns (`tropes`, `analysis`, `historical_echo`) hold serialised objects.
 
 ```sql
 CREATE TABLE comparisons (
   id                    TEXT PRIMARY KEY,
   timestamp             TEXT NOT NULL,       -- ISO 8601
-  source_publication    TEXT,                -- hostname, e.g. "tass.com"
+  source_publication    TEXT,                -- outlet hostname, e.g. "tass.com"
   source_url            TEXT,
   contemporary_quote    TEXT,                -- extracted quote, original language
   contemporary_quote_en TEXT,                -- UK English translation (if non-English)
@@ -399,8 +389,8 @@ CREATE TABLE comparisons (
   historical_parallel   TEXT,                -- matched trope theme
   tropes                TEXT,                -- JSON array, e.g. ["foreign_saboteur"]
   confidence            REAL,                -- 0.0 – 0.95
-  analysis              TEXT,                -- JSON object with all 18 dimensions
-  historical_echo       TEXT,                -- JSON: { figure, year, quote, context }
+  analysis              TEXT,                -- JSON object — all 18 analytical dimensions
+  historical_echo       TEXT,                -- JSON: { figure, year, quote, context, source? }
   divergence_note       TEXT,
   extraction_method     TEXT,                -- readability | jsonld | dom_paragraphs | puppeteer_dom | fallback_text
   evidence_snippet      TEXT,
@@ -408,14 +398,46 @@ CREATE TABLE comparisons (
 );
 ```
 
+The `historical_echo` JSON object:
+```json
+{
+  "figure": "Joseph Goebbels",
+  "year": "1933",
+  "quote": "...",
+  "context": "...",
+  "source": {
+    "citation": "Calvin University German Propaganda Archive — Goebbels speech, 28 February 1933",
+    "url": "https://research.calvin.edu/german-propaganda-archive/..."
+  }
+}
+```
+
 **Indexes:** `idx_ts` on `timestamp DESC` (list ordering), `idx_url` on `source_url` (deduplication).
+
+#### `echo_embeddings` table
+
+Precomputed Voyage AI vectors for all historical echoes. Used at analysis time for cross-trope cosine similarity retrieval.
+
+```sql
+CREATE TABLE echo_embeddings (
+  echo_key   TEXT PRIMARY KEY,   -- {trope_id}:{slugified-figure}:{sha1(quote)[0:8]}
+  trope_id   TEXT NOT NULL,
+  figure     TEXT NOT NULL,
+  quote      TEXT NOT NULL,
+  context    TEXT,
+  source     TEXT,               -- JSON: { citation, url? }
+  embedding  BLOB NOT NULL       -- Float32Array stored as raw bytes
+);
+```
+
+Populated by `scripts/precompute-embeddings.mjs`. Re-run the seeder after adding new echoes to `archival-memory.json`.
 
 ### `archival-memory.json`
 
 The core analytical reference. Contains:
-- `_comment` — human-readable dimension reference chart (this file's equivalent of comments)
+- `_comment` — human-readable dimension reference chart
 - `_meta` — machine-readable dimension definitions with sources and valid values
-- `rhetorical_tropes` — 22 trope entries, each with: `taxonomy` (all 18 dimension defaults), `modern_keywords` (detection strings), `historical_echoes` (2–5 verbatim quotes with source attribution), `modern_examples` (Kremlin/regime source URLs)
+- `rhetorical_tropes` — 22 trope entries, each with: `taxonomy` (all 18 dimension defaults), `modern_keywords` (detection strings), `historical_echoes` (verbatim quotes with figure, context, source citation and URL), `modern_examples` (regime source URLs)
 
 ---
 
@@ -424,4 +446,3 @@ The core analytical reference. Contains:
 GPL v3
 
 See LICENSE file for more.
-

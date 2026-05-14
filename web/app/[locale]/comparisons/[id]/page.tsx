@@ -33,7 +33,7 @@ type Comparison = {
   tropes: string[];
   confidence: number;
   analysis?: Analysis;
-  historical_echo?: { figure: string; year: string; quote: string; context: string };
+  historical_echo?: { figure: string; year: string; quote: string; context: string; source?: { citation: string; url?: string } };
   divergence_note?: string;
   notes: string;
 };
@@ -136,6 +136,14 @@ export default async function ComparisonDetailPage({ params }: { params: Promise
             <blockquote className="border-l-2 border-zinc-600 pl-4 text-zinc-300 italic">
               "{item.historical_echo.quote}"
             </blockquote>
+            {item.historical_echo.source && (
+              <p className="mt-3 text-xs text-zinc-600">
+                {item.historical_echo.source.url
+                  ? <a href={item.historical_echo.source.url} target="_blank" rel="noopener noreferrer" className="hover:text-zinc-400 underline underline-offset-2">{item.historical_echo.source.citation}</a>
+                  : item.historical_echo.source.citation
+                }
+              </p>
+            )}
           </div>
         </section>
       )}
