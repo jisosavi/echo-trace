@@ -1,15 +1,16 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
+import Database from 'better-sqlite3';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 const LOG_PATH = process.env.CYCLE_LOG_PATH ??
   path.resolve(process.cwd(), '../agent/data/cycle.log');
+const DB_PATH = path.resolve(process.cwd(), '../agent/data/echo-trace.db');
 
-function parseStatus(content: string) {
+function parseLog(content: string) {
   let lastScrape: string | null = null;
-  let lastAnalysis: string | null = null;
   let lastCycleStart: string | null = null;
   let lastCycleEnd: string | null = null;
 
@@ -18,8 +19,11 @@ function parseStatus(content: string) {
     if (!m) continue;
     const ts = m[1];
 
+    // cycle.sh marker
     if (line.includes('phase=scrape') && line.includes('status=complete')) lastScrape = ts;
-    if (line.includes('phase=analyze') && line.includes('status=complete')) lastAnalysis = ts;
+    // scrape-news.mjs direct invocation marker
+    if (line.includes('[scrape-news]') && line.includes('scrape cycle complete')) lastScrape = ts;
+
     if (line.includes('[cycle]') && line.includes('cycle=start')) lastCycleStart = ts;
     if (line.includes('[cycle]') && line.includes('cycle=end')) lastCycleEnd = ts;
   }
@@ -28,14 +32,28 @@ function parseStatus(content: string) {
     lastCycleStart !== null &&
     (lastCycleEnd === null || new Date(lastCycleStart) > new Date(lastCycleEnd));
 
-  return { lastScrape, lastAnalysis, isActive };
+  return { lastScrape, isActive };
+}
+
+function readLastAnalysis(): string | null {
+  try {
+    const db = new Database(DB_PATH, { readonly: true });
+    const row = db.prepare('SELECT MAX(timestamp) as ts FROM comparisons').get() as { ts: string | null };
+    db.close();
+    return row?.ts ?? null;
+  } catch {
+    return null;
+  }
 }
 
 export async function GET() {
   try {
     const content = await fs.readFile(LOG_PATH, 'utf8');
-    return Response.json(parseStatus(content));
+    const { lastScrape, isActive } = parseLog(content);
+    const lastAnalysis = readLastAnalysis();
+    return Response.json({ lastScrape, lastAnalysis, isActive });
   } catch {
-    return Response.json({ lastScrape: null, lastAnalysis: null, isActive: false });
+    const lastAnalysis = readLastAnalysis();
+    return Response.json({ lastScrape: null, lastAnalysis, isActive: false });
   }
 }
