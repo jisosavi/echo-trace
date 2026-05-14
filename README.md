@@ -18,6 +18,18 @@ Just parallel quotes, timestamped and traced.
 
 ---
 
+## Screenshots
+
+**Live Console — real-time scraping log and world map**
+
+![Live Console](docs/screenshots/live-console.png)
+
+**Dashboard — trope distribution and analytical framing**
+
+![Dashboard](docs/screenshots/dashboard.png)
+
+---
+
 ## Table of Contents
 
 1. [What It Does](#what-it-does)
