@@ -92,8 +92,9 @@ export const SOURCES = [
   // ── Iran ────────────────────────────────────────────────────────────────────
   {
     name: 'Press TV', regime: 'Iran', corpus: 'state', language: 'en',
-    frontPage: 'https://www.presstv.ir/',
-    articlePattern: /^https?:\/\/(www\.)?presstv\.ir\/Detail\/\d{4}\/\d{2}\/\d{2}\/\d+/,
+    // Moved from presstv.ir (which now redirects here); article links are JS-rendered, so use the feed.
+    rssUrl: 'https://www.presstv.co.uk/rss.xml',
+    articlePattern: /^https?:\/\/(www\.)?presstv\.(ir|co\.uk)\/Detail\/\d{4}\/\d{2}\/\d{2}\/\d+/,
     maxArticles: 4,
   },
   {

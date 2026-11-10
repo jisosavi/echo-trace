@@ -11,7 +11,7 @@ const URL_COUNTRY: [RegExp, string][] = [
   [/english\.news\.cn|chinadaily|people\.cn|globaltimes\.cn/, '156'], // China
   [/belta\.by|sb\.by/,                                    '112'], // Belarus
   [/granma\.cu|prensa-latina\.cu|cubadebate\.cu/,         '192'], // Cuba
-  [/presstv\.ir|tehrantimes\.com/,                        '364'], // Iran
+  [/presstv\.(ir|co\.uk)|tehrantimes\.com/,                '364'], // Iran
   [/kcna\.kp/,                                             '408'], // North Korea
   [/spa\.gov\.sa/,                                         '682'], // Saudi Arabia
   [/shabait\.com/,                                        '232'], // Eritrea

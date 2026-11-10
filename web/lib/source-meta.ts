@@ -16,6 +16,8 @@ const META: Record<string, SourceMeta> = {
   'www.chinadaily.com.cn': { country: 'China',         flag: '🇨🇳', wikipedia: 'https://en.wikipedia.org/wiki/China_Daily' },
   'kcna.kp':               { country: 'North Korea',   flag: '🇰🇵', wikipedia: 'https://en.wikipedia.org/wiki/Korean_Central_News_Agency' },
   'www.presstv.ir':        { country: 'Iran',          flag: '🇮🇷', wikipedia: 'https://en.wikipedia.org/wiki/Press_TV' },
+  'presstv.co.uk':         { country: 'Iran',          flag: '🇮🇷', wikipedia: 'https://en.wikipedia.org/wiki/Press_TV' },
+  'www.presstv.co.uk':     { country: 'Iran',          flag: '🇮🇷', wikipedia: 'https://en.wikipedia.org/wiki/Press_TV' },
   'www.tehrantimes.com':   { country: 'Iran',          flag: '🇮🇷', wikipedia: 'https://en.wikipedia.org/wiki/Tehran_Times' },
   'en.granma.cu':          { country: 'Cuba',          flag: '🇨🇺', wikipedia: 'https://en.wikipedia.org/wiki/Granma_(newspaper)' },
   'www.cubadebate.cu':     { country: 'Cuba',          flag: '🇨🇺', wikipedia: 'https://en.wikipedia.org/wiki/Cubadebate' },

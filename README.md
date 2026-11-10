@@ -220,7 +220,7 @@ These tropes recur across authoritarian regimes regardless of geopolitical align
 | **China** | Xinhua · China Daily · People's Daily · Global Times |
 | **North Korea** | KCNA (HTTP fallback — HTTPS not reliably served) |
 | **Cuba** | Granma · Prensa Latina · Cubadebate (es) |
-| **Iran** | Press TV · Tehran Times |
+| **Iran** | Press TV `[RSS]` (now presstv.co.uk) · Tehran Times |
 | **Saudi Arabia** | SPA — Saudi Press Agency (JS-rendered; Puppeteer) |
 | **Belarus** | BelTA · SB Belarus (ru) |
 | **Eritrea** | Shabait `[RSS]` |
@@ -379,6 +379,7 @@ npm run start   # production server
 
 - Real-time log stream from `cycle.log` via SSE; event-driven via `fs.watch` — no polling
 - Interactive world map (`react-simple-maps`) highlighting countries as they are scraped
+- Map data: `web/public/data/world-110m.json` (Natural Earth 110m via world-atlas), edited so that Crimea is part of Ukraine — the source data draws it inside Russia. Re-apply this if the file is ever replaced.
 - Link to Freedom House — Freedom in the World 2026 for country freedom profiles
 
 ### Internationalisation
