@@ -7,11 +7,11 @@
 #   bash scripts/cycle.sh
 #
 # Crontab (every 6 hours) — add with `crontab -e`:
-#   0 */6 * * * cd /home/pi/forensic-semiotics && bash scripts/cycle.sh
+#   0 */6 * * * cd /path/to/echo-trace && bash scripts/cycle.sh
 #
 # Required env vars (define in .env at the project root, or export to shell/cron):
 #   ANTHROPIC_API_KEY
-#   VOYAGE_API_KEY     (enables cross-trope semantic echo search)
+#   VOYAGE_API_KEY     (semantic echo search; required for baseline statistics)
 
 set -euo pipefail
 
@@ -49,24 +49,12 @@ NEW_URLS=$(node "$ROOT_DIR/scripts/scrape-news.mjs" 2>>"$LOG_PATH") || true
 URL_COUNT=$(printf '%s\n' "$NEW_URLS" | grep -c 'http' 2>/dev/null || true)
 log "phase=scrape status=complete new_urls=${URL_COUNT:-0}"
 
-if [[ -z "${NEW_URLS:-}" ]] || [[ "${URL_COUNT:-0}" -eq 0 ]]; then
-  log "cycle=end reason=no-new-urls"
-  exit 0
-fi
+# No early exit when nothing is new: failed articles from earlier cycles are retried.
 
-# ── Phase 2: Analyse each new article ─────────────────────────────────────────
+# ── Phase 2: Analyse every pending article (new + retries) in one process ─────
 
 log "phase=analyze status=started"
-FAILED=0
-
-while IFS= read -r url; do
-  [[ -z "$url" ]] && continue
-  log "analyzing url=$url"
-  if ! node "$ROOT_DIR/scripts/analyze-one-url.mjs" "$url" >>"$LOG_PATH" 2>&1; then
-    log "analysis-failed url=$url"
-    FAILED=$((FAILED + 1))
-  fi
-done <<< "$NEW_URLS"
-
-log "phase=analyze status=complete failed=$FAILED"
+STATUS=0
+node "$ROOT_DIR/scripts/analyze-new.mjs" >>"$LOG_PATH" 2>&1 || STATUS=$?
+log "phase=analyze status=complete exit=$STATUS"
 log "cycle=end"

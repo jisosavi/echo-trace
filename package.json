@@ -1,23 +1,22 @@
 {
-  "name": "forensic-semiotics",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "name": "echo-trace",
+  "version": "3.0.0",
+  "private": true,
+  "description": "ECHO/trace — traces the rhetorical inheritance of contemporary state propaganda",
+  "license": "SEE LICENSE IN LICENSE",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jisosavi/forensic-semiotics.git"
+    "url": "git+https://github.com/jisosavi/echo-trace.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/jisosavi/forensic-semiotics/issues"
+  "scripts": {
+    "cycle": "bash scripts/cycle.sh",
+    "scrape": "node --env-file-if-exists=.env scripts/scrape-news.mjs",
+    "analyze": "node --env-file-if-exists=.env scripts/analyze-new.mjs",
+    "archive:check": "node --env-file-if-exists=.env scripts/check-archive.mjs",
+    "archive:verify": "node --env-file-if-exists=.env scripts/verify-echo.mjs",
+    "archive:embed": "node --env-file-if-exists=.env scripts/precompute-embeddings.mjs",
+    "calibrate": "node --env-file-if-exists=.env scripts/calibrate-threshold.mjs"
   },
-  "homepage": "https://github.com/jisosavi/forensic-semiotics#readme",
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",
     "@mozilla/readability": "^0.6.0",
@@ -25,5 +24,8 @@
     "cheerio": "^1.2.0",
     "jsdom": "^29.0.1",
     "puppeteer": "^24.40.0"
+  },
+  "engines": {
+    "node": ">=22.9"
   }
 }

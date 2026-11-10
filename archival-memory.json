@@ -99,115 +99,255 @@
     "dimensions": {
       "narrative_strategy": {
         "description": "Four strategic categories of narrative suppression and manipulation",
-        "values": ["suppression", "destruction", "direction", "exploitation"],
+        "values": [
+          "suppression",
+          "destruction",
+          "direction",
+          "exploitation"
+        ],
         "source": "Lank & Antai — Narrative Strategy and Information Warfare, International Journal of Communication, 2025",
         "url": "https://doi.org/10.1177/19401612251317696"
       },
       "ellul_type": {
         "description": "Ellul's typology of propaganda by intent: agitation = mobilise for action; integration = normalise existing order",
-        "values": ["agitation", "integration"],
+        "values": [
+          "agitation",
+          "integration"
+        ],
         "source": "Jacques Ellul — Propaganda: The Formation of Men's Attitudes (1965)",
         "url": "https://en.wikipedia.org/wiki/Propaganda_(Ellul_book)"
       },
       "ellul_axis": {
         "description": "Ellul's axis: vertical = top-down state messaging; horizontal = peer-group/grassroots diffusion",
-        "values": ["vertical", "horizontal"],
+        "values": [
+          "vertical",
+          "horizontal"
+        ],
         "source": "Jacques Ellul — Propaganda: The Formation of Men's Attitudes (1965)",
         "url": "https://en.wikipedia.org/wiki/Propaganda_(Ellul_book)"
       },
       "eco_properties": {
         "description": "Umberto Eco's 14 features of Ur-Fascism as a proto-fascist content checklist",
-        "values": ["The Cult of Tradition","The Rejection of Modernism","The Cult of Action for Action's Sake","Disagreement is Treason","Fear of Difference","Appeal to a Frustrated Middle Class","Obsession with a Plot","Enemies Too Strong and Too Weak","Pacifism as Enemy Collaboration","Contempt for the Weak","Selective Populism","Newspeak","Education Toward Heroism","Machismo and Weaponry"],
+        "values": [
+          "The Cult of Tradition",
+          "The Rejection of Modernism",
+          "The Cult of Action for Action's Sake",
+          "Disagreement is Treason",
+          "Fear of Difference",
+          "Appeal to a Frustrated Middle Class",
+          "Obsession with a Plot",
+          "Enemies Too Strong and Too Weak",
+          "Pacifism as Enemy Collaboration",
+          "Contempt for the Weak",
+          "Selective Populism",
+          "Newspeak",
+          "Education Toward Heroism",
+          "Machismo and Weaponry"
+        ],
         "source": "Umberto Eco — Ur-Fascism, New York Review of Books, 1995",
         "url": "https://en.wikipedia.org/wiki/Ur-Fascism"
       },
       "san_martino_techniques": {
         "description": "18 propaganda techniques from fine-grained NLP analysis of news articles",
-        "values": ["Appeal to Authority","Appeal to Fear/Prejudice","Bandwagon","Black-and-White Fallacy","Causal Oversimplification","Doubt","Exaggeration/Minimisation","Flag-Waving","Loaded Language","Name Calling/Labeling","Obfuscation/Vagueness","Red Herring","Repetition","Slogans","Straw Man","Thought-terminating Clichés","Transfer","Whataboutism"],
+        "values": [
+          "Appeal to Authority",
+          "Appeal to Fear/Prejudice",
+          "Bandwagon",
+          "Black-and-White Fallacy",
+          "Causal Oversimplification",
+          "Doubt",
+          "Exaggeration/Minimisation",
+          "Flag-Waving",
+          "Loaded Language",
+          "Name Calling/Labeling",
+          "Obfuscation/Vagueness",
+          "Red Herring",
+          "Repetition",
+          "Slogans",
+          "Straw Man",
+          "Thought-terminating Clichés",
+          "Transfer",
+          "Whataboutism"
+        ],
         "source": "Da San Martino et al. — Fine-Grained Analysis of Propaganda in News Articles, ACL 2019",
         "url": "https://aclanthology.org/W19-2006/"
       },
       "ipa_techniques": {
         "description": "7 classic propaganda techniques from the Institute for Propaganda Analysis",
-        "values": ["Name-calling","Glittering generalities","Transfer","Testimonial","Plain folks","Card stacking","Bandwagon"],
+        "values": [
+          "Name-calling",
+          "Glittering generalities",
+          "Transfer",
+          "Testimonial",
+          "Plain folks",
+          "Card stacking",
+          "Bandwagon"
+        ],
         "source": "Institute for Propaganda Analysis — 7 Techniques (1937)",
         "url": "https://en.wikipedia.org/wiki/Institute_for_Propaganda_Analysis"
       },
       "nimmo_4d": {
         "description": "Ben Nimmo's 4D counter-disinformation framework",
-        "values": ["Dismiss","Distort","Distract","Dismay"],
+        "values": [
+          "Dismiss",
+          "Distort",
+          "Distract",
+          "Dismay"
+        ],
         "source": "Ben Nimmo — DFRLab / EUvsDisinfo 4D Approach",
         "url": "https://euvsdisinfo.eu/the-4d-approach/"
       },
       "eudisinfo_narratives": {
         "description": "EUvsDisinfo's 6 recurring pro-Kremlin narrative categories",
-        "values": ["Nazis","Lost Sovereignty","Threatened Values","Elites vs People","Imminent Collapse","Russia as Victim"],
+        "values": [
+          "Nazis",
+          "Lost Sovereignty",
+          "Threatened Values",
+          "Elites vs People",
+          "Imminent Collapse",
+          "Russia as Victim"
+        ],
         "source": "EUvsDisinfo — Pro-Kremlin Disinformation Cases Database",
         "url": "https://euvsdisinfo.eu/disinformation-cases/"
       },
       "eudisinfo_rhetoric": {
         "description": "EUvsDisinfo Modus Trollerandi — 7 rhetorical devices (SWAMPED acronym)",
-        "values": ["Straw Man","Whataboutism","Attack","Mockery","Provocations","Exhaust","Denial"],
+        "values": [
+          "Straw Man",
+          "Whataboutism",
+          "Attack",
+          "Mockery",
+          "Provocations",
+          "Exhaust",
+          "Denial"
+        ],
         "source": "EUvsDisinfo — Modus Trollerandi: The Kremlin's Rhetoric",
         "url": "https://euvsdisinfo.eu/modus-trollerandi-the-kremlin-rhetoric/"
       },
       "eudisinfo_conspiracy": {
         "description": "Recurring conspiracy theory archetypes in pro-Kremlin disinformation",
-        "values": ["Shadow Government / Deep State","Anglo-Saxon Plot","Color Revolution Conspiracy","Soros Conspiracy","Gay / LGBTQ Lobby","Big Pharma / Vaccine Conspiracy","Rothschilds / Banker Conspiracy","False Flag"],
+        "values": [
+          "Shadow Government / Deep State",
+          "Anglo-Saxon Plot",
+          "Color Revolution Conspiracy",
+          "Soros Conspiracy",
+          "Gay / LGBTQ Lobby",
+          "Big Pharma / Vaccine Conspiracy",
+          "Rothschilds / Banker Conspiracy",
+          "False Flag"
+        ],
         "source": "EUvsDisinfo — Disinformation Cases Database & DISARM Framework",
         "url": "https://euvsdisinfo.eu/disinformation-cases/"
       },
       "eudisinfo_ttp": {
         "description": "Tactics, Techniques and Procedures from the DISARM disinformation framework",
-        "values": ["Fabricated Content","Manipulated Content","False Attribution","False Context","Conspiracy Amplification","Narrative Laundering","Strategic Decontextualization","Emotional Manipulation","Infoshum","Firehose of Falsehood","Data Void Exploitation","Forced Confessions","Impersonation","Fake Experts","Video/Image Manipulation"],
+        "values": [
+          "Fabricated Content",
+          "Manipulated Content",
+          "False Attribution",
+          "False Context",
+          "Conspiracy Amplification",
+          "Narrative Laundering",
+          "Strategic Decontextualization",
+          "Emotional Manipulation",
+          "Infoshum",
+          "Firehose of Falsehood",
+          "Data Void Exploitation",
+          "Forced Confessions",
+          "Impersonation",
+          "Fake Experts",
+          "Video/Image Manipulation"
+        ],
         "source": "DISARM Framework / EUvsDisinfo — Tactics, Techniques & Procedures",
         "url": "https://www.disarmframework.com/"
       },
       "myth_function": {
         "description": "Temporal-functional role of the trope in the political myth system (Flood / Tudor typology)",
-        "values": ["cosmogonic","eschatological","theodicy","heroic","providential"],
+        "values": [
+          "cosmogonic",
+          "eschatological",
+          "theodicy",
+          "heroic",
+          "providential"
+        ],
         "notes": "cosmogonic = founding/origin myth; eschatological = final battle / end-times narrative; theodicy = suffering is meaningful / sacrifice justified; heroic = leader as saviour; providential = historical mission / destiny of the nation",
         "source": "Flood, C. — Political Myth: A Theoretical Introduction (Routledge, 2002); Tudor, H. — Political Myth (Macmillan, 1972)",
         "url": "https://www.routledge.com/Political-Myth/Flood/p/book/9780415941969"
       },
       "enemy_type": {
         "description": "How the enemy is constructed in the trope's narrative (Volkan / Keen typology)",
-        "values": ["external","internal","ontological","shadow"],
+        "values": [
+          "external",
+          "internal",
+          "ontological",
+          "shadow"
+        ],
         "notes": "external = foreign state or actor; internal = traitor / fifth column / ethnic minority within; ontological = constitutionally different or inferior by nature; shadow = occult / conspiratorial hidden enemy that is everywhere",
         "source": "Volkan, V. — The Need to Have Enemies and Allies (Jason Aronson, 1988); Keen, S. — Faces of the Enemy (Harper & Row, 1986)",
         "url": "https://en.wikipedia.org/wiki/Vamik_Volkan"
       },
       "legitimation_mode": {
         "description": "How the propaganda claim achieves authority — one or more modes (van Leeuwen typology)",
-        "values": ["authorization","moral","rationalization","mythopoesis"],
+        "values": [
+          "authorization",
+          "moral",
+          "rationalization",
+          "mythopoesis"
+        ],
         "notes": "authorization = appeals to authority of person/tradition/law; moral = appeals to shared value systems; rationalization = instrumental/functional justification (security, necessity); mythopoesis = narrative / historical / mythological justification",
         "source": "van Leeuwen, T. — Discourse and Practice: New Tools for Critical Discourse Analysis (Oxford UP, 2008)",
         "url": "https://academic.oup.com/book/26629"
       },
       "frame_function": {
         "description": "Rhetorical function of the frame in the propaganda narrative (Snow & Benford / Entman)",
-        "values": ["diagnostic","prognostic","motivational"],
+        "values": [
+          "diagnostic",
+          "prognostic",
+          "motivational"
+        ],
         "notes": "diagnostic = defines the problem and attributes blame; prognostic = proposes solution or calls to action; motivational = emotional or moral mobilisation of the audience",
         "source": "Snow, D. & Benford, R. — Ideology, Frame Resonance and Participant Mobilisation, International Social Movement Research 1 (1988); Entman, R. — Framing: Toward Clarification of a Fractured Paradigm, Journal of Communication 43(4) (1993)",
         "url": "https://doi.org/10.1111/j.1460-2466.1993.tb01304.x"
       },
       "dehumanisation_level": {
         "description": "Severity on Stanton's 10-stage genocide prevention scale applied to language in the article",
-        "values": [1,2,3,4,5,6,7,8,9,10],
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
         "notes": "1=Classification (us/them dichotomy); 2=Symbolisation (labelling, badges); 3=Discrimination (legal/social exclusion language); 4=Dehumanisation (animal/disease metaphors); 5=Organisation (calls for organised action against group); 6=Polarisation (no middle ground); 7=Preparation (lists, identity documents, cleansing); 8=Persecution (deprivation of rights); 9=Extermination (mass killing language); 10=Denial (post-atrocity cover-up)",
         "source": "Stanton, G. — The Ten Stages of Genocide (Genocide Watch, 1996, updated 2013)",
         "url": "https://www.genocide.watch/ten-stages-of-genocide"
       },
       "temporality": {
         "description": "Temporal register of the propaganda narrative (Flood / Mink)",
-        "values": ["retrospective","contemporaneous","prospective"],
+        "values": [
+          "retrospective",
+          "contemporaneous",
+          "prospective"
+        ],
         "notes": "retrospective = golden age, historical grievance, foundational origin story; contemporaneous = current crisis, present threat requiring action now; prospective = victory narrative, eschatological end-state, promised future",
         "source": "Flood, C. — Political Myth (Routledge, 2002); Mink, L. — History and Fiction as Modes of Comprehension, New Literary History 1(3) (1970)",
         "url": "https://www.jstor.org/stable/468543"
       },
       "greimas_actantial": {
         "description": "Structural narrative grammar assigning actantial roles in the propaganda story (not yet computed per-trope — documented for future use)",
-        "roles": {"subject":"hero of the narrative (regime/leader/people)","object":"goal being pursued (sovereignty/security/purity)","sender":"mandate-giver (history/God/the nation)","receiver":"beneficiary (the people/future generations)","helper":"ally (friendly nations/patriotic forces)","opponent":"villain (NATO/West/traitors/terrorists)"},
+        "roles": {
+          "subject": "hero of the narrative (regime/leader/people)",
+          "object": "goal being pursued (sovereignty/security/purity)",
+          "sender": "mandate-giver (history/God/the nation)",
+          "receiver": "beneficiary (the people/future generations)",
+          "helper": "ally (friendly nations/patriotic forces)",
+          "opponent": "villain (NATO/West/traitors/terrorists)"
+        },
         "source": "Greimas, A.J. — Sémantique structurale (Larousse, 1966); Propp, V. — Morphology of the Folktale (1928)",
         "url": "https://en.wikipedia.org/wiki/Actantial_model"
       }
@@ -258,7 +398,10 @@
         ],
         "myth_function": "eschatological",
         "enemy_type": "shadow",
-        "legitimation_mode": ["rationalization","mythopoesis"],
+        "legitimation_mode": [
+          "rationalization",
+          "mythopoesis"
+        ],
         "frame_function": "diagnostic",
         "dehumanisation_level": 3,
         "temporality": "contemporaneous"
@@ -274,63 +417,154 @@
       ],
       "historical_echoes": [
         {
+          "id": "foreign_saboteur:joseph-stalin:e4a43fe7",
           "figure": "Joseph Stalin",
-          "context": "Plenum of the Central Committee, March 1937 — speech launching the Great Terror",
+          "year": "1937",
           "quote": "Wreckers, diversionists, and spies who have been agents of foreign intelligence services have penetrated our Party, Soviet, economic, and military organisations.",
+          "context": "Plenum of the Central Committee, March 1937 — speech launching the Great Terror",
           "analogy_link": "Both frame domestic political opponents as agents of a foreign enemy, making any internal dissent an act of treason rather than legitimate opposition.",
           "source": {
             "citation": "J. V. Stalin, 'Defects in Party Work and Measures for Liquidating Trotskyite and Other Double-Dealers,' Report to the Plenary Meeting of the CC, CPSU(B), March 3–5, 1937. Marxists Internet Archive",
             "url": "https://www.marxists.org/reference/archive/stalin/works/1937/03/05.htm"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:16.783Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "foreign_saboteur:senator-joseph-mccarthy:d9d607b2",
           "figure": "Senator Joseph McCarthy",
-          "context": "Speech in Wheeling, West Virginia, February 9, 1950",
+          "year": "1950",
           "quote": "I have here in my hand a list of 205 — a list of names that were made known to the Secretary of State as being members of the Communist Party and who nevertheless are still working and shaping policy in the State Department.",
+          "context": "Speech in Wheeling, West Virginia, February 9, 1950",
           "analogy_link": "The claim of a hidden enemy list — unfalsifiable, immune to rebuttal — is structurally identical to accusations of 'foreign agents' infiltrating Ukrainian civil society.",
           "source": {
             "citation": "Senator Joseph McCarthy, Address to the United States Senate, Congressional Record, 81st Congress, 2nd Session, February 20, 1950, p. 1954–1957 (Wheeling text entered into record). US Government Publishing Office",
             "url": "https://www.govinfo.gov/content/pkg/GPO-CRECB-1950-pt2/pdf/GPO-CRECB-1950-pt2-4.pdf"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:16.802Z",
+              "http_status": 200,
+              "match": "not_text",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "foreign_saboteur:joseph-goebbels:a39a5927",
           "figure": "Joseph Goebbels",
-          "context": "\"Communism with the Mask Off\" — speech at Nuremberg Rally, September 13, 1935. Calvin University German Propaganda Archive",
+          "year": "1935",
           "quote": "Bolshevism is the declared enemy of all nations and of all religions and of all human civilisation… He has set up a barrier against world Bolshevism against which the waves of this vile Asiatic-Jewish flood break in vain.",
+          "context": "\"Communism with the Mask Off\" — speech at Nuremberg Rally, September 13, 1935. Calvin University German Propaganda Archive",
           "analogy_link": "Germany as the lone civilisational bulwark against an ideological foreign infection — the direct structural ancestor of Russian framing as the defender of tradition against a Western-engineered cultural and political invasion.",
           "source": {
             "citation": "Joseph Goebbels, 'Communism with the Mask Off,' Nuremberg Rally, September 13, 1935. Trans. Randall Bytwerk, Calvin University German Propaganda Archive",
             "url": "https://research.calvin.edu/german-propaganda-archive/goeb58.htm"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:16.802Z",
+              "http_status": 200,
+              "match": "partial",
+              "score": 0.85,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "foreign_saboteur:lavrentiy-beria-nkvd:179e4e48",
           "figure": "Lavrentiy Beria / NKVD",
-          "context": "NKVD Order No. 00447, July 30, 1937 — mass operation against 'anti-Soviet elements'",
+          "year": "1937",
           "quote": "Former kulaks, criminals and other anti-Soviet elements who have returned from camps… are to be immediately arrested and, after trial by troikas, shot or sent to camps.",
+          "context": "NKVD Order No. 00447, July 30, 1937 — mass operation against 'anti-Soviet elements'",
           "analogy_link": "Bureaucratic dehumanisation of political opponents as 'elements' managed by foreign powers — the same logic used to frame civic protesters as foreign-funded saboteurs.",
           "source": {
             "citation": "NKVD Order No. 00447, 'On the Operation to Repress Former Kulaks, Criminals, and Other Anti-Soviet Elements,' July 30, 1937. Wilson Center Digital Archive",
             "url": "https://digitalarchive.wilsoncenter.org/document/nkvd-order-no-00447"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:16.802Z",
+              "http_status": null,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false,
+              "error": "TypeError"
+            }
           }
         },
         {
+          "id": "foreign_saboteur:francisco-franco:5c3b35c7",
           "figure": "Francisco Franco",
-          "context": "Speeches and broadcasts of the early Francoist period, 1936–1947 — standard formulation of the 'triple conspiracy' justifying the Civil War and subsequent dictatorship",
+          "year": "1936",
           "quote": "Spain suffers from a secret alliance of its eternal enemies — Freemasonry, Communism, and Judaism — who work hand in hand to destroy Christian civilisation. Their agents have infiltrated our press, our universities, and our public institutions.",
+          "context": "Speeches and broadcasts of the early Francoist period, 1936–1947 — standard formulation of the 'triple conspiracy' justifying the Civil War and subsequent dictatorship",
           "analogy_link": "The multi-headed transnational conspiracy as the ancestor of modern 'foreign saboteur' rhetoric: an ideologically and ethnically defined enemy network with domestic agents becomes the totalising explanation for all internal opposition. The structural template — secretive, internationally coordinated, domestically embedded — is reproduced almost verbatim in Kremlin references to 'Anglo-Saxon plots', Soros-funded NGOs, and foreign-agent networks undermining Russian society.",
           "source": {
             "citation": "Francisco Franco, speeches and official proclamations, 1936–1947. The 'judeo-masónico-comunista' conspiracy formula is documented throughout. Cf. Paul Preston, 'Franco: A Biography' (HarperCollins, 1994), pp. 241–243",
             "url": "https://www.cervantesvirtual.com/portales/francisco_franco/"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:16.803Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "foreign_saboteur:p-w-botha:30035f96",
           "figure": "P. W. Botha",
-          "context": "Prime Minister and later State President of South Africa, 1978–1989 — the 'Total Onslaught' (Totale Aanslag) doctrine, which held that South Africa faced a coordinated Soviet-directed communist assault across all sectors of society",
+          "year": "1978",
           "quote": "South Africa faces a total onslaught — military, psychological, economic, cultural, and religious. The Soviet Union and its proxies have infiltrated our trade unions, our churches, our universities, and our press. Every sector of our society is a battlefield. We must respond with a total strategy.",
+          "context": "Prime Minister and later State President of South Africa, 1978–1989 — the 'Total Onslaught' (Totale Aanslag) doctrine, which held that South Africa faced a coordinated Soviet-directed communist assault across all sectors of society",
           "analogy_link": "The 'Total Onslaught' doctrine is one of the most fully elaborated foreign-saboteur conspiracy frameworks in modern history: every institution of civil society — churches, unions, universities, NGOs, media — is simultaneously a potential front for Soviet infiltration, requiring 'total' counter-mobilisation. This is structurally identical to modern Kremlin claims about Western-funded NGOs, 'foreign agents' in civil society, and the ANC-as-Soviet-proxy, with the innovation that the conspiracy is not merely asserted but operationalised as official state security doctrine.",
           "source": {
             "citation": "P. W. Botha, 'Total National Strategy' formulation, 1979; 'Total Onslaught' doctrine as codified in the White Paper on Defence, Republic of South Africa, 1977. Truth and Reconciliation Commission of South Africa Report, Vol. 2, Ch. 2 (1998)",
             "url": "https://www.justice.gov.za/trc/report/"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:16.803Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": false
+            }
           }
         }
       ],
@@ -387,7 +621,10 @@
         ],
         "myth_function": "heroic",
         "enemy_type": "external",
-        "legitimation_mode": ["authorization","moral"],
+        "legitimation_mode": [
+          "authorization",
+          "moral"
+        ],
         "frame_function": "motivational",
         "dehumanisation_level": 1,
         "temporality": "contemporaneous"
@@ -402,63 +639,154 @@
       ],
       "historical_echoes": [
         {
+          "id": "paternal_protector:mao-zedong:8b1e55dd",
           "figure": "Mao Zedong",
-          "context": "Quotations from Chairman Mao (Little Red Book), 1964",
+          "year": "1964",
           "quote": "The force at the core leading our cause forward is the Chinese Communist Party. The theoretical basis guiding our thinking is Marxism-Leninism.",
+          "context": "Quotations from Chairman Mao (Little Red Book), 1964",
           "analogy_link": "Party and leader as the single legitimate source of truth; to question the leader is to question reality itself.",
           "source": {
             "citation": "Mao Zedong, 'Quotations from Chairman Mao Tse-tung' (Little Red Book), People's Liberation Army Daily, 1964. Marxists Internet Archive",
             "url": "https://www.marxists.org/reference/archive/mao/works/red-book/"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:16.995Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "paternal_protector:joseph-goebbels:b8e70ecd",
           "figure": "Joseph Goebbels",
-          "context": "\"Look Confidently to the Helmsman!\" — Das Reich, March 1945. Calvin University German Propaganda Archive",
+          "year": "1945",
           "quote": "Look with confidence to the helmsman and with united strength toward the goal! Each German must be sure that it can and will end only with victory and our complete self-assertion. This war is not only a matter of the laurel wreath for our people, but of its entire existence.",
+          "context": "\"Look Confidently to the Helmsman!\" — Das Reich, March 1945. Calvin University German Propaganda Archive",
           "analogy_link": "The helmsman metaphor insulates the leader from accountability for military disasters: the ship may be sinking, but the solution is more trust in the captain, never a change of course — identical to the logic of rallying around Putin as Russian forces suffer setbacks.",
           "source": {
             "citation": "Joseph Goebbels, 'Look Confidently to the Helmsman!,' Das Reich, March 1945. Trans. Randall Bytwerk, Calvin University German Propaganda Archive",
             "url": "https://research.calvin.edu/german-propaganda-archive/goeb80.htm"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:17.063Z",
+              "http_status": 200,
+              "match": "partial",
+              "score": 0.65,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "paternal_protector:joseph-goebbels:123171ae",
           "figure": "Joseph Goebbels",
-          "context": "\"Do You Want Total War?\" — Sportpalast speech, Berlin, February 18, 1943. Calvin University German Propaganda Archive",
+          "year": "1943",
           "quote": "Are you ready to follow the Führer as the phalanx of the homeland, standing behind the fighting army? The people want action. It is time for it!",
+          "context": "\"Do You Want Total War?\" — Sportpalast speech, Berlin, February 18, 1943. Calvin University German Propaganda Archive",
           "analogy_link": "Manufactured popular consent for total escalation — the leader does not impose the war on the people but appears to respond to their spontaneous demand for it. Used after Stalingrad to frame intensified mobilisation as a popular uprising rather than a state directive.",
           "source": {
             "citation": "Joseph Goebbels, 'Do You Want Total War?' Sportpalast speech, Berlin, February 18, 1943. Trans. Randall Bytwerk, Calvin University German Propaganda Archive",
             "url": "https://research.calvin.edu/german-propaganda-archive/goeb36.htm"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:17.158Z",
+              "http_status": 200,
+              "match": "partial",
+              "score": 0.77,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "paternal_protector:kim-il-sung-korean-central-news-agency:de9a8f7c",
           "figure": "Kim Il-sung / Korean Central News Agency",
-          "context": "North Korean state media, formative period 1948–1972",
+          "year": "1948",
           "quote": "The Great Leader Comrade Kim Il-sung is the sun of the nation and the lodestar of its liberation. He is the father of all Korean people.",
+          "context": "North Korean state media, formative period 1948–1972",
           "analogy_link": "The 'sun' metaphor removes the leader from ordinary political accountability — he illuminates rather than governs, making failure impossible by definition.",
           "source": {
             "citation": "Korean Central News Agency (KCNA) formative propaganda, 1948–1972. Documented in Brian Myers, 'The Cleanest Race: How North Koreans See Themselves and Why It Matters' (Melville House, 2010); Wilson Center NKIDP Digital Archive",
             "url": "https://digitalarchive.wilsoncenter.org/collection/north-korea-international-documentation-project"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:17.291Z",
+              "http_status": null,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": true,
+              "error": "TypeError"
+            }
           }
         },
         {
+          "id": "paternal_protector:omar-bongo:133b9a1f",
           "figure": "Omar Bongo",
-          "context": "President of Gabon, 1967–2009 — one of Africa's longest-serving heads of state; characteristic paternalist rhetoric employed throughout his 41-year rule",
+          "year": "1967",
           "quote": "I am not just the president of Gabon — I am its father, its guide, its protector. Gabon exists because I have held it together. Without unity under strong leadership, there is only chaos and foreign exploitation.",
+          "context": "President of Gabon, 1967–2009 — one of Africa's longest-serving heads of state; characteristic paternalist rhetoric employed throughout his 41-year rule",
           "analogy_link": "The claim of personal indispensability as national continuity: the leader and the nation are so fused that to question him is to threaten Gabon's very existence. Bongo's 41-year tenure was sustained not by democratic mandate but by this fusion — loyalty to Bongo was loyalty to stability, making any succession or political competition an existential rather than electoral matter.",
           "source": {
             "citation": "Omar Bongo, speeches and statements, 1967–2009. Cf. Douglas Yates, 'The Rentier State in Africa: Oil Rent Dependency and Neocolonialism in the Republic of Gabon' (Africa World Press, 1996); Amnesty International, 'Gabon' annual reports",
             "url": "https://www.amnesty.org/en/location/africa/west-and-central-africa/gabon/"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:17.297Z",
+              "http_status": 403,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "paternal_protector:rafael-trujillo:b1684e5f",
           "figure": "Rafael Trujillo",
-          "context": "Dictator of the Dominican Republic, 1930–1961 — El Benefactor de la Patria; the most complete example of personal rule fused with national identity in the Caribbean",
+          "year": "1930",
           "quote": "Trujillo and God — God in heaven, Trujillo on earth. He is not a ruler — he is the nation. Everything in this Republic exists by his grace, through his sacrifice and his genius. To love the Dominican Republic is to love Trujillo. To honour the Fatherland is to honour him.",
+          "context": "Dictator of the Dominican Republic, 1930–1961 — El Benefactor de la Patria; the most complete example of personal rule fused with national identity in the Caribbean",
           "analogy_link": "Trujillo's personality cult achieved what few regimes manage: the legal renaming of the capital city (Santo Domingo became 'Ciudad Trujillo') and the official slogan 'God and Trujillo' displayed in churches — making the fusion of leader and nation literal rather than metaphorical. Loyalty to Trujillo was structurally indistinguishable from patriotism, making any opposition both sacrilegious and treasonous simultaneously. This is the paternal protector at its most extreme: not merely the nation's father but its creator, sustainer, and owner.",
           "source": {
             "citation": "Trujillo regime propaganda, 1930–1961. Robert Crassweller, 'Trujillo: The Life and Times of a Caribbean Dictator' (Macmillan, 1966); Lauren Derby, 'The Dictator's Seduction: Politics and the Popular Imagination in the Era of Trujillo' (Duke UP, 2009)",
             "url": "https://archive.org/details/trujillolifetime00cras"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:17.505Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": false
+            }
           }
         }
       ],
@@ -515,7 +843,10 @@
         ],
         "myth_function": "theodicy",
         "enemy_type": "ontological",
-        "legitimation_mode": ["moral","mythopoesis"],
+        "legitimation_mode": [
+          "moral",
+          "mythopoesis"
+        ],
         "frame_function": "diagnostic",
         "dehumanisation_level": 4,
         "temporality": "contemporaneous"
@@ -531,53 +862,128 @@
       ],
       "historical_echoes": [
         {
+          "id": "moral_purification:benito-mussolini-giovanni-gentile:0bfe3840",
           "figure": "Benito Mussolini & Giovanni Gentile",
-          "context": "Doctrine of Fascism, 1932. Yale Avalon Project",
+          "year": "1932",
           "quote": "War alone brings all human energies to their highest tension and sets a seal of nobility on peoples who have the courage to face it… The State is an absolute before which individuals and groups are relative. The nation is created by the State, which gives the people an effective existence.",
+          "context": "Doctrine of Fascism, 1932. Yale Avalon Project",
           "analogy_link": "War as ennobling civilisational test and the state as the only legitimate moral entity — individual suffering becomes politically meaningless, making mass sacrifice not just acceptable but spiritually necessary. This is the operational theology behind 'we do not count casualties' Russian war communication.",
           "source": {
             "citation": "Benito Mussolini and Giovanni Gentile, 'The Doctrine of Fascism,' 1932. English translation, Yale Avalon Project",
             "url": "https://avalon.law.yale.edu/20th_century/mussolini.asp"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:17.519Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "moral_purification:heinrich-himmler:feec5898",
           "figure": "Heinrich Himmler",
-          "context": "Speech to SS Group Leaders, Posen, October 4, 1943. Nuremberg Trial Document PS-1919",
+          "year": "1943",
           "quote": "We had the moral right, we had the duty to our people, to destroy this people which wanted to destroy us.",
+          "context": "Speech to SS Group Leaders, Posen, October 4, 1943. Nuremberg Trial Document PS-1919",
           "analogy_link": "The self-defence framing of civilisational violence — extermination recast as moral obligation to preserve a threatened culture.",
           "source": {
             "citation": "Heinrich Himmler, Speech at Posen, October 4, 1943. Nuremberg Document PS-1919. Yale Avalon Project",
             "url": "https://avalon.law.yale.edu/imt/himmler.asp"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:17.546Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "moral_purification:konstantin-pobedonostsev:95ffd0dc",
           "figure": "Konstantin Pobedonostsev",
-          "context": "Ober-Procurator of the Holy Synod, advisor to Tsar Alexander III, 1880s",
+          "year": "1898",
           "quote": "Parliamentary government is the great lie of our time… Democracy means the rule of the street, the tyranny of mediocrity, the destruction of all that is sacred.",
+          "context": "Ober-Procurator of the Holy Synod, advisor to Tsar Alexander III, 1880s",
           "analogy_link": "The direct ancestor of modern Kremlin anti-Westernism: democracy as moral degeneration, autocracy as spiritual hygiene.",
           "source": {
             "citation": "Konstantin Pobedonostsev, 'Reflections of a Russian Statesman,' trans. Robert Crozier Long (London: Grant Richards, 1898). Internet Archive",
             "url": "https://archive.org/details/reflectionsofrus00pobe"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:17.606Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "moral_purification:anto-nio-de-oliveira-salazar:2080da09",
           "figure": "António de Oliveira Salazar",
-          "context": "Estado Novo ideological formulation, Portugal 1932–1968 — the official triad 'Deus, Pátria e Família' (God, Homeland, Family) as the philosophical foundation of the Portuguese New State",
+          "year": "1932",
           "quote": "We are opposed to all forms of internationalism — to communism, to syndicalism, and to everything that divides or weakens the family. Against class struggle we set the harmony of classes; against materialism, the spiritual conception of life; against internationalism, the Fatherland.",
+          "context": "Estado Novo ideological formulation, Portugal 1932–1968 — the official triad 'Deus, Pátria e Família' (God, Homeland, Family) as the philosophical foundation of the Portuguese New State",
           "analogy_link": "Catholic social conservatism weaponised as a comprehensive anti-liberal political programme. Unlike Nazism's racial biology, Salazar's 'God, Homeland, Family' grounds its rejection of Western liberalism in spiritual and communal values — making it the closer structural ancestor of modern Kremlin 'traditional values' rhetoric, which similarly appeals to God, nation, and family rather than race as the antidote to Western 'degeneracy'.",
           "source": {
             "citation": "António de Oliveira Salazar, speeches and interviews, Estado Novo period, 1932–1968. Cf. António Ferro, 'Salazar: Portugal and Her Leader' (Faber & Faber, 1939); Arquivo Histórico Parlamentar",
             "url": "https://arquivo.pt/wayback/20191213133500/http://www.portugal.gov.pt/pt/o-governo/arquivo-historico/governos-historicos/governo-salazar.aspx"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:17.731Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "moral_purification:d-f-malan:89f93736",
           "figure": "D. F. Malan",
-          "context": "Prime Minister of South Africa, 1948–1954 — architect of the apartheid system; National Party election programme and parliamentary speeches establishing apartheid as official policy",
+          "year": "1948",
           "quote": "The apartheid policy is not only the policy of differentiation. It is the policy which God has laid down for us. It is the Divine plan that each people should maintain its own character, its own nature, and its own calling. To mix the races is to work against God's plan.",
+          "context": "Prime Minister of South Africa, 1948–1954 — architect of the apartheid system; National Party election programme and parliamentary speeches establishing apartheid as official policy",
           "analogy_link": "Racial segregation grounded in theological destiny rather than biological hierarchy: Malan's 'Christian National' framing presents apartheid not as racial supremacy but as divinely ordained separation for the good of all parties — making opposition to it not merely political but spiritually transgressive. This theological register is the closest historical antecedent to modern authoritarian regimes that frame exclusionary policies as aligned with God's natural order, traditional values, or divine civilisational mandate.",
           "source": {
             "citation": "D. F. Malan, electoral speeches and parliamentary addresses, 1948. Cf. Lindie Koorts, 'DF Malan and the Rise of Afrikaner Nationalism' (Tafelberg, 2014); South African Parliament Hansard, 1948–1954",
             "url": "https://www.parliament.gov.za/historical-documents"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:18.238Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": true
+            }
           }
         }
       ],
@@ -635,7 +1041,10 @@
         ],
         "myth_function": "eschatological",
         "enemy_type": "ontological",
-        "legitimation_mode": ["moral","rationalization"],
+        "legitimation_mode": [
+          "moral",
+          "rationalization"
+        ],
         "frame_function": "diagnostic",
         "dehumanisation_level": 4,
         "temporality": "contemporaneous"
@@ -653,53 +1062,129 @@
       ],
       "historical_echoes": [
         {
+          "id": "nazi_label:joseph-goebbels:35c4a213",
           "figure": "Joseph Goebbels",
-          "context": "\"The Jews Are Guilty!\" — Das Reich, November 16, 1941. Calvin University German Propaganda Archive",
+          "year": "1941",
           "quote": "Every Jew is our enemy in this historic struggle, regardless of whether he vegetates in a Polish ghetto or carries on his parasitic existence in Berlin… The Jews are to blame for each German soldier who falls in this war. They have him on their conscience, and they must also pay for it.",
+          "context": "\"The Jews Are Guilty!\" — Das Reich, November 16, 1941. Calvin University German Propaganda Archive",
           "analogy_link": "Collective ethnic guilt as propaganda engine: every individual member of the group is held personally responsible for the war, making indiscriminate action against any of them morally justified — structurally identical to 'every Ukrainian is a Nazi' framing that delegitimises all Ukrainian civilian casualties.",
           "source": {
             "citation": "Joseph Goebbels, 'The Jews Are Guilty!,' Das Reich, November 16, 1941. Trans. Randall Bytwerk, Calvin University German Propaganda Archive",
             "url": "https://research.calvin.edu/german-propaganda-archive/goeb1.htm"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:18.240Z",
+              "http_status": 200,
+              "match": "partial",
+              "score": 0.77,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "nazi_label:joseph-goebbels:2e637a87",
           "figure": "Joseph Goebbels",
-          "context": "\"The War and the Jews\" — Das Reich, 1943. Calvin University German Propaganda Archive",
+          "year": "1943",
           "quote": "This war is a war of the Jewish race and its subject people against Western culture… Jewry wanted this war. The instigators are to be found in the foreground.",
+          "context": "\"The War and the Jews\" — Das Reich, 1943. Calvin University German Propaganda Archive",
           "analogy_link": "The 'they started it' inversion — the aggressor retroactively becomes the victim of an enemy conspiracy that 'wanted' the war. This is the exact structure of Russian claims that NATO/the West/Ukraine 'provoked' and 'wanted' the 2022 war.",
           "source": {
             "citation": "Joseph Goebbels, 'The War and the Jews,' Das Reich, 1943. Trans. Randall Bytwerk, Calvin University German Propaganda Archive",
             "url": "https://research.calvin.edu/german-propaganda-archive/goeb37.htm"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:18.387Z",
+              "http_status": 200,
+              "match": "partial",
+              "score": 0.46,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "nazi_label:slobodan-milos-evic-serbian-state-media-:ee095993",
           "figure": "Slobodan Milošević / Serbian state media RTS",
-          "context": "Serbian Radio-Television (RTS) coverage of the Croatian and Bosnian wars, 1991–1995",
+          "year": "1991",
           "quote": "The Ustasha [Croatian] leadership is continuing the genocide of the Serbian people. Our special operation is a defensive response to their fascist aggression.",
+          "context": "Serbian Radio-Television (RTS) coverage of the Croatian and Bosnian wars, 1991–1995",
           "analogy_link": "The closest modern structural parallel: a Slavic state labels its neighbour as irredeemably fascist and genocidal to justify military invasion — identical framing to Russian 'de-Nazification' of Ukraine.",
           "source": {
             "citation": "Serbian Radio-Television (RTS) broadcasts, 1991–1995. Documented in Tim Judah, 'The Serbs: History, Myth and the Destruction of Yugoslavia' (Yale UP, 1997); ICTY Prosecution evidence, Prosecutor v. Milošević",
             "url": "https://www.icty.org/en/case/slobodan_milosevic"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:18.532Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "nazi_label:soviet-foreign-ministry-tass:7cfc2693",
           "figure": "Soviet Foreign Ministry / TASS",
-          "context": "Soviet reaction to West German rearmament and NATO membership, 1954–1955",
+          "year": "1954",
           "quote": "The remilitarisation of West Germany and the creation of a Wehrmacht represents a direct revival of Hitlerite fascism on German soil. The NATO powers are enabling a new Nazi threat to peace-loving peoples.",
+          "context": "Soviet reaction to West German rearmament and NATO membership, 1954–1955",
           "analogy_link": "The Soviet prototype for post-war 'Nazi' labelling as geopolitical weapon: any Western military development becomes 'fascist', making diplomatic engagement impossible and military vigilance morally mandatory.",
           "source": {
             "citation": "Soviet Foreign Ministry communiqués and TASS statements on West German rearmament and NATO accession, 1954–1955. Wilson Center Digital Archive, Germany and Europe collection",
             "url": "https://digitalarchive.wilsoncenter.org/collection/germany-cold-war"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:18.580Z",
+              "http_status": null,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": true,
+              "error": "TypeError"
+            }
           }
         },
         {
+          "id": "nazi_label:vyacheslav-molotov:8a81f853",
           "figure": "Vyacheslav Molotov",
-          "context": "Radio address justifying the Soviet invasion of Finland, November 30, 1939",
+          "year": "1939",
           "quote": "The Finnish White Guards and their foreign backers have long been preparing an attack on Leningrad. The Soviet Government has been compelled to take measures to protect the security of the Soviet Union.",
+          "context": "Radio address justifying the Soviet invasion of Finland, November 30, 1939",
           "analogy_link": "The template for all subsequent Russian 'de-Nazification' and 'protection' operations: the victim is recast as aggressor, and invasion as pre-emptive self-defence against an existential fascist threat.",
           "source": {
             "citation": "Vyacheslav Molotov, Radio broadcast on the outbreak of the Soviet-Finnish War, November 30, 1939. In Jane Degras, ed., 'Soviet Documents on Foreign Policy,' Vol. 3, 1933–1941 (Oxford UP, 1953)",
             "url": "https://archive.org/details/sovietdocumentso0003degr"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:18.609Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         }
       ],
@@ -757,7 +1242,10 @@
         ],
         "myth_function": "cosmogonic",
         "enemy_type": "internal",
-        "legitimation_mode": ["mythopoesis","authorization"],
+        "legitimation_mode": [
+          "mythopoesis",
+          "authorization"
+        ],
         "frame_function": "diagnostic",
         "dehumanisation_level": 2,
         "temporality": "retrospective"
@@ -774,43 +1262,103 @@
       ],
       "historical_echoes": [
         {
+          "id": "territorial_myth:adolf-hitler:3cda43b6",
           "figure": "Adolf Hitler",
-          "context": "Sportpalast speech, Berlin, September 26, 1938 — on the Sudetenland crisis",
+          "year": "1938",
           "quote": "This is the last territorial claim I have to make in Europe, but it is a claim from which I will not retreat and which, God willing, I will make good.",
+          "context": "Sportpalast speech, Berlin, September 26, 1938 — on the Sudetenland crisis",
           "analogy_link": "The 'final demand' structure — each annexation is framed as a limited correction of historical injustice, never an expansionist project, until the next 'historical injustice' is identified.",
           "source": {
             "citation": "Adolf Hitler, Speech at the Berlin Sportpalast on the Sudeten Crisis, September 26, 1938. Documents on German Foreign Policy 1918–1945, Series D, Vol. II (HMSO, 1950); Yale Avalon Project",
             "url": "https://avalon.law.yale.edu/imt/munich2.asp"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:18.696Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "territorial_myth:slobodan-milos-evic:a91cebf0",
           "figure": "Slobodan Milošević",
-          "context": "Speech at Kosovo Polje (Gazimestan), June 28, 1989 — 600th anniversary of the Battle of Kosovo",
+          "year": "1989",
           "quote": "Serbia has never had only Serbs living in it. Today, more than in the past, members of other peoples and nationalities also live in it. This is not a disadvantage for Serbia. I am truly convinced that it is its advantage.",
+          "context": "Speech at Kosovo Polje (Gazimestan), June 28, 1989 — 600th anniversary of the Battle of Kosovo",
           "analogy_link": "The 'brotherly peoples' framing that simultaneously asserts an organic ethnic unity and denies minority political autonomy — used to claim that Kosovo is inalienably Serbian regardless of its population's wishes.",
           "source": {
             "citation": "Slobodan Milošević, Speech at Gazimestan, Kosovo, June 28, 1989. Translated text in Lenard Cohen, 'Broken Bonds: Yugoslavia's Disintegration and Balkan Politics in Transition' (Westview Press, 1995)",
             "url": "https://avalon.law.yale.edu/20th_century/milosevic.asp"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:18.869Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "territorial_myth:konstantin-leontiev-pan-slavic-thinkers:26ef9005",
           "figure": "Konstantin Leontiev / Pan-Slavic thinkers",
-          "context": "Russian imperial Pan-Slavism, 1860s–1880s — 'All-Russian' ethnic theory",
+          "year": "1952",
           "quote": "Great Russians, Little Russians, and White Russians are not three peoples but three branches of the one Russian tribe; the Ukrainian literary language is an artificial political project of the enemies of Russian unity.",
+          "context": "Russian imperial Pan-Slavism, 1860s–1880s — 'All-Russian' ethnic theory",
           "analogy_link": "The direct 19th-century ancestor of Putin's 2021 essay 'On the Historical Unity of Russians and Ukrainians' — denying Ukrainian nationhood as an anti-Russian political construct.",
           "source": {
             "citation": "Pan-Slavic ideological writings, 1860s–1880s; composite of Mikhail Katkov, Konstantin Leontiev, et al. Cf. Nicholas Riasanovsky, 'Russia and the West in the Teaching of the Slavophiles' (Harvard UP, 1952); Robert MacMaster, 'Danilevsky: A Russian Totalitarian Philosopher' (Harvard UP, 1967)",
             "url": "https://archive.org/details/russiawestinteac0000rias"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:18.891Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "territorial_myth:benito-mussolini:d6eb930e",
           "figure": "Benito Mussolini",
-          "context": "Speech to the Italian parliament on irredentism, May 26, 1927",
+          "year": "1927",
           "quote": "The Italian people have a mission in the Mediterranean that goes back to Rome. Dalmatia, Nice, Tunis — these are Italian lands that history and blood have claimed for us.",
+          "context": "Speech to the Italian parliament on irredentism, May 26, 1927",
           "analogy_link": "The 'blood and history' claim as trump card over current borders and populations — the same logic behind Russian claims that Crimea, Donbas, and 'Novorossiya' are primordially Russian.",
           "source": {
             "citation": "Benito Mussolini, Speech to the Italian Parliament, May 26, 1927. In 'Opera Omnia di Benito Mussolini,' Vol. 22, ed. Edoardo and Duilio Susmel (Florence: La Fenice, 1957)",
             "url": "https://archive.org/search?query=opera+omnia+mussolini"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:19.018Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": true
+            }
           }
         }
       ],
@@ -875,7 +1423,10 @@
         ],
         "myth_function": "eschatological",
         "enemy_type": "shadow",
-        "legitimation_mode": ["rationalization","moral"],
+        "legitimation_mode": [
+          "rationalization",
+          "moral"
+        ],
         "frame_function": "diagnostic",
         "dehumanisation_level": 3,
         "temporality": "contemporaneous"
@@ -894,33 +1445,80 @@
       ],
       "historical_echoes": [
         {
+          "id": "maidan_coup:soviet-foreign-ministry-pravda:8c95f1b2",
           "figure": "Soviet Foreign Ministry / Pravda",
-          "context": "Soviet response to the Hungarian Revolution, November 1956",
+          "year": "1956",
           "quote": "The counter-revolutionary uprising in Hungary was organised and directed by imperialist reaction — primarily American — with the active participation of the Horthyite fascist emigration and internal enemy elements.",
+          "context": "Soviet response to the Hungarian Revolution, November 1956",
           "analogy_link": "The structural template: a mass popular uprising is reframed as a foreign-engineered putsch, rendering all subsequent suppression legitimate self-defence rather than imperial violence.",
           "source": {
             "citation": "Soviet Foreign Ministry statement and Pravda editorial on the Hungarian uprising, November 4–7, 1956. Wilson Center Digital Archive, Hungary 1956 collection",
             "url": "https://digitalarchive.wilsoncenter.org/collection/14/hungary-1956"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:19.291Z",
+              "http_status": null,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false,
+              "error": "TypeError"
+            }
           }
         },
         {
+          "id": "maidan_coup:soviet-communist-party-presidium-tass:69454386",
           "figure": "Soviet Communist Party Presidium / TASS",
-          "context": "Soviet framing of the Prague Spring, August 21, 1968",
+          "year": "1968",
           "quote": "The party and government leaders of the Czechoslovak Socialist Republic have asked the Soviet Union and other allied states for immediate assistance, including armed forces, in their struggle against counter-revolutionary forces.",
+          "context": "Soviet framing of the Prague Spring, August 21, 1968",
           "analogy_link": "The 'invitation' fiction — framing military invasion as a response to a legitimate request, exactly as Russia framed its 2014 Crimea and 2022 Donbas operations.",
           "source": {
             "citation": "TASS communiqué, August 21, 1968. In Jaromir Navratil, ed., 'The Prague Spring 1968: A National Security Archive Document Reader' (CEU Press, 1998); Wilson Center Digital Archive, Czechoslovakia 1968",
             "url": "https://digitalarchive.wilsoncenter.org/collection/czechoslovakia-1968"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:19.295Z",
+              "http_status": null,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": true,
+              "error": "TypeError"
+            }
           }
         },
         {
+          "id": "maidan_coup:augusto-pinochet-chilean-military-junta:f2b0cdbf",
           "figure": "Augusto Pinochet / Chilean military junta",
-          "context": "Proclamation No. 5 of the Military Junta, September 11, 1973",
+          "year": "1973",
           "quote": "The Armed Forces and Carabineros of Chile declare that the Marxist government of Allende has been overthrown, inasmuch as its actions were destroying the country's economy and morals, creating fratricidal hatreds, and placing Chile on the path to becoming a satellite of international communism.",
+          "context": "Proclamation No. 5 of the Military Junta, September 11, 1973",
           "analogy_link": "The coup that calls itself a counter-coup: genuine democratic government is retrospectively reframed as the 'real' coup, and military takeover as restoration of order — the mirror logic of 'Maidan was the coup'.",
           "source": {
             "citation": "Junta de Gobierno de Chile, Proclamation No. 5, September 11, 1973. National Security Archive, Chile Documentation Project",
             "url": "https://nsarchive.gwu.edu/collection/chile-documentation-project"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:19.297Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": true
+            }
           }
         }
       ],
@@ -981,7 +1579,9 @@
         ],
         "myth_function": "eschatological",
         "enemy_type": "shadow",
-        "legitimation_mode": ["rationalization"],
+        "legitimation_mode": [
+          "rationalization"
+        ],
         "frame_function": "diagnostic",
         "dehumanisation_level": 3,
         "temporality": "contemporaneous"
@@ -998,33 +1598,79 @@
       ],
       "historical_echoes": [
         {
+          "id": "covert_operations:soviet-kgb-active-measures-directorate:473f71cc",
           "figure": "Soviet KGB / Active Measures Directorate",
-          "context": "Operation DENVER (Operation INFEKTION), 1983–1987 — KGB disinformation campaign planting AIDS-as-bioweapon story in Indian media",
+          "year": "1983",
           "quote": "The AIDS epidemic is the result of Pentagon experiments at Fort Detrick, Maryland, designed to develop new biological weapons capable of destroying people of specific racial groups.",
+          "context": "Operation DENVER (Operation INFEKTION), 1983–1987 — KGB disinformation campaign planting AIDS-as-bioweapon story in Indian media",
           "analogy_link": "The direct institutional ancestor of Ukrainian biolabs disinformation: KGB 'active measures' planted the story in Indian media, spread via front organisations, and achieved global circulation — the exact playbook used for US biolabs claims in 2022.",
           "source": {
             "citation": "Thomas Boghardt, 'Operation INFEKTION: Soviet Bloc Intelligence and Its AIDS Disinformation Campaign,' Studies in Intelligence 53(4), December 2009. Central Intelligence Agency. US State Dept, 'Soviet Influence Activities: A Report on Active Measures and Propaganda, 1986–87' (1987)",
             "url": "https://www.cia.gov/resources/csi/studies-in-intelligence/volume-53-no-4/operation-infektion-soviet-bloc-intelligence-and-its-aids-disinformation-campaign/"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:19.619Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "covert_operations:north-korean-chinese-propaganda:200ed8f7",
           "figure": "North Korean / Chinese Propaganda",
-          "context": "Accusation of US germ warfare during the Korean War, February–March 1952",
+          "year": "1952",
           "quote": "American imperialists have been using bacteriological weapons against the Korean and Chinese peoples. Aircraft of the US Air Force have dropped insects and animals infected with plague, cholera and typhoid fever over our territory.",
+          "context": "Accusation of US germ warfare during the Korean War, February–March 1952",
           "analogy_link": "The pattern of bioweapon accusations attached to every US military engagement — unverifiable, terrifying, and immune to denial (since 'the cover-up proves the conspiracy').",
           "source": {
             "citation": "Statement by the Central People's Government of China and the Government of the Korean People's Democratic Republic on US germ warfare, February–March 1952. Documented in Milton Leitenberg, 'The Korean War Biological Weapon Allegations,' CBW Studies Research Paper No. 2 (2016)",
             "url": "https://digitalarchive.wilsoncenter.org/collection/korea-cold-war"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:19.754Z",
+              "http_status": null,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": true,
+              "error": "TypeError"
+            }
           }
         },
         {
+          "id": "covert_operations:nazi-propaganda-ministry:8d91dd49",
           "figure": "Nazi Propaganda Ministry",
-          "context": "Wartime propaganda on biological contamination, 1939–1945 — Der Stürmer and related materials",
+          "year": "1939",
           "quote": "Jews are carriers of disease. Just as a single bacillus is enough to infect an entire community, a single Jew is enough to corrupt an entire city, an entire people.",
+          "context": "Wartime propaganda on biological contamination, 1939–1945 — Der Stürmer and related materials",
           "analogy_link": "Biological contamination as political metaphor normalises the idea that an ethnic or political enemy is literally pathogenic — a conceptual framework that makes bioweapon conspiracy theories viscerally credible.",
           "source": {
             "citation": "Nazi Ministry of Public Enlightenment and Propaganda, 'Der Ewige Jude' (The Eternal Jew) and related materials, 1940–1943. United States Holocaust Memorial Museum (USHMM)",
             "url": "https://encyclopedia.ushmm.org/content/en/article/nazi-propaganda"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:19.759Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": false
+            }
           }
         }
       ],
@@ -1091,7 +1737,10 @@
         ],
         "myth_function": "theodicy",
         "enemy_type": "external",
-        "legitimation_mode": ["rationalization","mythopoesis"],
+        "legitimation_mode": [
+          "rationalization",
+          "mythopoesis"
+        ],
         "frame_function": "diagnostic",
         "dehumanisation_level": 10,
         "temporality": "contemporaneous"
@@ -1109,43 +1758,103 @@
       ],
       "historical_echoes": [
         {
+          "id": "atrocity_denial:joseph-goebbels:8efd5344",
           "figure": "Joseph Goebbels",
-          "context": "\"Churchill's Lie Factory\" — Das Reich, January 12, 1941. Calvin University German Propaganda Archive",
+          "year": "1941",
           "quote": "When one lies, one should lie big, and stick to it. They keep up their lies, even at the risk of looking ridiculous… Mr. Churchill, a genuine John Bull, holds to his lies, and in fact repeats them until he himself believes them.",
+          "context": "\"Churchill's Lie Factory\" — Das Reich, January 12, 1941. Calvin University German Propaganda Archive",
           "analogy_link": "The enemy's atrocity evidence is itself proof of their propaganda machinery — the bigger the documented crime, the more obviously it is fabricated for psychological warfare. This makes evidence of atrocities self-refuting: the very existence of Bucha photographs becomes proof they are staged.",
           "source": {
             "citation": "Joseph Goebbels, 'Churchill's Lie Factory,' Das Reich, January 12, 1941. Trans. Randall Bytwerk, Calvin University German Propaganda Archive",
             "url": "https://research.calvin.edu/german-propaganda-archive/goeb29.htm"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:20.025Z",
+              "http_status": 200,
+              "match": "partial",
+              "score": 0.87,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "atrocity_denial:soviet-foreign-ministry:f2384374",
           "figure": "Soviet Foreign Ministry",
-          "context": "Soviet denial of the Katyn massacre, April 1943–April 1990",
+          "year": "1943",
           "quote": "The Polish officers were shot by German fascists in autumn 1941. The so-called 'Katyn documents' are crude forgeries manufactured by Hitlerite propaganda services and their Polish collaborators.",
+          "context": "Soviet denial of the Katyn massacre, April 1943–April 1990",
           "analogy_link": "Fifty years of institutional denial of a massacre for which direct documentary evidence existed — demonstrating that atrocity denial is not about evidence but about the political cost of admission.",
           "source": {
             "citation": "Soviet Foreign Ministry denial of the Katyn massacre, April 1943. Cf. Anna Cienciala, Natalia Lebedeva, Wojciech Materski, eds., 'Katyn: A Crime Without Punishment' (Yale UP, 2007); National Archives (US), Katyn Forest Massacre files",
             "url": "https://www.archives.gov/research/foreign-policy/katyn"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:20.169Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": true
+            }
           }
         },
         {
+          "id": "atrocity_denial:ss-standartenfu-hrer-alfred-naujocks-rei:ea6f2f5d",
           "figure": "SS-Standartenführer Alfred Naujocks / Reich Security Main Office",
-          "context": "Gleiwitz incident, August 31, 1939 — staged attack on German radio station used as pretext for invading Poland",
+          "year": "1939",
           "quote": "[Nuremberg testimony, 1945]: I was ordered to simulate an attack on the Gleiwitz station and make it appear that the attacking force consisted of Poles.",
+          "context": "Gleiwitz incident, August 31, 1939 — staged attack on German radio station used as pretext for invading Poland",
           "analogy_link": "The false-flag as war pretext: staged evidence of enemy aggression to manufacture a casus belli — the institutional origin of the entire false-flag accusation genre.",
           "source": {
             "citation": "Affidavit of Alfred Helmut Naujocks, November 20, 1945. Nuremberg Document PS-2751. Yale Avalon Project, International Military Tribunal",
             "url": "https://avalon.law.yale.edu/imt/naujocks.asp"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:20.173Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "atrocity_denial:serbian-government-and-republika-srpska-:ccf5bab2",
           "figure": "Serbian government and Republika Srpska leadership",
-          "context": "Denial of the Srebrenica massacre, July–December 1995",
+          "year": "1995",
           "quote": "There was no genocide in Srebrenica. What happened there was combat between the Bosnian Muslim army and Serbian forces. The figures of the dead are propaganda invented by Western intelligence services and Muslim fundamentalists.",
+          "context": "Denial of the Srebrenica massacre, July–December 1995",
           "analogy_link": "The closest structural parallel to Bucha denial: a mass atrocity with overwhelming physical evidence is systematically reframed as 'staged propaganda' — perpetrator denial as an extension of the original violence.",
           "source": {
             "citation": "Republika Srpska government statements on Srebrenica, July–December 1995. Human Rights Watch, 'The Fall of Srebrenica and the Failure of UN Peacekeeping' (1995); ICTY, Prosecutor v. Radislav Krstić, Case No. IT-98-33",
             "url": "https://www.icty.org/en/case/krstic"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:20.189Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": false
+            }
           }
         }
       ],
@@ -1205,7 +1914,10 @@
         ],
         "myth_function": "eschatological",
         "enemy_type": "shadow",
-        "legitimation_mode": ["rationalization","moral"],
+        "legitimation_mode": [
+          "rationalization",
+          "moral"
+        ],
         "frame_function": "diagnostic",
         "dehumanisation_level": 2,
         "temporality": "contemporaneous"
@@ -1222,33 +1934,80 @@
       ],
       "historical_echoes": [
         {
+          "id": "color_revolution:nikita-khrushchev-soviet-presidium:84c59053",
           "figure": "Nikita Khrushchev / Soviet Presidium",
-          "context": "Soviet Presidium analysis of the Hungarian Revolution in internal CC documents, November 1956",
+          "year": "1956",
           "quote": "The counter-revolutionary uprising was not spontaneous. It was prepared over many years by imperialist intelligence services operating through émigré organisations, Radio Free Europe, and internal enemy elements disguised as reform communists.",
+          "context": "Soviet Presidium analysis of the Hungarian Revolution in internal CC documents, November 1956",
           "analogy_link": "The cognitive template that makes all future civic uprisings interpretable as foreign operations: once the framework is established, any mass protest becomes evidence of 'imperialist' manipulation rather than genuine popular discontent.",
           "source": {
             "citation": "CPSU Central Committee Presidium protocols on Hungary, November 1956. Wilson Center Digital Archive, Hungary 1956 collection",
             "url": "https://digitalarchive.wilsoncenter.org/collection/14/hungary-1956"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:20.256Z",
+              "http_status": null,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false,
+              "error": "TypeError"
+            }
           }
         },
         {
+          "id": "color_revolution:ali-khamenei-iranian-supreme-leader:0f32f5d4",
           "figure": "Ali Khamenei / Iranian Supreme Leader",
-          "context": "Friday Prayer sermon, Tehran University, June 19, 2009 — on the Iranian Green Movement",
+          "year": "2009",
           "quote": "These riots, which have been planned and supported by foreign powers hostile to Islam and the Islamic Republic, will not succeed. The enemies of Iran are using the election as a pretext for a Velvet Revolution.",
+          "context": "Friday Prayer sermon, Tehran University, June 19, 2009 — on the Iranian Green Movement",
           "analogy_link": "The same template applied in a non-European context: mass protests dismissed as foreign engineering, framing state repression as defence of national sovereignty against Western manipulation.",
           "source": {
             "citation": "Supreme Leader Ali Khamenei, Friday Prayer sermon, Tehran University, June 19, 2009. English translation, Khamenei.ir official archive",
             "url": "https://english.khamenei.ir/news/1100/The-election-issue-is-a-political-and-security-matter"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:20.261Z",
+              "http_status": null,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false,
+              "error": "TypeError"
+            }
           }
         },
         {
+          "id": "color_revolution:alexander-lukashenko:0ef15703",
           "figure": "Alexander Lukashenko",
-          "context": "Belarusian state television address, August 17, 2020 — responding to post-election protests",
+          "year": "2020",
           "quote": "These are not elections or protesters. This is an externally controlled operation, prepared in advance by the West with Soros money and NATO logistics, to destroy Belarusian statehood.",
+          "context": "Belarusian state television address, August 17, 2020 — responding to post-election protests",
           "analogy_link": "The contemporary Eurasian application of the Soviet template, demonstrating how the colour revolution narrative is used to pre-emptively delegitimise any electoral challenge before results are even contested.",
           "source": {
             "citation": "Alexander Lukashenko, Address on Belarusian state television (ONT/Belarus 1), August 17, 2020. BBC Monitoring; OSCE/ODIHR Election Observation Mission Final Report, Belarus 2020",
             "url": "https://www.bbc.co.uk/news/world-europe-53797131"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:20.318Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         }
       ],
@@ -1311,7 +2070,10 @@
         ],
         "myth_function": "eschatological",
         "enemy_type": "internal",
-        "legitimation_mode": ["rationalization","moral"],
+        "legitimation_mode": [
+          "rationalization",
+          "moral"
+        ],
         "frame_function": "diagnostic",
         "dehumanisation_level": 3,
         "temporality": "contemporaneous"
@@ -1330,33 +2092,79 @@
       ],
       "historical_echoes": [
         {
+          "id": "puppet_regime:vidkun-quisling-national-samling-nazi-oc:b0fc0bb2",
           "figure": "Vidkun Quisling / National Samling, Nazi-occupied Norway",
-          "context": "National Samling proclamations and Reichskommissariat Norway, April–June 1940",
+          "year": "1940",
           "quote": "The new Norwegian government under National Samling will restore the sovereignty of Norway in cooperation with the German Reich. The old political class that served foreign financial interests has been swept away.",
+          "context": "National Samling proclamations and Reichskommissariat Norway, April–June 1940",
           "analogy_link": "The 'Quisling' model — collaborationist regime framed as liberation from foreign domination — became the template for all subsequent puppet government propaganda: the occupier's installed authority claims to be the authentic national voice against the previous 'foreign-controlled' government.",
           "source": {
             "citation": "Vidkun Quisling, National Samling proclamations, Oslo, April–June 1940. Cf. Hans Fredrik Dahl, 'Quisling: A Study in Treachery' (Cambridge UP, 1999)",
             "url": "https://archive.org/search?query=quisling+national+samling"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:20.737Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": true
+            }
           }
         },
         {
+          "id": "puppet_regime:soviet-cominform-pravda:bddd3e26",
           "figure": "Soviet Cominform / Pravda",
-          "context": "Soviet reaction to Yugoslavia's expulsion from Cominform, June 1948",
+          "year": "1948",
           "quote": "The Tito clique has transformed Yugoslavia into a colony of Anglo-American imperialism. The party leaders are agents of international capitalism who have betrayed the socialist cause and sold Yugoslav sovereignty.",
+          "context": "Soviet reaction to Yugoslavia's expulsion from Cominform, June 1948",
           "analogy_link": "Any independent foreign policy choice by a smaller state is reframed as 'selling sovereignty' to imperial powers — a move that makes strategic independence by post-Soviet states structurally impossible to conceive of as legitimate.",
           "source": {
             "citation": "Cominform Resolution on 'The Situation in the Communist Party of Yugoslavia,' June 28, 1948; Pravda editorials, 1948–1949. Wilson Center Digital Archive, Yugoslavia collection",
             "url": "https://digitalarchive.wilsoncenter.org/collection/yugoslavia"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:20.918Z",
+              "http_status": null,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": true,
+              "error": "TypeError"
+            }
           }
         },
         {
+          "id": "puppet_regime:mao-zedong:6aeff938",
           "figure": "Mao Zedong",
-          "context": "\"On the People's Democratic Dictatorship,\" June 30, 1949",
+          "year": "1949",
           "quote": "The Chiang Kai-shek reactionaries are the running dogs of American imperialism. The Chinese people must lean to one side — it is impossible to sit on the fence, and there is no third road.",
+          "context": "\"On the People's Democratic Dictatorship,\" June 30, 1949",
           "analogy_link": "The binary that eliminates neutral positions: any government that cooperates with the West is automatically a 'running dog' puppet, leaving no space for independent sovereignty — exactly the logic applied to Ukraine's European integration.",
           "source": {
             "citation": "Mao Zedong, 'On the People's Democratic Dictatorship,' June 30, 1949. Selected Works of Mao Tse-tung, Vol. IV. Marxists Internet Archive",
             "url": "https://www.marxists.org/reference/archive/mao/selected-works/volume-4/mswv4_65.htm"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:20.923Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": false
+            }
           }
         }
       ],
@@ -1410,7 +2218,9 @@
         ],
         "myth_function": "eschatological",
         "enemy_type": "external",
-        "legitimation_mode": ["rationalization"],
+        "legitimation_mode": [
+          "rationalization"
+        ],
         "frame_function": "prognostic",
         "dehumanisation_level": 2,
         "temporality": "prospective"
@@ -1427,33 +2237,79 @@
       ],
       "historical_echoes": [
         {
+          "id": "imminent_defeat:joseph-goebbels:cdfd90e5",
           "figure": "Joseph Goebbels",
-          "context": "Diary entries and Das Reich articles, September–November 1944",
+          "year": "1944",
           "quote": "The Anglo-American alliance is fundamentally fragile. Between the plutocratic English and the speculative Americans on one side and the Bolshevist hordes on the other, contradictions must inevitably erupt. The moment this coalition breaks, the war turns in our favour.",
+          "context": "Diary entries and Das Reich articles, September–November 1944",
           "analogy_link": "Military collapse propaganda used to sustain fighting morale when the actual military situation is deteriorating — the same cognitive structure as Russian narratives about imminent Western disunity and Ukrainian defeat.",
           "source": {
             "citation": "Joseph Goebbels, diary entries, September–November 1944. In Hugh Trevor-Roper, ed., 'Final Entries 1945: The Diaries of Joseph Goebbels' (Putnam, 1978); Elke Fröhlich, ed., 'Die Tagebücher von Joseph Goebbels,' Vol. 13–14 (Munich: K. G. Saur, 1993–1996)",
             "url": "https://research.calvin.edu/german-propaganda-archive/goebbels.htm"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:20.931Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "imminent_defeat:iraqi-information-minister-mohammed-saee:44b17ffd",
           "figure": "Iraqi Information Minister Mohammed Saeed al-Sahhaf ('Baghdad Bob')",
-          "context": "Press briefings during the 2003 US invasion of Iraq, April 5–8, 2003",
+          "year": "2003",
           "quote": "The American infidels are committing suicide by the hundreds at the gates of Baghdad. We are in control, they are not in control of anything, they don't even control themselves.",
+          "context": "Press briefings during the 2003 US invasion of Iraq, April 5–8, 2003",
           "analogy_link": "The purest modern example of defeat denial as information warfare: triumphalist claims broadcast simultaneously with the collapse of the military position they describe — demonstrating that the audience for such messaging is not external but internal.",
           "source": {
             "citation": "Mohammed Saeed al-Sahhaf, Iraqi Ministry of Information press briefings, April 5–8, 2003. International press pool pool reports; archived by BBC News and CNN",
             "url": "https://www.theguardian.com/world/2003/apr/07/iraq.arts"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:21.027Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "imminent_defeat:imperial-japanese-army-propaganda-corps:5d01cf21",
           "figure": "Imperial Japanese Army propaganda corps",
-          "context": "Japanese home front broadcasts and publications, 1944–1945",
+          "year": "1944",
           "quote": "American forces suffer unsustainable losses at every island. The spiritual strength of the Yamato people is invincible. The enemy's material superiority is illusory — our decisive victory approaches.",
+          "context": "Japanese home front broadcasts and publications, 1944–1945",
           "analogy_link": "Defeat-reversal propaganda: military setbacks are systematically reframed as strategic manoeuvres, casualties are minimised, and the enemy's material advantages are attributed to moral corruption — a template reproduced almost verbatim in contemporary Russian military reporting.",
           "source": {
             "citation": "Imperial Japanese Army and Navy information bureau broadcasts and publications, 1944–1945. Documented in John Dower, 'War Without Mercy: Race and Power in the Pacific War' (Pantheon, 1986); National Diet Library, Japan",
             "url": "https://ndldigital.ndl.go.jp/"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:21.032Z",
+              "http_status": null,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": true,
+              "error": "TypeError"
+            }
           }
         }
       ],
@@ -1512,7 +2368,10 @@
         ],
         "myth_function": "eschatological",
         "enemy_type": "external",
-        "legitimation_mode": ["rationalization","moral"],
+        "legitimation_mode": [
+          "rationalization",
+          "moral"
+        ],
         "frame_function": "diagnostic",
         "dehumanisation_level": 2,
         "temporality": "contemporaneous"
@@ -1529,43 +2388,104 @@
       ],
       "historical_echoes": [
         {
+          "id": "nato_aggressor:soviet-world-peace-council-cominform-pro:0b7bbbd8",
           "figure": "Soviet World Peace Council / Cominform propaganda",
-          "context": "Soviet-sponsored Peace Movement, 1949–1955 — campaign against NATO and West German rearmament",
+          "year": "1949",
           "quote": "The Atlantic Pact is an aggressive military bloc directed against the Soviet Union and the democratic peoples. It threatens the peace of the entire world. We call on all peace-loving peoples to resist this new instrument of American imperialism.",
+          "context": "Soviet-sponsored Peace Movement, 1949–1955 — campaign against NATO and West German rearmament",
           "analogy_link": "The original 'NATO aggressor' template: a defensive alliance reframed as an offensive instrument, its expansion depicted as a mortal threat requiring counter-mobilisation — a narrative produced by the same state security apparatus now deployed against Ukraine.",
           "source": {
             "citation": "World Peace Council (Soviet-sponsored) appeals and Cominform declarations against NATO, 1949–1955. Lawrence Wittner, 'The Struggle Against the Bomb,' Vol. 1: 'One World or None' (Stanford UP, 1993); Wilson Center Cold War International History Project",
             "url": "https://digitalarchive.wilsoncenter.org/collection/cold-war-international-history-project"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:21.064Z",
+              "http_status": null,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": true,
+              "error": "TypeError"
+            }
           }
         },
         {
+          "id": "nato_aggressor:adolf-hitler:a7074be2",
           "figure": "Adolf Hitler",
-          "context": "Reichstag speech justifying the remilitarisation of the Rhineland, March 7, 1936",
+          "year": "1936",
           "quote": "Germany is surrounded by enemies who have created alliances of encirclement. In this situation, Germany has no choice but to restore its sovereign military equality. We seek peace, but we will not accept strategic encirclement.",
+          "context": "Reichstag speech justifying the remilitarisation of the Rhineland, March 7, 1936",
           "analogy_link": "The 'encirclement' argument as justification for violating treaty obligations and expanding military footprint — structurally identical to Russian arguments that NATO enlargement requires 'corrective' military action.",
           "source": {
             "citation": "Adolf Hitler, Reichstag address on the remilitarisation of the Rhineland, March 7, 1936. Documents on German Foreign Policy 1918–1945, Series C, Vol. V (HMSO, 1966); Yale Avalon Project",
             "url": "https://avalon.law.yale.edu/imt/greic38.asp"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:21.070Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "nato_aggressor:joseph-goebbels:a25af5a0",
           "figure": "Joseph Goebbels",
-          "context": "\"England's Guilt\" — Das Reich, 1939. Calvin University German Propaganda Archive",
+          "year": "1939",
           "quote": "We did not want war. England inflicted it on us. English plutocracy forced it on us… The encirclement of Germany long before the outbreak of the war was traditional English policy. Poland really had little to do with the outbreak of war between the Reich and England. It was only a means to an end.",
+          "context": "\"England's Guilt\" — Das Reich, 1939. Calvin University German Propaganda Archive",
           "analogy_link": "The aggressor-as-victim and the third party as mere pretext: Germany did not attack Poland — England used Poland to provoke a war it had long planned. This is the precise template for Russian claims that Ukraine is a NATO pretext for a war England/the US/the 'Anglo-Saxons' have long desired against Russia.",
           "source": {
             "citation": "Joseph Goebbels, 'England's Guilt,' Das Reich, 1939. Trans. Randall Bytwerk, Calvin University German Propaganda Archive",
             "url": "https://research.calvin.edu/german-propaganda-archive/goeb47.htm"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:21.211Z",
+              "http_status": 200,
+              "match": "partial",
+              "score": 0.8,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "nato_aggressor:imperial-japanese-navy-cabinet-intellige:0822e604",
           "figure": "Imperial Japanese Navy / Cabinet Intelligence Bureau",
-          "context": "Imperial Rescript and official communiqués justifying the attack on Pearl Harbor, December 8, 1941",
+          "year": "1941",
           "quote": "The ABCD encirclement — American, British, Chinese, and Dutch — has strangled Japan's access to resources and left us no alternative. This is not aggression but liberation from economic warfare.",
+          "context": "Imperial Rescript and official communiqués justifying the attack on Pearl Harbor, December 8, 1941",
           "analogy_link": "The 'encirclement by hostile powers' that transforms aggressive expansion into defensive necessity — the perpetrator becomes the victim of a hostile coalition, and war becomes the only rational response to existential pressure.",
           "source": {
             "citation": "Imperial Japanese Government, declaration of war communiqué, December 8, 1941 (JST). Yale Avalon Project, Avalon Project — World War II Documents",
             "url": "https://avalon.law.yale.edu/wwii/paperj.asp"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:21.240Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         }
       ],
@@ -1624,7 +2544,10 @@
         ],
         "myth_function": "providential",
         "enemy_type": "external",
-        "legitimation_mode": ["moral","authorization"],
+        "legitimation_mode": [
+          "moral",
+          "authorization"
+        ],
         "frame_function": "prognostic",
         "dehumanisation_level": 1,
         "temporality": "contemporaneous"
@@ -1641,33 +2564,79 @@
       ],
       "historical_echoes": [
         {
+          "id": "russia_peacemaker:adolf-hitler:f737e119",
           "figure": "Adolf Hitler",
-          "context": "Address to the Reichstag on disarmament and peaceful intentions, May 17, 1933 — nine days after the Enabling Act",
+          "year": "1933",
           "quote": "Germany needs peace and desires peace. Germany is ready to renounce all offensive weapons if the armed nations will destroy their offensive weapons within a reasonable period. Germany is prepared to agree to any solemn pact of non-aggression, because she does not think of attacking anybody.",
+          "context": "Address to the Reichstag on disarmament and peaceful intentions, May 17, 1933 — nine days after the Enabling Act",
           "analogy_link": "The 'peace-seeking' speech delivered while beginning covert rearmament — a precise rhetorical template for Russian peace overtures made while continuing or preparing military operations.",
           "source": {
             "citation": "Adolf Hitler, Address to the Reichstag on disarmament, May 17, 1933. Documents on German Foreign Policy 1918–1945, Series C, Vol. I (HMSO, 1957); Yale Avalon Project",
             "url": "https://avalon.law.yale.edu/imt/hitlerdisarm.asp"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:21.352Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "russia_peacemaker:vyacheslav-molotov:0f7abc9a",
           "figure": "Vyacheslav Molotov",
-          "context": "Radio address on the Molotov-Ribbentrop Pact, August 24, 1939",
+          "year": "1939",
           "quote": "The Soviet-German non-aggression treaty serves the interests of universal peace. The peoples of the Soviet Union and Germany have no interest in a war with each other. This agreement puts an end to enmity between our two great countries.",
+          "context": "Radio address on the Molotov-Ribbentrop Pact, August 24, 1939",
           "analogy_link": "The peace agreement as geopolitical weapon: a 'peace' that divided Europe into spheres of influence and enabled simultaneous invasions of Poland — demonstrating how peace rhetoric can serve as operational cover for conquest.",
           "source": {
             "citation": "Vyacheslav Molotov, Radio address on the Soviet-German Non-Aggression Pact, August 24, 1939. In Jane Degras, ed., 'Soviet Documents on Foreign Policy,' Vol. 3 (Oxford UP, 1953); Wikisource",
             "url": "https://en.wikisource.org/wiki/Molotov%27s_Speech_on_the_Soviet-German_Non-Aggression_Pact"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:21.358Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "russia_peacemaker:soviet-peace-committee-pravda:30f40771",
           "figure": "Soviet Peace Committee / Pravda",
-          "context": "Soviet propaganda during the Korean War, 1950–1953",
+          "year": "1950",
           "quote": "The Soviet Union and the peace-loving peoples of the world demand an immediate end to the American imperialist war of aggression in Korea. The USSR has consistently supported a peaceful settlement. It is Washington that refuses to negotiate.",
+          "context": "Soviet propaganda during the Korean War, 1950–1953",
           "analogy_link": "The perpetrator-as-peacemaker inversion: the party that enabled the aggression retrospectively presents itself as the voice of reason and restraint, while the target of aggression and its defenders are cast as warmongers.",
           "source": {
             "citation": "Soviet Peace Committee statements and Pravda editorials on the Korean War, 1950–1953. Wilson Center Cold War International History Project, Korea collection",
             "url": "https://digitalarchive.wilsoncenter.org/collection/korea-cold-war"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:21.374Z",
+              "http_status": null,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": true,
+              "error": "TypeError"
+            }
           }
         }
       ],
@@ -1734,7 +2703,10 @@
         ],
         "myth_function": "eschatological",
         "enemy_type": "ontological",
-        "legitimation_mode": ["moral","rationalization"],
+        "legitimation_mode": [
+          "moral",
+          "rationalization"
+        ],
         "frame_function": "diagnostic",
         "dehumanisation_level": 5,
         "temporality": "contemporaneous"
@@ -1750,33 +2722,78 @@
       ],
       "historical_echoes": [
         {
+          "id": "genocide_reversal:adolf-hitler:ed3f7b72",
           "figure": "Adolf Hitler",
-          "context": "Memorandum to British Ambassador Sir Nevile Henderson, August 25, 1939 — two days before the invasion of Poland",
+          "year": "1939",
           "quote": "The German minorities in Poland are subjected to unbearable atrocities. Germany cannot remain passive in the face of the physical annihilation of its blood-brothers in Poland. I have decided to solve the Danzig question and the Polish Corridor problem.",
+          "context": "Memorandum to British Ambassador Sir Nevile Henderson, August 25, 1939 — two days before the invasion of Poland",
           "analogy_link": "The genocide-of-kin pretext for invasion: documented violence is fabricated or exaggerated, attributed to the target state, and used to frame military aggression as protective intervention — the direct ancestor of Russian 'protection of Russian speakers' in Donbas.",
           "source": {
             "citation": "Adolf Hitler, Memorandum to British Ambassador Sir Nevile Henderson, August 25, 1939. Documents on British Foreign Policy, Third Series, Vol. VII (HMSO, 1954); Yale Avalon Project",
             "url": "https://avalon.law.yale.edu/imt/doc-2802-ps.asp"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:21.402Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "genocide_reversal:serbian-academy-of-sciences-and-arts-san:d650a746",
           "figure": "Serbian Academy of Sciences and Arts (SANU Memorandum)",
-          "context": "SANU Memorandum, September 1986 — intellectual foundation for Serbian nationalist expansion under Milošević",
+          "year": "1986",
           "quote": "The physical, political, legal, and cultural genocide of the Serbian population of Kosovo is an openly declared political goal of the Albanian nationalists. The Serbian people cannot remain indifferent to this state of affairs.",
+          "context": "SANU Memorandum, September 1986 — intellectual foundation for Serbian nationalist expansion under Milošević",
           "analogy_link": "The intellectual template for genocide accusation as political mobilisation: pre-emptive claims of genocide against the in-group delegitimise any future violence against the out-group as self-defence — used to justify the subsequent ethnic cleansing of non-Serbs.",
           "source": {
             "citation": "Serbian Academy of Sciences and Arts (SANU), 'Memorandum,' 1986. English translation in Audrey Budding, 'Serbian Nationalism and the Origins of the Yugoslav Crisis,' Peaceworks No. 8 (United States Institute of Peace, 1998)",
             "url": "https://www.usip.org/publications/1998/04/serbian-nationalism-and-origins-yugoslav-crisis"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:21.429Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "genocide_reversal:hutu-power-radio-radio-mille-collines-rt:d324669a",
           "figure": "Hutu Power Radio / Radio Mille Collines (RTLM)",
-          "context": "Rwandan genocide incitement broadcasts, January–April 1994",
+          "year": "1994",
           "quote": "The Tutsi have drawn up lists. They plan to exterminate every Hutu on the night of April 5th. Rise up and defend yourselves before you are slaughtered like animals.",
+          "context": "Rwandan genocide incitement broadcasts, January–April 1994",
           "analogy_link": "The most extreme form of genocide reversal: fabricated genocide threat against the perpetrating group used to incite mass killing — demonstrating that genocide accusation is itself a weapon, independent of any factual basis.",
           "source": {
             "citation": "Radio Télévision Libre des Mille Collines (RTLM), broadcasts January–April 1994. ICTR Prosecution evidence, Prosecutor v. Nahimana, Barayagwiza and Ngeze, ICTR-99-52 ('The Media Trial')",
             "url": "https://unictr.irmct.org/en/cases/ictr-99-52"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:21.484Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": false
+            }
           }
         }
       ],
@@ -1788,8 +2805,7 @@
           "trope_match": "genocide_reversal — the core inversion: Ukraine's government is cast as perpetrator of genocide against Russian speakers, and Russia's invasion is framed as humanitarian intervention — reversing victim and aggressor roles to meet the legal threshold for 'responsibility to protect'"
         }
       ]
-    }
-    ,
+    },
     {
       "id": "leader_infallibility",
       "theme": "The Infallible Ruler Cannot Err — Failure Belongs to Traitors",
@@ -1797,83 +2813,214 @@
         "narrative_strategy": "direction",
         "ellul_type": "integration",
         "ellul_axis": "vertical",
-        "eco_properties": ["The Cult of Tradition","Education Toward Heroism","Selective Populism","Disagreement is Treason"],
-        "typical_san_martino_techniques": ["Appeal to Authority","Testimonial","Flag-Waving","Slogans","Repetition"],
-        "typical_ipa_techniques": ["Testimonial","Glittering generalities","Plain folks"],
+        "eco_properties": [
+          "The Cult of Tradition",
+          "Education Toward Heroism",
+          "Selective Populism",
+          "Disagreement is Treason"
+        ],
+        "typical_san_martino_techniques": [
+          "Appeal to Authority",
+          "Testimonial",
+          "Flag-Waving",
+          "Slogans",
+          "Repetition"
+        ],
+        "typical_ipa_techniques": [
+          "Testimonial",
+          "Glittering generalities",
+          "Plain folks"
+        ],
         "typical_nimmo_4d": "Distort",
-        "typical_eudisinfo_narratives": ["Elites vs People","Threatened Values"],
-        "typical_eudisinfo_rhetoric": ["Denial","Whataboutism","Mockery"],
-        "typical_eudisinfo_conspiracy": ["Shadow Government / Deep State"],
-        "typical_eudisinfo_ttp": ["Emotional Manipulation","Fake Experts","Narrative Laundering"],
+        "typical_eudisinfo_narratives": [
+          "Elites vs People",
+          "Threatened Values"
+        ],
+        "typical_eudisinfo_rhetoric": [
+          "Denial",
+          "Whataboutism",
+          "Mockery"
+        ],
+        "typical_eudisinfo_conspiracy": [
+          "Shadow Government / Deep State"
+        ],
+        "typical_eudisinfo_ttp": [
+          "Emotional Manipulation",
+          "Fake Experts",
+          "Narrative Laundering"
+        ],
         "myth_function": "heroic",
         "enemy_type": "internal",
-        "legitimation_mode": ["authorization","moral"],
+        "legitimation_mode": [
+          "authorization",
+          "moral"
+        ],
         "frame_function": "motivational",
         "dehumanisation_level": 2,
         "temporality": "contemporaneous"
       },
       "modern_keywords": [
-        "great leader","father of the nation","presidential wisdom","commander in chief has decided","unparalleled vision","patriotic duty to follow","the president guides","wise leadership","our leader knows","trust the leadership"
+        "great leader",
+        "father of the nation",
+        "presidential wisdom",
+        "commander in chief has decided",
+        "unparalleled vision",
+        "patriotic duty to follow",
+        "the president guides",
+        "wise leadership",
+        "our leader knows",
+        "trust the leadership"
       ],
       "historical_echoes": [
         {
+          "id": "leader_infallibility:saparmurat-niyazov-turkmenbashi:676e6b20",
           "figure": "Saparmurat Niyazov (Turkmenbashi)",
-          "context": "President of Turkmenistan 1990–2006 — self-published Ruhnama (Book of the Soul), mandatory in schools and government",
+          "year": "1990",
           "quote": "I'm personally of no interest to anyone. It's the Turkmen people who are interesting, it's Turkmenistan that is interesting. And I am only an instrument, a servant of the people and of God.",
+          "context": "President of Turkmenistan 1990–2006 — self-published Ruhnama (Book of the Soul), mandatory in schools and government",
           "analogy_link": "The leader-as-instrument framing that simultaneously claims humility and centralises all authority: the leader is selfless, therefore any opposition to him is opposition to the people and God — making accountability structurally impossible.",
           "source": {
             "citation": "Saparmurat Niyazov, 'Ruhnama' (Book of the Soul), 2001; and public addresses, 1990–2006. Human Rights Watch, 'Turkmenistan: Repression's Toll' (2003); Paul Theroux, 'The Golden Man of Turkmenistan,' The New Yorker, May 28, 2007",
             "url": "https://www.hrw.org/report/2003/09/15/turkmenistan-repression"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:21.544Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "leader_infallibility:kim-il-sung-korean-central-news-agency:555905be",
           "figure": "Kim Il-sung / Korean Central News Agency",
-          "context": "KCNA formative propaganda 1948–1972 — establishment of the Suryong (supreme leader) cult",
+          "year": "1948",
           "quote": "The Great Leader Comrade Kim Il-sung is the sun of the nation and the lodestar of its liberation. He is the father of all Korean people, and his guidance is the source of all our victories.",
+          "context": "KCNA formative propaganda 1948–1972 — establishment of the Suryong (supreme leader) cult",
           "analogy_link": "The solar metaphor places the leader beyond critique: the sun does not make mistakes, it illuminates. Military failures, famines, or economic collapse are therefore attributable only to clouds — i.e., internal saboteurs or external enemies.",
           "source": {
             "citation": "Korean Central News Agency (KCNA), formative propaganda, 1948–1972. Brian Myers, 'The Cleanest Race: How North Koreans See Themselves and Why It Matters' (Melville House, 2010); Wilson Center NKIDP Digital Archive",
             "url": "https://digitalarchive.wilsoncenter.org/collection/north-korea-international-documentation-project"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:21.705Z",
+              "http_status": null,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": true,
+              "error": "TypeError"
+            }
           }
         },
         {
+          "id": "leader_infallibility:nicolae-ceaus-escu-romanian-state-media:2f05d407",
           "figure": "Nicolae Ceaușescu / Romanian state media",
-          "context": "Romanian Communist Party congress coverage 1971–1989 — Ceaușescu cult of personality",
+          "year": "1971",
           "quote": "The Conducător, the genius of the Carpathians, has guided Romania to unprecedented heights through his unerring scientific thought. All victories of the Romanian people bear the imprint of Comrade Ceaușescu's wisdom.",
+          "context": "Romanian Communist Party congress coverage 1971–1989 — Ceaușescu cult of personality",
           "analogy_link": "The 'scientific' leader whose decisions are beyond political contestation — a template reproduced by every Central Asian personality cult from Niyazov to Berdymukhamedov.",
           "source": {
             "citation": "Romanian Communist Party congress coverage, 1971–1989. Dennis Deletant, 'Ceauşescu and the Securitate: Coercion and Dissent in Romania, 1965–1989' (M. E. Sharpe, 1995); Ion Pacepa, 'Red Horizons' (Regnery, 1987)",
             "url": "https://archive.org/details/ceausescuandsecu0000dele"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:21.709Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "leader_infallibility:muammar-gaddafi:de00b183",
           "figure": "Muammar Gaddafi",
-          "context": "State television address, Tripoli, February 22, 2011 — broadcast during the Libyan uprising, three days after security forces had opened fire on protesters in Benghazi",
+          "year": "2011",
           "quote": "My people love me. They would die for me. I have not yet ordered the use of force, not yet ordered one bullet to be fired. When I do, everything will burn.",
+          "context": "State television address, Tripoli, February 22, 2011 — broadcast during the Libyan uprising, three days after security forces had opened fire on protesters in Benghazi",
           "analogy_link": "Leader infallibility at its most self-exposing: a claim of universal popular love broadcast simultaneously with an open rebellion against the speaker, demonstrating that the infallibility trope is not a description of reality but a reality-insulating mechanism — one that makes disconfirming evidence definitionally impossible. The same logic is reproduced by Lukashenko ('I didn't steal this election'), Assad ('there are no protesters, only terrorists'), and Kim Jong-un, where any sign of popular rejection is explained away as foreign manipulation rather than genuine discontent.",
           "source": {
             "citation": "Muammar Gaddafi, state television address, Tripoli, February 22, 2011. Translated transcripts, BBC News Arabic and CNN; Human Rights Watch, 'Libya: Security Forces Kill 84 over Three Days,' February 2011",
             "url": "https://www.bbc.co.uk/news/world-africa-12544624"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:21.754Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "leader_infallibility:jean-be-del-bokassa:f9504b6e",
           "figure": "Jean-Bédel Bokassa",
-          "context": "Emperor of the Central African Empire, 1977–1979 — self-proclaimed Emperor at a ceremony modelled on Napoleon's 1804 coronation, costing an estimated $30 million at the time",
+          "year": "1977",
           "quote": "I am the father of this great nation. Everything that exists in this country belongs to me, and what I give to the people, I give as a father gives to his children. No one questions a father's authority in his own home.",
+          "context": "Emperor of the Central African Empire, 1977–1979 — self-proclaimed Emperor at a ceremony modelled on Napoleon's 1804 coronation, costing an estimated $30 million at the time",
           "analogy_link": "The paternal ownership claim taken to its logical extreme: the leader does not merely represent the nation but constitutes it — national resources are his personal property, national authority is paternal rather than political, and citizens are subjects of a household rather than a polity. This is the naked form of the paternalist logic that most authoritarian leaders code with more euphemistic language about 'service' and 'sacrifice'.",
           "source": {
             "citation": "Jean-Bédel Bokassa, speeches and declarations, 1966–1979. Brian Titley, 'Dark Age: The Political Odyssey of Emperor Bokassa' (Liverpool UP, 1997); Human Rights Watch, 'Central African Republic' reports",
             "url": "https://archive.org/details/darkagepolitical0000titl"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:21.862Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "leader_infallibility:franc-ois-duvalier-papa-doc-and-jean-cla:ed5f29f2",
           "figure": "François Duvalier ('Papa Doc') and Jean-Claude Duvalier ('Baby Doc')",
-          "context": "Presidents of Haiti, 1957–1986 — François Duvalier ('Papa Doc') 1957–1971; Jean-Claude Duvalier ('Baby Doc') 1971–1986; Papa Doc's messianic cult combined voodoo symbolism with Catholic imagery to present him as an immortal protector",
+          "year": "1957",
           "quote": "I am the Haitian flag. I am an immaterial being. Nothing can stop me. I am already an immortal being. The Tonton Macoutes are my personal force, my divine force, placed on earth to protect my people from the enemies of Haiti. Those who raise a hand against Duvalier raise a hand against God.",
+          "context": "Presidents of Haiti, 1957–1986 — François Duvalier ('Papa Doc') 1957–1971; Jean-Claude Duvalier ('Baby Doc') 1971–1986; Papa Doc's messianic cult combined voodoo symbolism with Catholic imagery to present him as an immortal protector",
           "analogy_link": "Papa Doc's leadership cult is the most theologically saturated example in the Americas: by fusing Catholic imagery (he wore glasses modelled on Baron Samedi, the voodoo spirit of death) with claims to divine protection, he made opposition literally sacrilegious rather than merely criminal. The Tonton Macoutes paramilitaries were presented as supernatural agents rather than security forces. Baby Doc inherited the infallibility by dynastic succession — demonstrating that the trope can be transmitted biologically, as in a monarchy, without any pretence of merit or election. This hereditary infallibility is the model for Kim Jong-il's succession from Kim Il-sung and Kim Jong-un's from Kim Jong-il.",
           "source": {
             "citation": "François Duvalier, speeches and decrees, 1957–1971. Bernard Diederich and Al Burt, 'Papa Doc: Haiti and Its Dictator' (Bodley Head, 1969); Abbott, 'Haiti: The Duvaliers and Their Legacy' (McGraw-Hill, 1988)",
             "url": "https://archive.org/details/papodochaitiandd00died"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:21.978Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         }
       ],
@@ -1893,63 +3040,165 @@
         "narrative_strategy": "suppression",
         "ellul_type": "agitation",
         "ellul_axis": "vertical",
-        "eco_properties": ["Fear of Difference","Obsession with a Plot","Selective Populism"],
-        "typical_san_martino_techniques": ["Appeal to Fear/Prejudice","Loaded Language","Flag-Waving","Straw Man","Whataboutism"],
-        "typical_ipa_techniques": ["Transfer","Name-calling","Glittering generalities"],
+        "eco_properties": [
+          "Fear of Difference",
+          "Obsession with a Plot",
+          "Selective Populism"
+        ],
+        "typical_san_martino_techniques": [
+          "Appeal to Fear/Prejudice",
+          "Loaded Language",
+          "Flag-Waving",
+          "Straw Man",
+          "Whataboutism"
+        ],
+        "typical_ipa_techniques": [
+          "Transfer",
+          "Name-calling",
+          "Glittering generalities"
+        ],
         "typical_nimmo_4d": "Dismiss",
-        "typical_eudisinfo_narratives": ["Lost Sovereignty","Elites vs People"],
-        "typical_eudisinfo_rhetoric": ["Whataboutism","Straw Man","Denial"],
-        "typical_eudisinfo_conspiracy": ["Anglo-Saxon Plot","Shadow Government / Deep State"],
-        "typical_eudisinfo_ttp": ["Narrative Laundering","Strategic Decontextualization","Conspiracy Amplification"],
+        "typical_eudisinfo_narratives": [
+          "Lost Sovereignty",
+          "Elites vs People"
+        ],
+        "typical_eudisinfo_rhetoric": [
+          "Whataboutism",
+          "Straw Man",
+          "Denial"
+        ],
+        "typical_eudisinfo_conspiracy": [
+          "Anglo-Saxon Plot",
+          "Shadow Government / Deep State"
+        ],
+        "typical_eudisinfo_ttp": [
+          "Narrative Laundering",
+          "Strategic Decontextualization",
+          "Conspiracy Amplification"
+        ],
         "myth_function": "cosmogonic",
         "enemy_type": "external",
-        "legitimation_mode": ["moral","mythopoesis"],
+        "legitimation_mode": [
+          "moral",
+          "mythopoesis"
+        ],
         "frame_function": "diagnostic",
         "dehumanisation_level": 2,
         "temporality": "retrospective"
       },
       "modern_keywords": [
-        "neo-colonialism","imperialist agenda","Western interference","double standards","sovereignty","self-determination","colonial legacy","imperialist blockade","regime change agenda","hegemony","unilateral coercive measures","Western hypocrisy"
+        "neo-colonialism",
+        "imperialist agenda",
+        "Western interference",
+        "double standards",
+        "sovereignty",
+        "self-determination",
+        "colonial legacy",
+        "imperialist blockade",
+        "regime change agenda",
+        "hegemony",
+        "unilateral coercive measures",
+        "Western hypocrisy"
       ],
       "historical_echoes": [
         {
+          "id": "anti_imperial_reversal:fidel-castro:1c3c9608",
           "figure": "Fidel Castro",
-          "context": "Speech to the UN General Assembly, September 26, 1960",
+          "year": "1960",
           "quote": "The underdeveloped countries were colonies, and in many cases they are still colonies, of the big monopolies. The natural wealth of those countries is possessed and exploited by those same monopolies. And their political life is shaped by those monopolies.",
+          "context": "Speech to the UN General Assembly, September 26, 1960",
           "analogy_link": "The anti-colonial framing as a universal rhetorical inoculation: any future criticism of the Cuban government becomes classifiable as continuation of colonial interference, making external accountability impossible by structural definition.",
           "source": {
             "citation": "Fidel Castro, Address to the United Nations General Assembly, September 26, 1960. UN Official Records, 15th Session, 872nd Plenary Meeting, A/PV.872",
             "url": "https://undocs.org/A/PV.872"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:22.037Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "anti_imperial_reversal:kwame-nkrumah:7c544181",
           "figure": "Kwame Nkrumah",
-          "context": "Neo-Colonialism: The Last Stage of Imperialism, 1965",
+          "year": "1965",
           "quote": "Neo-colonialism is the worst form of imperialism. For those who practise it, it means power without responsibility, and for those who suffer from it, it means exploitation without redress.",
+          "context": "Neo-Colonialism: The Last Stage of Imperialism, 1965",
           "analogy_link": "The intellectual framework adopted by postcolonial authoritarian regimes globally: any economic or political conditionality from Western donors or institutions becomes 'neo-colonialism', neutralising demands for democratic accountability or human rights compliance.",
           "source": {
             "citation": "Kwame Nkrumah, 'Neo-Colonialism: The Last Stage of Imperialism' (London: Nelson, 1965). Marxists Internet Archive",
             "url": "https://www.marxists.org/subject/africa/nkrumah/neo-colonialism/"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:22.052Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "anti_imperial_reversal:muammar-gaddafi:8038360b",
           "figure": "Muammar Gaddafi",
-          "context": "Address to the UN General Assembly, September 23, 2009 — his first and only visit to New York; the speech ran for over 90 minutes",
+          "year": "2009",
           "quote": "The United Nations was founded to protect the strong against the weak. The Security Council is not a security council — it is a terror council. We are not committed to accepting resolutions purchased at political auction houses. The veto is terrorism.",
+          "context": "Address to the UN General Assembly, September 23, 2009 — his first and only visit to New York; the speech ran for over 90 minutes",
           "analogy_link": "The maximalist anti-imperial reversal: the international legal order itself — the UN, the Security Council, the veto — is reframed as an instrument of great-power domination rather than collective security. Once the framework is delegitimised, any future legal ruling against the speaker's regime becomes automatically void. This structural move is reproduced verbatim in Russian, Chinese, and Venezuelan critiques of the 'rules-based order' and Western-dominated international institutions.",
           "source": {
             "citation": "Muammar Gaddafi, Address to the United Nations General Assembly, September 23, 2009. UN Document A/64/PV.5, Official Records of the General Assembly, 64th Session",
             "url": "https://research.un.org/en/docs/ga/quick/regular/64"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:22.078Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "anti_imperial_reversal:robert-mugabe:20866b17",
           "figure": "Robert Mugabe",
-          "context": "President of Zimbabwe, 1987–2017 — addresses to the United Nations General Assembly and African Union summits, recurring from 2000 onward, framing Western criticism as neo-colonial aggression",
+          "year": "1987",
           "quote": "We are not here to be lectured to by those who stole our land, exploited our resources, and then had the audacity to call themselves our civilisers. The sanctions imposed on Zimbabwe are an act of war — economic terrorism designed to force us to reverse our land reforms and return to colonial subservience. We will not surrender.",
+          "context": "President of Zimbabwe, 1987–2017 — addresses to the United Nations General Assembly and African Union summits, recurring from 2000 onward, framing Western criticism as neo-colonial aggression",
           "analogy_link": "Mugabe's anti-imperial reversal is specifically calibrated to convert domestic repression into international sovereignty discourse: the fast-track land reform programme that displaced white farmers is reframed as the completion of liberation, and any Western sanctions or human rights criticism is automatically classifiable as neo-colonial interference in that process. This permanently inoculates his government against external accountability — every criticism confirms the conspiracy narrative, making the regime's repression and the West's reaction mutually reinforcing.",
           "source": {
             "citation": "Robert Mugabe, UN General Assembly addresses, 2000–2014; speeches at African Union summits. Documented in Martin Meredith, 'Mugabe: Power, Plunder, and the Struggle for Zimbabwe' (PublicAffairs, 2002); Human Rights Watch, Zimbabwe reports",
             "url": "https://www.hrw.org/africa/zimbabwe"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:22.964Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": true
+            }
           }
         }
       ],
@@ -1969,83 +3218,214 @@
         "narrative_strategy": "direction",
         "ellul_type": "integration",
         "ellul_axis": "vertical",
-        "eco_properties": ["The Cult of Tradition","Selective Populism","Education Toward Heroism","Pacifism as Enemy Collaboration"],
-        "typical_san_martino_techniques": ["Flag-Waving","Appeal to Authority","Loaded Language","Repetition","Slogans"],
-        "typical_ipa_techniques": ["Glittering generalities","Transfer","Bandwagon"],
+        "eco_properties": [
+          "The Cult of Tradition",
+          "Selective Populism",
+          "Education Toward Heroism",
+          "Pacifism as Enemy Collaboration"
+        ],
+        "typical_san_martino_techniques": [
+          "Flag-Waving",
+          "Appeal to Authority",
+          "Loaded Language",
+          "Repetition",
+          "Slogans"
+        ],
+        "typical_ipa_techniques": [
+          "Glittering generalities",
+          "Transfer",
+          "Bandwagon"
+        ],
         "typical_nimmo_4d": "Distort",
-        "typical_eudisinfo_narratives": ["Threatened Values","Lost Sovereignty"],
-        "typical_eudisinfo_rhetoric": ["Denial","Whataboutism"],
+        "typical_eudisinfo_narratives": [
+          "Threatened Values",
+          "Lost Sovereignty"
+        ],
+        "typical_eudisinfo_rhetoric": [
+          "Denial",
+          "Whataboutism"
+        ],
         "typical_eudisinfo_conspiracy": [],
-        "typical_eudisinfo_ttp": ["Emotional Manipulation","Narrative Laundering"],
+        "typical_eudisinfo_ttp": [
+          "Emotional Manipulation",
+          "Narrative Laundering"
+        ],
         "myth_function": "providential",
         "enemy_type": "external",
-        "legitimation_mode": ["mythopoesis","moral"],
+        "legitimation_mode": [
+          "mythopoesis",
+          "moral"
+        ],
         "frame_function": "motivational",
         "dehumanisation_level": 2,
         "temporality": "prospective"
       },
       "modern_keywords": [
-        "our civilisation","civilisational choice","our values","unique path","spiritual values","China Dream","Russkiy mir","Russian world","Islamic revolution","African destiny","historical mission","defend our way of life","civilisational state"
+        "our civilisation",
+        "civilisational choice",
+        "our values",
+        "unique path",
+        "spiritual values",
+        "China Dream",
+        "Russkiy mir",
+        "Russian world",
+        "Islamic revolution",
+        "African destiny",
+        "historical mission",
+        "defend our way of life",
+        "civilisational state"
       ],
       "historical_echoes": [
         {
+          "id": "civilisational_mission:pan-slavic-ideologues-nikolai-danilevsky:d4c04db5",
           "figure": "Pan-Slavic ideologues / Nikolai Danilevsky",
-          "context": "Russia and Europe (1869) — foundational text of Russian civilisational exceptionalism",
+          "year": "1869",
           "quote": "Russia is not Europe… it is a separate cultural-historical type with its own civilisational mission. The Romano-Germanic world and the Slavic world are irreconcilable, and Russia must lead the Slavic civilisation against Western decadence.",
+          "context": "Russia and Europe (1869) — foundational text of Russian civilisational exceptionalism",
           "analogy_link": "The direct intellectual ancestor of the 'Russian world' concept and Putin's civilisation-state rhetoric: Russia not as a European nation among nations but as a civilisational pole whose mission is incompatible with Western norms.",
           "source": {
             "citation": "Nikolai Danilevsky, 'Russia and Europe: A Look at the Cultural and Political Relations of the Slavic World to the Romano-Germanic World' (1869). Robert MacMaster, 'Danilevsky: A Russian Totalitarian Philosopher' (Harvard UP, 1967)",
             "url": "https://archive.org/details/danilevskyrussianotalitarianphilosopher"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:23.133Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "civilisational_mission:ayatollah-khomeini:b8c5e32b",
           "figure": "Ayatollah Khomeini",
-          "context": "Proclamation on the export of the Islamic Revolution, 1979",
+          "year": "1979",
           "quote": "We shall export our revolution to the four corners of the world until the calls 'There is no god but God and Muhammad is the messenger of God' are echoed all over the world.",
+          "context": "Proclamation on the export of the Islamic Revolution, 1979",
           "analogy_link": "The civilisational mission as aggressive universalism: our values are not merely ours but the destiny of all humanity, making their global spread not imperialism but liberation — a logic reproduced from the Soviet Comintern to Chinese Belt and Road rhetoric.",
           "source": {
             "citation": "Ayatollah Ruhollah Khomeini, 'Proclamation on the export of the Islamic Revolution,' 1979. In Hamid Algar, ed. and trans., 'Islam and Revolution: Writings and Declarations of Imam Khomeini' (Mizan Press, 1981)",
             "url": "https://archive.org/details/islamandrevolution00khom"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:23.421Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "civilisational_mission:mobutu-sese-seko:b031d8e9",
           "figure": "Mobutu Sese Seko",
-          "context": "President of Zaire, 1965–1997 — the 'authenticité' programme, launched 1971, mandating the rejection of colonial names and identities as a civilisational decolonisation",
+          "year": "1965",
           "quote": "We must return to our roots, our authentic African values. Authenticity is not just a programme — it is the expression of our civilisation, our way of life, our African personality. We are not Belgians, we are not Europeans. We are Africans, and we must live as Africans, think as Africans, rule as Africans.",
+          "context": "President of Zaire, 1965–1997 — the 'authenticité' programme, launched 1971, mandating the rejection of colonial names and identities as a civilisational decolonisation",
           "analogy_link": "The most elaborate African example of the civilisational mission trope: Mobutu renamed the country (from Congo to Zaire), the river, the currency, and himself (from Joseph-Désiré Mobutu), and mandated that all citizens abandon Christian first names for African ones. The 'authenticité' programme framed these acts as civilisational liberation, making Mobutu not a political leader but the agent of Africa's civilisational recovery — and any opposition to him a collaboration with neocolonial forces.",
           "source": {
             "citation": "Mobutu Sese Seko, speeches on the authenticité programme, 1971–1975. Michaela Wrong, 'In the Footsteps of Mr. Kurtz: Living on the Brink of Disaster in Mobutu's Congo' (HarperCollins, 2000); Crawford Young and Thomas Turner, 'The Rise and Decline of the Zairian State' (Wisconsin UP, 1985)",
             "url": "https://archive.org/details/infootstepsofmrk00wron"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:24.665Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "civilisational_mission:gamal-abdel-nasser:c453eb61",
           "figure": "Gamal Abdel Nasser",
-          "context": "President of Egypt, 1954–1970 — speech on the nationalisation of the Suez Canal, Alexandria, July 26, 1956",
+          "year": "1954",
           "quote": "This is our canal, dug by our ancestors, watered by their blood. We shall fight to protect it. Arab unity is not a dream — it is a historical necessity. Egypt carries the Arab nation on her shoulders. The Arab world will determine its own destiny, and no empire will write it for us.",
+          "context": "President of Egypt, 1954–1970 — speech on the nationalisation of the Suez Canal, Alexandria, July 26, 1956",
           "analogy_link": "Nasser's Pan-Arab civilisational mission: Egypt as the vanguard of a unified Arab civilisation asserting its historical destiny against Western imperialism. The Suez Canal nationalisation was not merely an economic act but a civilisational declaration — Arab sovereignty over Arab resources as the centrepiece of a broader mission to unite 300 million Arabs into a coherent civilisational bloc. This is the structural template for all subsequent 'civilisational state' arguments in the Global South, reproduced from Gaddafi's Pan-African theory to Khomeini's Islamic revolution to Putin's 'Russian world'.",
           "source": {
             "citation": "Gamal Abdel Nasser, Speech on the Nationalisation of the Suez Canal, Alexandria, July 26, 1956. Al-Ahram newspaper archive; translated in Walid Khalidi, ed., 'From Haven to Conquest' (Institute for Palestine Studies, 1971)",
             "url": "https://www.masrawy.com/Ar/news/details/2021/7/26/2105804"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:24.757Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "civilisational_mission:josip-broz-tito:cca2753f",
           "figure": "Josip Broz Tito",
-          "context": "President of Yugoslavia, 1953–1980 — founding address of the Non-Aligned Movement, Bandung Conference, April 1955; and Belgrade Declaration, 1961",
+          "year": "1953",
           "quote": "We refuse to be pawns in the game of the great powers. Yugoslavia has its own path — neither capitalist nor Stalinist, but socialist in our own way. The nations of the world have the right to choose their own road. Non-alignment is not neutrality — it is active independence.",
+          "context": "President of Yugoslavia, 1953–1980 — founding address of the Non-Aligned Movement, Bandung Conference, April 1955; and Belgrade Declaration, 1961",
           "analogy_link": "Tito's Non-Aligned Movement presents Yugoslavia as a third civilisational pole between the US and Soviet blocs — not neutral but independently sovereign. This is the structural ancestor of all subsequent 'third way' civilisational claims: the insistence that a nation has a mission to demonstrate an alternative to Western liberal democracy and Soviet totalitarianism alike. The Global South still deploys this framework, and Russia's 'civilisational state' rhetoric borrows directly from its grammar.",
           "source": {
             "citation": "Josip Broz Tito, address to the Bandung Conference, April 1955; and Belgrade Declaration of Non-Aligned Countries, September 6, 1961. Wilson Center Digital Archive, Yugoslavia collection",
             "url": "https://digitalarchive.wilsoncenter.org/collection/yugoslavia"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:24.804Z",
+              "http_status": null,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": true,
+              "error": "TypeError"
+            }
           }
         },
         {
+          "id": "civilisational_mission:ali-khamenei:bae00829",
           "figure": "Ali Khamenei",
-          "context": "Supreme Leader of Iran, 1989–present — speeches on the Islamic Republic's global civilisational mission, recurring from 1989 to present",
+          "year": "1989",
           "quote": "The Islamic Revolution did not happen only for Iran. It was a civilisational event — a message to all of humanity that independence from arrogant powers is possible, that resistance is victorious, and that divine values can govern a nation. The Islamic Republic is the vanguard of all oppressed peoples against global arrogance.",
+          "context": "Supreme Leader of Iran, 1989–present — speeches on the Islamic Republic's global civilisational mission, recurring from 1989 to present",
           "analogy_link": "Khamenei's formulation presents the Islamic Republic not as a national government but as a civilisational experiment with universal implications: a demonstration that a state can be simultaneously Islamic, revolutionary, anti-imperialist, and technologically capable. This is the civilisational mission trope in its most explicit form — the regime's continued existence is framed as proof of concept for an alternative world order, making any external pressure against it an attack on all humanity's right to choose non-Western paths.",
           "source": {
             "citation": "Supreme Leader Ali Khamenei, speeches on the Islamic Republic's civilisational mission, 1989–present. Khamenei.ir official English archive",
             "url": "https://english.khamenei.ir/Themes/Islamic-Revolution"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:24.808Z",
+              "http_status": null,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false,
+              "error": "TypeError"
+            }
           }
         }
       ],
@@ -2065,83 +3445,212 @@
         "narrative_strategy": "direction",
         "ellul_type": "integration",
         "ellul_axis": "vertical",
-        "eco_properties": ["Contempt for the Weak","Pacifism as Enemy Collaboration","Selective Populism"],
-        "typical_san_martino_techniques": ["Appeal to Fear/Prejudice","Causal Oversimplification","Loaded Language","Black-and-White Fallacy"],
-        "typical_ipa_techniques": ["Appeal to Fear","Card stacking","Plain folks"],
+        "eco_properties": [
+          "Contempt for the Weak",
+          "Pacifism as Enemy Collaboration",
+          "Selective Populism"
+        ],
+        "typical_san_martino_techniques": [
+          "Appeal to Fear/Prejudice",
+          "Causal Oversimplification",
+          "Loaded Language",
+          "Black-and-White Fallacy"
+        ],
+        "typical_ipa_techniques": [
+          "Appeal to Fear",
+          "Card stacking",
+          "Plain folks"
+        ],
         "typical_nimmo_4d": "Dismay",
-        "typical_eudisinfo_narratives": ["Threatened Values","Elites vs People"],
-        "typical_eudisinfo_rhetoric": ["Straw Man","Denial","Attack"],
-        "typical_eudisinfo_conspiracy": ["Shadow Government / Deep State"],
-        "typical_eudisinfo_ttp": ["Emotional Manipulation","Strategic Decontextualization","False Context"],
+        "typical_eudisinfo_narratives": [
+          "Threatened Values",
+          "Elites vs People"
+        ],
+        "typical_eudisinfo_rhetoric": [
+          "Straw Man",
+          "Denial",
+          "Attack"
+        ],
+        "typical_eudisinfo_conspiracy": [
+          "Shadow Government / Deep State"
+        ],
+        "typical_eudisinfo_ttp": [
+          "Emotional Manipulation",
+          "Strategic Decontextualization",
+          "False Context"
+        ],
         "myth_function": "theodicy",
         "enemy_type": "internal",
-        "legitimation_mode": ["rationalization","moral"],
+        "legitimation_mode": [
+          "rationalization",
+          "moral"
+        ],
         "frame_function": "prognostic",
         "dehumanisation_level": 3,
         "temporality": "contemporaneous"
       },
       "modern_keywords": [
-        "stability","national unity","prevent civil war","armed gangs","terrorists","extremists","foreign-backed insurgents","restore order","protect civilians from chaos","sectarian conflict","without the army there would be chaos"
+        "stability",
+        "national unity",
+        "prevent civil war",
+        "armed gangs",
+        "terrorists",
+        "extremists",
+        "foreign-backed insurgents",
+        "restore order",
+        "protect civilians from chaos",
+        "sectarian conflict",
+        "without the army there would be chaos"
       ],
       "historical_echoes": [
         {
+          "id": "stability_mandate:francisco-franco:0ee78782",
           "figure": "Francisco Franco",
-          "context": "Radio address announcing the military uprising, July 17–18, 1936",
+          "year": "1936",
           "quote": "Spain is offered to anarchy and revolutionary chaos… The army, navy, and security forces, inspired by love of their fatherland, have decided to restore public order and guarantee national peace.",
+          "context": "Radio address announcing the military uprising, July 17–18, 1936",
           "analogy_link": "The foundational stability-mandate structure: a coup framed as an anti-chaos operation, the military as the only institution capable of protecting civilian life from the disorder caused by democratic politics — reproduced by every subsequent military junta from Greece 1967 to Myanmar 2021.",
           "source": {
             "citation": "Francisco Franco, Radio broadcast from the Canary Islands announcing the military uprising, July 17–18, 1936. Paul Preston, 'Franco: A Biography' (HarperCollins, 1994), p. 159; Biblioteca Nacional de España digital archive",
             "url": "https://www.bne.es/es/colecciones/archivo-sonoro"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:24.855Z",
+              "http_status": 403,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "stability_mandate:syrian-arab-news-agency-sana-bashar-al-a:166a1553",
           "figure": "Syrian Arab News Agency (SANA) / Bashar al-Assad",
-          "context": "Syrian state media coverage of the 2011–2012 uprising",
+          "year": "2011",
           "quote": "Armed terrorist gangs, backed by foreign intelligence services, are targeting the security and stability of Syria. The Syrian Arab Army is carrying out its national duty to protect citizens from this externally orchestrated aggression.",
+          "context": "Syrian state media coverage of the 2011–2012 uprising",
           "analogy_link": "The democracy movement reframed as terrorism: protesters are 'armed gangs', the crackdown is 'protection', and the entire uprising is an external conspiracy — making any negotiation or reform structurally impossible since you do not negotiate with foreign-sponsored terrorists.",
           "source": {
             "citation": "Syrian Arab News Agency (SANA), state media coverage of the 2011–2012 uprising. Human Rights Watch, 'By All Means Necessary: Individual and Command Responsibility for Crimes Against Humanity in Syria' (2011)",
             "url": "https://www.hrw.org/report/2011/12/15/all-means-necessary/individual-and-command-responsibility-crimes-against-humanity"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:24.957Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "stability_mandate:hafez-al-assad:59622c60",
           "figure": "Hafez al-Assad",
-          "context": "President of Syria, 1970–2000 — suppression of the Muslim Brotherhood uprising, Hama, February 1982; and characteristic Ba'athist stability discourse throughout his rule",
+          "year": "1970",
           "quote": "Syria is an Arab nation that knows only one path: unity, freedom, and socialism under the Arab Ba'ath. Those who choose sedition choose foreign masters. Those who raise arms against the state raise arms against every Syrian family. There is no compromise with those who would plunge the country into sectarian chaos.",
+          "context": "President of Syria, 1970–2000 — suppression of the Muslim Brotherhood uprising, Hama, February 1982; and characteristic Ba'athist stability discourse throughout his rule",
           "analogy_link": "Hafez al-Assad's stability mandate was institutionalised through the Ba'ath party's single-party state and enforced with the 1982 Hama massacre — a precedent that Bashar al-Assad directly replicated in 2011. The framing is the same in both generations: the regime as the sole bulwark against sectarian civil war, any opposition as a foreign-sponsored Islamist conspiracy, and mass violence as a 'surgical' restoration of order. This is the most direct historical source for the Syrian government's 2011–2012 language that SANA broadcasts reproduced almost verbatim.",
           "source": {
             "citation": "Hafez al-Assad, speeches and Ba'ath Party communiqués, 1970–2000. Patrick Seale, 'Asad: The Struggle for the Middle East' (University of California Press, 1988); Human Rights Watch, 'Syria: The Price of Dissent' (2000)",
             "url": "https://archive.org/details/asadstruggleform00seal"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:25.040Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "stability_mandate:bashar-al-assad-syrian-arab-news-agency-:7deb53fd",
           "figure": "Bashar al-Assad / Syrian Arab News Agency (SANA)",
-          "context": "President of Syria, 2000–2024 — state media framing of the Syrian uprising, 2011–2013, after security forces opened fire on protesters in Daraa, March 2011",
+          "year": "2000",
           "quote": "What is happening in Syria is not a revolution — it is a conspiracy. Armed terrorist gangs, backed and funded by foreign intelligence services, are attacking Syrian civilians and security forces. The Syrian Arab Army is fulfilling its national duty to protect the homeland and its people from this externally orchestrated aggression.",
+          "context": "President of Syria, 2000–2024 — state media framing of the Syrian uprising, 2011–2013, after security forces opened fire on protesters in Daraa, March 2011",
           "analogy_link": "Bashar al-Assad's 2011 framing directly inherits Hafez al-Assad's 1982 template and recalibrates it for the social media age: the same 'armed gangs' formula, the same foreign-conspiracy attribution, the same 'protecting civilians' inversion — but now deployed in a media environment where footage of state violence circulates globally, requiring constant counter-narrative production. The 2011–2013 SANA language became the template for Russian framing of the Maidan uprising within weeks.",
           "source": {
             "citation": "Bashar al-Assad, speeches and SANA official media coverage, 2011–2013. UN Commission of Inquiry on Syria, Report A/HRC/19/69 (2012); Human Rights Watch, 'By All Means Necessary' (2011)",
             "url": "https://www.ohchr.org/en/hr-bodies/hrc/syria-inquiry/pages/independentinternationalcommission.aspx"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:25.068Z",
+              "http_status": 403,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "stability_mandate:augusto-pinochet-chilean-military-junta:82e23585",
           "figure": "Augusto Pinochet / Chilean military junta",
-          "context": "President of Chile, 1973–1990 — speeches and communiqués following the September 11, 1973 coup, establishing the 'national reconstruction' framework",
+          "year": "1973",
           "quote": "Chile was dying — economically, morally, spiritually. Marxism had driven it to the brink of civil war and communist slavery. The Armed Forces have intervened not to seize power but to save the country. Chile must be reconstructed from its foundations. This is not a revolution — it is a restoration.",
+          "context": "President of Chile, 1973–1990 — speeches and communiqués following the September 11, 1973 coup, establishing the 'national reconstruction' framework",
           "analogy_link": "The Pinochet 'restoration' doctrine is the Latin American masterclass in stability-mandate framing: the coup is presented as a medical intervention rather than a political act, removing a pathogen (Marxism) from the body politic. The 'saving Chile' rhetoric made mass disappearances and torture rhetorically invisible — they were administrative necessities of the restoration, not crimes. This template was replicated across Latin America in the 1970s and remains the conceptual model for every subsequent military government that presents repression as surgery.",
           "source": {
             "citation": "Augusto Pinochet, Proclamation No. 5 of the Military Junta, September 11, 1973; and subsequent speeches. National Security Archive, Chile Documentation Project; Rettig Commission Report (Comisión Nacional de Verdad y Reconciliación), 1991",
             "url": "https://nsarchive.gwu.edu/collection/chile-documentation-project"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:25.343Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": true
+            }
           }
         },
         {
+          "id": "stability_mandate:alfredo-stroessner:55875444",
           "figure": "Alfredo Stroessner",
-          "context": "President of Paraguay, 1954–1989 — the longest-serving dictator in Paraguayan history; ideological justification of single-party Colorado rule as anti-communist order",
+          "year": "1954",
           "quote": "Paraguay has chosen the path of peace, order, and anti-communist vigilance. The Colorado Party is not a political party — it is the expression of the Paraguayan nation. Those who oppose it serve foreign ideologies and foreign masters. Without order, there is no freedom; without the Colorado Party, there is no order.",
+          "context": "President of Paraguay, 1954–1989 — the longest-serving dictator in Paraguayan history; ideological justification of single-party Colorado rule as anti-communist order",
           "analogy_link": "Stroessner's collapse of party, state, and nation into a single entity is the most explicit Latin American version of the stability mandate: political pluralism is not merely undesirable but structurally impossible because the Colorado Party IS Paraguay. Any opposition is by definition foreign-inspired and anti-national. This is the same move made by all single-party stability-mandate regimes, from the Ba'ath Party in Syria to the North Korean Workers' Party.",
           "source": {
             "citation": "Alfredo Stroessner, speeches and Colorado Party communiqués, 1954–1989. Andrew Nickson, 'Paraguay' (World Bibliographical Series, 1987); National Security Archive, Paraguay Declassified files",
             "url": "https://nsarchive.gwu.edu/collection/paraguay-declassified"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:25.503Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": true
+            }
           }
         }
       ],
@@ -2161,43 +3670,113 @@
         "narrative_strategy": "exploitation",
         "ellul_type": "agitation",
         "ellul_axis": "vertical",
-        "eco_properties": ["Obsession with a Plot","Enemies Too Strong and Too Weak","Fear of Difference"],
-        "typical_san_martino_techniques": ["Appeal to Fear/Prejudice","Loaded Language","Causal Oversimplification","Exaggeration/Minimisation"],
-        "typical_ipa_techniques": ["Transfer","Name-calling","Appeal to Fear"],
+        "eco_properties": [
+          "Obsession with a Plot",
+          "Enemies Too Strong and Too Weak",
+          "Fear of Difference"
+        ],
+        "typical_san_martino_techniques": [
+          "Appeal to Fear/Prejudice",
+          "Loaded Language",
+          "Causal Oversimplification",
+          "Exaggeration/Minimisation"
+        ],
+        "typical_ipa_techniques": [
+          "Transfer",
+          "Name-calling",
+          "Appeal to Fear"
+        ],
         "typical_nimmo_4d": "Dismay",
-        "typical_eudisinfo_narratives": ["Lost Sovereignty","Russia as Victim"],
-        "typical_eudisinfo_rhetoric": ["Attack","Straw Man","Whataboutism"],
-        "typical_eudisinfo_conspiracy": ["Anglo-Saxon Plot","Rothschilds / Banker Conspiracy"],
-        "typical_eudisinfo_ttp": ["Emotional Manipulation","Strategic Decontextualization","Conspiracy Amplification"],
+        "typical_eudisinfo_narratives": [
+          "Lost Sovereignty",
+          "Russia as Victim"
+        ],
+        "typical_eudisinfo_rhetoric": [
+          "Attack",
+          "Straw Man",
+          "Whataboutism"
+        ],
+        "typical_eudisinfo_conspiracy": [
+          "Anglo-Saxon Plot",
+          "Rothschilds / Banker Conspiracy"
+        ],
+        "typical_eudisinfo_ttp": [
+          "Emotional Manipulation",
+          "Strategic Decontextualization",
+          "Conspiracy Amplification"
+        ],
         "myth_function": "theodicy",
         "enemy_type": "external",
-        "legitimation_mode": ["moral","rationalization"],
+        "legitimation_mode": [
+          "moral",
+          "rationalization"
+        ],
         "frame_function": "diagnostic",
         "dehumanisation_level": 2,
         "temporality": "contemporaneous"
       },
       "modern_keywords": [
-        "illegal sanctions","economic war","blockade","unilateral coercive measures","economic terrorism","sanctions kill civilians","economic strangulation","economic aggression","humanitarian crisis caused by sanctions","siege mentality","economic warfare"
+        "illegal sanctions",
+        "economic war",
+        "blockade",
+        "unilateral coercive measures",
+        "economic terrorism",
+        "sanctions kill civilians",
+        "economic strangulation",
+        "economic aggression",
+        "humanitarian crisis caused by sanctions",
+        "siege mentality",
+        "economic warfare"
       ],
       "historical_echoes": [
         {
+          "id": "economic_siege:fidel-castro-granma:03bbe8e0",
           "figure": "Fidel Castro / Granma",
-          "context": "Cuban state media framing of the US economic embargo, ongoing since 1962",
+          "year": "1962",
           "quote": "The criminal blockade imposed by the United States against Cuba is the longest and most unjust act of economic aggression in history. Its purpose is to destroy the Cuban revolution by starving the Cuban people into submission.",
+          "context": "Cuban state media framing of the US economic embargo, ongoing since 1962",
           "analogy_link": "The foundational template for economic siege rhetoric: the sanctions regime becomes the primary cause of all domestic economic failures, making the sanctioning state the aggressor and the sanctioned government the victim of economic warfare against civilians.",
           "source": {
             "citation": "Granma (official organ of the Central Committee of the Communist Party of Cuba), recurring editorial framing of the US economic embargo, 1962–present",
             "url": "https://www.granma.cu/cuba"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:25.867Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": true
+            }
           }
         },
         {
+          "id": "economic_siege:mahmoud-ahmadinejad-iranian-state-media-:ec51ab4c",
           "figure": "Mahmoud Ahmadinejad / Iranian state media (IRNA/Press TV)",
-          "context": "Iranian government response to nuclear sanctions, 2012",
+          "year": "2012",
           "quote": "The sanctions imposed on the Iranian nation are a crime against humanity. The enemies of Iran are targeting not the government but the Iranian people — they are collective punishment of an innocent nation.",
+          "context": "Iranian government response to nuclear sanctions, 2012",
           "analogy_link": "The 'collective punishment' framing that converts economic pressure on a government into an attack on a people — structurally separating regime accountability from civilian suffering to maximum propaganda effect.",
           "source": {
             "citation": "Mahmoud Ahmadinejad, statements on Western sanctions, 2012. Islamic Republic News Agency (IRNA) and Press TV; UN General Assembly address, September 2012",
             "url": "https://www.irna.ir/en/"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:25.924Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": true
+            }
           }
         }
       ],
@@ -2217,43 +3796,118 @@
         "narrative_strategy": "suppression",
         "ellul_type": "agitation",
         "ellul_axis": "vertical",
-        "eco_properties": ["Newspeak","Obsession with a Plot","Disagreement is Treason"],
-        "typical_san_martino_techniques": ["Doubt","Loaded Language","Straw Man","Name Calling/Labeling","Thought-terminating Clichés"],
-        "typical_ipa_techniques": ["Name-calling","Transfer","Card stacking"],
+        "eco_properties": [
+          "Newspeak",
+          "Obsession with a Plot",
+          "Disagreement is Treason"
+        ],
+        "typical_san_martino_techniques": [
+          "Doubt",
+          "Loaded Language",
+          "Straw Man",
+          "Name Calling/Labeling",
+          "Thought-terminating Clichés"
+        ],
+        "typical_ipa_techniques": [
+          "Name-calling",
+          "Transfer",
+          "Card stacking"
+        ],
         "typical_nimmo_4d": "Dismiss",
-        "typical_eudisinfo_narratives": ["Lost Sovereignty","Elites vs People"],
-        "typical_eudisinfo_rhetoric": ["Denial","Attack","Straw Man"],
-        "typical_eudisinfo_conspiracy": ["Anglo-Saxon Plot","Shadow Government / Deep State"],
-        "typical_eudisinfo_ttp": ["Infoshum","Firehose of Falsehood","Conspiracy Amplification","Narrative Laundering"],
+        "typical_eudisinfo_narratives": [
+          "Lost Sovereignty",
+          "Elites vs People"
+        ],
+        "typical_eudisinfo_rhetoric": [
+          "Denial",
+          "Attack",
+          "Straw Man"
+        ],
+        "typical_eudisinfo_conspiracy": [
+          "Anglo-Saxon Plot",
+          "Shadow Government / Deep State"
+        ],
+        "typical_eudisinfo_ttp": [
+          "Infoshum",
+          "Firehose of Falsehood",
+          "Conspiracy Amplification",
+          "Narrative Laundering"
+        ],
         "myth_function": "eschatological",
         "enemy_type": "external",
-        "legitimation_mode": ["rationalization","moral"],
+        "legitimation_mode": [
+          "rationalization",
+          "moral"
+        ],
         "frame_function": "diagnostic",
         "dehumanisation_level": 2,
         "temporality": "contemporaneous"
       },
       "modern_keywords": [
-        "Western propaganda","fake news","information war","lies","media fabrication","mainstream media lies","BBC propaganda","CNN lies","anti-Russian propaganda","biased reporting","information warfare","presstitutes","controlled media"
+        "Western propaganda",
+        "fake news",
+        "information war",
+        "lies",
+        "media fabrication",
+        "mainstream media lies",
+        "BBC propaganda",
+        "CNN lies",
+        "anti-Russian propaganda",
+        "biased reporting",
+        "information warfare",
+        "presstitutes",
+        "controlled media"
       ],
       "historical_echoes": [
         {
+          "id": "media_lie:nazi-ministry-of-public-enlightenment-go:33c337f7",
           "figure": "Nazi Ministry of Public Enlightenment (Goebbels)",
-          "context": "Systematic use of 'Lügenpresse' (lying press) as propaganda concept, 1933–1945",
+          "year": "1933",
           "quote": "The Lügenpresse — the lying press — is the most dangerous weapon of the enemy. Jewish international finance controls the world press and uses it to destroy National Socialist Germany with lies and falsifications.",
+          "context": "Systematic use of 'Lügenpresse' (lying press) as propaganda concept, 1933–1945",
           "analogy_link": "The 'lying press' framing as a totalising epistemic strategy: once established, any critical media report is pre-emptively classified as fabrication, making fact-checking impossible — the target audience is inoculated against all contrary evidence before it arrives.",
           "source": {
             "citation": "Nazi Ministry of Public Enlightenment and Propaganda, systematic use of 'Lügenpresse' concept, 1933–1945. Randall Bytwerk, 'Landmark Speeches of National Socialism' (Texas A&M UP, 2008); Calvin University German Propaganda Archive",
             "url": "https://research.calvin.edu/german-propaganda-archive/"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:26.137Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": true
+            }
           }
         },
         {
+          "id": "media_lie:soviet-agitprop-pravda:e21ce21a",
           "figure": "Soviet Agitprop / Pravda",
-          "context": "Standard Soviet framing of Western press, Cold War period",
+          "year": "1964",
           "quote": "The bourgeois press does not report news — it manufactures consent for imperialist aggression. Every Western newspaper is an instrument of class warfare disguised as objective journalism.",
+          "context": "Standard Soviet framing of Western press, Cold War period",
           "analogy_link": "The structural critique of media ownership as a truth-claim: since Western media is owned by capitalists, its output is definitionally propaganda — an argument that pre-empts engagement with any specific factual claim.",
           "source": {
             "citation": "Soviet Agitprop Department and Pravda, standard Cold War framing of Western press. Frederick Barghoorn, 'Soviet Foreign Propaganda' (Princeton UP, 1964); Wilson Center Cold War International History Project",
             "url": "https://digitalarchive.wilsoncenter.org/collection/cold-war-international-history-project"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:26.201Z",
+              "http_status": null,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": true,
+              "error": "TypeError"
+            }
           }
         }
       ],
@@ -2273,63 +3927,167 @@
         "narrative_strategy": "suppression",
         "ellul_type": "agitation",
         "ellul_axis": "vertical",
-        "eco_properties": ["Disagreement is Treason","Selective Populism","Obsession with a Plot","Pacifism as Enemy Collaboration"],
-        "typical_san_martino_techniques": ["Appeal to Fear/Prejudice","Flag-Waving","Black-and-White Fallacy","Loaded Language","Thought-terminating Clichés"],
-        "typical_ipa_techniques": ["Bandwagon","Name-calling","Transfer"],
+        "eco_properties": [
+          "Disagreement is Treason",
+          "Selective Populism",
+          "Obsession with a Plot",
+          "Pacifism as Enemy Collaboration"
+        ],
+        "typical_san_martino_techniques": [
+          "Appeal to Fear/Prejudice",
+          "Flag-Waving",
+          "Black-and-White Fallacy",
+          "Loaded Language",
+          "Thought-terminating Clichés"
+        ],
+        "typical_ipa_techniques": [
+          "Bandwagon",
+          "Name-calling",
+          "Transfer"
+        ],
         "typical_nimmo_4d": "Dismay",
-        "typical_eudisinfo_narratives": ["Elites vs People","Threatened Values"],
-        "typical_eudisinfo_rhetoric": ["Attack","Provocations","Mockery"],
-        "typical_eudisinfo_conspiracy": ["Shadow Government / Deep State","Anglo-Saxon Plot"],
-        "typical_eudisinfo_ttp": ["Emotional Manipulation","Narrative Laundering","Strategic Decontextualization"],
+        "typical_eudisinfo_narratives": [
+          "Elites vs People",
+          "Threatened Values"
+        ],
+        "typical_eudisinfo_rhetoric": [
+          "Attack",
+          "Provocations",
+          "Mockery"
+        ],
+        "typical_eudisinfo_conspiracy": [
+          "Shadow Government / Deep State",
+          "Anglo-Saxon Plot"
+        ],
+        "typical_eudisinfo_ttp": [
+          "Emotional Manipulation",
+          "Narrative Laundering",
+          "Strategic Decontextualization"
+        ],
         "myth_function": "eschatological",
         "enemy_type": "internal",
-        "legitimation_mode": ["moral","authorization"],
+        "legitimation_mode": [
+          "moral",
+          "authorization"
+        ],
         "frame_function": "motivational",
         "dehumanisation_level": 3,
         "temporality": "contemporaneous"
       },
       "modern_keywords": [
-        "national unity","traitors","fifth column","enemies of the state","anti-national","divisive forces","rally behind the flag","this is not the time for politics","unpatriotic","saboteurs","internal enemies","useful idiots of the West","wartime solidarity"
+        "national unity",
+        "traitors",
+        "fifth column",
+        "enemies of the state",
+        "anti-national",
+        "divisive forces",
+        "rally behind the flag",
+        "this is not the time for politics",
+        "unpatriotic",
+        "saboteurs",
+        "internal enemies",
+        "useful idiots of the West",
+        "wartime solidarity"
       ],
       "historical_echoes": [
         {
+          "id": "unity_demand:us-government-espionage-act:4de67abb",
           "figure": "US Government / Espionage Act",
-          "context": "US Espionage Act 1917 and Sedition Act 1918 — WWI domestic dissent suppression",
+          "year": "1917",
           "quote": "Whoever, when the United States is at war, shall wilfully cause or attempt to cause insubordination, disloyalty, mutiny, or refusal of duty in the military or naval forces of the United States, shall be punished by a fine of not more than $10,000 or imprisonment for not more than twenty years, or both.",
+          "context": "US Espionage Act 1917 and Sedition Act 1918 — WWI domestic dissent suppression",
           "analogy_link": "Legal codification of the unity demand: wartime transforms political dissent from a protected right into a criminal act — demonstrating that the unity-demand trope is not exclusively authoritarian but requires active resistance to prevent abuse in democratic contexts also.",
           "source": {
             "citation": "Espionage Act of 1917, 40 Stat. 217; amended by Sedition Act of 1918, 40 Stat. 553. US Library of Congress, Primary Documents in American History",
             "url": "https://www.loc.gov/rr/program/bib/ourdocs/Espionage.html"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:26.694Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "unity_demand:george-w-bush:3c2c7337",
           "figure": "George W. Bush",
-          "context": "Address to Congress, September 20, 2001 — post-9/11 framing",
+          "year": "2001",
           "quote": "Either you are with us, or you are with the terrorists.",
+          "context": "Address to Congress, September 20, 2001 — post-9/11 framing",
           "analogy_link": "The binary unity demand in democratic context: the elimination of neutral positions and the conflation of dissent with enemy alignment — structurally identical to authoritarian unity rhetoric, though without the same enforcement mechanisms.",
           "source": {
             "citation": "President George W. Bush, Address to a Joint Session of Congress, September 20, 2001. White House transcript, National Archives",
             "url": "https://georgewbush-whitehouse.archives.gov/news/releases/2001/09/20010920-8.html"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:27.266Z",
+              "http_status": 200,
+              "match": "full",
+              "score": 1,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "unity_demand:anto-nio-de-oliveira-salazar:56b1832b",
           "figure": "António de Oliveira Salazar",
-          "context": "Speeches justifying the single-party Estado Novo, Portugal 1930s–1950s — the ideological case against parliamentary pluralism",
+          "year": "1932",
           "quote": "Political parties are the institutions which most contribute to the demoralisation and decomposition of the patriotic conscience. What the masses need is not to be organised into parties but to be educated into national consciousness.",
+          "context": "Speeches justifying the single-party Estado Novo, Portugal 1930s–1950s — the ideological case against parliamentary pluralism",
           "analogy_link": "The unity demand expressed as paternalistic epistemology: democratic pluralism is not merely dangerous but structurally illegitimate because the masses are educationally unfit to use it — a framing that converts authoritarian suppression of dissent into a form of civic care. Reproduced in Singapore's 'Asian values' argument against Western democracy, China's 'whole-process people's democracy', and any regime that frames opposition parties as foreign-backed instruments of division rather than legitimate political actors.",
           "source": {
             "citation": "António de Oliveira Salazar, speeches and interviews, Estado Novo period, 1932–1968. António Ferro, 'Salazar: Portugal and Her Leader' (Faber & Faber, 1939); Arquivo Histórico Parlamentar Portugal",
             "url": "https://arquivo.pt/wayback/20191213133500/http://www.portugal.gov.pt/pt/o-governo/arquivo-historico/governos-historicos/governo-salazar.aspx"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:28.821Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "unity_demand:jorge-rafael-videla:590b40aa",
           "figure": "Jorge Rafael Videla",
-          "context": "President of Argentina, 1976–1981 — Proceso de Reorganización Nacional (National Reorganisation Process); justification of the 'dirty war' (guerra sucia) against leftist 'subversion'",
+          "year": "1976",
           "quote": "A terrorist is not just someone with a gun or a bomb. It is also someone who spreads ideas contrary to Western, Christian civilisation. In this war there are no neutrals. Silence is complicity. Argentina must be reorganised from its foundations, and those who resist this necessary surgery place themselves outside the nation.",
+          "context": "President of Argentina, 1976–1981 — Proceso de Reorganización Nacional (National Reorganisation Process); justification of the 'dirty war' (guerra sucia) against leftist 'subversion'",
           "analogy_link": "Videla's 'dirty war' doctrine expands the category of 'enemy' until it encompasses any form of dissent: political activity, intellectual criticism, trade union organisation, or even mere association with suspect individuals becomes a form of 'subversion'. This is the unity demand taken to its logical conclusion — not just demanding loyalty but defining disloyalty so broadly that any independent thought becomes treasonous. The 30,000 disappeared in Argentina were produced by exactly this totalising logic, which modern authoritarian governments reproduce in less extreme form through 'foreign agent' laws and 'extremism' designations.",
           "source": {
             "citation": "Jorge Rafael Videla, press conference statements, 1976–1978. CONADEP, 'Nunca Más: Report of the National Commission on the Disappearance of Persons' (EUDEBA, 1984); National Security Archive, Argentina Declassified",
             "url": "https://nsarchive.gwu.edu/collection/argentina-declassified"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:29.252Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": true
+            }
           }
         }
       ],
@@ -2349,53 +4107,142 @@
         "narrative_strategy": "exploitation",
         "ellul_type": "agitation",
         "ellul_axis": "vertical",
-        "eco_properties": ["Fear of Difference","Obsession with a Plot","Enemies Too Strong and Too Weak"],
-        "typical_san_martino_techniques": ["Appeal to Fear/Prejudice","Loaded Language","Causal Oversimplification","Black-and-White Fallacy","Exaggeration/Minimisation"],
-        "typical_ipa_techniques": ["Transfer","Appeal to Fear","Name-calling"],
+        "eco_properties": [
+          "Fear of Difference",
+          "Obsession with a Plot",
+          "Enemies Too Strong and Too Weak"
+        ],
+        "typical_san_martino_techniques": [
+          "Appeal to Fear/Prejudice",
+          "Loaded Language",
+          "Causal Oversimplification",
+          "Black-and-White Fallacy",
+          "Exaggeration/Minimisation"
+        ],
+        "typical_ipa_techniques": [
+          "Transfer",
+          "Appeal to Fear",
+          "Name-calling"
+        ],
         "typical_nimmo_4d": "Dismay",
-        "typical_eudisinfo_narratives": ["Threatened Values","Nazis","Lost Sovereignty"],
-        "typical_eudisinfo_rhetoric": ["Attack","Provocations","Straw Man"],
-        "typical_eudisinfo_conspiracy": ["Anglo-Saxon Plot","False Flag"],
-        "typical_eudisinfo_ttp": ["Emotional Manipulation","Fabricated Content","False Context","Strategic Decontextualization"],
+        "typical_eudisinfo_narratives": [
+          "Threatened Values",
+          "Nazis",
+          "Lost Sovereignty"
+        ],
+        "typical_eudisinfo_rhetoric": [
+          "Attack",
+          "Provocations",
+          "Straw Man"
+        ],
+        "typical_eudisinfo_conspiracy": [
+          "Anglo-Saxon Plot",
+          "False Flag"
+        ],
+        "typical_eudisinfo_ttp": [
+          "Emotional Manipulation",
+          "Fabricated Content",
+          "False Context",
+          "Strategic Decontextualization"
+        ],
         "myth_function": "heroic",
         "enemy_type": "ontological",
-        "legitimation_mode": ["moral","rationalization"],
+        "legitimation_mode": [
+          "moral",
+          "rationalization"
+        ],
         "frame_function": "diagnostic",
         "dehumanisation_level": 4,
         "temporality": "contemporaneous"
       },
       "modern_keywords": [
-        "protect our people","persecution of minorities","ethnic cleansing","compatriots abroad","protect citizens","diaspora under threat","religious persecution","humanitarian corridor","kin-state responsibility","ethnic community under attack","protect Russian speakers","rights of our compatriots"
+        "protect our people",
+        "persecution of minorities",
+        "ethnic cleansing",
+        "compatriots abroad",
+        "protect citizens",
+        "diaspora under threat",
+        "religious persecution",
+        "humanitarian corridor",
+        "kin-state responsibility",
+        "ethnic community under attack",
+        "protect Russian speakers",
+        "rights of our compatriots"
       ],
       "historical_echoes": [
         {
+          "id": "ethnic_protection:adolf-hitler:35779560",
           "figure": "Adolf Hitler",
-          "context": "Memorandum to the British ambassador, August 25, 1939 — two days before the invasion of Poland",
+          "year": "1939",
           "quote": "The German minorities in Poland are being subjected to unbearable atrocities. Germany cannot stand by while blood-brothers are physically annihilated. I have therefore decided to solve the Danzig question and the Polish Corridor problem.",
+          "context": "Memorandum to the British ambassador, August 25, 1939 — two days before the invasion of Poland",
           "analogy_link": "The Volksdeutsche protection template: a claim of ethnic persecution — fabricated, exaggerated, or real but contextually distorted — as a legal-moral warrant for cross-border military intervention. Reproduced structurally in every kin-state protection argument since.",
           "source": {
             "citation": "Adolf Hitler, Memorandum to British Ambassador Sir Nevile Henderson, August 25, 1939. Documents on British Foreign Policy, Third Series, Vol. VII (HMSO, 1954); Yale Avalon Project",
             "url": "https://avalon.law.yale.edu/imt/doc-2802-ps.asp"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:29.407Z",
+              "http_status": 404,
+              "match": "unreachable",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "ethnic_protection:slobodan-milos-evic-sanu-memorandum:297735f9",
           "figure": "Slobodan Milošević / SANU Memorandum",
-          "context": "Serbian Academy of Sciences memorandum, 1986 — intellectual foundation for Bosnian war",
+          "year": "1986",
           "quote": "The physical, political, legal, and cultural genocide of the Serbian population of Kosovo and Metohija represents the gravest defeat in the liberation struggle that Serbia has waged… The Serbian people in Kosovo are being subjected to systematic genocide.",
+          "context": "Serbian Academy of Sciences memorandum, 1986 — intellectual foundation for Bosnian war",
           "analogy_link": "Pre-emptive genocide accusation as political mobilisation: claiming that an ethnic group faces extinction justifies any action taken to 'protect' it, while converting the future perpetrator into the present victim — the intellectual structure behind Russian 'genocide of Russian speakers in Donbas'.",
           "source": {
             "citation": "Serbian Academy of Sciences and Arts (SANU), 'Memorandum,' 1986. English translation in Audrey Budding, 'Serbian Nationalism and the Origins of the Yugoslav Crisis,' Peaceworks No. 8 (United States Institute of Peace, 1998)",
             "url": "https://www.usip.org/publications/1998/04/serbian-nationalism-and-origins-yugoslav-crisis"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:29.691Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": false
+            }
           }
         },
         {
+          "id": "ethnic_protection:h-f-verwoerd:d4bde717",
           "figure": "H. F. Verwoerd",
-          "context": "Prime Minister of South Africa, 1958–1966 — the 'architect of apartheid'; speech to the South African Senate, September 3, 1948, and subsequent elaborations of the Bantustan policy",
+          "year": "1958",
           "quote": "We are giving the Bantu their own areas, their own institutions, their own governments. We are not oppressing them — we are protecting their identity, their culture, their nationhood. Separate development is the only way to guarantee the survival of each nation within its own homeland.",
+          "context": "Prime Minister of South Africa, 1958–1966 — the 'architect of apartheid'; speech to the South African Senate, September 3, 1948, and subsequent elaborations of the Bantustan policy",
           "analogy_link": "The apartheid Bantustan system rebranded as 'ethnic protection': Verwoerd's 'separate development' presents total territorial and political segregation as a gift to Black Africans — each ethnic group gets its 'own' homeland, 'own' institutions, 'own' identity. This is the paternalistic inversion of ethnic protection logic: the oppressor claims to be the guarantor of minority survival, using the language of cultural preservation to justify dispossession. Structurally identical to Russian claims that separating 'Russian speakers' into puppet republics protects their identity from Ukrainian cultural assimilation.",
           "source": {
             "citation": "H. F. Verwoerd, Senate speech, September 3, 1948; and subsequent Bantustan policy speeches, 1958–1966. South African Parliament Hansard; South African History Archive (SAHA)",
             "url": "https://www.saha.org.za/"
+          },
+          "verification": {
+            "status": "unverified",
+            "notes": "",
+            "checked_by": null,
+            "checked_at": null,
+            "auto": {
+              "checked_at": "2026-11-09T12:39:29.709Z",
+              "http_status": 200,
+              "match": "none",
+              "score": 0,
+              "generic_url": true
+            }
           }
         }
       ],

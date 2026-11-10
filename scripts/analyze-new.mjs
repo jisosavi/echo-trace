@@ -1,122 +1,58 @@
 #!/usr/bin/env node
 /**
  * analyze-new.mjs
- * Reads agent/data/raw-news.json, compares against already-analyzed URLs in
- * agent/data/echo-trace.db, and runs analyze-one-url.mjs on each new URL.
+ * Analyses every pending article in the database (plus failed ones with
+ * retries left), in one process. Called by cycle.sh after scraping.
  *
- * Usage:
- *   ANTHROPIC_API_KEY=sk-... node scripts/analyze-new.mjs [options]
- *
- * Options:
- *   --limit <n>     Max URLs to process in this run (default: all)
- *   --delay <ms>    Delay between analyses (default: 2000)
- *   --dry-run       Print URLs that would be analyzed, without running
+ * Usage: node scripts/analyze-new.mjs [--limit <n>] [--corpus state|control] [--dry-run]
  */
+import { getPendingArticles } from './db.mjs';
+import { createContext, analyzeArticle } from './lib/analyze.mjs';
+import { closeBrowser } from './lib/extract.mjs';
+import { makeLogger } from './lib/log.mjs';
 
-import { readFile } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
-import { spawn } from 'node:child_process';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { getAllUrls } from './db.mjs';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname  = path.dirname(__filename);
-const ROOT       = path.resolve(__dirname, '..');
-
-const RAW_NEWS_PATH = path.join(ROOT, 'agent/data/raw-news.json');
-const ANALYZER      = path.join(ROOT, 'scripts/analyze-one-url.mjs');
+const log = makeLogger('analyze');
 
 function parseArgs() {
   const args = process.argv.slice(2);
-  const opts = { limit: Infinity, delay: 2000, dryRun: false };
+  const opts = { limit: 1e9, corpus: null, dryRun: false };
   for (let i = 0; i < args.length; i++) {
     switch (args[i]) {
-      case '--limit':   opts.limit  = parseInt(args[++i], 10); break;
-      case '--delay':   opts.delay  = parseInt(args[++i], 10); break;
+      case '--limit': opts.limit = parseInt(args[++i], 10); break;
+      case '--corpus': opts.corpus = args[++i]; break;
       case '--dry-run': opts.dryRun = true; break;
     }
   }
   return opts;
 }
 
-async function readJson(filePath) {
-  if (!existsSync(filePath)) return [];
-  try { return JSON.parse(await readFile(filePath, 'utf8')); } catch { return []; }
-}
-
-function runAnalyzer(url) {
-  return new Promise((resolve, reject) => {
-    const child = spawn('node', [ANALYZER, url], {
-      stdio: 'inherit',
-      env: { ...process.env }
-    });
-    child.on('close', (code) => {
-      if (code === 0) resolve();
-      else reject(new Error(`analyze-one-url exited with code ${code} for ${url}`));
-    });
-    child.on('error', reject);
-  });
-}
-
 async function main() {
   const opts = parseArgs();
-
-  if (!process.env.ANTHROPIC_API_KEY && !opts.dryRun) {
-    console.error('Error: ANTHROPIC_API_KEY not set');
-    process.exit(1);
-  }
-
-  const rawNews = await readJson(RAW_NEWS_PATH);
-
-  if (rawNews.length === 0) {
-    console.log('No scraped articles found in raw-news.json. Run scrape-news.mjs first.');
-    return;
-  }
-
-  // Build set of already-analyzed URLs from SQLite
-  const analyzedUrls = getAllUrls();
-
-  // Filter to real news URLs not yet analyzed
-  const pending = rawNews
-    .filter((r) => r.url && !analyzedUrls.has(r.url))
-    .slice(0, opts.limit);
-
-  console.log(`raw-news.json: ${rawNews.length} articles`);
-  console.log(`Already analyzed: ${analyzedUrls.size}`);
-  console.log(`Pending: ${pending.length}${opts.limit < Infinity ? ` (capped at ${opts.limit})` : ''}\n`);
-
-  if (pending.length === 0) {
-    console.log('Nothing new to analyze.');
-    return;
-  }
-
+  const pending = getPendingArticles(opts.limit, opts.corpus);
+  console.log(`Pending articles: ${pending.length}`);
   if (opts.dryRun) {
-    console.log('Dry run — would analyze:');
-    pending.forEach((r) => console.log(`  [${r.source}] ${r.url}`));
+    for (const a of pending) console.log(`  [${a.corpus}] ${a.source} — ${a.url}`);
     return;
   }
+  if (pending.length === 0) return;
 
-  const delay = (ms) => new Promise((r) => setTimeout(r, ms));
-  let done = 0;
-  let failed = 0;
+  const ctx = createContext();
+  if (ctx.embeddingWarning) log(`WARNING ${ctx.embeddingWarning}`);
 
-  for (const record of pending) {
-    console.log(`[${done + 1}/${pending.length}] ${record.source} — ${record.url}`);
-    try {
-      await runAnalyzer(record.url);
-      done++;
-    } catch (err) {
-      console.error(`  Failed: ${err.message}`);
-      failed++;
-    }
-    if (done + failed < pending.length) await delay(opts.delay);
+  const tally = {};
+  for (const article of pending) {
+    const outcome = await analyzeArticle(article, ctx, log);
+    tally[outcome] = (tally[outcome] ?? 0) + 1;
   }
-
-  console.log(`\nDone. Analyzed: ${done}  Failed: ${failed}`);
+  const summary = Object.entries(tally).map(([k, v]) => `${k}=${v}`).join(' ');
+  log(`analysis batch complete ${summary}`);
+  console.log(summary);
+  if (tally.error) process.exitCode = 2;
 }
 
-main().catch((err) => {
-  console.error('Fatal:', err instanceof Error ? err.message : err);
-  process.exit(1);
-});
+main()
+  .catch((err) => {
+    console.error(err);
+    process.exitCode = 1;
+  })
+  .finally(closeBrowser);
