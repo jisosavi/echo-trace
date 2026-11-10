@@ -12,3 +12,7 @@ agent/data/
 
 # OS
 .DS_Store
+
+# Editor / local tool settings
+.vscode/
+.claude/settings.local.json

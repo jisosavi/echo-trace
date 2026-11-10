@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "private": true,
   "description": "ECHO/trace — traces the rhetorical inheritance of contemporary state propaganda",
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "GPL-3.0-only",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jisosavi/echo-trace.git"

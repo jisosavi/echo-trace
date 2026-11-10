@@ -2,7 +2,7 @@
 
 **Authoritarian propaganda does not invent new language. It inherits it.**
 
-ECHO/trace is an autonomous AI-powered pattern-matching system that exposes this inheritance in real time. Every six hours, it scrapes 21 state media outlets in authoritarian states, identifies rhetorical patterns using a 22-trope taxonomy, and matches them against a curated archive of 88 historical quotes from over 30 figures spanning the 20th and 21st centuries. A control corpus of public-service broadcasters in democracies runs through the identical pipeline, so every echo can be read against a baseline.
+ECHO/trace is an autonomous AI-powered pattern-matching system that exposes this inheritance in real time. Every six hours, it scrapes 21 state media outlets in authoritarian states, identifies rhetorical patterns using a 22-trope taxonomy, and matches them against a curated archive of 88 historical quotes from 70 figures spanning the 20th and 21st centuries. A control corpus of public-service broadcasters in democracies runs through the identical pipeline, so every echo can be read against a baseline.
 
 The output: forensic pairings that juxtapose today's propaganda with its structural ancestors — a Putin spokesman echoing Goebbels, Chinese state media recycling Stalin, Iranian broadcasts mirroring Mussolini.
 
@@ -172,7 +172,7 @@ Each comparison is annotated across 18 scientific dimensions. Dimensions marked 
 
 ## Trope Taxonomy
 
-The taxonomy in `archival-memory.json` covers 22 rhetorical tropes. Each entry contains modern keywords for detection, 88 historical echoes in total with verbatim quotes and verifiable source citations, and full annotation across all 18 dimensions above.
+The taxonomy in `archival-memory.json` covers 22 rhetorical tropes. Each entry contains modern keywords for detection, 88 historical echoes in total, each with a source citation and a verification status (see [Archive Verification](#archive-verification)), and full annotation across all 18 dimensions above.
 
 ### Kremlin-aligned tropes (v1.0 — 14 tropes)
 
@@ -362,6 +362,7 @@ npm run start   # production server
 | `/[locale]/console` | Live Console — streaming log + world map |
 | `/api/logs` | SSE endpoint — event-driven push from `cycle.log` via `fs.watch` |
 | `/api/map-status` | JSON endpoint — active/processed countries for world map |
+| `/api/status` | JSON endpoint — last scrape, last analysis and whether a cycle is running (status bar) |
 
 ### Dashboard sections
 

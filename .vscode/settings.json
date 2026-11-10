@@ -1,7 +1,0 @@
-{
-  "typescript.tsconfig.paths": {
-    "/Users/jki/Documents/Visual Code/forensic-semiotics/web/**": [
-      "/Users/jki/Documents/Visual Code/forensic-semiotics/web/tsconfig.json"
-    ]
-  }
-}

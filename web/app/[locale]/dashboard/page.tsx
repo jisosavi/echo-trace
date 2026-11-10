@@ -239,7 +239,7 @@ export default async function DashboardPage() {
       {stats.tropeRanked.length > 0 && (
         <section className="rounded-lg border border-zinc-800 bg-zinc-900/40 p-5">
           <h2 className="mb-1 text-sm font-medium uppercase tracking-wide text-zinc-400">{t('sections.tropeDistribution')}</h2>
-          <Ref name="Forensic Semiotics Project — 14-trope authoritarian rhetoric taxonomy" url="https://github.com/jisosavi/forensic-semiotics" />
+          <Ref name="ECHO/trace — 22-trope authoritarian rhetoric taxonomy" url="https://github.com/jisosavi/echo-trace" />
           <div className="space-y-3">
             {stats.tropeRanked.map(([trope, count]) => (
               <BarRow key={trope} label={trope} count={count} total={stats.totalClassified} maxCount={stats.maxTrope}
