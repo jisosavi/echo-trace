@@ -1,7 +1,14 @@
-node_modules
+# Dependencies & build output
+node_modules/
 .next/
+*.tsbuildinfo
+
+# Secrets
 .env
 .env.local
-agent/data/echo-trace.db
-agent/data/echo-trace.db-shm
-agent/data/echo-trace.db-wal
+
+# Runtime data (database, logs, scraped text, worklists, backups)
+agent/data/
+
+# OS
+.DS_Store
