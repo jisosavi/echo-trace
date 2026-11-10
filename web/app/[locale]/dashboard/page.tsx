@@ -1,13 +1,9 @@
-import { promises as fs } from 'node:fs';
-import path from 'node:path';
 import { getTranslations } from 'next-intl/server';
 import { StatusBar } from '@/components/status-bar';
 import { formatUTC } from '@/lib/format';
-import { getAllComparisons } from '@/lib/db';
+import { getAllComparisons, getBaselineStats, getSourceActivity, getTotalArticles, type CorpusStats } from '@/lib/db';
 
 export const revalidate = 21600;
-
-const DATA_DIR = path.resolve(process.cwd(), '../agent/data');
 
 type Comparison = {
   id: string;
@@ -29,12 +25,6 @@ type Comparison = {
   };
 };
 
-type RawNewsRecord = { source: string; regime: string; url: string; retrieved_at: string };
-
-async function readJson<T>(filePath: string): Promise<T | null> {
-  try { return JSON.parse(await fs.readFile(filePath, 'utf8')) as T; } catch { return null; }
-}
-
 function countArray(comps: Comparison[], field: keyof NonNullable<Comparison['analysis']>) {
   const counts: Record<string, number> = {};
   for (const c of comps) {
@@ -54,11 +44,8 @@ function countScalar(comps: Comparison[], field: keyof NonNullable<Comparison['a
 }
 
 async function loadStats() {
-  const [rawNews] = await Promise.all([
-    readJson<RawNewsRecord[]>(path.join(DATA_DIR, 'raw-news.json')),
-  ]);
-  const comps = getAllComparisons() as Comparison[];
-  const news = rawNews ?? [];
+  const comps = getAllComparisons('state') as Comparison[];
+  const sources = getSourceActivity();
   const tropeCounts: Record<string, number> = {};
   let confidenceSum = 0, confidenceN = 0;
   for (const c of comps) {
@@ -68,12 +55,6 @@ async function loadStats() {
   }
   const tropeRanked = Object.entries(tropeCounts).sort((a, b) => b[1] - a[1]);
   const maxTrope = tropeRanked[0]?.[1] ?? 1;
-  const sourceCounts: Record<string, { count: number; regime: string; lastSeen: string }> = {};
-  for (const r of news) {
-    const e = sourceCounts[r.source];
-    if (!e) sourceCounts[r.source] = { count: 1, regime: r.regime, lastSeen: r.retrieved_at };
-    else { e.count++; if (r.retrieved_at > e.lastSeen) e.lastSeen = r.retrieved_at; }
-  }
   return {
     totalClassified: comps.length,
     avgConfidence: confidenceN > 0 ? confidenceSum / confidenceN : 0,
@@ -89,8 +70,9 @@ async function loadStats() {
     rhetoricCounts:   countArray(comps,  'eudisinfo_rhetoric'),
     conspiracyCounts: countArray(comps,  'eudisinfo_conspiracy'),
     ttpCounts:        countArray(comps,  'eudisinfo_ttp'),
-    totalNews: news.length,
-    sourceRanked: Object.entries(sourceCounts).sort((a, b) => b[1].count - a[1].count),
+    totalNews: getTotalArticles(),
+    sources,
+    baseline: getBaselineStats(),
   };
 }
 
@@ -173,6 +155,59 @@ function GroupLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
+function Baseline({ stats, t }: { stats: Record<'state' | 'control', CorpusStats>; t: Awaited<ReturnType<typeof getTranslations>> }) {
+  const rows: { label: string; value: (c: CorpusStats) => string }[] = [
+    { label: t('baseline.analysed'), value: (c) => c.analysed.toLocaleString() },
+    { label: t('baseline.propagandaShare'), value: (c) => (c.analysed ? `${pct(c.propaganda, c.analysed)}%` : '—') },
+    { label: t('baseline.echoRate'), value: (c) => (c.analysed ? `${pct(c.echoes, c.analysed)}%` : '—') },
+    { label: t('baseline.meanSimilarity'), value: (c) => (c.meanTopSimilarity != null ? c.meanTopSimilarity.toFixed(3) : '—') },
+    { label: t('baseline.naziShare'), value: (c) => (c.echoes ? `${pct(c.nazi, c.echoes)}%` : '—') },
+    { label: t('baseline.dehumanisation'), value: (c) => (c.meanDehumanisation != null ? c.meanDehumanisation.toFixed(1) : '—') },
+  ];
+  const max = Math.max(stats.state.analysed ? stats.state.echoes / stats.state.analysed : 0, stats.control.analysed ? stats.control.echoes / stats.control.analysed : 0, 0.01);
+  const bar = (c: CorpusStats, color: string, label: string) => {
+    const rate = c.analysed ? c.echoes / c.analysed : 0;
+    return (
+      <div className="grid grid-cols-[8rem_1fr_3rem] items-center gap-3">
+        <span className="text-xs text-zinc-300">{label}</span>
+        <div className="h-3 overflow-hidden rounded bg-zinc-800">
+          <div className={`h-full ${color}`} style={{ width: `${(rate / max) * 100}%` }} />
+        </div>
+        <span className="text-right font-mono text-xs text-zinc-400">{c.analysed ? `${Math.round(rate * 100)}%` : '—'}</span>
+      </div>
+    );
+  };
+  return (
+    <section className="rounded-lg border border-zinc-800 bg-zinc-900/40 p-5">
+      <h2 className="mb-1 text-sm font-medium uppercase tracking-wide text-zinc-400">{t('baseline.title')}</h2>
+      <p className="mb-4 text-xs text-zinc-500">{t('baseline.subtitle')}</p>
+      <div className="mb-5 space-y-2">
+        {bar(stats.state, 'bg-emerald-500', t('baseline.state'))}
+        {bar(stats.control, 'bg-sky-500', t('baseline.control'))}
+      </div>
+      <table className="w-full text-xs">
+        <thead>
+          <tr className="border-b border-zinc-800 text-left text-zinc-500">
+            <th className="pb-2 pr-4 font-normal" />
+            <th className="pb-2 pr-4 font-normal">{t('baseline.state')}</th>
+            <th className="pb-2 font-normal">{t('baseline.control')}</th>
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-zinc-800/50">
+          {rows.map((r) => (
+            <tr key={r.label} className="text-zinc-300">
+              <td className="py-1.5 pr-4 text-zinc-500">{r.label}</td>
+              <td className="py-1.5 pr-4 font-mono">{r.value(stats.state)}</td>
+              <td className="py-1.5 font-mono">{r.value(stats.control)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      {stats.control.analysed < 30 && <p className="mt-3 text-[11px] text-amber-400/80">{t('baseline.smallSample', { n: stats.control.analysed })}</p>}
+    </section>
+  );
+}
+
 export default async function DashboardPage() {
   const t = await getTranslations('dashboard');
   const stats = await loadStats();
@@ -196,8 +231,10 @@ export default async function DashboardPage() {
         <StatCard label={t('stats.tropes')} value={String(stats.tropeRanked.filter(([tr]) => tr !== 'unclassified').length)} sub={t('stats.tropesSub')} />
         <StatCard label={t('stats.articles')}
           value={stats.totalNews > 0 ? stats.totalNews.toLocaleString() : '—'}
-          sub={stats.totalNews > 0 ? t('stats.sources', { n: stats.sourceRanked.length }) : t('stats.noScrape')} />
+          sub={stats.totalNews > 0 ? t('stats.sources', { n: stats.sources.length }) : t('stats.noScrape')} />
       </div>
+
+      <Baseline stats={stats.baseline} t={t} />
 
       {stats.tropeRanked.length > 0 && (
         <section className="rounded-lg border border-zinc-800 bg-zinc-900/40 p-5">
@@ -305,10 +342,10 @@ export default async function DashboardPage() {
         </div>
       </div>
 
-      {stats.sourceRanked.length > 0 && (
+      {stats.sources.length > 0 && (
         <section className="rounded-lg border border-zinc-800 bg-zinc-900/40 p-5">
           <h2 className="mb-4 text-sm font-medium uppercase tracking-wide text-zinc-400">
-            {t('sections.sourceActivity')} <span className="normal-case text-zinc-600">({t('stats.sources', { n: stats.sourceRanked.length })})</span>
+            {t('sections.sourceActivity')} <span className="normal-case text-zinc-600">({t('stats.sources', { n: stats.sources.length })})</span>
           </h2>
           <div className="overflow-x-auto">
             <table className="w-full text-xs">
@@ -317,16 +354,21 @@ export default async function DashboardPage() {
                   <th className="pb-2 pr-4 font-normal">{t('table.source')}</th>
                   <th className="pb-2 pr-4 font-normal">{t('table.regime')}</th>
                   <th className="pb-2 pr-4 font-normal tabular-nums">{t('table.articles')}</th>
+                  <th className="pb-2 pr-4 font-normal tabular-nums">{t('baseline.echoRate')}</th>
                   <th className="pb-2 font-normal">{t('table.lastSeen')}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-zinc-800/50">
-                {stats.sourceRanked.map(([source, data]) => (
-                  <tr key={source} className="text-zinc-300">
-                    <td className="py-2 pr-4">{source}</td>
-                    <td className="py-2 pr-4 text-zinc-500">{data.regime}</td>
-                    <td className="py-2 pr-4 font-mono">{data.count}</td>
-                    <td className="py-2 text-zinc-500">{formatUTC(data.lastSeen)}</td>
+                {stats.sources.map((s) => (
+                  <tr key={`${s.corpus}:${s.source}`} className="text-zinc-300">
+                    <td className="py-2 pr-4">
+                      {s.source}
+                      {s.corpus === 'control' && <span className="ml-2 text-[10px] text-sky-400">{t('baseline.control')}</span>}
+                    </td>
+                    <td className="py-2 pr-4 text-zinc-500">{s.regime}</td>
+                    <td className="py-2 pr-4 font-mono">{s.articles}</td>
+                    <td className="py-2 pr-4 font-mono">{s.analysed > 0 ? `${pct(s.echoes, s.analysed)}%` : '—'}</td>
+                    <td className="py-2 text-zinc-500">{formatUTC(s.lastSeen)}</td>
                   </tr>
                 ))}
               </tbody>

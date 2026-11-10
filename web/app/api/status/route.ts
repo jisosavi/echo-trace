@@ -38,7 +38,10 @@ function parseLog(content: string) {
 function readLastAnalysis(): string | null {
   try {
     const db = new Database(DB_PATH, { readonly: true });
-    const row = db.prepare('SELECT MAX(timestamp) as ts FROM comparisons').get() as { ts: string | null };
+    // Every analysed article counts, including ones with no comparison (not propaganda / no echo).
+    const row = db.prepare(`SELECT MAX(ts) AS ts FROM (
+      SELECT MAX(analyzed_at) AS ts FROM articles UNION ALL SELECT MAX(timestamp) FROM comparisons
+    )`).get() as { ts: string | null };
     db.close();
     return row?.ts ?? null;
   } catch {

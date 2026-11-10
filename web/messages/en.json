@@ -55,6 +55,19 @@
       "regime": "Regime",
       "articles": "Articles",
       "lastSeen": "Last seen"
+    },
+    "baseline": {
+      "title": "Baseline — state media vs control corpus",
+      "subtitle": "Both corpora pass through the identical, source-blind pipeline. The gap between them is the finding.",
+      "state": "State media",
+      "control": "Control",
+      "analysed": "Articles analysed",
+      "propagandaShare": "Classified as propaganda",
+      "echoRate": "Echo rate",
+      "meanSimilarity": "Mean nearest-echo similarity",
+      "naziShare": "Echoes from Nazi figures",
+      "dehumanisation": "Mean dehumanisation (0–10)",
+      "smallSample": "Only {n} control articles analysed so far — the baseline is not yet reliable."
     }
   },
   "comparisons": {
@@ -64,7 +77,13 @@
     "fullAnalysis": "Full analysis →",
     "translatedFrom": "Translated from {language} by {service}",
     "confidence": "{n}% confidence",
-    "wikipedia": "Wikipedia"
+    "wikipedia": "Wikipedia",
+    "stateTab": "State media",
+    "controlTab": "Control corpus",
+    "controlNote": "Public-service media in democracies, analysed by the identical pipeline. Shown for comparison — the baseline against which state-media echoes are read.",
+    "unverified": "quote unverified",
+    "paraphrase": "paraphrase",
+    "noEcho": "No historical parallel found"
   },
   "comparisonDetail": {
     "historicalEcho": "Historical Echo",
@@ -81,13 +100,30 @@
       "kremlinNarratives": "Pro-Kremlin narratives",
       "rhetoric": "Rhetoric (SWAMPED)",
       "conspiracy": "Conspiracy patterns",
-      "ttp": "TTPs"
+      "ttp": "TTPs",
+      "mythFunction": "Myth function",
+      "enemyType": "Enemy type",
+      "legitimationMode": "Legitimation",
+      "frameFunction": "Frame function",
+      "temporality": "Temporality",
+      "dehumanisation": "Dehumanisation",
+      "actantial": "Actantial model"
     },
     "meta": {
       "confidence": "Confidence:",
       "tropes": "Tropes:",
       "notes": "Notes:",
-      "translatedFrom": "Translated from {language} by {service}"
+      "translatedFrom": "Translated from {language} by {service}",
+      "similarity": "Semantic similarity:",
+      "sharedLogic": "Shared logic:",
+      "provenance": "Provenance:",
+      "nearVerbatim": "quote matched to nearest sentence"
+    },
+    "controlBadge": "control corpus",
+    "noEcho": "No historical statement in the archive shares this rhetorical logic.",
+    "verification": {
+      "unverified": "This historical quote has not yet been verified against its primary source.",
+      "paraphrase": "This is a paraphrase, not the figure’s verbatim words."
     }
   },
   "console": {

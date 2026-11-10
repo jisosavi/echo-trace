@@ -55,6 +55,19 @@
       "regime": "Régime",
       "articles": "Articles",
       "lastSeen": "Dernière vue"
+    },
+    "baseline": {
+      "title": "Référence — médias d’État vs corpus de contrôle",
+      "subtitle": "Les deux corpus passent par le même pipeline, aveugle à la source. L’écart entre eux est le résultat.",
+      "state": "Médias d'État",
+      "control": "Contrôle",
+      "analysed": "Articles analysés",
+      "propagandaShare": "Classés comme propagande",
+      "echoRate": "Taux d'écho",
+      "meanSimilarity": "Similarité moyenne de l’écho le plus proche",
+      "naziShare": "Échos de figures nazies",
+      "dehumanisation": "Déshumanisation moyenne (0–10)",
+      "smallSample": "Seulement {n} articles de contrôle analysés — la référence n’est pas encore fiable."
     }
   },
   "comparisons": {
@@ -64,7 +77,13 @@
     "fullAnalysis": "Analyse complète →",
     "translatedFrom": "Traduit du {language} par {service}",
     "confidence": "{n}% de confiance",
-    "wikipedia": "Wikipédia"
+    "wikipedia": "Wikipédia",
+    "stateTab": "Médias d'État",
+    "controlTab": "Corpus de contrôle",
+    "controlNote": "Médias de service public de pays démocratiques, analysés par le même pipeline. Affichés à titre de comparaison — la référence à laquelle se mesurent les échos des médias d’État.",
+    "unverified": "citation non vérifiée",
+    "paraphrase": "paraphrase",
+    "noEcho": "Aucun parallèle historique trouvé"
   },
   "comparisonDetail": {
     "historicalEcho": "Écho Historique",
@@ -81,13 +100,30 @@
       "kremlinNarratives": "Récits pro-Kremlin",
       "rhetoric": "Rhétorique (SWAMPED)",
       "conspiracy": "Schémas conspirationnistes",
-      "ttp": "TTPs"
+      "ttp": "TTPs",
+      "mythFunction": "Fonction mythique",
+      "enemyType": "Type d'ennemi",
+      "legitimationMode": "Légitimation",
+      "frameFunction": "Fonction du cadrage",
+      "temporality": "Temporalité",
+      "dehumanisation": "Déshumanisation",
+      "actantial": "Modèle actantiel"
     },
     "meta": {
       "confidence": "Confiance :",
       "tropes": "Tropes :",
       "notes": "Notes :",
-      "translatedFrom": "Traduit du {language} par {service}"
+      "translatedFrom": "Traduit du {language} par {service}",
+      "similarity": "Similarité sémantique :",
+      "sharedLogic": "Logique commune :",
+      "provenance": "Provenance :",
+      "nearVerbatim": "citation rapprochée de la phrase la plus proche"
+    },
+    "controlBadge": "corpus de contrôle",
+    "noEcho": "Aucune déclaration historique de l’archive ne partage cette logique rhétorique.",
+    "verification": {
+      "unverified": "Cette citation historique n’a pas encore été vérifiée dans sa source primaire.",
+      "paraphrase": "Il s’agit d’une paraphrase, non des mots exacts du personnage."
     }
   },
   "console": {

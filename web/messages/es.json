@@ -55,6 +55,19 @@
       "regime": "Régimen",
       "articles": "Artículos",
       "lastSeen": "Última vez visto"
+    },
+    "baseline": {
+      "title": "Referencia — medios estatales vs corpus de control",
+      "subtitle": "Ambos corpus pasan por el mismo proceso, ciego a la fuente. La diferencia entre ellos es el hallazgo.",
+      "state": "Medios estatales",
+      "control": "Control",
+      "analysed": "Artículos analizados",
+      "propagandaShare": "Clasificados como propaganda",
+      "echoRate": "Tasa de eco",
+      "meanSimilarity": "Similitud media con el eco más cercano",
+      "naziShare": "Ecos de figuras nazis",
+      "dehumanisation": "Deshumanización media (0–10)",
+      "smallSample": "Solo {n} artículos de control analizados hasta ahora: la referencia aún no es fiable."
     }
   },
   "comparisons": {
@@ -64,7 +77,13 @@
     "fullAnalysis": "Análisis completo →",
     "translatedFrom": "Traducido del {language} por {service}",
     "confidence": "{n}% de confianza",
-    "wikipedia": "Wikipedia"
+    "wikipedia": "Wikipedia",
+    "stateTab": "Medios estatales",
+    "controlTab": "Corpus de control",
+    "controlNote": "Medios de servicio público de democracias, analizados con el mismo proceso. Se muestran como comparación: la referencia frente a la que se leen los ecos de los medios estatales.",
+    "unverified": "cita no verificada",
+    "paraphrase": "paráfrasis",
+    "noEcho": "No se encontró paralelo histórico"
   },
   "comparisonDetail": {
     "historicalEcho": "Eco Histórico",
@@ -81,13 +100,30 @@
       "kremlinNarratives": "Narrativas pro-Kremlin",
       "rhetoric": "Retórica (SWAMPED)",
       "conspiracy": "Patrones conspiratorios",
-      "ttp": "TTPs"
+      "ttp": "TTPs",
+      "mythFunction": "Función mítica",
+      "enemyType": "Tipo de enemigo",
+      "legitimationMode": "Legitimación",
+      "frameFunction": "Función del encuadre",
+      "temporality": "Temporalidad",
+      "dehumanisation": "Deshumanización",
+      "actantial": "Modelo actancial"
     },
     "meta": {
       "confidence": "Confianza:",
       "tropes": "Tropos:",
       "notes": "Notas:",
-      "translatedFrom": "Traducido del {language} por {service}"
+      "translatedFrom": "Traducido del {language} por {service}",
+      "similarity": "Similitud semántica:",
+      "sharedLogic": "Lógica compartida:",
+      "provenance": "Procedencia:",
+      "nearVerbatim": "cita ajustada a la frase más cercana"
+    },
+    "controlBadge": "corpus de control",
+    "noEcho": "Ninguna declaración histórica del archivo comparte esta lógica retórica.",
+    "verification": {
+      "unverified": "Esta cita histórica aún no se ha verificado con su fuente primaria.",
+      "paraphrase": "Es una paráfrasis, no las palabras textuales del personaje."
     }
   },
   "console": {

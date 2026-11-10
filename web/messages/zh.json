@@ -55,6 +55,19 @@
       "regime": "政权",
       "articles": "文章",
       "lastSeen": "最后出现"
+    },
+    "baseline": {
+      "title": "基准——官方媒体与对照语料",
+      "subtitle": "两组语料经过完全相同、不知来源的流程。二者之间的差距即为结论。",
+      "state": "官方媒体",
+      "control": "对照",
+      "analysed": "已分析文章",
+      "propagandaShare": "被判定为宣传",
+      "echoRate": "回声率",
+      "meanSimilarity": "最近回声的平均相似度",
+      "naziShare": "来自纳粹人物的回声",
+      "dehumanisation": "平均去人性化程度（0–10）",
+      "smallSample": "目前仅分析了 {n} 篇对照文章——基准尚不可靠。"
     }
   },
   "comparisons": {
@@ -64,7 +77,13 @@
     "fullAnalysis": "完整分析 →",
     "translatedFrom": "由{service}从{language}翻译",
     "confidence": "置信度{n}%",
-    "wikipedia": "维基百科"
+    "wikipedia": "维基百科",
+    "stateTab": "官方媒体",
+    "controlTab": "对照语料",
+    "controlNote": "民主国家的公共媒体，经由完全相同的流程分析。仅供对照——这是衡量官方媒体回声的基准。",
+    "unverified": "引文未核实",
+    "paraphrase": "转述",
+    "noEcho": "未找到历史对应"
   },
   "comparisonDetail": {
     "historicalEcho": "历史回声",
@@ -81,13 +100,30 @@
       "kremlinNarratives": "亲克里姆林宫叙事",
       "rhetoric": "修辞（SWAMPED）",
       "conspiracy": "阴谋论模式",
-      "ttp": "TTPs"
+      "ttp": "TTPs",
+      "mythFunction": "神话功能",
+      "enemyType": "敌人类型",
+      "legitimationMode": "合法化方式",
+      "frameFunction": "框架功能",
+      "temporality": "时间性",
+      "dehumanisation": "去人性化",
+      "actantial": "行动元模型"
     },
     "meta": {
       "confidence": "置信度：",
       "tropes": "修辞格：",
       "notes": "备注：",
-      "translatedFrom": "由{service}从{language}翻译"
+      "translatedFrom": "由{service}从{language}翻译",
+      "similarity": "语义相似度：",
+      "sharedLogic": "共同逻辑：",
+      "provenance": "来源信息：",
+      "nearVerbatim": "引文已匹配至最接近的句子"
+    },
+    "controlBadge": "对照语料",
+    "noEcho": "档案中没有任何历史言论与此修辞逻辑相同。",
+    "verification": {
+      "unverified": "此历史引文尚未与原始出处核对。",
+      "paraphrase": "此为转述，并非该人物的原话。"
     }
   },
   "console": {

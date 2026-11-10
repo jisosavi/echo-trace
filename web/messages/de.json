@@ -55,6 +55,19 @@
       "regime": "Regime",
       "articles": "Artikel",
       "lastSeen": "Zuletzt gesehen"
+    },
+    "baseline": {
+      "title": "Basislinie — Staatsmedien vs Kontrollkorpus",
+      "subtitle": "Beide Korpora durchlaufen dieselbe quellenblinde Pipeline. Der Abstand zwischen ihnen ist der Befund.",
+      "state": "Staatsmedien",
+      "control": "Kontrolle",
+      "analysed": "Analysierte Artikel",
+      "propagandaShare": "Als Propaganda eingestuft",
+      "echoRate": "Echo-Rate",
+      "meanSimilarity": "Mittlere Ähnlichkeit zum nächsten Echo",
+      "naziShare": "Echos von NS-Figuren",
+      "dehumanisation": "Mittlere Entmenschlichung (0–10)",
+      "smallSample": "Bisher nur {n} Kontrollartikel analysiert — die Basislinie ist noch nicht belastbar."
     }
   },
   "comparisons": {
@@ -64,7 +77,13 @@
     "fullAnalysis": "Vollständige Analyse →",
     "translatedFrom": "Übersetzt aus dem {language} von {service}",
     "confidence": "{n}% Konfidenz",
-    "wikipedia": "Wikipedia"
+    "wikipedia": "Wikipedia",
+    "stateTab": "Staatsmedien",
+    "controlTab": "Kontrollkorpus",
+    "controlNote": "Öffentlich-rechtliche Medien aus Demokratien, mit derselben Pipeline analysiert. Zum Vergleich gezeigt — die Basislinie, an der die Echos der Staatsmedien gemessen werden.",
+    "unverified": "Zitat ungeprüft",
+    "paraphrase": "Paraphrase",
+    "noEcho": "Keine historische Parallele gefunden"
   },
   "comparisonDetail": {
     "historicalEcho": "Historisches Echo",
@@ -81,13 +100,30 @@
       "kremlinNarratives": "Pro-Kreml-Narrative",
       "rhetoric": "Rhetorik (SWAMPED)",
       "conspiracy": "Verschwörungsmuster",
-      "ttp": "TTPs"
+      "ttp": "TTPs",
+      "mythFunction": "Mythosfunktion",
+      "enemyType": "Feindtyp",
+      "legitimationMode": "Legitimation",
+      "frameFunction": "Frame-Funktion",
+      "temporality": "Zeitlichkeit",
+      "dehumanisation": "Entmenschlichung",
+      "actantial": "Aktantenmodell"
     },
     "meta": {
       "confidence": "Konfidenz:",
       "tropes": "Tropen:",
       "notes": "Anmerkungen:",
-      "translatedFrom": "Übersetzt aus dem {language} von {service}"
+      "translatedFrom": "Übersetzt aus dem {language} von {service}",
+      "similarity": "Semantische Ähnlichkeit:",
+      "sharedLogic": "Gemeinsame Logik:",
+      "provenance": "Herkunft:",
+      "nearVerbatim": "Zitat dem nächstliegenden Satz zugeordnet"
+    },
+    "controlBadge": "Kontrollkorpus",
+    "noEcho": "Keine historische Aussage im Archiv teilt diese rhetorische Logik.",
+    "verification": {
+      "unverified": "Dieses historische Zitat wurde noch nicht an der Primärquelle geprüft.",
+      "paraphrase": "Dies ist eine Paraphrase, nicht der genaue Wortlaut der Person."
     }
   },
   "console": {

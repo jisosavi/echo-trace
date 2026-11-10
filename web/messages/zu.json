@@ -55,6 +55,19 @@
       "regime": "Uhulumeni",
       "articles": "Izindaba",
       "lastSeen": "Kubonwe l'khoke"
+    },
+    "baseline": {
+      "title": "Isisekelo — abezindaba bombuso vs iqoqo lokuqhathanisa",
+      "subtitle": "Womabili amaqoqo adlula endleleni efanayo engazi umthombo. Umehluko phakathi kwawo yiwona mphumela.",
+      "state": "Abezindaba bombuso",
+      "control": "Ukuqhathanisa",
+      "analysed": "Izindatshana ezihlaziyiwe",
+      "propagandaShare": "Kuhlukaniswe njenge-propaganda",
+      "echoRate": "Izinga lomsindo",
+      "meanSimilarity": "Ukufana okumaphakathi nomsindo oseduze",
+      "naziShare": "Imisindo evela kubantu bamaNazi",
+      "dehumanisation": "Ukwehlisa ubuntu okumaphakathi (0–10)",
+      "smallSample": "Izindatshana zokuqhathanisa ezingu-{n} kuphela ezihlaziyiwe — isisekelo asikathembeki."
     }
   },
   "comparisons": {
@@ -64,7 +77,13 @@
     "fullAnalysis": "Ukuhlaziya okugcwele →",
     "translatedFrom": "Hunyushwe ku-{language} ngu-{service}",
     "confidence": "{n}% ukwethemba",
-    "wikipedia": "Wikipedia"
+    "wikipedia": "Wikipedia",
+    "stateTab": "Abezindaba bombuso",
+    "controlTab": "Iqoqo lokuqhathanisa",
+    "controlNote": "Abezindaba bomphakathi emazweni entando yeningi, ahlaziywe ngendlela efanayo. Kuboniswa ukuze kuqhathaniswe — isisekelo sokufunda imisindo yabezindaba bombuso.",
+    "unverified": "isicaphuno asikaqinisekiswa",
+    "paraphrase": "ukuphinda ngamanye amazwi",
+    "noEcho": "Akutholakalanga ukufana komlando"
   },
   "comparisonDetail": {
     "historicalEcho": "Impindwa Yasemlandweni",
@@ -81,13 +100,30 @@
       "kremlinNarratives": "Izindaba zangaphansi kwe-Kremlin",
       "rhetoric": "Umlabalaba (SWAMPED)",
       "conspiracy": "Izinhlelo zamandla",
-      "ttp": "TTPs"
+      "ttp": "TTPs",
+      "mythFunction": "Umsebenzi wenganekwane",
+      "enemyType": "Uhlobo lwesitha",
+      "legitimationMode": "Ukugunyaza",
+      "frameFunction": "Umsebenzi wohlaka",
+      "temporality": "Isikhathi",
+      "dehumanisation": "Ukwehlisa ubuntu",
+      "actantial": "Imodeli yabadlali"
     },
     "meta": {
       "confidence": "Ukwethemba:",
       "tropes": "Amaqiniso:",
       "notes": "Amanothi:",
-      "translatedFrom": "Hunyushwe ku-{language} ngu-{service}"
+      "translatedFrom": "Hunyushwe ku-{language} ngu-{service}",
+      "similarity": "Ukufana kwencazelo:",
+      "sharedLogic": "Umqondo ofanayo:",
+      "provenance": "Umsuka:",
+      "nearVerbatim": "isicaphuno sihlanganiswe nomusho oseduze"
+    },
+    "controlBadge": "iqoqo lokuqhathanisa",
+    "noEcho": "Asikho isitatimende somlando kungobo yomlando esabelana ngalo mqondo wokukhuluma.",
+    "verification": {
+      "unverified": "Lesi sicaphuno somlando asikaqinisekiswa emthonjeni wokuqala.",
+      "paraphrase": "Lokhu kuphindwe ngamanye amazwi, akuwona amagama aqondile alowo muntu."
     }
   },
   "console": {

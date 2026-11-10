@@ -55,6 +55,19 @@
       "regime": "Regime",
       "articles": "Articoli",
       "lastSeen": "Ultima visualizzazione"
+    },
+    "baseline": {
+      "title": "Riferimento — media di Stato vs corpus di controllo",
+      "subtitle": "Entrambi i corpus attraversano la stessa pipeline, cieca rispetto alla fonte. La distanza tra i due è il risultato.",
+      "state": "Media di Stato",
+      "control": "Controllo",
+      "analysed": "Articoli analizzati",
+      "propagandaShare": "Classificati come propaganda",
+      "echoRate": "Tasso di eco",
+      "meanSimilarity": "Somiglianza media con l'eco più vicina",
+      "naziShare": "Echi da figure naziste",
+      "dehumanisation": "Disumanizzazione media (0–10)",
+      "smallSample": "Finora solo {n} articoli di controllo analizzati — il riferimento non è ancora affidabile."
     }
   },
   "comparisons": {
@@ -64,7 +77,13 @@
     "fullAnalysis": "Analisi completa →",
     "translatedFrom": "Tradotto dal {language} da {service}",
     "confidence": "{n}% di confidenza",
-    "wikipedia": "Wikipedia"
+    "wikipedia": "Wikipedia",
+    "stateTab": "Media di Stato",
+    "controlTab": "Corpus di controllo",
+    "controlNote": "Media di servizio pubblico di paesi democratici, analizzati con la stessa pipeline. Mostrati per confronto — il riferimento con cui leggere gli echi dei media di Stato.",
+    "unverified": "citazione non verificata",
+    "paraphrase": "parafrasi",
+    "noEcho": "Nessun parallelo storico trovato"
   },
   "comparisonDetail": {
     "historicalEcho": "Eco Storica",
@@ -81,13 +100,30 @@
       "kremlinNarratives": "Narrazioni pro-Cremlino",
       "rhetoric": "Retorica (SWAMPED)",
       "conspiracy": "Schemi cospirativi",
-      "ttp": "TTPs"
+      "ttp": "TTPs",
+      "mythFunction": "Funzione mitica",
+      "enemyType": "Tipo di nemico",
+      "legitimationMode": "Legittimazione",
+      "frameFunction": "Funzione del frame",
+      "temporality": "Temporalità",
+      "dehumanisation": "Disumanizzazione",
+      "actantial": "Modello attanziale"
     },
     "meta": {
       "confidence": "Confidenza:",
       "tropes": "Tropi:",
       "notes": "Note:",
-      "translatedFrom": "Tradotto dal {language} da {service}"
+      "translatedFrom": "Tradotto dal {language} da {service}",
+      "similarity": "Somiglianza semantica:",
+      "sharedLogic": "Logica comune:",
+      "provenance": "Provenienza:",
+      "nearVerbatim": "citazione associata alla frase più vicina"
+    },
+    "controlBadge": "corpus di controllo",
+    "noEcho": "Nessuna dichiarazione storica dell’archivio condivide questa logica retorica.",
+    "verification": {
+      "unverified": "Questa citazione storica non è ancora stata verificata sulla fonte primaria.",
+      "paraphrase": "Si tratta di una parafrasi, non delle parole testuali del personaggio."
     }
   },
   "console": {

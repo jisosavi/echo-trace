@@ -8,27 +8,20 @@ const LOG_PATH = process.env.CYCLE_LOG_PATH ??
   path.resolve(process.cwd(), '../agent/data/cycle.log');
 
 // URL domain pattern → ISO 3166-1 numeric code (matches world-atlas topojson ids)
+// State-media sources only — control-corpus outlets are deliberately not drawn on the map.
 const URL_COUNTRY: [RegExp, string][] = [
   [/tass\.com|kremlin\.ru|government\.ru/,                '643'], // Russia
-  [/xinhuanet|english\.news\.cn|chinadaily|people\.cn|globaltimes\.cn/, '156'], // China
-  [/belta\.by|ont\.by/,                                   '112'], // Belarus
+  [/english\.news\.cn|chinadaily|people\.cn|globaltimes\.cn/, '156'], // China
+  [/belta\.by|sb\.by/,                                    '112'], // Belarus
   [/granma\.cu|prensa-latina\.cu|cubadebate\.cu/,         '192'], // Cuba
   [/presstv\.ir|tehrantimes\.com/,                        '364'], // Iran
   [/kcna\.kp/,                                             '408'], // North Korea
-  [/avn\.info\.ve|vtv\.gob\.ve/,                          '862'], // Venezuela
-  [/herald\.co\.zw/,                                      '716'], // Zimbabwe
-  [/sana\.sy/,                                            '760'], // Syria
+  [/spa\.gov\.sa/,                                         '682'], // Saudi Arabia
   [/shabait\.com/,                                        '232'], // Eritrea
   [/tdh\.gov\.tm/,                                        '795'], // Turkmenistan
   [/khovar\.tj/,                                          '762'], // Tajikistan
-  [/saba\.ye/,                                            '887'], // Yemen
-  [/spsrasd\.info/,                                       '732'], // Western Sahara
   [/gnlm\.com\.mm/,                                       '104'], // Myanmar
-  [/eswatiniobserver\.com|times\.co\.sz/,                 '748'], // Eswatini
-  [/aljazeera\.com/,                                      '634'], // Qatar
-  [/saudigazette\.com\.sa/,                               '682'], // Saudi Arabia
-  [/middleeasteye\.net/,                                  '826'], // UK
-  [/origo\.hu|magyarnemzet\.hu|pestisracok\.hu/,          '348'], // Hungary
+  [/eswatiniobserver\.com/,                               '748'], // Eswatini
 ];
 
 function urlToCountry(url: string): string | null {

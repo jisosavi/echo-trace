@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import type React from 'react';
 import { formatUTC } from '@/lib/format';
 import { getComparisonById } from '@/lib/db';
+import { isTrusted, type VerificationStatus } from '@/lib/archive';
 
 export const revalidate = 21600;
 
@@ -19,6 +20,15 @@ type Analysis = {
   eudisinfo_rhetoric?: string[];
   eudisinfo_conspiracy?: string[];
   eudisinfo_ttp?: string[];
+  myth_function?: string;
+  enemy_type?: string;
+  legitimation_mode?: string[];
+  frame_function?: string;
+  dehumanisation_level?: number;
+  temporality?: string;
+  greimas_actantial?: Record<string, string>;
+  rationale?: string;
+  shared_logic?: string | null;
 };
 
 type Comparison = {
@@ -33,9 +43,17 @@ type Comparison = {
   tropes: string[];
   confidence: number;
   analysis?: Analysis;
-  historical_echo?: { figure: string; year: string; quote: string; context: string; source?: { citation: string; url?: string } };
+  historical_echo?: { figure: string; year: string; quote: string; context: string; source?: { citation: string; url?: string }; verification?: VerificationStatus | null };
   divergence_note?: string;
   notes: string;
+  corpus: 'state' | 'control';
+  outcome?: string | null;
+  similarity?: number | null;
+  speaker?: string | null;
+  claim_verbatim?: boolean | null;
+  models?: Record<string, string | null> | null;
+  prompt_version?: string | null;
+  archive_version?: string | null;
 };
 
 function strategyBadge(s: string) {
@@ -103,7 +121,12 @@ export default async function ComparisonDetailPage({ params }: { params: Promise
   return (
     <main className="mx-auto min-h-screen w-full max-w-4xl px-6 py-12">
       <div className="mt-6">
-        <p className="text-xs text-zinc-500">{formatUTC(item.timestamp)}</p>
+        <p className="text-xs text-zinc-500">
+          {formatUTC(item.timestamp)}
+          {item.corpus === 'control' && (
+            <span className="ml-2 rounded border border-sky-800 bg-sky-950/40 px-1.5 py-px text-[10px] text-sky-300">{t('controlBadge')}</span>
+          )}
+        </p>
         <h1 className="mt-2 text-3xl font-semibold">{item.historical_parallel}</h1>
       </div>
 
@@ -118,6 +141,7 @@ export default async function ComparisonDetailPage({ params }: { params: Promise
           </div>
         )}
         <footer className="mt-3 text-sm text-zinc-500">
+          {item.speaker && <span className="mr-2 text-zinc-400">{item.speaker} ·</span>}
           <a href={item.source.url} target="_blank" rel="noopener noreferrer" className="hover:text-sky-300">
             {item.source.publication}
           </a>
@@ -144,7 +168,18 @@ export default async function ComparisonDetailPage({ params }: { params: Promise
                 }
               </p>
             )}
+            {!isTrusted(item.historical_echo.verification) && (
+              <p className="mt-3 text-xs text-amber-400/80">
+                {item.historical_echo.verification === 'paraphrase' ? t('verification.paraphrase') : t('verification.unverified')}
+              </p>
+            )}
           </div>
+        </section>
+      )}
+      {!item.historical_echo && item.outcome === 'no_echo' && (
+        <section className="mt-8">
+          <h2 className="mb-3 text-sm font-medium uppercase tracking-wide text-zinc-500">{t('historicalEcho')}</h2>
+          <p className="rounded-lg border border-zinc-800 bg-zinc-900/40 p-5 text-sm text-zinc-500">{t('noEcho')}</p>
         </section>
       )}
 
@@ -251,6 +286,39 @@ export default async function ComparisonDetailPage({ params }: { params: Promise
                 </div>
               </DimRow>
             )}
+            {item.analysis.myth_function && (
+              <DimRow label={t('labels.mythFunction')}><TagList items={[item.analysis.myth_function]} /></DimRow>
+            )}
+            {item.analysis.enemy_type && (
+              <DimRow label={t('labels.enemyType')}><TagList items={[item.analysis.enemy_type]} /></DimRow>
+            )}
+            {item.analysis.legitimation_mode && item.analysis.legitimation_mode.length > 0 && (
+              <DimRow label={t('labels.legitimationMode')}><TagList items={item.analysis.legitimation_mode} /></DimRow>
+            )}
+            {item.analysis.frame_function && (
+              <DimRow label={t('labels.frameFunction')}><TagList items={[item.analysis.frame_function]} /></DimRow>
+            )}
+            {item.analysis.temporality && (
+              <DimRow label={t('labels.temporality')}><TagList items={[item.analysis.temporality]} /></DimRow>
+            )}
+            {typeof item.analysis.dehumanisation_level === 'number' && (
+              <DimRow label={t('labels.dehumanisation')}>
+                <span className="font-mono text-xs text-zinc-300">{item.analysis.dehumanisation_level} / 10</span>
+                <span className="ml-3"><CiteLink href="https://www.genocide.watch/ten-stages-of-genocide">Stanton — Ten Stages of Genocide</CiteLink></span>
+              </DimRow>
+            )}
+            {item.analysis.greimas_actantial && (
+              <DimRow label={t('labels.actantial')}>
+                <dl className="grid grid-cols-[6rem_1fr] gap-x-3 gap-y-1 text-xs">
+                  {Object.entries(item.analysis.greimas_actantial).map(([role, value]) => (
+                    <div key={role} className="contents">
+                      <dt className="text-zinc-500">{role}</dt>
+                      <dd className="text-zinc-300">{value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </DimRow>
+            )}
           </dl>
         </section>
       )}
@@ -265,10 +333,31 @@ export default async function ComparisonDetailPage({ params }: { params: Promise
             <dt className="inline font-medium text-zinc-300">{t('meta.tropes')}</dt>{' '}
             <dd className="inline">{item.tropes.join(', ')}</dd>
           </div>
+          {typeof item.similarity === 'number' && (
+            <div>
+              <dt className="inline font-medium text-zinc-300">{t('meta.similarity')}</dt>{' '}
+              <dd className="inline font-mono">{item.similarity.toFixed(3)}</dd>
+            </div>
+          )}
+          {item.analysis?.shared_logic && (
+            <div>
+              <dt className="inline font-medium text-zinc-300">{t('meta.sharedLogic')}</dt>{' '}
+              <dd className="inline">{item.analysis.shared_logic}</dd>
+            </div>
+          )}
           <div>
             <dt className="inline font-medium text-zinc-300">{t('meta.notes')}</dt>{' '}
             <dd className="inline">{item.notes}</dd>
           </div>
+          {item.prompt_version && item.prompt_version !== 'legacy' && (
+            <div className="text-xs text-zinc-600">
+              <dt className="inline">{t('meta.provenance')}</dt>{' '}
+              <dd className="inline font-mono">
+                {[item.models?.classify, item.models?.match, item.models?.embed].filter(Boolean).join(' · ')} · prompt {item.prompt_version} · archive {item.archive_version}
+                {item.claim_verbatim === false ? ` · ${t('meta.nearVerbatim')}` : ''}
+              </dd>
+            </div>
+          )}
         </dl>
       </section>
     </main>

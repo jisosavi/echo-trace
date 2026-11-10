@@ -3,7 +3,8 @@ import { Link } from '@/i18n/navigation';
 import { StatusBar } from '@/components/status-bar';
 import { formatUTC } from '@/lib/format';
 import { getSourceMeta } from '@/lib/source-meta';
-import { getAllComparisons } from '@/lib/db';
+import { getAllComparisons, type Corpus } from '@/lib/db';
+import { isTrusted, type VerificationStatus } from '@/lib/archive';
 
 export const revalidate = 21600;
 
@@ -30,7 +31,8 @@ type Comparison = {
   tropes: string[];
   confidence: number;
   analysis?: Analysis;
-  historical_echo?: { figure: string; year: string };
+  historical_echo?: { figure: string; year: string; verification?: VerificationStatus | null };
+  outcome?: string | null;
   notes: string;
 };
 
@@ -60,9 +62,18 @@ function ellulBadge(t: string) {
     : 'border-teal-800 bg-teal-900/40 text-teal-300';
 }
 
-export default async function ComparisonsPage() {
+export default async function ComparisonsPage({ searchParams }: { searchParams: Promise<{ corpus?: string }> }) {
   const t = await getTranslations('comparisons');
-  const data = getAllComparisons() as Comparison[];
+  const corpus: Corpus = (await searchParams).corpus === 'control' ? 'control' : 'state';
+  const data = getAllComparisons(corpus) as Comparison[];
+  const tab = (c: Corpus, label: string) => (
+    <Link
+      href={c === 'control' ? '/comparisons?corpus=control' : '/comparisons'}
+      className={`rounded px-3 py-1 text-xs ${corpus === c ? 'bg-zinc-200 text-zinc-900' : 'border border-zinc-700 text-zinc-400 hover:text-zinc-200'}`}
+    >
+      {label}
+    </Link>
+  );
 
   return (
     <main className="mx-auto flex min-h-screen w-full max-w-5xl flex-col gap-8 px-6 py-12">
@@ -71,6 +82,14 @@ export default async function ComparisonsPage() {
         <p className="mt-2 text-zinc-400">{t('subtitle')}</p>
       </header>
       <StatusBar show={['analysis']} />
+
+      <div className="flex flex-col gap-2">
+        <div className="flex gap-2">
+          {tab('state', t('stateTab'))}
+          {tab('control', t('controlTab'))}
+        </div>
+        {corpus === 'control' && <p className="text-xs text-zinc-500">{t('controlNote')}</p>}
+      </div>
 
       <section className="grid gap-4">
         {data.map((item) => (
@@ -81,11 +100,18 @@ export default async function ComparisonsPage() {
             </div>
 
             <h2 className="text-lg font-medium">{item.historical_parallel}</h2>
-            {item.historical_echo && (
+            {item.historical_echo ? (
               <p className="mt-0.5 text-xs text-zinc-500">
                 {t('vs')} {item.historical_echo.figure}{item.historical_echo.year ? `, ${item.historical_echo.year}` : ''}
+                {!isTrusted(item.historical_echo.verification) && (
+                  <span className="ml-2 rounded border border-amber-800/60 px-1.5 py-px text-[10px] text-amber-400/80">
+                    {item.historical_echo.verification === 'paraphrase' ? t('paraphrase') : t('unverified')}
+                  </span>
+                )}
               </p>
-            )}
+            ) : item.outcome === 'no_echo' ? (
+              <p className="mt-0.5 text-xs text-zinc-600">{t('noEcho')}</p>
+            ) : null}
 
             <p className="mt-3 line-clamp-3 text-sm text-zinc-300">"{item.contemporary_quote}"</p>
             {item.contemporary_quote_en && (
