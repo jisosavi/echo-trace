@@ -1,11 +1,9 @@
 import { promises as fs } from 'node:fs';
-import path from 'node:path';
+import { LOG_PATH } from '@/lib/paths';
 import { getTranslations } from 'next-intl/server';
 import { LiveConsole } from '@/components/live-console';
 import { StatusBar } from '@/components/status-bar';
 import { PropagandaMapLoader } from '@/components/propaganda-map-loader';
-
-const LOG_PATH = path.resolve(process.cwd(), '../agent/data/cycle.log');
 
 async function getInitialLogs(): Promise<string[]> {
   try {

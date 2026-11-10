@@ -1,21 +1,13 @@
 import { watch, type FSWatcher } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
+import { LOG_PATH } from '@/lib/paths';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 const encoder = new TextEncoder();
 const MAX_LINES = 120;
-
-function resolveLogPath(): string {
-  if (process.env.CYCLE_LOG_PATH) {
-    return process.env.CYCLE_LOG_PATH;
-  }
-
-  // Running from `/web`, defaulting to monorepo sibling log file.
-  return path.resolve(process.cwd(), '../agent/data/cycle.log');
-}
 
 function tailLines(content: string, maxLines: number): string[] {
   const lines = content
@@ -30,7 +22,7 @@ function toSse(event: string, payload: unknown): Uint8Array {
 }
 
 export async function GET(): Promise<Response> {
-  const logPath = resolveLogPath();
+  const logPath = LOG_PATH;
   let heartbeatId: ReturnType<typeof setInterval> | undefined;
   let watcher: FSWatcher | undefined;
   let parentWatcher: FSWatcher | undefined;

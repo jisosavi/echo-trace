@@ -24,7 +24,7 @@
       "classifiedSub": "analysierte Vergleiche",
       "confidence": "Durchschn. Konfidenz",
       "tropes": "Erkannte Tropen",
-      "tropesSub": "von 14 definierten Tropen",
+      "tropesSub": "von {total} definierten Tropen",
       "articles": "Nachrichtenartikel",
       "sources": "{n} Quellen",
       "noScrape": "Scraping noch nicht ausgeführt"

@@ -24,7 +24,7 @@
       "classifiedSub": "已分析比较",
       "confidence": "平均置信度",
       "tropes": "已检测修辞格",
-      "tropesSub": "共14个已定义修辞格",
+      "tropesSub": "共{total}个已定义修辞格",
       "articles": "新闻文章",
       "sources": "{n}个来源",
       "noScrape": "尚未运行爬取"

@@ -102,8 +102,7 @@ function CiteLink({ children, href }: { children: React.ReactNode; href: string 
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function DimRow({ label, children }: { label: string; children: any }) {
+function DimRow({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="grid grid-cols-[10rem_1fr] gap-4 border-b border-zinc-800 py-3 text-sm last:border-0">
       <dt className="font-medium text-zinc-500 pt-0.5">{label}</dt>
@@ -131,10 +130,10 @@ export default async function ComparisonDetailPage({ params }: { params: Promise
       </div>
 
       <blockquote className="mt-6 rounded-lg border border-zinc-800 bg-zinc-900/40 p-5">
-        <p className="text-zinc-200 leading-relaxed">"{item.contemporary_quote}"</p>
+        <p className="text-zinc-200 leading-relaxed">&quot;{item.contemporary_quote}&quot;</p>
         {item.contemporary_quote_en && (
           <div className="mt-4 border-t border-zinc-800 pt-4">
-            <p className="text-zinc-300 leading-relaxed italic">"{item.contemporary_quote_en}"</p>
+            <p className="text-zinc-300 leading-relaxed italic">&quot;{item.contemporary_quote_en}&quot;</p>
             <p className="mt-1.5 text-xs text-zinc-600">
               {t('meta.translatedFrom', { language: item.translation_language ?? '', service: item.translation_service ?? '' })}
             </p>
@@ -158,7 +157,7 @@ export default async function ComparisonDetailPage({ params }: { params: Promise
               {item.historical_echo.context && <span className="text-xs text-zinc-500">— {item.historical_echo.context}</span>}
             </div>
             <blockquote className="border-l-2 border-zinc-600 pl-4 text-zinc-300 italic">
-              "{item.historical_echo.quote}"
+              &quot;{item.historical_echo.quote}&quot;
             </blockquote>
             {item.historical_echo.source && (
               <p className="mt-3 text-xs text-zinc-600">

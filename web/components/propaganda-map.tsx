@@ -61,12 +61,8 @@ export function PropagandaMap() {
                 stroke="#22c55e"
                 strokeWidth={0.4}
                 style={{
-                  default: {
-                    outline: 'none',
-                    animation: isActive(id) ? 'flash-country 0.8s ease-in-out infinite' : 'none',
-                  },
-                  hover: { outline: 'none' },
-                  pressed: { outline: 'none' },
+                  outline: 'none',
+                  animation: isActive(id) ? 'flash-country 0.8s ease-in-out infinite' : 'none',
                 }}
               />
             );

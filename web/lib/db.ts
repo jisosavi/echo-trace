@@ -1,8 +1,6 @@
 import Database from 'better-sqlite3';
-import path from 'node:path';
+import { DB_PATH } from './paths';
 import { getEchoVerification, type VerificationStatus } from './archive';
-
-const DB_PATH = path.resolve(process.cwd(), '../agent/data/echo-trace.db');
 
 let _db: InstanceType<typeof Database> | null = null;
 

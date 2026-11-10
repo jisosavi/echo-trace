@@ -24,7 +24,7 @@
       "classifiedSub": "comparaisons analysées",
       "confidence": "Confiance moyenne",
       "tropes": "Tropes détectés",
-      "tropesSub": "sur 14 tropes définis",
+      "tropesSub": "sur {total} tropes définis",
       "articles": "Articles de presse",
       "sources": "{n} sources",
       "noScrape": "extraction non encore effectuée"

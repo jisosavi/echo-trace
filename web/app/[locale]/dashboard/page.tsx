@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { StatusBar } from '@/components/status-bar';
 import { formatUTC } from '@/lib/format';
+import { getTropeCount } from '@/lib/archive';
 import { getAllComparisons, getBaselineStats, getSourceActivity, getTotalArticles, type CorpusStats } from '@/lib/db';
 
 export const revalidate = 21600;
@@ -228,7 +229,7 @@ export default async function DashboardPage() {
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
         <StatCard label={t('stats.classified')} value={stats.totalClassified.toLocaleString()} sub={t('stats.classifiedSub')} />
         <StatCard label={t('stats.confidence')} value={stats.avgConfidence > 0 ? `${Math.round(stats.avgConfidence * 100)}%` : '—'} />
-        <StatCard label={t('stats.tropes')} value={String(stats.tropeRanked.filter(([tr]) => tr !== 'unclassified').length)} sub={t('stats.tropesSub')} />
+        <StatCard label={t('stats.tropes')} value={String(stats.tropeRanked.filter(([tr]) => tr !== 'unclassified').length)} sub={t('stats.tropesSub', { total: getTropeCount() })} />
         <StatCard label={t('stats.articles')}
           value={stats.totalNews > 0 ? stats.totalNews.toLocaleString() : '—'}
           sub={stats.totalNews > 0 ? t('stats.sources', { n: stats.sources.length }) : t('stats.noScrape')} />

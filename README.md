@@ -342,7 +342,7 @@ crontab -e
 
 ## Web Frontend
 
-A Next.js app in `web/`. Reads comparisons and articles directly from `agent/data/echo-trace.db` via `better-sqlite3`, and verification status from `archival-memory.json`. The dashboard, comparisons list, and comparison detail pages use ISR (`revalidate = 21600`) so rendered HTML is cached for 6 hours — matching the pipeline cadence — and rebuilt in the background after the cache expires. The console page is fully dynamic. Supports 9 UI locales via `next-intl` with URL-based routing (`/[locale]/...`); the default locale (`en`) is served at `/`.
+A Next.js app in `web/`. Reads comparisons and articles directly from `agent/data/echo-trace.db` via `better-sqlite3`, and verification status from `archival-memory.json`. The dashboard, comparisons list, and comparison detail pages use ISR (`revalidate = 21600`) so rendered HTML is cached for 6 hours — matching the pipeline cadence — and rebuilt in the background after the cache expires. The console page is fully dynamic. Supports 9 UI locales via `next-intl` with URL-based routing (`/[locale]/...`); unprefixed URLs redirect to the English (`/en/...`) version.
 
 ```bash
 cd web

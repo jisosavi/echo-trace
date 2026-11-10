@@ -1,13 +1,10 @@
 import { promises as fs } from 'node:fs';
-import path from 'node:path';
+import { DB_PATH, LOG_PATH } from '@/lib/paths';
 import Database from 'better-sqlite3';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-const LOG_PATH = process.env.CYCLE_LOG_PATH ??
-  path.resolve(process.cwd(), '../agent/data/cycle.log');
-const DB_PATH = path.resolve(process.cwd(), '../agent/data/echo-trace.db');
 
 function parseLog(content: string) {
   let lastScrape: string | null = null;

@@ -1,11 +1,8 @@
 import { promises as fs } from 'node:fs';
-import path from 'node:path';
+import { LOG_PATH } from '@/lib/paths';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
-
-const LOG_PATH = process.env.CYCLE_LOG_PATH ??
-  path.resolve(process.cwd(), '../agent/data/cycle.log');
 
 // URL domain pattern → ISO 3166-1 numeric code (matches world-atlas topojson ids)
 // State-media sources only — control-corpus outlets are deliberately not drawn on the map.

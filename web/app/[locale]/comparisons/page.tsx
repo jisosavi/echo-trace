@@ -113,10 +113,10 @@ export default async function ComparisonsPage({ searchParams }: { searchParams: 
               <p className="mt-0.5 text-xs text-zinc-600">{t('noEcho')}</p>
             ) : null}
 
-            <p className="mt-3 line-clamp-3 text-sm text-zinc-300">"{item.contemporary_quote}"</p>
+            <p className="mt-3 line-clamp-3 text-sm text-zinc-300">&quot;{item.contemporary_quote}&quot;</p>
             {item.contemporary_quote_en && (
               <div className="mt-1">
-                <p className="line-clamp-3 text-sm text-zinc-400 italic">"{item.contemporary_quote_en}"</p>
+                <p className="line-clamp-3 text-sm text-zinc-400 italic">&quot;{item.contemporary_quote_en}&quot;</p>
                 <p className="mt-0.5 text-[10px] text-zinc-600">
                   {t('translatedFrom', { language: item.translation_language ?? '', service: item.translation_service ?? '' })}
                 </p>
